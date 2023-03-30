@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/PaymentTypes",
+  "$id": "http://mittatb.no/schemas/paymentTypes.json",
+  "definitions": {
+    "PaymentTypes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "app": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaymentType"
+          }
+        },
+        "web": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaymentType"
+          }
+        }
+      },
+      "required": [],
+      "title": "PaymentTypes"
+    },
+    "PaymentType": {
+      "type": "string",
+      "enum": ["vipps", "visa", "mastercard"]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@atb-as/fare-product-type-configs",
+  "version": "1.0.0",
+  "description": "Shared types and validation for fare product type configs",
+  "main": "index.js",
+  "license": "EUPL-1.2",
+  "bin": "./tools/validate.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtB-AS/fare-product-type-configs.git"
+  },
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.0",
+    "@types/node": "^18.15.11",
+    "@types/yargs": "^17.0.24",
+    "typescript": "^5.0.2",
+    "vitest": "^0.29.8"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "yargs": "^17.7.1",
+    "zod": "^3.21.4"
+  }
+}

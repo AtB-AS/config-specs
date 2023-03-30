@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/TravelSearchFilters",
+  "$id": "http://mittatb.no/schemas/travelSearchFilters.json",
+  "definitions": {
+    "TravelSearchFilters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "transportModes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TransportMode"
+          }
+        }
+      },
+      "required": ["transportModes"],
+      "title": "TravelSearchFilters"
+    },
+    "TransportMode": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "icon": {
+          "$ref": "#/definitions/Icon"
+        },
+        "text": {
+          "$ref": "_common.json#/definitions/LanguageArray"
+        },
+        "modes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Mode"
+          }
+        },
+        "description": {
+          "$ref": "_common.json#/definitions/LanguageArray"
+        }
+      },
+      "required": ["icon", "id", "modes", "text"],
+      "title": "TransportMode"
+    },
+    "Icon": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "transportMode": {
+          "$ref": "_common.json#/definitions/TransportModeType"
+        },
+        "transportSubMode": {
+          "$ref": "_common.json#/definitions/TransportSubModeType"
+        }
+      },
+      "required": ["transportMode"],
+      "title": "Icon"
+    },
+    "Mode": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "transportMode": {
+          "$ref": "_common.json#/definitions/TransportModeType"
+        },
+        "transportSubModes": {
+          "type": "array",
+          "items": {
+            "$ref": "_common.json#/definitions/TransportSubModeType"
+          }
+        }
+      },
+      "required": ["transportMode"],
+      "title": "Mode"
+    }
+  }
+}

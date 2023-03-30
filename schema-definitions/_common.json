@@ -1,0 +1,181 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "http://mittatb.no/schemas/_common.json",
+  "description": "Common util types used by other files.",
+  "definitions": {
+    "LanguageArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/LanguageAndTextType"
+      }
+    },
+    "LanguageAndTextType": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lang": {
+          "$ref": "#/definitions/Lang"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["lang", "value"],
+      "title": "Description"
+    },
+    "Lang": {
+      "type": "string",
+      "enum": ["nob", "eng"],
+      "title": "Language 3 letter ISO-code"
+    },
+    "TransportMode": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "$ref": "#/definitions/TransportModeType"
+        },
+        "subMode": {
+          "$ref": "#/definitions/TransportSubModeType"
+        }
+      },
+      "required": ["mode"],
+      "title": "TransportMode"
+    },
+    "TransportModeType": {
+      "type": "string",
+      "enum": [
+        "air",
+        "bus",
+        "metro",
+        "rail",
+        "tram",
+        "coach",
+        "water",
+        "cableway",
+        "funicular",
+        "monorail",
+        "lift",
+        "trolleybus",
+        "unknown"
+      ]
+    },
+    "TransportSubModeType": {
+      "type": "string",
+      "enum": [
+        "SchengenAreaFlight",
+        "airportBoatLink",
+        "airportLinkBus",
+        "airportLinkRail",
+        "airshipService",
+        "allFunicularServices",
+        "allHireVehicles",
+        "allTaxiServices",
+        "bikeTaxi",
+        "blackCab",
+        "cableCar",
+        "cableFerry",
+        "canalBarge",
+        "carTransportRailService",
+        "chairLift",
+        "charterTaxi",
+        "cityTram",
+        "communalTaxi",
+        "commuterCoach",
+        "crossCountryRail",
+        "dedicatedLaneBus",
+        "demandAndResponseBus",
+        "domesticCharterFlight",
+        "domesticFlight",
+        "domesticScheduledFlight",
+        "dragLift",
+        "expressBus",
+        "funicular",
+        "helicopterService",
+        "highFrequencyBus",
+        "highSpeedPassengerService",
+        "highSpeedRail",
+        "highSpeedVehicleService",
+        "hireCar",
+        "hireCycle",
+        "hireMotorbike",
+        "hireVan",
+        "intercontinentalCharterFlight",
+        "intercontinentalFlight",
+        "international",
+        "internationalCarFerry",
+        "internationalCharterFlight",
+        "internationalCoach",
+        "internationalFlight",
+        "internationalPassengerFerry",
+        "interregionalRail",
+        "lift",
+        "local",
+        "localBus",
+        "localCarFerry",
+        "localPassengerFerry",
+        "localTram",
+        "longDistance",
+        "metro",
+        "miniCab",
+        "mobilityBus",
+        "mobilityBusForRegisteredDisabled",
+        "nationalCarFerry",
+        "nationalCoach",
+        "nationalPassengerFerry",
+        "nightBus",
+        "nightRail",
+        "postBoat",
+        "postBus",
+        "rackAndPinionRailway",
+        "railReplacementBus",
+        "railShuttle",
+        "railTaxi",
+        "regionalBus",
+        "regionalCarFerry",
+        "regionalCoach",
+        "regionalPassengerFerry",
+        "regionalRail",
+        "regionalTram",
+        "replacementRailService",
+        "riverBus",
+        "roadFerryLink",
+        "roundTripCharterFlight",
+        "scheduledFerry",
+        "schoolAndPublicServiceBus",
+        "schoolBoat",
+        "schoolBus",
+        "schoolCoach",
+        "shortHaulInternationalFlight",
+        "shuttleBus",
+        "shuttleCoach",
+        "shuttleFerryService",
+        "shuttleFlight",
+        "shuttleTram",
+        "sightseeingBus",
+        "sightseeingCoach",
+        "sightseeingFlight",
+        "sightseeingService",
+        "sightseeingTram",
+        "sleeperRailService",
+        "specialCoach",
+        "specialNeedsBus",
+        "specialTrain",
+        "streetCableCar",
+        "suburbanRailway",
+        "telecabin",
+        "telecabinLink",
+        "touristCoach",
+        "touristRailway",
+        "trainFerry",
+        "trainTram",
+        "tube",
+        "undefined",
+        "undefinedFunicular",
+        "unknown",
+        "urbanRailway",
+        "waterTaxi"
+      ]
+    }
+  }
+}

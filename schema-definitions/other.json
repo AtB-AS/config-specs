@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/ConfigurationOther",
+  "$id": "http://mittatb.no/schemas/other.json",
+  "definitions": {
+    "ConfigurationOther": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "defaultTariffZone": {
+          "type": "string"
+        },
+        "vatPercent": {
+          "type": "integer"
+        },
+        "travelcardNumberLength": {
+          "type": "integer",
+          "default": 16,
+          "enum": [9, 16]
+        },
+        "defaultOfferSearchMode": {
+          "$ref": "#/definitions/OfferSearchMode"
+        },
+        "disabledLoginMethods": {
+          "$ref": "#/definitions/DisabledLoginMethods"
+        },
+        "enableTokenToggleRestrictions": {
+          "type": "boolean"
+        },
+        "nextMorningUtcTimestamp": {
+          "type": "string",
+          "pattern": "^\\d{2}:\\d{2}"
+        },
+        "tokenToggleMaxLimit": {
+          "type": "integer"
+        },
+        "modesWeSellTicketsFor": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["vatPercent"],
+      "title": "ConfigurationOther"
+    },
+    "OfferSearchMode": {
+      "type": "string",
+      "default": "zone",
+      "enum": ["zone", "stop-place"]
+    },
+    "DisabledLoginMethods": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "app": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LoginMethod"
+          }
+        },
+        "web": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LoginMethod"
+          }
+        }
+      },
+      "required": [],
+      "title": "DisabledLoginMethods"
+    },
+    "LoginMethod": {
+      "type": "string",
+      "enum": ["otp", "email", "vipps"]
+    }
+  }
+}
