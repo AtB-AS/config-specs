@@ -12,6 +12,7 @@
   "private": false,
   "scripts": {
     "cli": "node -r @swc-node/register src/tools/bin.ts",
+    "gen": "node -r @swc-node/register src/tools/generate-schemas.ts",
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "test": "vitest"
@@ -32,6 +33,7 @@
     "glob": "^9.3.2",
     "js-yaml": "^4.1.0",
     "yargs": "^17.7.1",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "zod-to-json-schema": "^3.20.4"
   }
 }
