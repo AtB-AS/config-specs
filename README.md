@@ -29,7 +29,22 @@ vatPercent: 12
 ```
 
 ```sh
-npx @atb-as/fare-product-type-configs validate other.yaml
+Usage: npx @atb-as/fare-product-type-configs -s [schema] -f [file]
+
+Options:
+      --version  Show version number                                   [boolean]
+  -f, --file     file to validate                                     [required]
+  -s, --schema   choose a schema                [required] [choices: 'fareProductTypeConfigs',
+                                                                        'other',
+                                                                        'paymentTypes',
+                                                                        'travelSearchFilters',
+                                                                        'url'  ]
+  -h, --help     Show help                                             [boolean]
+
+Examples:
+  Validate other.yaml with position specification
+
+    npx @atb-as/fare-product-type-configs -s other -f other.yaml
 ```
 
 ## Install
