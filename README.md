@@ -36,23 +36,20 @@ Usage: npx @atb-as/fare-product-type-configs -s [schema] -f [file]
 Options:
       --version  Show version number                                   [boolean]
   -f, --file     file to validate                                     [required]
-  -s, --schema   choose a schema                [required] [choices: 'fareProductTypeConfigs',
-                                                                        'other',
-                                                                        'paymentTypes',
-                                                                        'travelSearchFilters',
-                                                                        'url'  ]
+  -s, --schema   choose a schema
+         [required] [choices: "fareProductTypeConfigs", "other", "paymentTypes",
+                                                   "travelSearchFilters", "url"]
   -h, --help     Show help                                             [boolean]
 
 Examples:
-  Validate other.yaml with position specification
-
-    npx @atb-as/fare-product-type-configs -s other -f other.yaml
+  npx @atb-as/fare-product-type-configs -s other -f other.json  Validate other.json with position specification
+  npx @atb-as/fare-product-type-configs -s other -f other.yaml  Validate other.yaml with position specification
 ```
 
 ## Install
 
 ```
-$ yarn add @atb-as/fare-product-type-configs
+yarn add @atb-as/fare-product-type-configs
 ```
 
 ## License

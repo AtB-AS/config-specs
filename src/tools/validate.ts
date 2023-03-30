@@ -6,29 +6,27 @@ import {join} from 'path';
 import addFormats from 'ajv-formats';
 import {SchemaNames} from './specifications-types';
 
-const ajv = new Ajv({allErrors: true});
-addFormats(ajv);
+let ajv = new Ajv({allErrors: true});
+ajv = addFormats(ajv);
+
+const BASE_FOLDER = join(__dirname, '..', '..', 'schema-definitions');
 
 type ValidationOutput =
-  | {
-      error: false;
-    }
+  | {error: false}
   | {
       error: true;
       errorData: ValidateFunction['errors'];
     };
 export default async function validate(
   schema: SchemaNames,
-  json: any,
+  json: object,
 ): Promise<ValidationOutput> {
   await potentiallyAddCommon();
 
   const doValidate = await readSpecification(schema);
   const isValid = doValidate(json);
   if (isValid) {
-    return {
-      error: false,
-    };
+    return {error: false};
   } else {
     return {
       error: true,
@@ -40,9 +38,7 @@ export default async function validate(
 async function readSpecification(
   filename: SchemaNames,
 ): Promise<ValidateFunction> {
-  const spec = await readFile(
-    join(__dirname, '..', 'schema-definitions', `${filename}.json`),
-  );
+  const spec = await readFile(join(BASE_FOLDER, `${filename}.json`));
   try {
     const parsed = JSON.parse(spec.toString());
     const previous = ajv.getSchema(parsed['$id']);
@@ -58,14 +54,13 @@ async function readSpecification(
 }
 
 async function potentiallyAddCommon() {
-  const spec = await readFile(
-    join(__dirname, '..', 'schema-definitions', `_common.json`),
-  );
+  const spec = await readFile(join(BASE_FOLDER, `_common.json`));
   try {
     const parsed = JSON.parse(spec.toString());
     const previous = ajv.getSchema(parsed['$id']);
+
     if (!previous) {
-      ajv.compile(parsed);
+      ajv.addSchema(parsed);
     }
   } catch (err) {
     throw new Error(`Unable to load common refs`);
