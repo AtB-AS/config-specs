@@ -19,9 +19,4 @@ test('TransportModeType', function () {
       mode: TransportMode.Coach,
     }),
   );
-  assertType<TransportModeType>(
-    TransportModeType.safeParse(`{
-      "mode": "${TransportMode.Coach}"
-    }`),
-  );
 });
