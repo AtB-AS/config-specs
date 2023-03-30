@@ -28,6 +28,8 @@ defaultTariffZone: NOR:TariffZone:8040
 vatPercent: 12
 ```
 
+#### Running as CLI
+
 ```sh
 Usage: npx @atb-as/fare-product-type-configs -s [schema] -f [file]
 
