@@ -1,16 +1,19 @@
-import zodToJsonSchema from 'zod-to-json-schema';
-import {
-  FareProductTypeConfig,
-  FareProductTypeConfigSettings,
-  LanguageAndTextType,
-  TransportModeType,
-} from '../types';
+import {writeFile} from 'fs/promises';
+import {join} from 'path';
+import {BASE_FOLDER} from './config';
+import {SchemaNames, schemaTypes} from './specifications-types';
 
-const jsonSchema = zodToJsonSchema(FareProductTypeConfig, {
-  definitions: {
-    LanguageAndTextType,
-    TransportModeType,
-    FareProductTypeConfigSettings,
-  },
-});
-console.log(JSON.stringify(jsonSchema, null, 2));
+saveSchema('fareProductTypeConfigs');
+
+function saveSchema(schema: SchemaNames) {
+  const schemaType = schemaTypes[schema];
+  if (schemaType) {
+    save(schema, schemaType);
+  }
+}
+function save(filename: string, content: object) {
+  return writeFile(
+    join(BASE_FOLDER, `${filename}.json`),
+    JSON.stringify(content, null, 2),
+  );
+}

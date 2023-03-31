@@ -5,11 +5,10 @@ import {join} from 'path';
 
 import addFormats from 'ajv-formats';
 import {SchemaNames} from './specifications-types';
+import {BASE_FOLDER} from './config';
 
 let ajv = new Ajv({allErrors: true});
 ajv = addFormats(ajv);
-
-const BASE_FOLDER = join(__dirname, '..', '..', 'schema-definitions');
 
 type ValidationOutput =
   | {error: false}

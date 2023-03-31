@@ -1,0 +1,161 @@
+# yaml-language-server: $schema=../schema-definitions/fareProductTypeConfigs.json
+fareProductTypeConfigs:
+  - type: single
+    name:
+      - lang: nob
+        value: Enkeltbillett
+      - lang: eng
+        value: Single ticket
+    illustration: single
+    transportModes:
+      - mode: bus
+    description:
+      - lang: nob
+        value: Når du skal reise av og til
+      - lang: eng
+        value: When you travel occasionally
+    configuration:
+      zoneSelectionMode: multiple
+      travellerSelectionMode: multiple
+      timeSelectionMode: datetime
+      productSelectionMode: none
+      requiresLogin: false
+  - type: carnet
+    name:
+      - lang: nob
+        value: Klippekort
+      - lang: eng
+        value: Punch card
+    illustration: carnet
+    transportModes:
+      - mode: bus
+    excludedTariffZones:
+      - NOR:TariffZone:8360
+      - NOR:TariffZone:8221
+      - NOR:TariffZone:4121
+      - NOR:TariffZone:8131
+      - NOR:TariffZone:5045
+      - NOR:TariffZone:8061
+      - NOR:TariffZone:8270
+      - NOR:TariffZone:8380
+      - NOR:TariffZone:8180
+      - NOR:TariffZone:8111
+      - NOR:TariffZone:8250
+      - NOR:TariffZone:8331
+      - NOR:TariffZone:8241
+      - NOR:TariffZone:8160
+      - NOR:TariffZone:8201
+      - NOR:TariffZone:8120
+      - NOR:TariffZone:8132
+      - NOR:TariffZone:8060
+      - NOR:TariffZone:8381
+      - NOR:TariffZone:8332
+      - NOR:TariffZone:8320
+      - NOR:TariffZone:8753
+      - NOR:TariffZone:8242
+      - NOR:TariffZone:8340
+      - NOR:TariffZone:8372
+      - NOR:TariffZone:5060
+      - NOR:TariffZone:8280
+      - NOR:TariffZone:8370
+      - NOR:TariffZone:8260
+      - NOR:TariffZone:8063
+      - NOR:TariffZone:8530
+      - NOR:TariffZone:8251
+      - NOR:TariffZone:8150
+      - NOR:TariffZone:8361
+      - NOR:TariffZone:8371
+      - NOR:TariffZone:8130
+      - NOR:TariffZone:5046
+      - NOR:TariffZone:8062
+      - NOR:TariffZone:8220
+      - NOR:TariffZone:8110
+      - NOR:TariffZone:8240
+      - NOR:TariffZone:8330
+      - NOR:TariffZone:8200
+    description:
+      - lang: nob
+        value:
+          10 forhåndskjøpte enkeltbilletter som må aktiveres før du går om bord.
+      - lang: eng
+        value:
+          10 pre-purchased single tickets that you have to validate before
+          boarding.
+    configuration:
+      zoneSelectionMode: multiple-zone
+      travellerSelectionMode: single
+      timeSelectionMode: none
+      productSelectionMode: productAlias
+      requiresLogin: true
+      productSelectionTitle:
+        - lang: nob
+          value: Velg antall klipp
+        - lang: eng
+          value: Choose number of tickets
+  - type: period
+    name:
+      - lang: nob
+        value: Periodebillett
+      - lang: eng
+        value: Periodic ticket
+    illustration: period
+    transportModes:
+      - mode: bus
+    description:
+      - lang: nob
+        value: Når du reiser litt oftere
+      - lang: eng
+        value: When you travel more frequently
+    configuration:
+      zoneSelectionMode: multiple
+      travellerSelectionMode: single
+      timeSelectionMode: datetime
+      productSelectionMode: duration
+      requiresLogin: true
+      productSelectionTitle:
+        - lang: nob
+          value: Velg varighet
+        - lang: eng
+          value: Select duration
+  - type: hour24
+    name:
+      - lang: nob
+        value: 24-timersbillett
+      - lang: eng
+        value: 24 hour pass
+    illustration: hour24
+    transportModes:
+      - mode: bus
+        subMode: localBus
+    description:
+      - lang: nob
+        value: Når du vil reise flere ganger på et døgn
+      - lang: eng
+        value: For travelling several times in 24 hours
+    configuration:
+      zoneSelectionMode: single
+      travellerSelectionMode: single
+      timeSelectionMode: datetime
+      productSelectionMode: none
+      requiresLogin: false
+  - type: night_v2
+    name:
+      - lang: nob
+        value: Nattbillett
+      - lang: eng
+        value: Night ticket
+    illustration: night
+    transportModes:
+      - mode: bus
+        subMode: localBus
+    description:
+      - lang: nob
+        value: Fra 00:30 til 04:00 på nattbuss
+      - lang: eng
+        value: From 00:30 to 04:00 for night bus
+    configuration:
+      zoneSelectionMode: none
+      travellerSelectionMode: none
+      timeSelectionMode: none
+      productSelectionMode: product
+      requiresLogin: false

@@ -1,11 +1,291 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$ref": "#/definitions/FareProductConfiguration",
-  "$id": "http://mittatb.no/schemas/fareProductTypeConfigs.json",
   "definitions": {
+    "LanguageAndTextType": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "lang": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "lang",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "TransportModeType": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "air",
+            "bus",
+            "cableway",
+            "coach",
+            "funicular",
+            "lift",
+            "metro",
+            "monorail",
+            "rail",
+            "tram",
+            "trolleybus",
+            "unknown",
+            "water"
+          ]
+        },
+        "subMode": {
+          "type": "string",
+          "enum": [
+            "SchengenAreaFlight",
+            "airportBoatLink",
+            "airportLinkBus",
+            "airportLinkRail",
+            "airshipService",
+            "allFunicularServices",
+            "allHireVehicles",
+            "allTaxiServices",
+            "bikeTaxi",
+            "blackCab",
+            "cableCar",
+            "cableFerry",
+            "canalBarge",
+            "carTransportRailService",
+            "chairLift",
+            "charterTaxi",
+            "cityTram",
+            "communalTaxi",
+            "commuterCoach",
+            "crossCountryRail",
+            "dedicatedLaneBus",
+            "demandAndResponseBus",
+            "domesticCharterFlight",
+            "domesticFlight",
+            "domesticScheduledFlight",
+            "dragLift",
+            "expressBus",
+            "funicular",
+            "helicopterService",
+            "highFrequencyBus",
+            "highSpeedPassengerService",
+            "highSpeedRail",
+            "highSpeedVehicleService",
+            "hireCar",
+            "hireCycle",
+            "hireMotorbike",
+            "hireVan",
+            "intercontinentalCharterFlight",
+            "intercontinentalFlight",
+            "international",
+            "internationalCarFerry",
+            "internationalCharterFlight",
+            "internationalCoach",
+            "internationalFlight",
+            "internationalPassengerFerry",
+            "interregionalRail",
+            "lift",
+            "local",
+            "localBus",
+            "localCarFerry",
+            "localPassengerFerry",
+            "localTram",
+            "longDistance",
+            "metro",
+            "miniCab",
+            "mobilityBus",
+            "mobilityBusForRegisteredDisabled",
+            "nationalCarFerry",
+            "nationalCoach",
+            "nationalPassengerFerry",
+            "nightBus",
+            "nightRail",
+            "postBoat",
+            "postBus",
+            "rackAndPinionRailway",
+            "railReplacementBus",
+            "railShuttle",
+            "railTaxi",
+            "regionalBus",
+            "regionalCarFerry",
+            "regionalCoach",
+            "regionalPassengerFerry",
+            "regionalRail",
+            "regionalTram",
+            "replacementRailService",
+            "riverBus",
+            "roadFerryLink",
+            "roundTripCharterFlight",
+            "scheduledFerry",
+            "schoolAndPublicServiceBus",
+            "schoolBoat",
+            "schoolBus",
+            "schoolCoach",
+            "shortHaulInternationalFlight",
+            "shuttleBus",
+            "shuttleCoach",
+            "shuttleFerryService",
+            "shuttleFlight",
+            "shuttleTram",
+            "sightseeingBus",
+            "sightseeingCoach",
+            "sightseeingFlight",
+            "sightseeingService",
+            "sightseeingTram",
+            "sleeperRailService",
+            "specialCoach",
+            "specialNeedsBus",
+            "specialTrain",
+            "streetCableCar",
+            "suburbanRailway",
+            "telecabin",
+            "telecabinLink",
+            "touristCoach",
+            "touristRailway",
+            "trainFerry",
+            "trainTram",
+            "tube",
+            "undefined",
+            "undefinedFunicular",
+            "unknown",
+            "urbanRailway",
+            "waterTaxi"
+          ]
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "additionalProperties": false
+    },
+    "FareProductTypeConfigSettings": {
+      "type": "object",
+      "properties": {
+        "zoneSelectionMode": {
+          "type": "string",
+          "enum": [
+            "none",
+            "single",
+            "single-stop",
+            "single-zone",
+            "multiple",
+            "multiple-stop",
+            "multiple-zone"
+          ]
+        },
+        "travellerSelectionMode": {
+          "type": "string",
+          "enum": [
+            "multiple",
+            "single",
+            "none"
+          ]
+        },
+        "timeSelectionMode": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "next-morning",
+            "next-morning-minimum",
+            "none"
+          ]
+        },
+        "productSelectionMode": {
+          "type": "string",
+          "enum": [
+            "duration",
+            "product",
+            "productAlias",
+            "none"
+          ]
+        },
+        "productSelectionTitle": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LanguageAndTextType"
+          }
+        },
+        "requiresLogin": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "zoneSelectionMode",
+        "travellerSelectionMode",
+        "timeSelectionMode",
+        "productSelectionMode",
+        "requiresLogin"
+      ],
+      "additionalProperties": false
+    },
+    "FareProductTypeConfig": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "illustration": {
+          "type": "string"
+        },
+        "name": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LanguageAndTextType"
+          }
+        },
+        "transportModes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TransportModeType"
+          }
+        },
+        "excludedTariffZones": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LanguageAndTextType"
+          }
+        },
+        "configuration": {
+          "$ref": "#/definitions/FareProductTypeConfigSettings"
+        }
+      },
+      "required": [
+        "type",
+        "illustration",
+        "name",
+        "transportModes",
+        "description",
+        "configuration"
+      ],
+      "additionalProperties": false
+    },
     "FareProductConfiguration": {
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "fareProductTypeConfigs": {
           "type": "array",
@@ -14,123 +294,11 @@
           }
         }
       },
-      "required": ["fareProductTypeConfigs"],
-      "title": "FareProductConfiguration"
-    },
-    "FareProductTypeConfig": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "type": {
-          "type": "string"
-        },
-        "name": {
-          "$ref": "_common.json#/definitions/LanguageArray"
-        },
-        "transportModes": {
-          "type": "array",
-          "items": {
-            "$ref": "_common.json#/definitions/TransportMode"
-          }
-        },
-        "illustration": {
-          "$ref": "#/definitions/Illustration"
-        },
-        "description": {
-          "$ref": "_common.json#/definitions/LanguageArray"
-        },
-        "excludedTariffZones": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "configuration": {
-          "$ref": "#/definitions/FareProductTypeConfigSettings"
-        }
-      },
       "required": [
-        "configuration",
-        "description",
-        "name",
-        "transportModes",
-        "type"
+        "fareProductTypeConfigs"
       ],
-      "title": "FareProductTypeConfig"
-    },
-    "FareProductTypeConfigSettings": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "zoneSelectionMode": {
-          "$ref": "#/definitions/ZoneSelectionMode"
-        },
-        "travellerSelectionMode": {
-          "$ref": "#/definitions/TravellerSelectionMode"
-        },
-        "timeSelectionMode": {
-          "$ref": "#/definitions/TimeSelectionMode"
-        },
-        "productSelectionMode": {
-          "$ref": "#/definitions/ProductSelectionMode"
-        },
-        "productSelectionTitle": {
-          "$ref": "_common.json#/definitions/LanguageArray"
-        },
-        "requiresLogin": {
-          "type": "boolean"
-        },
-        "offerEndpoint": {
-          "type": "string",
-          "deprecated": true,
-          "description": "Used to specify where we should search offers from. This is deprecated and no longer used in new versions of app."
-        }
-      },
-      "required": [
-        "productSelectionMode",
-        "requiresLogin",
-        "timeSelectionMode",
-        "travellerSelectionMode",
-        "zoneSelectionMode"
-      ],
-      "title": "Configuration"
-    },
-    "ZoneSelectionMode": {
-      "type": "string",
-      "enum": [
-        "none",
-        "single",
-        "single-stop",
-        "single-zone",
-        "multiple",
-        "multiple-stop",
-        "multiple-zone"
-      ]
-    },
-    "Illustration": {
-      "type": "string",
-      "enum": [
-        "single",
-        "period",
-        "hour24",
-        "carnet",
-        "night",
-        "boat",
-        "youth",
-        "summer"
-      ]
-    },
-    "TravellerSelectionMode": {
-      "type": "string",
-      "enum": ["multiple", "single", "none"]
-    },
-    "TimeSelectionMode": {
-      "type": "string",
-      "enum": ["datetime", "next-morning", "next-morning-minimum", "none"]
-    },
-    "ProductSelectionMode": {
-      "type": "string",
-      "enum": ["duration", "product", "productAlias", "none"]
+      "additionalProperties": false
     }
-  }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }
