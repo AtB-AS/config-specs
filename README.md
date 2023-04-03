@@ -15,7 +15,11 @@ import {ZoneSelectionMode} from '@atb-as/fare-product-type-configs';
 
 const selectedZone: ZoneSelectionMode =
   ZoneSelectionMode.parse('multiple-stop');
-// Throws error if not multiple-stop is valid.
+//> Throws error if not multiple-stop is valid.
+
+const selectedZone2: ZoneSelectionMode =
+  ZoneSelectionMode.safeParse('multiple-stop');
+//> selectedZone2.success = true | false
 ```
 
 ### Usage in YAML validation

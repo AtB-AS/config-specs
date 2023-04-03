@@ -6,7 +6,7 @@ import {
   FareProductTypeConfigSettings,
   LanguageAndTextType,
   TransportModeType,
-} from '../types';
+} from '../fare-product-type';
 
 export const specifications = [
   'fareProductTypeConfigs',
