@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "EUPL-1.2",
   "bin": "./lib/tools/bin.js",
+  "types": "./lib/index.d.ts",
   "files": [
     "schema-definitions",
     "lib",
