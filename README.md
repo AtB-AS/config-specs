@@ -35,7 +35,7 @@ vatPercent: 12
 #### Running as CLI
 
 ```sh
-Usage: npx @atb-as/fare-product-type-configs -s [schema] -f [file]
+Usage: npx @atb-as/config-specs -s [schema] -f [file]
 
 Options:
       --version  Show version number                                   [boolean]
@@ -46,14 +46,14 @@ Options:
   -h, --help     Show help                                             [boolean]
 
 Examples:
-  npx @atb-as/fare-product-type-configs -s other -f other.json  Validate other.json with position specification
-  npx @atb-as/fare-product-type-configs -s other -f other.yaml  Validate other.yaml with position specification
+  npx @atb-as/config-specs -s other -f other.json  Validate other.json with position specification
+  npx @atb-as/config-specs -s other -f other.yaml  Validate other.yaml with position specification
 ```
 
 ## Install
 
 ```
-yarn add @atb-as/fare-product-type-configs
+yarn add @atb-as/config-specs
 ```
 
 ## License
