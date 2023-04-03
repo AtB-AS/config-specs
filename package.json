@@ -1,6 +1,6 @@
 {
   "name": "@atb-as/config-specs",
-  "version": "1.0.6",
+  "version": "1.0.5",
   "description": "Shared types and validation for fare product type configs",
   "main": "index.js",
   "license": "EUPL-1.2",
@@ -20,7 +20,7 @@
     "prepublishOnly": "yarn build",
     "cli": "node -r @swc-node/register src/tools/bin.ts",
     "gen": "node -r @swc-node/register src/tools/generate-schemas.ts",
-    "build": "rimraf lib && tsc",
+    "build": "rimraf lib && yarn gen && tsc",
     "typecheck": "tsc --noEmit",
     "test": "vitest"
   },
