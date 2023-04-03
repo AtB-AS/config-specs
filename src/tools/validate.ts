@@ -40,7 +40,7 @@ async function readSpecification(
   const spec = await readFile(join(BASE_FOLDER, `${filename}.json`));
   try {
     const parsed = JSON.parse(spec.toString());
-    const previous = ajv.getSchema(parsed['$id']);
+    const previous = ajv.getSchema(parsed['$ref']);
 
     if (previous) {
       return previous;

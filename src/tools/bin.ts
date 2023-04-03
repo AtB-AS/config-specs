@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import {readFile} from 'fs/promises';
-import {extname} from 'path';
+import {extname, resolve} from 'path';
 import yargs from 'yargs';
 import {hideBin} from 'yargs/helpers';
 import {specifications} from './specifications-types';
@@ -75,7 +75,7 @@ async function readAllFiles(fileOrGlob: string | string[]) {
       const files = await glob(file, {cwd: process.cwd()});
       return Promise.all(files.map(readLocalFile));
     } else {
-      return [await readLocalFile(file)];
+      return [await readLocalFile(resolve(process.cwd(), file))];
     }
   };
   if (Array.isArray(fileOrGlob)) {
