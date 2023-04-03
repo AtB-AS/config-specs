@@ -188,7 +188,7 @@ export const FareProductTypeConfigSettings = z.object({
 
 export const FareProductTypeConfig = z.object({
   type: z.string(),
-  illustration: z.string(),
+  illustration: z.string().optional(),
   name: z.array(LanguageAndTextType),
   transportModes: z.array(TransportModeType),
   excludedTariffZones: z.array(z.string()).optional(),

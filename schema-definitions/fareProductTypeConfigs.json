@@ -276,7 +276,6 @@
       },
       "required": [
         "type",
-        "illustration",
         "name",
         "transportModes",
         "description",
