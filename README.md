@@ -1,4 +1,4 @@
-# @atb-as/fare-product-type-configs
+# @atb-as/config-specs
 
 > Shared types and validation for fare product type configs
 
@@ -11,7 +11,7 @@ across projects and organisations.
 ### API and Types
 
 ```js
-import {ZoneSelectionMode} from '@atb-as/fare-product-type-configs';
+import {ZoneSelectionMode} from '@atb-as/config-specs';
 
 const selectedZone: ZoneSelectionMode =
   ZoneSelectionMode.parse('multiple-stop');

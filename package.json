@@ -5,6 +5,10 @@
   "main": "index.js",
   "license": "EUPL-1.2",
   "bin": "./tools/validate.ts",
+  "files": [
+    "schema-definitions",
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/AtB-AS/fare-product-type-configs.git"
