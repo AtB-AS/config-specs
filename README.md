@@ -65,9 +65,15 @@ Examples:
 yarn add @atb-as/config-specs
 ```
 
-## License
+## Tests and fixtures
 
-EUPL-1.2
+Note contract/fixture tests in
+[src/tets/contract-fixtures-tests](./src/tets/contract-fixtures-tests). These
+tests should never fail unless it is very intentional. These are ment to ensure
+backwards compatibility with older apps.
+
+If they fail you need to ensure that the change is intentional and that older
+apps refering to the data that is the cause of change is no longer in use.
 
 ## Scope and goal of package
 
@@ -83,3 +89,7 @@ quality across Firestore, Webshop and App for all organisations involved.
 1. Type generation and Schema validation generation
 1. Input validation (Data INTO Firestore)
 1. Data decoding / encoding validation. (Data OUT of Firestore)
+
+## License
+
+EUPL-1.2
