@@ -6,6 +6,15 @@ Collects documentation, JSON Specifications and types for Fare Product Types
 Configs. Ensures consistent types and mapping for all fare product configs
 across projects and organisations.
 
+## Progress
+
+- [x] Fare Product Types
+- [x] Travel Search Filters
+- [ ] Urls
+- [ ] Payment Types
+- [ ] Other
+- [ ] Reference Data
+
 ## Usage
 
 ### API and Types
@@ -59,3 +68,18 @@ yarn add @atb-as/config-specs
 ## License
 
 EUPL-1.2
+
+## Scope and goal of package
+
+Goal of this package is to ensure data quality and consistent data across remote
+configuration and usage over time for multiple consumers.
+
+This package should collect specification and validation (incl. types) for data
+stored in Firestore. This should ensure easier consistent validation and data
+quality across Firestore, Webshop and App for all organisations involved.
+
+1. Collect specifications ("the standard"™)
+1. Collect documentation ("how to use the standard")
+1. Type generation and Schema validation generation
+1. Input validation (Data INTO Firestore)
+1. Data decoding / encoding validation. (Data OUT of Firestore)
