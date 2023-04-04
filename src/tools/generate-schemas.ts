@@ -1,7 +1,7 @@
 import {writeFile} from 'fs/promises';
 import {join} from 'path';
 import {BASE_FOLDER} from './config';
-import {SchemaNames, schemaTypes, specifications} from './specifications-types';
+import {SchemaNames, jsonSchemas, specifications} from './specifications-types';
 
 saveAll();
 
@@ -10,7 +10,7 @@ async function saveAll() {
 }
 
 async function saveSchema(schema: SchemaNames) {
-  const schemaType = schemaTypes[schema];
+  const schemaType = jsonSchemas[schema];
 
   try {
     if (schemaType) {
