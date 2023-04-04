@@ -68,7 +68,7 @@ yarn add @atb-as/config-specs
 ## Tests and fixtures
 
 Note contract/fixture tests in
-[src/tets/contract-fixtures-tests](./src/tets/contract-fixtures-tests). These
+[src/tests/contract-fixtures-tests](./src/tests/contract-fixtures-tests). These
 tests should never fail unless it is very intentional. These are ment to ensure
 backwards compatibility with older apps.
 
