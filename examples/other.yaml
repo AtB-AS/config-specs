@@ -1,5 +1,0 @@
-# yaml-language-server: $schema=../schema-definitions/other.json
-enableTokenToggleRestrictions: true
-tokenToggleMaxLimit: 3
-defaultTariffZone: NOR:TariffZone:8040
-vatPercent: 12
