@@ -29,6 +29,10 @@ export const specifications = [
 
 export type SchemaNames = typeof specifications[number];
 
+export function isValidSchema(schema: any): schema is SchemaNames {
+  return schema in schemaTypes;
+}
+
 // Exactly as structured in Firestore Config Yaml Files (correct root level)
 export const schemaTypes = {
   fareProductTypeConfigs: z.object({

@@ -1,0 +1,122 @@
+# yaml-language-server: $schema=../../schema-definitions/fareProductTypeConfigs.json
+fareProductTypeConfigs:
+  - type: single
+    name:
+      - lang: nob
+        value: Enkeltbillett
+      - lang: eng
+        value: Single ticket
+    illustration: single
+    transportModes:
+      - mode: bus
+        subMode: localBus
+      - mode: tram
+    description:
+      - lang: nob
+        value: Når du skal reise av og til
+      - lang: eng
+        value: When you travel occasionally
+    configuration:
+      zoneSelectionMode: multiple
+      travellerSelectionMode: multiple
+      timeSelectionMode: datetime
+      productSelectionMode: none
+      offerEndpoint: zones
+      requiresLogin: false
+  - type: period
+    name:
+      - lang: nob
+        value: Periodebillett
+      - lang: eng
+        value: Periodic ticket
+    illustration: period
+    transportModes:
+      - mode: bus
+        subMode: localBus
+      - mode: tram
+    description:
+      - lang: nob
+        value: Når du reiser litt oftere
+      - lang: eng
+        value: When you travel more frequently
+    configuration:
+      zoneSelectionMode: multiple
+      travellerSelectionMode: single
+      timeSelectionMode: datetime
+      productSelectionMode: duration
+      productSelectionTitle:
+        - lang: nob
+          value: Velg varighet
+        - lang: eng
+          value: Select duration
+      offerEndpoint: zones
+      requiresLogin: true
+  - type: hour24
+    name:
+      - lang: nob
+        value: 24-timersbillett
+      - lang: eng
+        value: 24 hour pass
+    illustration: hour24
+    transportModes:
+      - mode: bus
+        subMode: localBus
+      - mode: tram
+    description:
+      - lang: nob
+        value: Når du vil reise flere ganger på et døgn
+      - lang: eng
+        value: For travelling several times in 24 hours
+    configuration:
+      zoneSelectionMode: single
+      travellerSelectionMode: single
+      timeSelectionMode: datetime
+      productSelectionMode: none
+      offerEndpoint: zones
+      requiresLogin: false
+  - type: carnet
+    name:
+      - lang: nob
+        value: Klippekort
+      - lang: eng
+        value: Punch card
+    illustration: carnet
+    transportModes:
+      - mode: bus
+        subMode: localBus
+      - mode: tram
+    description:
+      - lang: nob
+        value: 10 forhåndskjøpte enkeltbilletter som må aktiveres før du går om bord
+      - lang: eng
+        value: 10 pre-purchased tickets that you have to validate before boarding
+    configuration:
+      zoneSelectionMode: multiple
+      travellerSelectionMode: single
+      timeSelectionMode: none
+      productSelectionMode: none
+      offerEndpoint: zones
+      requiresLogin: true
+  - type: night_v2
+    name:
+      - lang: nob
+        value: Nattbillett
+      - lang: eng
+        value: Night ticket
+    illustration: night
+    transportModes:
+      - mode: bus
+        subMode: localBus
+      - mode: tram
+    description:
+      - lang: nob
+        value: Fra 00:30 til 04:00 på nattbuss og -trikk
+      - lang: eng
+        value: From 00:30 to 04:00 for night bus and tram
+    configuration:
+      zoneSelectionMode: none
+      travellerSelectionMode: none
+      timeSelectionMode: none
+      productSelectionMode: product
+      offerEndpoint: authority
+      requiresLogin: false
