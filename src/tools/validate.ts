@@ -20,8 +20,6 @@ export default async function validate(
   schema: SchemaNames,
   json: object,
 ): Promise<ValidationOutput> {
-  await potentiallyAddCommon();
-
   const doValidate = await readSpecification(schema);
   const isValid = doValidate(json);
   if (isValid) {
@@ -49,19 +47,5 @@ async function readSpecification(
     }
   } catch (err) {
     throw new Error(`Unable to load or parse ${err}`);
-  }
-}
-
-async function potentiallyAddCommon() {
-  const spec = await readFile(join(BASE_FOLDER, `_common.json`));
-  try {
-    const parsed = JSON.parse(spec.toString());
-    const previous = ajv.getSchema(parsed['$id']);
-
-    if (!previous) {
-      ajv.addSchema(parsed);
-    }
-  } catch (err) {
-    throw new Error(`Unable to load common refs`);
   }
 }
