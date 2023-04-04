@@ -1,14 +1,27 @@
 import {writeFile} from 'fs/promises';
 import {join} from 'path';
 import {BASE_FOLDER} from './config';
-import {SchemaNames, schemaTypes} from './specifications-types';
+import {SchemaNames, schemaTypes, specifications} from './specifications-types';
 
-saveSchema('fareProductTypeConfigs');
+saveAll();
 
-function saveSchema(schema: SchemaNames) {
+async function saveAll() {
+  await Promise.all(specifications.map(saveSchema));
+}
+
+async function saveSchema(schema: SchemaNames) {
   const schemaType = schemaTypes[schema];
-  if (schemaType) {
-    save(schema, schemaType);
+
+  try {
+    if (schemaType) {
+      await save(schema, schemaType);
+      console.log(`Generating ${schema}`);
+    } else {
+      console.log(`> Ignoring ${schema}. Missing implementation`);
+    }
+  } catch (e) {
+    console.error(`Error generationg ${schema}`, e);
+    process.exit(1);
   }
 }
 function save(filename: string, content: object) {

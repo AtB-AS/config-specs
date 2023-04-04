@@ -33,7 +33,7 @@
         }
       ]
     },
-    "TransportModeType": {
+    "ProductTypeTransportModes": {
       "type": "object",
       "properties": {
         "mode": {
@@ -247,15 +247,12 @@
           "type": "string"
         },
         "name": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/LanguageAndTextType"
-          }
+          "$ref": "#/definitions/FareProductTypeConfigSettings/properties/productSelectionTitle"
         },
         "transportModes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/TransportModeType"
+            "$ref": "#/definitions/ProductTypeTransportModes"
           }
         },
         "excludedTariffZones": {
@@ -265,10 +262,7 @@
           }
         },
         "description": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/LanguageAndTextType"
-          }
+          "$ref": "#/definitions/FareProductTypeConfigSettings/properties/productSelectionTitle"
         },
         "configuration": {
           "$ref": "#/definitions/FareProductTypeConfigSettings"
@@ -282,6 +276,12 @@
         "configuration"
       ],
       "additionalProperties": false
+    },
+    "TransportModeTypeEnum": {
+      "$ref": "#/definitions/ProductTypeTransportModes/properties/mode"
+    },
+    "TransportSubmodeTypeEnum": {
+      "$ref": "#/definitions/ProductTypeTransportModes/properties/subMode"
     },
     "FareProductConfiguration": {
       "type": "object",

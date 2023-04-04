@@ -1,78 +1,252 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$ref": "#/definitions/TravelSearchFilters",
-  "$id": "http://mittatb.no/schemas/travelSearchFilters.json",
   "definitions": {
-    "TravelSearchFilters": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "transportModes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TransportMode"
+    "LanguageAndTextTypeArray": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "lang": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "lang",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "language": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
           }
-        }
-      },
-      "required": ["transportModes"],
-      "title": "TravelSearchFilters"
+        ]
+      }
     },
-    "TransportMode": {
+    "TravelSearchTransportModes": {
       "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "icon": {
-          "$ref": "#/definitions/Icon"
-        },
-        "text": {
-          "$ref": "_common.json#/definitions/LanguageArray"
-        },
-        "modes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Mode"
-          }
-        },
-        "description": {
-          "$ref": "_common.json#/definitions/LanguageArray"
-        }
-      },
-      "required": ["icon", "id", "modes", "text"],
-      "title": "TransportMode"
-    },
-    "Icon": {
-      "type": "object",
-      "additionalProperties": false,
       "properties": {
         "transportMode": {
-          "$ref": "_common.json#/definitions/TransportModeType"
-        },
-        "transportSubMode": {
-          "$ref": "_common.json#/definitions/TransportSubModeType"
-        }
-      },
-      "required": ["transportMode"],
-      "title": "Icon"
-    },
-    "Mode": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "transportMode": {
-          "$ref": "_common.json#/definitions/TransportModeType"
+          "type": "string",
+          "enum": [
+            "air",
+            "bus",
+            "cableway",
+            "coach",
+            "funicular",
+            "lift",
+            "metro",
+            "monorail",
+            "rail",
+            "tram",
+            "trolleybus",
+            "unknown",
+            "water"
+          ]
         },
         "transportSubModes": {
           "type": "array",
           "items": {
-            "$ref": "_common.json#/definitions/TransportSubModeType"
+            "type": "string",
+            "enum": [
+              "SchengenAreaFlight",
+              "airportBoatLink",
+              "airportLinkBus",
+              "airportLinkRail",
+              "airshipService",
+              "allFunicularServices",
+              "allHireVehicles",
+              "allTaxiServices",
+              "bikeTaxi",
+              "blackCab",
+              "cableCar",
+              "cableFerry",
+              "canalBarge",
+              "carTransportRailService",
+              "chairLift",
+              "charterTaxi",
+              "cityTram",
+              "communalTaxi",
+              "commuterCoach",
+              "crossCountryRail",
+              "dedicatedLaneBus",
+              "demandAndResponseBus",
+              "domesticCharterFlight",
+              "domesticFlight",
+              "domesticScheduledFlight",
+              "dragLift",
+              "expressBus",
+              "funicular",
+              "helicopterService",
+              "highFrequencyBus",
+              "highSpeedPassengerService",
+              "highSpeedRail",
+              "highSpeedVehicleService",
+              "hireCar",
+              "hireCycle",
+              "hireMotorbike",
+              "hireVan",
+              "intercontinentalCharterFlight",
+              "intercontinentalFlight",
+              "international",
+              "internationalCarFerry",
+              "internationalCharterFlight",
+              "internationalCoach",
+              "internationalFlight",
+              "internationalPassengerFerry",
+              "interregionalRail",
+              "lift",
+              "local",
+              "localBus",
+              "localCarFerry",
+              "localPassengerFerry",
+              "localTram",
+              "longDistance",
+              "metro",
+              "miniCab",
+              "mobilityBus",
+              "mobilityBusForRegisteredDisabled",
+              "nationalCarFerry",
+              "nationalCoach",
+              "nationalPassengerFerry",
+              "nightBus",
+              "nightRail",
+              "postBoat",
+              "postBus",
+              "rackAndPinionRailway",
+              "railReplacementBus",
+              "railShuttle",
+              "railTaxi",
+              "regionalBus",
+              "regionalCarFerry",
+              "regionalCoach",
+              "regionalPassengerFerry",
+              "regionalRail",
+              "regionalTram",
+              "replacementRailService",
+              "riverBus",
+              "roadFerryLink",
+              "roundTripCharterFlight",
+              "scheduledFerry",
+              "schoolAndPublicServiceBus",
+              "schoolBoat",
+              "schoolBus",
+              "schoolCoach",
+              "shortHaulInternationalFlight",
+              "shuttleBus",
+              "shuttleCoach",
+              "shuttleFerryService",
+              "shuttleFlight",
+              "shuttleTram",
+              "sightseeingBus",
+              "sightseeingCoach",
+              "sightseeingFlight",
+              "sightseeingService",
+              "sightseeingTram",
+              "sleeperRailService",
+              "specialCoach",
+              "specialNeedsBus",
+              "specialTrain",
+              "streetCableCar",
+              "suburbanRailway",
+              "telecabin",
+              "telecabinLink",
+              "touristCoach",
+              "touristRailway",
+              "trainFerry",
+              "trainTram",
+              "tube",
+              "undefined",
+              "undefinedFunicular",
+              "unknown",
+              "urbanRailway",
+              "waterTaxi"
+            ]
           }
         }
       },
-      "required": ["transportMode"],
-      "title": "Mode"
+      "required": [
+        "transportMode"
+      ],
+      "additionalProperties": false
+    },
+    "TravelSearchTransportModeIcon": {
+      "type": "object",
+      "properties": {
+        "transportMode": {
+          "$ref": "#/definitions/TravelSearchTransportModes/properties/transportMode"
+        },
+        "transportSubMode": {
+          "$ref": "#/definitions/TravelSearchTransportModes/properties/transportSubModes/items"
+        }
+      },
+      "required": [
+        "transportMode"
+      ],
+      "additionalProperties": false
+    },
+    "TransportModeTypeEnum": {
+      "$ref": "#/definitions/TravelSearchTransportModes/properties/transportMode"
+    },
+    "TransportSubmodeTypeEnum": {
+      "$ref": "#/definitions/TravelSearchTransportModes/properties/transportSubModes/items"
+    },
+    "TravelSearchFilters": {
+      "type": "object",
+      "properties": {
+        "transportModes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "icon": {
+                "$ref": "#/definitions/TravelSearchTransportModeIcon"
+              },
+              "text": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+                },
+                "minItems": 1
+              },
+              "description": {
+                "$ref": "#/definitions/LanguageAndTextTypeArray"
+              },
+              "modes": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/TravelSearchTransportModes"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "icon",
+              "text",
+              "modes"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     }
-  }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }
