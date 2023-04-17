@@ -24,6 +24,7 @@ async function saveSchema(schema: SchemaNames) {
     process.exit(1);
   }
 }
+
 function save(filename: string, content: object) {
   return writeFile(
     join(BASE_FOLDER, `${filename}.json`),

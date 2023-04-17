@@ -1,18 +1,18 @@
 import {z} from 'zod';
 import {
   LanguageAndTextTypeArray,
-  TransportModeTypeEnum,
-  TransportSubmodeTypeEnum,
+  TransportModeType,
+  TransportSubmodeType,
 } from './common';
 
 export const TravelSearchTransportModeIcon = z.object({
-  transportMode: TransportModeTypeEnum,
-  transportSubMode: TransportSubmodeTypeEnum.optional(),
+  transportMode: TransportModeType,
+  transportSubMode: TransportSubmodeType.optional(),
 });
 
 export const TravelSearchTransportModes = z.object({
-  transportMode: TransportModeTypeEnum,
-  transportSubModes: z.array(TransportSubmodeTypeEnum).optional(),
+  transportMode: TransportModeType,
+  transportSubModes: z.array(TransportSubmodeType).optional(),
 });
 
 export const TravelSearchTransport = z.object({

@@ -1,8 +1,8 @@
 import {z} from 'zod';
 import {
   LanguageAndTextTypeArray,
-  TransportModeTypeEnum,
-  TransportSubmodeTypeEnum,
+  TransportModeType,
+  TransportSubmodeType,
 } from './common';
 
 export const ZoneSelectionMode = z.union([
@@ -36,8 +36,8 @@ export const ProductSelectionMode = z.union([
 ]);
 
 export const ProductTypeTransportModes = z.object({
-  mode: TransportModeTypeEnum,
-  subMode: TransportSubmodeTypeEnum.optional(),
+  mode: TransportModeType,
+  subMode: TransportSubmodeType.optional(),
 });
 
 export const FareProductTypeConfigSettings = z.object({

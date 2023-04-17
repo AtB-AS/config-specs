@@ -9,15 +9,15 @@ test('TransportModeType', function () {
   expect(() => ProductTypeTransportModes.parse({foo: 1})).toThrowError();
 
   const valid: ProductTypeTransportModes = {
-    mode: TransportModeType.Air,
-    subMode: TransportSubmodeType.AirportLinkRail,
+    mode: 'air',
+    subMode: 'airportLinkRail',
   };
   expect(() => ProductTypeTransportModes.parse(valid)).not.toThrowError();
 
   assertType<ProductTypeTransportModes>(ProductTypeTransportModes.parse(valid));
   assertType<ProductTypeTransportModes>(
     ProductTypeTransportModes.parse({
-      mode: TransportModeType.Coach,
+      mode: 'coach',
     }),
   );
 });

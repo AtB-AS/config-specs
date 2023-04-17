@@ -277,10 +277,10 @@
       ],
       "additionalProperties": false
     },
-    "TransportModeTypeEnum": {
+    "TransportModeType": {
       "$ref": "#/definitions/ProductTypeTransportModes/properties/mode"
     },
-    "TransportSubmodeTypeEnum": {
+    "TransportSubmodeType": {
       "$ref": "#/definitions/ProductTypeTransportModes/properties/subMode"
     },
     "FareProductConfiguration": {

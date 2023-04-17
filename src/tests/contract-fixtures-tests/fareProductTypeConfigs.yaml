@@ -1,4 +1,3 @@
-# yaml-language-server: $schema=../../schema-definitions/fareProductTypeConfigs.json
 fareProductTypeConfigs:
   - type: single
     name:
@@ -87,9 +86,11 @@ fareProductTypeConfigs:
       - mode: tram
     description:
       - lang: nob
-        value: 10 forhåndskjøpte enkeltbilletter som må aktiveres før du går om bord
+        value:
+          10 forhåndskjøpte enkeltbilletter som må aktiveres før du går om bord
       - lang: eng
-        value: 10 pre-purchased tickets that you have to validate before boarding
+        value:
+          10 pre-purchased tickets that you have to validate before boarding
     configuration:
       zoneSelectionMode: multiple
       travellerSelectionMode: single

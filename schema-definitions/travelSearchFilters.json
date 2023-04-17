@@ -198,10 +198,10 @@
       ],
       "additionalProperties": false
     },
-    "TransportModeTypeEnum": {
+    "TransportModeType": {
       "$ref": "#/definitions/TravelSearchTransportModes/properties/transportMode"
     },
-    "TransportSubmodeTypeEnum": {
+    "TransportSubmodeType": {
       "$ref": "#/definitions/TravelSearchTransportModes/properties/transportSubModes/items"
     },
     "TravelSearchFilters": {

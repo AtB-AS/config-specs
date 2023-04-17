@@ -4,8 +4,8 @@ import {JsonSchema7Type} from 'zod-to-json-schema/src/parseDef';
 import {
   LanguageAndTextType,
   LanguageAndTextTypeArray,
-  TransportModeTypeEnum,
-  TransportSubmodeTypeEnum,
+  TransportModeType,
+  TransportSubmodeType,
 } from '../common';
 import {
   FareProductTypeConfig,
@@ -57,8 +57,8 @@ export const jsonSchemas = {
         ProductTypeTransportModes,
         FareProductTypeConfigSettings,
         FareProductTypeConfig,
-        TransportModeTypeEnum,
-        TransportSubmodeTypeEnum,
+        TransportModeType,
+        TransportSubmodeType,
       },
     },
   ),
@@ -70,8 +70,8 @@ export const jsonSchemas = {
       LanguageAndTextTypeArray,
       TravelSearchTransportModes,
       TravelSearchTransportModeIcon,
-      TransportModeTypeEnum,
-      TransportSubmodeTypeEnum,
+      TransportModeType,
+      TransportSubmodeType,
     },
   }),
   url: undefined,
