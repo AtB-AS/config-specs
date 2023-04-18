@@ -90,6 +90,12 @@ quality across Firestore, Webshop and App for all organisations involved.
 1. Input validation (Data INTO Firestore)
 1. Data decoding / encoding validation. (Data OUT of Firestore)
 
+## Release package
+
+Packages are automatically released when merging PR created by
+`release-please-action` Github Action. Changelog and releases should
+automatically be updated.
+
 ## License
 
 EUPL-1.2
