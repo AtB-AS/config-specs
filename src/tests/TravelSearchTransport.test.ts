@@ -1,12 +1,11 @@
 import {assertType, expect, test} from 'vitest';
-import {LanguageAndTextTypeArray} from '../common';
-import {TravelSearchTransport} from '../travel-search-filters';
+import {TransportModeFilterOptionType} from '../travel-search-filters';
 
-test('TravelSearchTransport', function () {
-  expect(() => TravelSearchTransport.parse('foo')).toThrowError();
+test('TransportModeFilterOptionType', function () {
+  expect(() => TransportModeFilterOptionType.parse('foo')).toThrowError();
 
-  assertType<TravelSearchTransport>(
-    TravelSearchTransport.parse({
+  assertType<TransportModeFilterOptionType>(
+    TransportModeFilterOptionType.parse({
       id: 'id',
       icon: {transportMode: 'bus'},
       text: [

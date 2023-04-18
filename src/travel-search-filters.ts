@@ -15,7 +15,7 @@ export const TravelSearchTransportModes = z.object({
   transportSubModes: z.array(TransportSubmodeType).optional(),
 });
 
-export const TravelSearchTransport = z.object({
+export const TransportModeFilterOptionType = z.object({
   id: z.string(),
   icon: TravelSearchTransportModeIcon,
   text: LanguageAndTextTypeArray.nonempty(),
@@ -24,7 +24,7 @@ export const TravelSearchTransport = z.object({
 });
 
 export const TravelSearchFiltersType = z.object({
-  transportModes: TravelSearchTransport.array().optional(),
+  transportModes: TransportModeFilterOptionType.array().optional(),
 });
 
 export type TravelSearchTransportModes = z.infer<
@@ -34,4 +34,6 @@ export type TravelSearchTransportModeIcon = z.infer<
   typeof TravelSearchTransportModeIcon
 >;
 export type TravelSearchFiltersType = z.infer<typeof TravelSearchFiltersType>;
-export type TravelSearchTransport = z.infer<typeof TravelSearchTransport>;
+export type TransportModeFilterOptionType = z.infer<
+  typeof TransportModeFilterOptionType
+>;
