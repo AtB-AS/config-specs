@@ -33,6 +33,7 @@ export type TravelSearchTransportModes = z.infer<
 export type TravelSearchTransportModeIcon = z.infer<
   typeof TravelSearchTransportModeIcon
 >;
+
 export type TravelSearchFiltersType = z.infer<typeof TravelSearchFiltersType>;
 export type TransportModeFilterOptionType = z.infer<
   typeof TransportModeFilterOptionType
