@@ -11,7 +11,7 @@ jobs:
         id: release
         with:
           release-type: node
-          command: manifest
+          command: github-release
           package-name: test-release-please
       # The logic below handles the npm publication:
       - uses: actions/checkout@v2
