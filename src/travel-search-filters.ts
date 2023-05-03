@@ -1,5 +1,6 @@
 import {z} from 'zod';
 import {
+  LabelType,
   LanguageAndTextTypeArray,
   TransportModeType,
   TransportSubmodeType,
@@ -23,8 +24,16 @@ export const TransportModeFilterOptionType = z.object({
   modes: z.array(TravelSearchTransportModes),
 });
 
+export const FlexibleTransportOptionType = z.object({
+  id: z.string(),
+  title: LanguageAndTextTypeArray.nonempty(),
+  label: LabelType.optional(),
+  description: LanguageAndTextTypeArray.nonempty(),
+});
+
 export const TravelSearchFiltersType = z.object({
   transportModes: TransportModeFilterOptionType.array().optional(),
+  flexibleTransport: FlexibleTransportOptionType.optional(),
 });
 
 export type TravelSearchTransportModes = z.infer<
@@ -35,6 +44,9 @@ export type TravelSearchTransportModeIcon = z.infer<
 >;
 
 export type TravelSearchFiltersType = z.infer<typeof TravelSearchFiltersType>;
+export type FlexibleTransportOptionType = z.infer<
+  typeof FlexibleTransportOptionType
+>;
 export type TransportModeFilterOptionType = z.infer<
   typeof TransportModeFilterOptionType
 >;
