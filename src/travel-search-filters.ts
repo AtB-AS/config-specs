@@ -1,5 +1,6 @@
 import {z} from 'zod';
 import {
+  LabelType,
   LanguageAndTextTypeArray,
   TransportModeType,
   TransportSubmodeType,
@@ -26,7 +27,7 @@ export const TransportModeFilterOptionType = z.object({
 export const FlexibleTransportOptionType = z.object({
   id: z.string(),
   title: LanguageAndTextTypeArray.nonempty(),
-  isNew: z.boolean().optional(),
+  label: LabelType.optional(),
   description: LanguageAndTextTypeArray.nonempty(),
 });
 

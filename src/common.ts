@@ -131,9 +131,14 @@ export const TransportSubmodeType = z.union([
   z.literal('waterTaxi'),
 ]);
 
+export const LabelType = z.union([
+  z.literal('beta'),
+  z.literal('new'),
+]);
+
 export type TransportModeType = z.infer<typeof TransportModeType>;
 export type TransportSubmodeType = z.infer<typeof TransportSubmodeType>;
-
+export type LabelType = z.infer<typeof LabelType>;
 export const LanguageAndTextType = z.union([
   z.object({
     lang: z.string(),

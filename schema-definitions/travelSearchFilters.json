@@ -257,8 +257,12 @@
               },
               "minItems": 1
             },
-            "isNew": {
-              "type": "boolean"
+            "label": {
+              "type": "string",
+              "enum": [
+                "beta",
+                "new"
+              ]
             },
             "description": {
               "type": "array",
