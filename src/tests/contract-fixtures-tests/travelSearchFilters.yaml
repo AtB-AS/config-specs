@@ -116,3 +116,17 @@ transportModes:
       - transportMode: monorail
       - transportMode: lift
       - transportMode: trolleybus
+
+flexibleTransport:
+  id: 'flexibleTransport'
+  isNew: true
+  title:
+    - lang: nob
+      value: Tips om Fleksibel transport
+    - lang: eng
+      value: Tips on Flexible transport
+  description:
+    - lang: nob
+      value: Vis tips om bestillingstransport som kjøres fra adresse til adresse i Steinkjer, Verdal, Rørs og Overhalla.
+    - lang: eng
+      value: Show tips about ordered transport that is driven from address to address in Steinkjer, Verdal, Rørs and Overhalla.

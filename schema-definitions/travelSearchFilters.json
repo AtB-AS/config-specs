@@ -243,6 +243,37 @@
             ],
             "additionalProperties": false
           }
+        },
+        "flexibleTransport": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "title": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+              },
+              "minItems": 1
+            },
+            "isNew": {
+              "type": "boolean"
+            },
+            "description": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "id",
+            "title",
+            "description"
+          ],
+          "additionalProperties": false
         }
       },
       "additionalProperties": false
