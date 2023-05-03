@@ -119,7 +119,7 @@ transportModes:
 
 flexibleTransport:
   id: 'flexibleTransport'
-  isNew: true
+  label: 'new'
   title:
     - lang: nob
       value: Tips om Fleksibel transport

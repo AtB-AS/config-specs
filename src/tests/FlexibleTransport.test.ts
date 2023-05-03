@@ -13,7 +13,7 @@ test('TransportModeFilterOptionType', function () {
           value: 'foo',
         },
       ],
-      isNew: true,
+      label: 'new',
       description: [
         {
           lang: 'nob',
