@@ -17,11 +17,13 @@ import {
   TravelSearchTransportModeIcon,
   TravelSearchTransportModes,
 } from '../travel-search-filters';
+import {MobilityOperator, FormFactor} from '../mobility-operators';
 
 // All supported specifications
 export const specifications = [
   'fareProductTypeConfigs',
   'other',
+  'mobility',
   'paymentTypes',
   'travelSearchFilters',
   'url',
@@ -39,6 +41,9 @@ export const schemaTypes = {
     fareProductTypeConfigs: z.array(FareProductTypeConfig),
   }),
   travelSearchFilters: TravelSearchFiltersType,
+  mobility: {
+    operators: z.array(MobilityOperator)
+  },
   other: undefined,
   paymentTypes: undefined,
   url: undefined,
@@ -59,6 +64,16 @@ export const jsonSchemas = {
         FareProductTypeConfig,
         TransportModeType,
         TransportSubmodeType,
+      },
+    },
+  ),
+  mobility: zodToJsonSchema(z.object({
+    operators: z.array(MobilityOperator)
+  }),
+    {
+      name: 'MobilityOperator',
+      definitions: {
+        FormFactor,
       },
     },
   ),
