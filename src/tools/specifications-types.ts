@@ -41,9 +41,9 @@ export const schemaTypes = {
     fareProductTypeConfigs: z.array(FareProductTypeConfig),
   }),
   travelSearchFilters: TravelSearchFiltersType,
-  mobility: {
+  mobility: z.object({
     operators: z.array(MobilityOperator)
-  },
+  }),
   other: undefined,
   paymentTypes: undefined,
   url: undefined,
