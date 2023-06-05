@@ -10,7 +10,7 @@ export const MobilityOperator = z.object({
   id: z.string().nonempty(),
   name: z.string().nonempty(),
   showInApp: z.boolean().default(true),
-  formFactors: z.array(FormFactor),
+  formFactors: z.array(FormFactor).nonempty(),
 });
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;

@@ -33,7 +33,8 @@
                 "type": "array",
                 "items": {
                   "$ref": "#/definitions/FormFactor"
-                }
+                },
+                "minItems": 1
               }
             },
             "required": [
