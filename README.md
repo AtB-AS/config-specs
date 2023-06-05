@@ -1,15 +1,15 @@
 # @atb-as/config-specs
 
-> Shared types and validation for fare product type configs
+> Shared types and validation for configs
 
-Collects documentation, JSON Specifications and types for Fare Product Types
-Configs. Ensures consistent types and mapping for all fare product configs
+Collects documentation, JSON Specifications and types for configs. Ensures consistent types and mapping for all fare product configs
 across projects and organisations.
 
 ## Progress
 
 - [x] Fare Product Types
 - [x] Travel Search Filters
+- [x] Mobility operators
 - [ ] Urls
 - [ ] Payment Types
 - [ ] Other
