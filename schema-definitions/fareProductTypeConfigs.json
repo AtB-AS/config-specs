@@ -226,6 +226,10 @@
         },
         "requiresLogin": {
           "type": "boolean"
+        },
+        "requiresTokenOnMobile": {
+          "type": "boolean",
+          "default": false
         }
       },
       "required": [
