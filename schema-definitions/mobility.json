@@ -27,7 +27,7 @@
               },
               "showInApp": {
                 "type": "boolean",
-                "default": true
+                "default": false
               },
               "formFactors": {
                 "type": "array",

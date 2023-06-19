@@ -7,7 +7,7 @@ test('MobilityOperator', () => {
   expect(() => MobilityOperator.parse({name: 'foo'}), 'Id is required').toThrowError()
   expect(() => MobilityOperator.parse({id: 'id', name: 'foo'}), 'FormFactor is required').toThrowError()
   expect(() => MobilityOperator.parse({id: 'id', name: 'foo', formFactors: []}), 'FormFactors must have at least one value').toThrowError()
-  expect(MobilityOperator.parse({id: 'id', name: 'default showInApp',formFactors: ['SCOOTER']}).showInApp, 'showInApp should default to true').toEqual(true);
+  expect(MobilityOperator.parse({id: 'id', name: 'default showInApp',formFactors: ['SCOOTER']}).showInApp, 'showInApp should default to false').toEqual(false);
 
   assertType<MobilityOperatorType>(
     MobilityOperator.parse({

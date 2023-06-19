@@ -9,7 +9,7 @@ export const FormFactor = z.union([
 export const MobilityOperator = z.object({
   id: z.string().nonempty(),
   name: z.string().nonempty(),
-  showInApp: z.boolean().default(true),
+  showInApp: z.boolean().default(false),
   formFactors: z.array(FormFactor).nonempty(),
 });
 
