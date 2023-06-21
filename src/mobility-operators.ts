@@ -14,7 +14,10 @@ export const OperatorBenefit = z.object({
   id: OperatorBenefitId,
   descriptionWhenActive: LanguageAndTextTypeArray.optional(),
   descriptionWhenNotActive: LanguageAndTextTypeArray.optional(),
-  callToAction: LanguageAndTextTypeArray.optional(),
+  callToAction: z.object({
+    url: z.string().optional(),
+    name: LanguageAndTextTypeArray.optional()
+  }).optional(),
 })
 
 export type OperatorBenefitType = z.infer<typeof OperatorBenefit>;

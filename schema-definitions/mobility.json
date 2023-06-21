@@ -84,7 +84,16 @@
                       "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
                     },
                     "callToAction": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
+                      "type": "object",
+                      "properties": {
+                        "url": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
+                        }
+                      },
+                      "additionalProperties": false
                     }
                   },
                   "required": [
