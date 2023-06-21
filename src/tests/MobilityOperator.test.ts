@@ -1,5 +1,10 @@
 import {assertType, expect, test} from 'vitest';
-import {MobilityOperator, MobilityOperatorType} from '../mobility-operators';
+import {
+  MobilityOperator,
+  MobilityOperatorType,
+  OperatorBenefit,
+  OperatorBenefitType
+} from '../mobility-operators';
 
 test('MobilityOperator', () => {
   expect(() => MobilityOperator.parse('foo'), 'Config must be an object').toThrowError();
@@ -17,4 +22,28 @@ test('MobilityOperator', () => {
       showInApp: true,
     }),
   );
+})
+
+test('Mobility operator benefits', () => {
+  expect(() => OperatorBenefit.parse({}), 'Benefit must have id').toThrowError();
+  expect(() => OperatorBenefit.parse({id: 'something'}), 'Id must be valid').toThrowError();
+
+  assertType<OperatorBenefitType>({
+    id: "free-unlock",
+    descriptionWhenActive: [
+      { lang: 'nob', value: 'Beskrivelse når aktiv'},
+      { lang: 'en', value: 'Description when active'}
+    ],
+    descriptionWhenNotActive: [
+      { lang: 'nob', value: 'Beskrivelse når ikke aktiv'},
+      { lang: 'en', value: 'Description when not active'}
+    ],
+    callToAction: {
+      url: "https://click.me",
+      name:  [
+        { lang: 'nob', value: 'Aktiver'},
+        { lang: 'en', value: 'Do it!'}
+      ]
+    }
+  })
 })
