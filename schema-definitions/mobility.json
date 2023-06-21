@@ -35,6 +35,64 @@
                   "$ref": "#/definitions/FormFactor"
                 },
                 "minItems": 1
+              },
+              "benefits": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "const": "free-unlock"
+                    },
+                    "descriptionWhenActive": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "lang": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "lang",
+                              "value"
+                            ],
+                            "additionalProperties": false
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "language": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false
+                          }
+                        ]
+                      }
+                    },
+                    "descriptionWhenNotActive": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
+                    },
+                    "callToAction": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ],
+                  "additionalProperties": false
+                },
+                "default": []
               }
             },
             "required": [
