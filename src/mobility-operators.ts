@@ -7,8 +7,8 @@ export const FormFactor = z.union([
   z.literal("CAR"),
 ])
 
-
 export const OperatorBenefitId = z.literal("free-unlock");
+export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
 
 export const OperatorBenefit = z.object({
   id: OperatorBenefitId,
