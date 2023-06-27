@@ -43,7 +43,10 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "const": "free-unlock"
+                      "enum": [
+                        "free-unlock",
+                        "free-use"
+                      ]
                     },
                     "descriptionWhenActive": {
                       "type": "array",
