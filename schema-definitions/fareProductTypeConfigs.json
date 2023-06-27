@@ -189,7 +189,8 @@
             "single-zone",
             "multiple",
             "multiple-stop",
-            "multiple-zone"
+            "multiple-zone",
+            "stop-places-harbor"
           ]
         },
         "travellerSelectionMode": {

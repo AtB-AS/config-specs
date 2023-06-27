@@ -13,6 +13,7 @@ export const ZoneSelectionMode = z.union([
   z.literal('multiple'),
   z.literal('multiple-stop'),
   z.literal('multiple-zone'),
+  z.literal('stop-places-harbor'),
 ]);
 
 export const TravellerSelectionMode = z.union([
