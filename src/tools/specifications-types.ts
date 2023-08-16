@@ -18,6 +18,7 @@ import {
   TravelSearchTransportModes,
 } from '../travel-search-filters';
 import {MobilityOperator, FormFactor} from '../mobility-operators';
+import {ConfigurableLinks} from '../urls';
 
 // All supported specifications
 export const specifications = [
@@ -29,7 +30,7 @@ export const specifications = [
   'url',
 ] as const;
 
-export type SchemaNames = typeof specifications[number];
+export type SchemaNames = (typeof specifications)[number];
 
 export function isValidSchema(schema: any): schema is SchemaNames {
   return schema in schemaTypes;
@@ -42,11 +43,11 @@ export const schemaTypes = {
   }),
   travelSearchFilters: TravelSearchFiltersType,
   mobility: z.object({
-    operators: z.array(MobilityOperator)
+    operators: z.array(MobilityOperator),
   }),
   other: undefined,
   paymentTypes: undefined,
-  url: undefined,
+  url: ConfigurableLinks,
 };
 
 // All correctly supportet schema types as JSON Schema data structures
@@ -67,9 +68,10 @@ export const jsonSchemas = {
       },
     },
   ),
-  mobility: zodToJsonSchema(z.object({
-    operators: z.array(MobilityOperator)
-  }),
+  mobility: zodToJsonSchema(
+    z.object({
+      operators: z.array(MobilityOperator),
+    }),
     {
       name: 'MobilityOperator',
       definitions: {
@@ -89,5 +91,10 @@ export const jsonSchemas = {
       TransportSubmodeType,
     },
   }),
-  url: undefined,
+  url: zodToJsonSchema(ConfigurableLinks, {
+    name: 'ConfigurableLinks',
+    definitions: {
+      LanguageAndTextType,
+    },
+  }),
 } satisfies Record<SchemaNames, JsonSchema7Type | undefined>;
