@@ -231,6 +231,14 @@
         "requiresTokenOnMobile": {
           "type": "boolean",
           "default": false
+        },
+        "offerEndpoint": {
+          "type": "string",
+          "enum": [
+            "zones",
+            "stop-places",
+            "authority"
+          ]
         }
       },
       "required": [
@@ -271,6 +279,9 @@
         },
         "configuration": {
           "$ref": "#/definitions/FareProductTypeConfigSettings"
+        },
+        "purchaseMessage": {
+          "$ref": "#/definitions/FareProductTypeConfigSettings/properties/productSelectionTitle"
         }
       },
       "required": [
