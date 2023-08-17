@@ -279,9 +279,6 @@
         },
         "configuration": {
           "$ref": "#/definitions/FareProductTypeConfigSettings"
-        },
-        "purchaseMessage": {
-          "$ref": "#/definitions/FareProductTypeConfigSettings/properties/productSelectionTitle"
         }
       },
       "required": [
