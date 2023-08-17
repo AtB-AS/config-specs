@@ -80,3 +80,9 @@ export type FareProductTypeConfigSettings = z.infer<
   typeof FareProductTypeConfigSettings
 >;
 export type FareProductTypeConfig = z.infer<typeof FareProductTypeConfig>;
+
+export const FareProductGroup = z.object({
+  transportModes: ProductTypeTransportModes.array(),
+  types: z.string().array(),
+});
+export type FareProductGroupType = z.infer<typeof FareProductGroup>;

@@ -8,6 +8,7 @@ import {
   TransportSubmodeType,
 } from '../common';
 import {
+  FareProductGroup,
   FareProductTypeConfig,
   FareProductTypeConfigSettings,
   ProductTypeTransportModes,
@@ -40,6 +41,7 @@ export function isValidSchema(schema: any): schema is SchemaNames {
 export const schemaTypes = {
   fareProductTypeConfigs: z.object({
     fareProductTypeConfigs: z.array(FareProductTypeConfig),
+    fareProductGroups: z.array(FareProductGroup).optional(),
   }),
   travelSearchFilters: TravelSearchFiltersType,
   mobility: z.object({
@@ -50,11 +52,12 @@ export const schemaTypes = {
   url: ConfigurableLinks,
 };
 
-// All correctly supportet schema types as JSON Schema data structures
+// All correctly supported schema types as JSON Schema data structures
 export const jsonSchemas = {
   fareProductTypeConfigs: zodToJsonSchema(
     z.object({
       fareProductTypeConfigs: z.array(FareProductTypeConfig),
+      fareProductGroups: z.array(FareProductGroup).optional() ,
     }),
     {
       name: 'FareProductConfiguration',
