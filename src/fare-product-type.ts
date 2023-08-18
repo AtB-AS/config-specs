@@ -36,6 +36,12 @@ export const ProductSelectionMode = z.union([
   z.literal('none'),
 ]);
 
+export const OfferEndpoint = z.union([
+  z.literal('zones'),
+  z.literal('stop-places'),
+  z.literal('authority'),
+])
+
 export const ProductTypeTransportModes = z.object({
   mode: TransportModeType,
   subMode: TransportSubmodeType.optional(),
@@ -49,6 +55,7 @@ export const FareProductTypeConfigSettings = z.object({
   productSelectionTitle: LanguageAndTextTypeArray.optional(),
   requiresLogin: z.boolean(),
   requiresTokenOnMobile: z.boolean().optional().default(false),
+  offerEndpoint: OfferEndpoint.optional(),
 });
 
 export const FareProductTypeConfig = z.object({
