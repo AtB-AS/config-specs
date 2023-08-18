@@ -5,3 +5,7 @@ export const HarborConnectionOverride = z.object({
   to: z.string(),
 });
 export type HarborConnectionOverrideType = z.infer<typeof HarborConnectionOverride>;
+
+export const HarborConnectionOverrides = z.object({
+  overrides: z.array(HarborConnectionOverride),
+});

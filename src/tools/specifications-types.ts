@@ -1,25 +1,16 @@
 import {z} from 'zod';
 import zodToJsonSchema from 'zod-to-json-schema';
 import {JsonSchema7Type} from 'zod-to-json-schema/src/parseDef';
-import {
-  LanguageAndTextType,
-  LanguageAndTextTypeArray,
-  TransportModeType,
-  TransportSubmodeType,
-} from '../common';
-import {
-  FareProductTypeConfig,
-  FareProductTypeConfigSettings,
-  ProductTypeTransportModes,
-} from '../fare-product-type';
+import {LanguageAndTextType, LanguageAndTextTypeArray, TransportModeType, TransportSubmodeType} from '../common';
+import {FareProductTypeConfig, FareProductTypeConfigSettings, ProductTypeTransportModes} from '../fare-product-type';
 import {
   TravelSearchFiltersType,
   TravelSearchTransportModeIcon,
   TravelSearchTransportModes,
 } from '../travel-search-filters';
-import {MobilityOperator, FormFactor} from '../mobility-operators';
+import {FormFactor, MobilityOperator} from '../mobility-operators';
 import {ConfigurableLinks} from '../urls';
-import {HarborConnectionOverride} from '../harbor-connection-overrides';
+import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 
 // All supported specifications
 export const specifications = [
@@ -50,7 +41,7 @@ export const schemaTypes = {
   other: undefined,
   paymentTypes: undefined,
   url: ConfigurableLinks,
-  harborConnectionOverrides: z.array(HarborConnectionOverride),
+  harborConnectionOverrides: HarborConnectionOverrides,
 };
 
 // All correctly supportet schema types as JSON Schema data structures
@@ -100,5 +91,5 @@ export const jsonSchemas = {
       LanguageAndTextType,
     },
   }),
-  harborConnectionOverrides: zodToJsonSchema(HarborConnectionOverride),
+  harborConnectionOverrides: zodToJsonSchema(HarborConnectionOverrides),
 } satisfies Record<SchemaNames, JsonSchema7Type | undefined>;
