@@ -19,6 +19,7 @@ import {
 } from '../travel-search-filters';
 import {MobilityOperator, FormFactor} from '../mobility-operators';
 import {ConfigurableLinks} from '../urls';
+import {HarborConnectionOverride} from '../harbor-connection-overrides';
 
 // All supported specifications
 export const specifications = [
@@ -28,6 +29,7 @@ export const specifications = [
   'paymentTypes',
   'travelSearchFilters',
   'url',
+  'harborConnectionOverrides',
 ] as const;
 
 export type SchemaNames = (typeof specifications)[number];
@@ -48,6 +50,7 @@ export const schemaTypes = {
   other: undefined,
   paymentTypes: undefined,
   url: ConfigurableLinks,
+  harborConnectionOverrides: z.array(HarborConnectionOverride),
 };
 
 // All correctly supportet schema types as JSON Schema data structures
@@ -97,4 +100,5 @@ export const jsonSchemas = {
       LanguageAndTextType,
     },
   }),
+  harborConnectionOverrides: zodToJsonSchema(HarborConnectionOverride),
 } satisfies Record<SchemaNames, JsonSchema7Type | undefined>;
