@@ -2,7 +2,12 @@ import {z} from 'zod';
 import zodToJsonSchema from 'zod-to-json-schema';
 import {JsonSchema7Type} from 'zod-to-json-schema/src/parseDef';
 import {LanguageAndTextType, LanguageAndTextTypeArray, TransportModeType, TransportSubmodeType} from '../common';
-import {FareProductTypeConfig, FareProductTypeConfigSettings, ProductTypeTransportModes} from '../fare-product-type';
+import {
+  FareProductGroup,
+  FareProductTypeConfig,
+  FareProductTypeConfigSettings,
+  ProductTypeTransportModes,
+} from '../fare-product-type';
 import {
   TravelSearchFiltersType,
   TravelSearchTransportModeIcon,
@@ -33,6 +38,7 @@ export function isValidSchema(schema: any): schema is SchemaNames {
 export const schemaTypes = {
   fareProductTypeConfigs: z.object({
     fareProductTypeConfigs: z.array(FareProductTypeConfig),
+    fareProductGroups: z.array(FareProductGroup).optional(),
   }),
   travelSearchFilters: TravelSearchFiltersType,
   mobility: z.object({
@@ -44,11 +50,12 @@ export const schemaTypes = {
   harborConnectionOverrides: HarborConnectionOverrides,
 };
 
-// All correctly supportet schema types as JSON Schema data structures
+// All correctly supported schema types as JSON Schema data structures
 export const jsonSchemas = {
   fareProductTypeConfigs: zodToJsonSchema(
     z.object({
       fareProductTypeConfigs: z.array(FareProductTypeConfig),
+      fareProductGroups: z.array(FareProductGroup).optional() ,
     }),
     {
       name: 'FareProductConfiguration',

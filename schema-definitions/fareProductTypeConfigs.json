@@ -304,6 +304,31 @@
           "items": {
             "$ref": "#/definitions/FareProductTypeConfig"
           }
+        },
+        "fareProductGroups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "transportModes": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/ProductTypeTransportModes"
+                }
+              },
+              "types": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "transportModes",
+              "types"
+            ],
+            "additionalProperties": false
+          }
         }
       },
       "required": [
