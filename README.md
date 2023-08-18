@@ -12,6 +12,7 @@ organisations.
 - [x] Travel Search Filters
 - [x] Mobility operators
 - [x] Urls
+- [x] Harbor connection overrides
 - [ ] Payment Types
 - [ ] Other
 - [ ] Reference Data
