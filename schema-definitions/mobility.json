@@ -96,11 +96,18 @@
                           "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
                         }
                       },
+                      "required": [
+                        "url",
+                        "name"
+                      ],
                       "additionalProperties": false
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "descriptionWhenActive",
+                    "descriptionWhenNotActive",
+                    "callToAction"
                   ],
                   "additionalProperties": false
                 },
