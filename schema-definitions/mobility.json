@@ -85,29 +85,12 @@
                     },
                     "descriptionWhenNotActive": {
                       "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
-                    },
-                    "callToAction": {
-                      "type": "object",
-                      "properties": {
-                        "url": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
-                        }
-                      },
-                      "required": [
-                        "url",
-                        "name"
-                      ],
-                      "additionalProperties": false
                     }
                   },
                   "required": [
                     "id",
                     "descriptionWhenActive",
-                    "descriptionWhenNotActive",
-                    "callToAction"
+                    "descriptionWhenNotActive"
                   ],
                   "additionalProperties": false
                 },

@@ -37,13 +37,6 @@ test('Mobility operator benefits', () => {
     descriptionWhenNotActive: [
       { lang: 'nob', value: 'Beskrivelse når ikke aktiv'},
       { lang: 'en', value: 'Description when not active'}
-    ],
-    callToAction: {
-      url: "https://click.me",
-      name:  [
-        { lang: 'nob', value: 'Aktiver'},
-        { lang: 'en', value: 'Do it!'}
-      ]
-    }
+    ]
   })
 })
