@@ -40,7 +40,7 @@ export const OfferEndpoint = z.union([
   z.literal('zones'),
   z.literal('stop-places'),
   z.literal('authority'),
-])
+]);
 
 export const ProductTypeTransportModes = z.object({
   mode: TransportModeType,
@@ -83,5 +83,6 @@ export type FareProductTypeConfig = z.infer<typeof FareProductTypeConfig>;
 export const FareProductGroup = z.object({
   transportModes: ProductTypeTransportModes.array(),
   types: z.string().array(),
+  heading: LanguageAndTextTypeArray.optional(),
 });
 export type FareProductGroupType = z.infer<typeof FareProductGroup>;

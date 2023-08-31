@@ -321,6 +321,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "heading": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/LanguageAndTextType"
+                }     
               }
             },
             "required": [
