@@ -323,10 +323,7 @@
                 }
               },
               "heading": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/LanguageAndTextType"
-                }     
+                "$ref": "#/definitions/FareProductTypeConfigSettings/properties/productSelectionTitle"
               }
             },
             "required": [
