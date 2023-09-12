@@ -10,6 +10,7 @@ export const TransportModeType = z.union([
   z.literal('metro'),
   z.literal('monorail'),
   z.literal('rail'),
+  z.literal('taxi'),
   z.literal('tram'),
   z.literal('trolleybus'),
   z.literal('unknown'),
@@ -131,10 +132,7 @@ export const TransportSubmodeType = z.union([
   z.literal('waterTaxi'),
 ]);
 
-export const LabelType = z.union([
-  z.literal('beta'),
-  z.literal('new'),
-]);
+export const LabelType = z.union([z.literal('beta'), z.literal('new')]);
 
 export type TransportModeType = z.infer<typeof TransportModeType>;
 export type TransportSubmodeType = z.infer<typeof TransportSubmodeType>;
