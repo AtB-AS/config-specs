@@ -53,6 +53,9 @@
         },
         "flexTransportInfo": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "dataSharingInfo": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }
       },
       "additionalProperties": false

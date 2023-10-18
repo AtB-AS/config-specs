@@ -7,6 +7,7 @@ export const ConfigurableLinks = z.object({
   inspectionInfo: LanguageAndTextTypeArray.optional(),
   refundInfo: LanguageAndTextTypeArray.optional(),
   flexTransportInfo: LanguageAndTextTypeArray.optional(),
+  dataSharingInfo: LanguageAndTextTypeArray.optional(),
 });
 
 export type ConfigurableLinksType = z.infer<typeof ConfigurableLinks>;
