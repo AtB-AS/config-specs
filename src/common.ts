@@ -3,6 +3,8 @@ import {z} from 'zod';
 export const TransportModeType = z.union([
   z.literal('air'),
   z.literal('bus'),
+  z.literal('foot'),
+  z.literal('bicycle'),
   z.literal('cableway'),
   z.literal('coach'),
   z.literal('funicular'),
