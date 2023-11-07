@@ -15,7 +15,9 @@ export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
 
 export const OperatorBenefit = z.object({
   id: OperatorBenefitId,
+  headingWhenActive: LanguageAndTextTypeArray.optional(),
   descriptionWhenActive: LanguageAndTextTypeArray.optional(),
+  headingWhenNotActive: LanguageAndTextTypeArray.optional(),
   descriptionWhenNotActive: LanguageAndTextTypeArray.optional(),
   callToAction: z.object({
     url: z.string(),

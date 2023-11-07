@@ -48,7 +48,7 @@
                         "free-use"
                       ]
                     },
-                    "descriptionWhenActive": {
+                    "headingWhenActive": {
                       "type": "array",
                       "items": {
                         "anyOf": [
@@ -83,8 +83,14 @@
                         ]
                       }
                     },
+                    "descriptionWhenActive": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
+                    },
+                    "headingWhenNotActive": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
+                    },
                     "descriptionWhenNotActive": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
                     },
                     "callToAction": {
                       "type": "object",
@@ -93,7 +99,7 @@
                           "type": "string"
                         },
                         "name": {
-                          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/descriptionWhenActive"
+                          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
                         }
                       },
                       "required": [
