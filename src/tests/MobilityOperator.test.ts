@@ -30,6 +30,10 @@ test('Mobility operator benefits', () => {
 
   assertType<OperatorBenefitType>({
     id: "free-unlock",
+    headingWhenActive: [
+      { lang: 'nob', value: 'Overkrift når aktiv'},
+      { lang: 'en', value: 'Heading when active'}
+    ],
     descriptionWhenActive: [
       { lang: 'nob', value: 'Beskrivelse når aktiv'},
       { lang: 'en', value: 'Description when active'}
@@ -37,6 +41,10 @@ test('Mobility operator benefits', () => {
     descriptionWhenNotActive: [
       { lang: 'nob', value: 'Beskrivelse når ikke aktiv'},
       { lang: 'en', value: 'Description when not active'}
+    ],
+    headingWhenNotActive: [
+      { lang: 'nob', value: 'Overskrift når ikke aktiv'},
+      { lang: 'en', value: 'Heading when not active'}
     ],
     callToAction: {
       url: "https://click.me",
