@@ -48,6 +48,9 @@
                         "free-use"
                       ]
                     },
+                    "image": {
+                      "type": "string"
+                    },
                     "headingWhenActive": {
                       "type": "array",
                       "items": {
@@ -110,6 +113,8 @@
                   },
                   "required": [
                     "id",
+                    "descriptionWhenActive",
+                    "descriptionWhenNotActive",
                     "callToAction"
                   ],
                   "additionalProperties": false
