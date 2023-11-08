@@ -48,7 +48,7 @@
                         "free-use"
                       ]
                     },
-                    "image": {
+                    "imageWhenActive": {
                       "type": "string"
                     },
                     "headingWhenActive": {
@@ -88,6 +88,9 @@
                     },
                     "descriptionWhenActive": {
                       "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
+                    },
+                    "imageWhenNotActive": {
+                      "type": "string"
                     },
                     "headingWhenNotActive": {
                       "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
