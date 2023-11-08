@@ -48,6 +48,9 @@
                         "free-use"
                       ]
                     },
+                    "imageWhenActive": {
+                      "type": "string"
+                    },
                     "headingWhenActive": {
                       "type": "array",
                       "items": {
@@ -86,6 +89,9 @@
                     "descriptionWhenActive": {
                       "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
                     },
+                    "imageWhenNotActive": {
+                      "type": "string"
+                    },
                     "headingWhenNotActive": {
                       "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
                     },
@@ -110,6 +116,8 @@
                   },
                   "required": [
                     "id",
+                    "descriptionWhenActive",
+                    "descriptionWhenNotActive",
                     "callToAction"
                   ],
                   "additionalProperties": false
