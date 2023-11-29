@@ -31,9 +31,20 @@ export const FlexibleTransportOptionType = z.object({
   description: LanguageAndTextTypeArray.nonempty(),
 });
 
+export const TravelSearchPreference = z.object({
+  title: LanguageAndTextTypeArray.nonempty(),
+  value: z.number().nonnegative()
+})
+
+export const TravelSearchPreferences = z.object({
+  transferSlackOptions: TravelSearchPreference.array().optional(),
+  walkSpeedOptions: TravelSearchPreference.array().optional(),
+})
+
 export const TravelSearchFiltersType = z.object({
   transportModes: TransportModeFilterOptionType.array().optional(),
   flexibleTransport: FlexibleTransportOptionType.optional(),
+  travelSearchPreferences: TravelSearchPreferences.optional(),
 });
 
 export type TravelSearchTransportModes = z.infer<
@@ -50,3 +61,6 @@ export type FlexibleTransportOptionType = z.infer<
 export type TransportModeFilterOptionType = z.infer<
   typeof TransportModeFilterOptionType
 >;
+
+export type TravelSearchPreferenceType = z.infer<typeof TravelSearchPreference>
+export type TravelSearchPreferencesType = z.infer<typeof TravelSearchPreferences>

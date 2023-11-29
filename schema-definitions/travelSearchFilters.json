@@ -44,6 +44,8 @@
           "enum": [
             "air",
             "bus",
+            "foot",
+            "bicycle",
             "cableway",
             "coach",
             "funicular",
@@ -278,6 +280,42 @@
             "title",
             "description"
           ],
+          "additionalProperties": false
+        },
+        "travelSearchPreferences": {
+          "type": "object",
+          "properties": {
+            "transferSlackOptions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+                    },
+                    "minItems": 1
+                  },
+                  "value": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "title",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "walkSpeedOptions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TravelSearchFilters/properties/travelSearchPreferences/properties/transferSlackOptions/items"
+              }
+            }
+          },
           "additionalProperties": false
         }
       },
