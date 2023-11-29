@@ -31,21 +31,30 @@ export const FlexibleTransportOptionType = z.object({
   description: LanguageAndTextTypeArray.nonempty(),
 });
 
-export const TravelSearchPreference = z.object({
-  title: LanguageAndTextTypeArray.nonempty(),
+export const TravelSearchPreferenceType = z.union([
+  z.literal('transferPenalty'),
+  z.literal('waitReluctance'),
+  z.literal('walkReluctance'),
+  z.literal('walkSpeed'),
+])
+export const TravelSearchPreferenceOptionId = z.string().nonempty();
+export const TravelSearchPreferenceOption = z.object({
+  id: TravelSearchPreferenceOptionId,
+  text: LanguageAndTextTypeArray.nonempty(),
   value: z.number().nonnegative(),
-  isDefaultOption: z.boolean().optional(),
 })
 
-export const TravelSearchPreferences = z.object({
-  transferSlackOptions: TravelSearchPreference.array().optional(),
-  walkSpeedOptions: TravelSearchPreference.array().optional(),
+export const TravelSearchPreference = z.object({
+  type: TravelSearchPreferenceType,
+  title: LanguageAndTextTypeArray.nonempty(),
+  options: TravelSearchPreferenceOption.array().nonempty(),
+  defaultOption: TravelSearchPreferenceOptionId,
 })
 
 export const TravelSearchFiltersType = z.object({
   transportModes: TransportModeFilterOptionType.array().optional(),
   flexibleTransport: FlexibleTransportOptionType.optional(),
-  travelSearchPreferences: TravelSearchPreferences.optional(),
+  travelSearchPreferences: TravelSearchPreference.array().optional(),
 });
 
 export type TravelSearchTransportModes = z.infer<
@@ -63,5 +72,6 @@ export type TransportModeFilterOptionType = z.infer<
   typeof TransportModeFilterOptionType
 >;
 
-export type TravelSearchPreferenceType = z.infer<typeof TravelSearchPreference>
-export type TravelSearchPreferencesType = z.infer<typeof TravelSearchPreferences>
+export type TravelSearchPreferenceOptionId = z.infer<typeof TravelSearchPreferenceOptionId>;
+export type TravelSearchPreferenceOption = z.infer<typeof TravelSearchPreferenceOption>;
+export type TravelSearchPreference = z.infer<typeof TravelSearchPreference>

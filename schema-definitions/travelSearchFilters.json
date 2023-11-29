@@ -283,43 +283,68 @@
           "additionalProperties": false
         },
         "travelSearchPreferences": {
-          "type": "object",
-          "properties": {
-            "transferSlackOptions": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "title": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-                    },
-                    "minItems": 1
-                  },
-                  "value": {
-                    "type": "number",
-                    "minimum": 0
-                  },
-                  "isDefaultOption": {
-                    "type": "boolean"
-                  }
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "transferPenalty",
+                  "waitReluctance",
+                  "walkReluctance",
+                  "walkSpeed"
+                ]
+              },
+              "title": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/LanguageAndTextTypeArray/items"
                 },
-                "required": [
-                  "title",
-                  "value"
-                ],
-                "additionalProperties": false
+                "minItems": 1
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "text": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+                      },
+                      "minItems": 1
+                    },
+                    "value": {
+                      "type": "number",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "text",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              },
+              "defaultOption": {
+                "$ref": "#/definitions/TravelSearchFilters/properties/travelSearchPreferences/items/properties/options/items/properties/id"
               }
             },
-            "walkSpeedOptions": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/TravelSearchFilters/properties/travelSearchPreferences/properties/transferSlackOptions/items"
-              }
-            }
-          },
-          "additionalProperties": false
+            "required": [
+              "type",
+              "title",
+              "options",
+              "defaultOption"
+            ],
+            "additionalProperties": false
+          }
         }
       },
       "additionalProperties": false
