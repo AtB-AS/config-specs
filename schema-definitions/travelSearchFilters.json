@@ -290,6 +290,7 @@
               "type": {
                 "type": "string",
                 "enum": [
+                  "transferSlack",
                   "transferPenalty",
                   "waitReluctance",
                   "walkReluctance",
