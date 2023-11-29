@@ -32,6 +32,7 @@ export const FlexibleTransportOptionType = z.object({
 });
 
 export const TravelSearchPreferenceType = z.union([
+  z.literal('transferSlack'),
   z.literal('transferPenalty'),
   z.literal('waitReluctance'),
   z.literal('walkReluctance'),
