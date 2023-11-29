@@ -300,6 +300,9 @@
                   "value": {
                     "type": "number",
                     "minimum": 0
+                  },
+                  "isDefaultOption": {
+                    "type": "boolean"
                   }
                 },
                 "required": [

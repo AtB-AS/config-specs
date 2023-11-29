@@ -35,7 +35,8 @@ test('TravelSearchPreferences', function () {
             lang: 'nob',
             value: 'Normal',
           },
-          value: 2.5
+          value: 2.5,
+          isDefaultOption: true,
         }
       ]
     },

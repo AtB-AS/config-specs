@@ -33,7 +33,8 @@ export const FlexibleTransportOptionType = z.object({
 
 export const TravelSearchPreference = z.object({
   title: LanguageAndTextTypeArray.nonempty(),
-  value: z.number().nonnegative()
+  value: z.number().nonnegative(),
+  isDefaultOption: z.boolean().optional(),
 })
 
 export const TravelSearchPreferences = z.object({
