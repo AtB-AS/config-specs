@@ -41,6 +41,8 @@
           "enum": [
             "air",
             "bus",
+            "foot",
+            "bicycle",
             "cableway",
             "coach",
             "funicular",
