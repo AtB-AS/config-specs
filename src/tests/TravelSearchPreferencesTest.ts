@@ -1,10 +1,10 @@
 import {assertType, expect, test} from 'vitest';
-import {TravelSearchPreference} from '../travel-search-filters';
+import {TravelSearchPreference, TravelSearchPreferenceType} from '../travel-search-filters';
 
 test('TravelSearchPreference', function () {
   expect(() => TravelSearchPreference.parse('foo')).toThrowError();
 
-  assertType<TravelSearchPreference>(
+  assertType<TravelSearchPreferenceType>(
     TravelSearchPreference.parse({
       type: 'walkSpeed',
       title: [{
