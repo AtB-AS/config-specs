@@ -8,11 +8,7 @@ import {
   FareProductTypeConfigSettings,
   ProductTypeTransportModes,
 } from '../fare-product-type';
-import {
-  TravelSearchFiltersType,
-  TravelSearchTransportModeIcon,
-  TravelSearchTransportModes,
-} from '../travel-search-filters';
+import {TravelSearchFilters, TravelSearchTransportModeIcon, TravelSearchTransportModes} from '../travel-search-filters';
 import {FormFactor, MobilityOperator} from '../mobility-operators';
 import {ConfigurableLinks} from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
@@ -40,7 +36,7 @@ export const schemaTypes = {
     fareProductTypeConfigs: z.array(FareProductTypeConfig),
     fareProductGroups: z.array(FareProductGroup).optional(),
   }),
-  travelSearchFilters: TravelSearchFiltersType,
+  travelSearchFilters: TravelSearchFilters,
   mobility: z.object({
     operators: z.array(MobilityOperator),
   }),
@@ -82,7 +78,7 @@ export const jsonSchemas = {
   ),
   other: undefined,
   paymentTypes: undefined,
-  travelSearchFilters: zodToJsonSchema(TravelSearchFiltersType, {
+  travelSearchFilters: zodToJsonSchema(TravelSearchFilters, {
     name: 'TravelSearchFilters',
     definitions: {
       LanguageAndTextTypeArray,

@@ -1,11 +1,11 @@
 import {assertType, expect, test} from 'vitest';
-import {FlexibleTransportOptionType} from '../travel-search-filters';
+import {FlexibleTransportOption, FlexibleTransportOptionType} from '../travel-search-filters';
 
 test('TransportModeFilterOptionType', function () {
-  expect(() => FlexibleTransportOptionType.parse('foo')).toThrowError();
+  expect(() => FlexibleTransportOption.parse('foo')).toThrowError();
 
   assertType<FlexibleTransportOptionType>(
-    FlexibleTransportOptionType.parse({
+    FlexibleTransportOption.parse({
       id: 'id',
       title: [
         {

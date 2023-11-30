@@ -16,7 +16,7 @@ export const TravelSearchTransportModes = z.object({
   transportSubModes: z.array(TransportSubmodeType).optional(),
 });
 
-export const TransportModeFilterOptionType = z.object({
+export const TransportModeFilterOption = z.object({
   id: z.string(),
   icon: TravelSearchTransportModeIcon,
   text: LanguageAndTextTypeArray.nonempty(),
@@ -24,14 +24,14 @@ export const TransportModeFilterOptionType = z.object({
   modes: z.array(TravelSearchTransportModes),
 });
 
-export const FlexibleTransportOptionType = z.object({
+export const FlexibleTransportOption = z.object({
   id: z.string(),
   title: LanguageAndTextTypeArray.nonempty(),
   label: LabelType.optional(),
   description: LanguageAndTextTypeArray.nonempty(),
 });
 
-export const TravelSearchPreferenceType = z.union([
+export const TravelSearchPreferenceParameter = z.union([
   z.literal('transferSlack'),
   z.literal('transferPenalty'),
   z.literal('waitReluctance'),
@@ -46,33 +46,33 @@ export const TravelSearchPreferenceOption = z.object({
 })
 
 export const TravelSearchPreference = z.object({
-  type: TravelSearchPreferenceType,
+  type: TravelSearchPreferenceParameter,
   title: LanguageAndTextTypeArray.nonempty(),
   options: TravelSearchPreferenceOption.array().nonempty(),
   defaultOption: TravelSearchPreferenceOptionId,
 })
 
-export const TravelSearchFiltersType = z.object({
-  transportModes: TransportModeFilterOptionType.array().optional(),
-  flexibleTransport: FlexibleTransportOptionType.optional(),
+export const TravelSearchFilters = z.object({
+  transportModes: TransportModeFilterOption.array().optional(),
+  flexibleTransport: FlexibleTransportOption.optional(),
   travelSearchPreferences: TravelSearchPreference.array().optional(),
 });
 
-export type TravelSearchTransportModes = z.infer<
+export type TravelSearchTransportModesType = z.infer<
   typeof TravelSearchTransportModes
 >;
-export type TravelSearchTransportModeIcon = z.infer<
+export type TravelSearchTransportModeIconType = z.infer<
   typeof TravelSearchTransportModeIcon
 >;
 
-export type TravelSearchFiltersType = z.infer<typeof TravelSearchFiltersType>;
+export type TravelSearchFiltersType = z.infer<typeof TravelSearchFilters>;
 export type FlexibleTransportOptionType = z.infer<
-  typeof FlexibleTransportOptionType
+  typeof FlexibleTransportOption
 >;
 export type TransportModeFilterOptionType = z.infer<
-  typeof TransportModeFilterOptionType
+  typeof TransportModeFilterOption
 >;
 
-export type TravelSearchPreferenceOptionId = z.infer<typeof TravelSearchPreferenceOptionId>;
-export type TravelSearchPreferenceOption = z.infer<typeof TravelSearchPreferenceOption>;
-export type TravelSearchPreference = z.infer<typeof TravelSearchPreference>
+export type TravelSearchPreferenceOptionIdType = z.infer<typeof TravelSearchPreferenceOptionId>;
+export type TravelSearchPreferenceOptionType = z.infer<typeof TravelSearchPreferenceOption>;
+export type TravelSearchPreferenceType = z.infer<typeof TravelSearchPreference>
