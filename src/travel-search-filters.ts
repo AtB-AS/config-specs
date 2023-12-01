@@ -73,6 +73,7 @@ export type TransportModeFilterOptionType = z.infer<
   typeof TransportModeFilterOption
 >;
 
+export type TravelSearchPreferenceParameterType = z.infer<typeof TravelSearchPreferenceParameter>;
 export type TravelSearchPreferenceOptionIdType = z.infer<typeof TravelSearchPreferenceOptionId>;
 export type TravelSearchPreferenceOptionType = z.infer<typeof TravelSearchPreferenceOption>;
 export type TravelSearchPreferenceType = z.infer<typeof TravelSearchPreference>
