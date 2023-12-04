@@ -13,6 +13,7 @@ organisations.
 - [x] Mobility operators
 - [x] Urls
 - [x] Harbor connection overrides
+- [x] Notification config
 - [ ] Payment Types
 - [ ] Other
 - [ ] Reference Data
