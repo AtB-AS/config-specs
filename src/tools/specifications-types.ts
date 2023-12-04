@@ -12,6 +12,7 @@ import {TravelSearchFilters, TravelSearchTransportModeIcon, TravelSearchTranspor
 import {FormFactor, MobilityOperator} from '../mobility-operators';
 import {ConfigurableLinks} from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
+import {NotificationConfig} from '../notification-config';
 
 // All supported specifications
 export const specifications = [
@@ -22,6 +23,7 @@ export const specifications = [
   'travelSearchFilters',
   'url',
   'harborConnectionOverrides',
+  'notificationConfig',
 ] as const;
 
 export type SchemaNames = (typeof specifications)[number];
@@ -44,6 +46,7 @@ export const schemaTypes = {
   paymentTypes: undefined,
   url: ConfigurableLinks,
   harborConnectionOverrides: HarborConnectionOverrides,
+  notificationConfig: NotificationConfig,
 };
 
 // All correctly supported schema types as JSON Schema data structures
@@ -95,4 +98,5 @@ export const jsonSchemas = {
     },
   }),
   harborConnectionOverrides: zodToJsonSchema(HarborConnectionOverrides),
+  notificationConfig: zodToJsonSchema(NotificationConfig),
 } satisfies Record<SchemaNames, JsonSchema7Type | undefined>;
