@@ -95,9 +95,25 @@ quality across Firestore, Webshop and App for all organisations involved.
 
 ## Release package
 
-Packages are automatically released when merging PR created by
+After your changes are merged to the main branch:
+
+1. Checkout the latest changes on main branch
+2. Make sure you are authenticated through npm by running `npm whoami`
+3. Make sure your npm user has access to publish packages to AtB's npm repo.
+4. Run `yarn build` to build the package.
+5. Tag a new release by running `yarn version`:
+  - **Major**: Breaking change. This version _require_ you to do code
+    modifications after upgrading on the consumer side.
+  - **Minor**: This version extends functionality.
+  - **Patch**: This version affects no APIs at all, just changes to existing
+    code.
+6. Run `npm publish` to publish the package to npm.
+7. Push to Github: `git push origin main`
+8. Push tags to Github: `git push origin main --tags`
+
+_TODO: Packages should be automatically released when merging a PR created by
 `release-please-action` Github Action. Changelog and releases should
-automatically be updated.
+automatically be updated._
 
 ## License
 
