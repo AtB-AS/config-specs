@@ -9,7 +9,8 @@ export const FormFactor = z.union([
 
 export const OperatorBenefitId = z.union([
   z.literal("free-unlock"),
-  z.literal('free-use')
+  z.literal('free-use'),
+  z.literal('single-unlock')
 ]);
 export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
 

@@ -45,7 +45,8 @@
                       "type": "string",
                       "enum": [
                         "free-unlock",
-                        "free-use"
+                        "free-use",
+                        "single-unlock"
                       ]
                     },
                     "imageWhenActive": {
