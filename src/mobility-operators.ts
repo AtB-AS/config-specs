@@ -26,6 +26,7 @@ export const OperatorBenefit = z.object({
     url: z.string(),
     name: LanguageAndTextTypeArray.optional(),
   }),
+  ticketDescription: LanguageAndTextTypeArray.optional(),
 })
 
 export type OperatorBenefitType = z.infer<typeof OperatorBenefit>;

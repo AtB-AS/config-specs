@@ -113,6 +113,9 @@
                         "url"
                       ],
                       "additionalProperties": false
+                    },
+                    "ticketDescription": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
                     }
                   },
                   "required": [
