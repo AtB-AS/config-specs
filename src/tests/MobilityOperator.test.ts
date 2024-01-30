@@ -52,6 +52,7 @@ test('Mobility operator benefits', () => {
         { lang: 'nob', value: 'Aktiver'},
         { lang: 'en', value: 'Do it!'}
       ]
-    }
+    },
+    formFactors: ["SCOOTER", "CAR"]
   })
 })

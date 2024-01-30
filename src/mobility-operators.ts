@@ -27,6 +27,7 @@ export const OperatorBenefit = z.object({
     name: LanguageAndTextTypeArray.optional(),
   }),
   ticketDescription: LanguageAndTextTypeArray.optional(),
+  formFactors: z.array(FormFactor).nonempty(),
 })
 
 export type OperatorBenefitType = z.infer<typeof OperatorBenefit>;
