@@ -116,13 +116,21 @@
                     },
                     "ticketDescription": {
                       "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
+                    },
+                    "formFactors": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/FormFactor"
+                      },
+                      "minItems": 1
                     }
                   },
                   "required": [
                     "id",
                     "descriptionWhenActive",
                     "descriptionWhenNotActive",
-                    "callToAction"
+                    "callToAction",
+                    "formFactors"
                   ],
                   "additionalProperties": false
                 },
