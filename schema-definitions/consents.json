@@ -1,53 +1,62 @@
 {
-  "type": "array",
-  "items": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": "number"
-      },
-      "title": {
+  "type": "object",
+  "properties": {
+    "consents": {
+      "type": "array",
+      "items": {
         "type": "object",
         "properties": {
-          "nob": {
-            "type": "string"
+          "id": {
+            "type": "number"
           },
-          "en": {
-            "type": "string"
+          "title": {
+            "type": "object",
+            "properties": {
+              "nob": {
+                "type": "string"
+              },
+              "en": {
+                "type": "string"
+              },
+              "nno": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "nob"
+            ],
+            "additionalProperties": false
           },
-          "nno": {
-            "type": "string"
+          "description": {
+            "type": "object",
+            "properties": {
+              "nob": {
+                "type": "string"
+              },
+              "en": {
+                "type": "string"
+              },
+              "nno": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "nob"
+            ],
+            "additionalProperties": false
           }
         },
         "required": [
-          "nob"
-        ],
-        "additionalProperties": false
-      },
-      "description": {
-        "type": "object",
-        "properties": {
-          "nob": {
-            "type": "string"
-          },
-          "en": {
-            "type": "string"
-          },
-          "nno": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "nob"
+          "id",
+          "title"
         ],
         "additionalProperties": false
       }
-    },
-    "required": [
-      "id",
-      "title"
-    ],
-    "additionalProperties": false
+    }
   },
+  "required": [
+    "consents"
+  ],
+  "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }

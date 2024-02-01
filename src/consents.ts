@@ -15,7 +15,10 @@ export const Consent = z.object({
     })
     .optional(),
 });
-export const Consents = z.array(Consent);
+
+export const Consents = z.object({
+  consents: z.array(Consent),
+});
 
 export type ConsentType = z.infer<typeof Consent>;
 export type ConsentsType = z.infer<typeof Consents>;
