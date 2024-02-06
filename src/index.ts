@@ -4,3 +4,4 @@ export * from './common';
 export * from './urls';
 export * from './harbor-connection-overrides';
 export * from './notification-config';
+export * from './consents';
