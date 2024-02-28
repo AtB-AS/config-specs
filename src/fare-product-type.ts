@@ -66,6 +66,7 @@ export const FareProductTypeConfig = z.object({
   excludedTariffZones: z.array(z.string()).optional(),
   description: LanguageAndTextTypeArray,
   configuration: FareProductTypeConfigSettings,
+  isCollectionOfAccesses: z.boolean(),
 });
 
 export type ProductTypeTransportModes = z.infer<
