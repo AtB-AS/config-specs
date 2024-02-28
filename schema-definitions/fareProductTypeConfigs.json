@@ -284,8 +284,7 @@
           "$ref": "#/definitions/FareProductTypeConfigSettings"
         },
         "isCollectionOfAccesses": {
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         }
       },
       "required": [
