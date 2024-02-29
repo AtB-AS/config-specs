@@ -282,6 +282,9 @@
         },
         "configuration": {
           "$ref": "#/definitions/FareProductTypeConfigSettings"
+        },
+        "isCollectionOfAccesses": {
+          "type": "boolean"
         }
       },
       "required": [
@@ -289,7 +292,8 @@
         "name",
         "transportModes",
         "description",
-        "configuration"
+        "configuration",
+        "isCollectionOfAccesses"
       ],
       "additionalProperties": false
     },
