@@ -285,6 +285,10 @@
         },
         "isCollectionOfAccesses": {
           "type": "boolean"
+        },
+        "onBehalfOfEnabled": {
+          "type": "boolean",
+          "default": true
         }
       },
       "required": [

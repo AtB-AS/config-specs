@@ -67,6 +67,7 @@ export const FareProductTypeConfig = z.object({
   description: LanguageAndTextTypeArray,
   configuration: FareProductTypeConfigSettings,
   isCollectionOfAccesses: z.boolean(),
+  onBehalfOfEnabled: z.boolean().optional().default(true),
 });
 
 export type ProductTypeTransportModes = z.infer<
