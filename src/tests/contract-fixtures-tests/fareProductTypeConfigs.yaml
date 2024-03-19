@@ -16,6 +16,7 @@ fareProductTypeConfigs:
       - lang: eng
         value: When you travel occasionally
     isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple
       travellerSelectionMode: multiple
@@ -40,6 +41,7 @@ fareProductTypeConfigs:
       - lang: eng
         value: When you travel more frequently
     isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple
       travellerSelectionMode: single
@@ -69,6 +71,7 @@ fareProductTypeConfigs:
       - lang: eng
         value: For travelling several times in 24 hours
     isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: single
       travellerSelectionMode: single
@@ -76,32 +79,6 @@ fareProductTypeConfigs:
       productSelectionMode: none
       offerEndpoint: zones
       requiresLogin: false
-  - type: carnet
-    name:
-      - lang: nob
-        value: Klippekort
-      - lang: eng
-        value: Punch card
-    illustration: carnet
-    transportModes:
-      - mode: bus
-        subMode: localBus
-      - mode: tram
-    description:
-      - lang: nob
-        value:
-          10 forhåndskjøpte enkeltbilletter som må aktiveres før du går om bord
-      - lang: eng
-        value:
-          10 pre-purchased tickets that you have to validate before boarding
-    isCollectionOfAccesses: true
-    configuration:
-      zoneSelectionMode: multiple
-      travellerSelectionMode: single
-      timeSelectionMode: none
-      productSelectionMode: none
-      offerEndpoint: zones
-      requiresLogin: true
   - type: night_v2
     name:
       - lang: nob
@@ -119,6 +96,7 @@ fareProductTypeConfigs:
       - lang: eng
         value: From 00:30 to 04:00 for night bus and tram
     isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: none
       travellerSelectionMode: none
@@ -145,6 +123,7 @@ fareProductTypeConfigs:
         value:
           10 pre-purchased tickets that you have to validate before boarding
     isCollectionOfAccesses: true
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple
       travellerSelectionMode: single
@@ -175,6 +154,7 @@ fareProductTypeConfigs:
       - lang: eng
         value: When you travel occasionally
     isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple-stop-harbor
       travellerSelectionMode: multiple
@@ -201,6 +181,7 @@ fareProductTypeConfigs:
       - lang: eng
         value: When you travel more frequently
     isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple-stop-harbor
       travellerSelectionMode: single
@@ -231,6 +212,7 @@ fareProductTypeConfigs:
       - lang: eng
         value: Monthly pass youth, bus and tram
     isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: single
       travellerSelectionMode: single

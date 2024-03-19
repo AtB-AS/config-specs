@@ -287,8 +287,7 @@
           "type": "boolean"
         },
         "onBehalfOfEnabled": {
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         }
       },
       "required": [
@@ -297,7 +296,8 @@
         "transportModes",
         "description",
         "configuration",
-        "isCollectionOfAccesses"
+        "isCollectionOfAccesses",
+        "onBehalfOfEnabled"
       ],
       "additionalProperties": false
     },

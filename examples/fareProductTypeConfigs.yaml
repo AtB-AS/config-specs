@@ -9,89 +9,22 @@ fareProductTypeConfigs:
     illustration: single
     transportModes:
       - mode: bus
+        subMode: localBus
+      - mode: tram
     description:
       - lang: nob
         value: Når du skal reise av og til
       - lang: eng
         value: When you travel occasionally
+    isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple
       travellerSelectionMode: multiple
       timeSelectionMode: datetime
       productSelectionMode: none
+      offerEndpoint: zones
       requiresLogin: false
-  - type: carnet
-    name:
-      - lang: nob
-        value: Klippekort
-      - lang: eng
-        value: Punch card
-    illustration: carnet
-    transportModes:
-      - mode: bus
-    excludedTariffZones:
-      - NOR:TariffZone:8360
-      - NOR:TariffZone:8221
-      - NOR:TariffZone:4121
-      - NOR:TariffZone:8131
-      - NOR:TariffZone:5045
-      - NOR:TariffZone:8061
-      - NOR:TariffZone:8270
-      - NOR:TariffZone:8380
-      - NOR:TariffZone:8180
-      - NOR:TariffZone:8111
-      - NOR:TariffZone:8250
-      - NOR:TariffZone:8331
-      - NOR:TariffZone:8241
-      - NOR:TariffZone:8160
-      - NOR:TariffZone:8201
-      - NOR:TariffZone:8120
-      - NOR:TariffZone:8132
-      - NOR:TariffZone:8060
-      - NOR:TariffZone:8381
-      - NOR:TariffZone:8332
-      - NOR:TariffZone:8320
-      - NOR:TariffZone:8753
-      - NOR:TariffZone:8242
-      - NOR:TariffZone:8340
-      - NOR:TariffZone:8372
-      - NOR:TariffZone:5060
-      - NOR:TariffZone:8280
-      - NOR:TariffZone:8370
-      - NOR:TariffZone:8260
-      - NOR:TariffZone:8063
-      - NOR:TariffZone:8530
-      - NOR:TariffZone:8251
-      - NOR:TariffZone:8150
-      - NOR:TariffZone:8361
-      - NOR:TariffZone:8371
-      - NOR:TariffZone:8130
-      - NOR:TariffZone:5046
-      - NOR:TariffZone:8062
-      - NOR:TariffZone:8220
-      - NOR:TariffZone:8110
-      - NOR:TariffZone:8240
-      - NOR:TariffZone:8330
-      - NOR:TariffZone:8200
-    description:
-      - lang: nob
-        value:
-          10 forhåndskjøpte enkeltbilletter som må aktiveres før du går om bord.
-      - lang: eng
-        value:
-          10 pre-purchased single tickets that you have to validate before
-          boarding.
-    configuration:
-      zoneSelectionMode: multiple-zone
-      travellerSelectionMode: single
-      timeSelectionMode: none
-      productSelectionMode: productAlias
-      requiresLogin: true
-      productSelectionTitle:
-        - lang: nob
-          value: Velg antall klipp
-        - lang: eng
-          value: Choose number of tickets
   - type: period
     name:
       - lang: nob
@@ -101,22 +34,27 @@ fareProductTypeConfigs:
     illustration: period
     transportModes:
       - mode: bus
+        subMode: localBus
+      - mode: tram
     description:
       - lang: nob
         value: Når du reiser litt oftere
       - lang: eng
         value: When you travel more frequently
+    isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple
       travellerSelectionMode: single
       timeSelectionMode: datetime
       productSelectionMode: duration
-      requiresLogin: true
       productSelectionTitle:
         - lang: nob
           value: Velg varighet
         - lang: eng
           value: Select duration
+      offerEndpoint: zones
+      requiresLogin: true
   - type: hour24
     name:
       - lang: nob
@@ -127,16 +65,20 @@ fareProductTypeConfigs:
     transportModes:
       - mode: bus
         subMode: localBus
+      - mode: tram
     description:
       - lang: nob
         value: Når du vil reise flere ganger på et døgn
       - lang: eng
         value: For travelling several times in 24 hours
+    isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: single
       travellerSelectionMode: single
       timeSelectionMode: datetime
       productSelectionMode: none
+      offerEndpoint: zones
       requiresLogin: false
   - type: night_v2
     name:
@@ -148,23 +90,59 @@ fareProductTypeConfigs:
     transportModes:
       - mode: bus
         subMode: localBus
+      - mode: tram
     description:
       - lang: nob
-        value: Fra 00:30 til 04:00 på nattbuss
+        value: Fra 00:30 til 04:00 på nattbuss og -trikk
       - lang: eng
-        value: From 00:30 to 04:00 for night bus
+        value: From 00:30 to 04:00 for night bus and tram
+    isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: none
       travellerSelectionMode: none
       timeSelectionMode: none
       productSelectionMode: product
+      offerEndpoint: authority
       requiresLogin: false
+  - type: carnet
+    name:
+      - lang: nob
+        value: Klippekort, buss og trikk
+      - lang: eng
+        value: Punch card, bus and tram
+    illustration: carnet
+    transportModes:
+      - mode: bus
+        subMode: localBus
+      - mode: tram
+    description:
+      - lang: nob
+        value:
+          10 forhåndskjøpte enkeltbilletter som må aktiveres før du går om bord
+      - lang: eng
+        value:
+          10 pre-purchased tickets that you have to validate before boarding
+    isCollectionOfAccesses: true
+    onBehalfOfEnabled: true
+    configuration:
+      zoneSelectionMode: multiple
+      travellerSelectionMode: single
+      timeSelectionMode: none
+      productSelectionMode: product
+      productSelectionTitle:
+        - lang: nob
+          value: Antall
+        - lang: eng
+          value: Count
+      offerEndpoint: zones
+      requiresLogin: true
   - type: boat-single
     name:
       - lang: nob
-        value: Enkeltbillett hurtigbåt
+        value: Enkeltbillett, hurtigbåt
       - lang: eng
-        value: Single ticket express boat
+        value: Single ticket, passenger boat
     illustration: boat
     transportModes:
       - mode: water
@@ -173,12 +151,14 @@ fareProductTypeConfigs:
         subMode: highSpeedVehicleService
     description:
       - lang: nob
-        value: Når du skal reise av og til med båt
+        value: Når du skal reise én gang
       - lang: eng
         value: When you travel occasionally
+    isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
-      zoneSelectionMode: none
-      travellerSelectionMode: single
+      zoneSelectionMode: multiple-stop-harbor
+      travellerSelectionMode: multiple
       timeSelectionMode: datetime
       productSelectionMode: none
       offerEndpoint: stop-places
@@ -187,10 +167,10 @@ fareProductTypeConfigs:
   - type: boat-period
     name:
       - lang: nob
-        value: Båt Periodebillett
+        value: Periodebillett, hurtigbåt
       - lang: eng
-        value: Boat Periodic ticket
-    illustration: boat
+        value: Periodic ticket, passenger boat
+    illustration: boat-period
     transportModes:
       - mode: water
         subMode: highSpeedPassengerService
@@ -198,11 +178,13 @@ fareProductTypeConfigs:
         subMode: highSpeedVehicleService
     description:
       - lang: nob
-        value: Når du reiser litt oftere med båt
+        value: Når du reiser litt oftere
       - lang: eng
-        value: When you travel more frequently by boat
+        value: When you travel more frequently
+    isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
     configuration:
-      zoneSelectionMode: none
+      zoneSelectionMode: multiple-stop-harbor
       travellerSelectionMode: single
       timeSelectionMode: datetime
       productSelectionMode: duration
@@ -214,3 +196,58 @@ fareProductTypeConfigs:
       offerEndpoint: stop-places
       requiresLogin: true
       requiresTokenOnMobile: true
+  - type: youth-ticket
+    name:
+      - lang: nob
+        value: 30 dager ungdom
+      - lang: eng
+        value: Monthly pass youth
+    illustration: youth
+    transportModes:
+      - mode: bus
+        subMode: localBus
+      - mode: tram
+    description:
+      - lang: nob
+        value: 30 dager ungdom, buss og trikk
+      - lang: eng
+        value: Monthly pass youth, bus and tram
+    isCollectionOfAccesses: false
+    onBehalfOfEnabled: true
+    configuration:
+      zoneSelectionMode: single
+      travellerSelectionMode: single
+      timeSelectionMode: datetime
+      productSelectionMode: none
+      offerEndpoint: zones
+      requiresLogin: true
+  - type: business
+    name:
+      - lang: nob
+        value: HjemJobbHjem
+      - lang: eng
+        value: HjemJobbHjem
+    illustration: city
+    transportModes:
+      - mode: bus
+        subMode: localBus
+      - mode: tram
+    description:
+      - lang: nob
+        value:
+          Billigere 30-dagers periodebillett for deg som er ansatt i en
+          HjemJobbHjem-bedrift. Billetten kan brukes på buss, trikk og tog i
+          sone A.
+      - lang: eng
+        value:
+          Cheaper monthly ticket for you who are employed in a HjemJobbHjem
+          company. The ticket is valid for buses, trams and trains in zone A.
+    isCollectionOfAccesses: false
+    onBehalfOfEnabled: false
+    configuration:
+      zoneSelectionMode: none
+      travellerSelectionMode: none
+      timeSelectionMode: datetime
+      productSelectionMode: none
+      offerEndpoint: zones
+      requiresLogin: true
