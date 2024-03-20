@@ -242,6 +242,9 @@
             "stop-places",
             "authority"
           ]
+        },
+        "onBehalfOfEnabled": {
+          "type": "boolean"
         }
       },
       "required": [
@@ -249,7 +252,8 @@
         "travellerSelectionMode",
         "timeSelectionMode",
         "productSelectionMode",
-        "requiresLogin"
+        "requiresLogin",
+        "onBehalfOfEnabled"
       ],
       "additionalProperties": false
     },
@@ -285,9 +289,6 @@
         },
         "isCollectionOfAccesses": {
           "type": "boolean"
-        },
-        "onBehalfOfEnabled": {
-          "type": "boolean"
         }
       },
       "required": [
@@ -296,8 +297,7 @@
         "transportModes",
         "description",
         "configuration",
-        "isCollectionOfAccesses",
-        "onBehalfOfEnabled"
+        "isCollectionOfAccesses"
       ],
       "additionalProperties": false
     },
