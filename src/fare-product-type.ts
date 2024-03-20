@@ -56,6 +56,7 @@ export const FareProductTypeConfigSettings = z.object({
   requiresLogin: z.boolean(),
   requiresTokenOnMobile: z.boolean().optional().default(false),
   offerEndpoint: OfferEndpoint.optional(),
+  onBehalfOfEnabled: z.boolean(),
 });
 
 export const FareProductTypeConfig = z.object({
@@ -67,7 +68,6 @@ export const FareProductTypeConfig = z.object({
   description: LanguageAndTextTypeArray,
   configuration: FareProductTypeConfigSettings,
   isCollectionOfAccesses: z.boolean(),
-  onBehalfOfEnabled: z.boolean(),
 });
 
 export type ProductTypeTransportModes = z.infer<

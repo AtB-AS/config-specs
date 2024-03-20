@@ -16,7 +16,6 @@ fareProductTypeConfigs:
       - lang: eng
         value: When you travel occasionally
     isCollectionOfAccesses: false
-    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple
       travellerSelectionMode: multiple
@@ -24,6 +23,7 @@ fareProductTypeConfigs:
       productSelectionMode: none
       offerEndpoint: zones
       requiresLogin: false
+      onBehalfOfEnabled: true
   - type: period
     name:
       - lang: nob
@@ -41,7 +41,6 @@ fareProductTypeConfigs:
       - lang: eng
         value: When you travel more frequently
     isCollectionOfAccesses: false
-    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple
       travellerSelectionMode: single
@@ -54,6 +53,7 @@ fareProductTypeConfigs:
           value: Select duration
       offerEndpoint: zones
       requiresLogin: true
+      onBehalfOfEnabled: true
   - type: hour24
     name:
       - lang: nob
@@ -71,7 +71,6 @@ fareProductTypeConfigs:
       - lang: eng
         value: For travelling several times in 24 hours
     isCollectionOfAccesses: false
-    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: single
       travellerSelectionMode: single
@@ -79,6 +78,7 @@ fareProductTypeConfigs:
       productSelectionMode: none
       offerEndpoint: zones
       requiresLogin: false
+      onBehalfOfEnabled: true
   - type: night_v2
     name:
       - lang: nob
@@ -96,7 +96,6 @@ fareProductTypeConfigs:
       - lang: eng
         value: From 00:30 to 04:00 for night bus and tram
     isCollectionOfAccesses: false
-    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: none
       travellerSelectionMode: none
@@ -104,6 +103,7 @@ fareProductTypeConfigs:
       productSelectionMode: product
       offerEndpoint: authority
       requiresLogin: false
+      onBehalfOfEnabled: true
   - type: carnet
     name:
       - lang: nob
@@ -123,7 +123,6 @@ fareProductTypeConfigs:
         value:
           10 pre-purchased tickets that you have to validate before boarding
     isCollectionOfAccesses: true
-    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple
       travellerSelectionMode: single
@@ -136,6 +135,7 @@ fareProductTypeConfigs:
           value: Count
       offerEndpoint: zones
       requiresLogin: true
+      onBehalfOfEnabled: true
   - type: boat-single
     name:
       - lang: nob
@@ -154,7 +154,6 @@ fareProductTypeConfigs:
       - lang: eng
         value: When you travel occasionally
     isCollectionOfAccesses: false
-    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple-stop-harbor
       travellerSelectionMode: multiple
@@ -163,6 +162,7 @@ fareProductTypeConfigs:
       offerEndpoint: stop-places
       requiresLogin: true
       requiresTokenOnMobile: true
+      onBehalfOfEnabled: true
   - type: boat-period
     name:
       - lang: nob
@@ -181,7 +181,6 @@ fareProductTypeConfigs:
       - lang: eng
         value: When you travel more frequently
     isCollectionOfAccesses: false
-    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: multiple-stop-harbor
       travellerSelectionMode: single
@@ -195,6 +194,7 @@ fareProductTypeConfigs:
       offerEndpoint: stop-places
       requiresLogin: true
       requiresTokenOnMobile: true
+      onBehalfOfEnabled: true
   - type: youth-ticket
     name:
       - lang: nob
@@ -212,7 +212,6 @@ fareProductTypeConfigs:
       - lang: eng
         value: Monthly pass youth, bus and tram
     isCollectionOfAccesses: false
-    onBehalfOfEnabled: true
     configuration:
       zoneSelectionMode: single
       travellerSelectionMode: single
@@ -220,6 +219,7 @@ fareProductTypeConfigs:
       productSelectionMode: none
       offerEndpoint: zones
       requiresLogin: true
+      onBehalfOfEnabled: true
   - type: business
     name:
       - lang: nob
@@ -242,7 +242,6 @@ fareProductTypeConfigs:
           Cheaper monthly ticket for you who are employed in a HjemJobbHjem
           company. The ticket is valid for buses, trams and trains in zone A.
     isCollectionOfAccesses: false
-    onBehalfOfEnabled: false
     configuration:
       zoneSelectionMode: none
       travellerSelectionMode: none
@@ -250,3 +249,4 @@ fareProductTypeConfigs:
       productSelectionMode: none
       offerEndpoint: zones
       requiresLogin: true
+      onBehalfOfEnabled: false
