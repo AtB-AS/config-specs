@@ -253,7 +253,6 @@
         "timeSelectionMode",
         "productSelectionMode",
         "requiresLogin",
-        "offerEndpoint",
         "onBehalfOfEnabled"
       ],
       "additionalProperties": false

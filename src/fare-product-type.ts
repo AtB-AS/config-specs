@@ -55,7 +55,7 @@ export const FareProductTypeConfigSettings = z.object({
   productSelectionTitle: LanguageAndTextTypeArray.optional(),
   requiresLogin: z.boolean(),
   requiresTokenOnMobile: z.boolean().optional().default(false),
-  offerEndpoint: OfferEndpoint,
+  offerEndpoint: OfferEndpoint.optional(),
   onBehalfOfEnabled: z.boolean(),
 });
 
