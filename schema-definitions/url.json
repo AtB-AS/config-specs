@@ -57,7 +57,7 @@
         "dataSharingInfo": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         },
-        "a11yStatement": {
+        "appA11yStatement": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }
       },

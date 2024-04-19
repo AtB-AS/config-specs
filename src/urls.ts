@@ -8,7 +8,7 @@ export const ConfigurableLinks = z.object({
   refundInfo: LanguageAndTextTypeArray.optional(),
   flexTransportInfo: LanguageAndTextTypeArray.optional(),
   dataSharingInfo: LanguageAndTextTypeArray.optional(),
-  a11yStatement: LanguageAndTextTypeArray.optional(),
+  appA11yStatement: LanguageAndTextTypeArray.optional(),
 });
 
 export type ConfigurableLinksType = z.infer<typeof ConfigurableLinks>;
