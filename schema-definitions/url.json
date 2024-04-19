@@ -56,6 +56,9 @@
         },
         "dataSharingInfo": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "appA11yStatement": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }
       },
       "additionalProperties": false
