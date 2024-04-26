@@ -22,6 +22,7 @@ export const TransportModeFilterOption = z.object({
   text: LanguageAndTextTypeArray.nonempty(),
   description: LanguageAndTextTypeArray.optional(),
   modes: z.array(TravelSearchTransportModes),
+  defaultValue: z.boolean().optional(),
 });
 
 export const FlexibleTransportOption = z.object({
@@ -37,20 +38,20 @@ export const TravelSearchPreferenceParameter = z.union([
   z.literal('waitReluctance'),
   z.literal('walkReluctance'),
   z.literal('walkSpeed'),
-])
+]);
 export const TravelSearchPreferenceOptionId = z.string().nonempty();
 export const TravelSearchPreferenceOption = z.object({
   id: TravelSearchPreferenceOptionId,
   text: LanguageAndTextTypeArray.nonempty(),
   value: z.number().nonnegative(),
-})
+});
 
 export const TravelSearchPreference = z.object({
   type: TravelSearchPreferenceParameter,
   title: LanguageAndTextTypeArray.nonempty(),
   options: TravelSearchPreferenceOption.array().nonempty(),
   defaultOption: TravelSearchPreferenceOptionId,
-})
+});
 
 export const TravelSearchFilters = z.object({
   transportModes: TransportModeFilterOption.array().optional(),
@@ -73,7 +74,13 @@ export type TransportModeFilterOptionType = z.infer<
   typeof TransportModeFilterOption
 >;
 
-export type TravelSearchPreferenceParameterType = z.infer<typeof TravelSearchPreferenceParameter>;
-export type TravelSearchPreferenceOptionIdType = z.infer<typeof TravelSearchPreferenceOptionId>;
-export type TravelSearchPreferenceOptionType = z.infer<typeof TravelSearchPreferenceOption>;
-export type TravelSearchPreferenceType = z.infer<typeof TravelSearchPreference>
+export type TravelSearchPreferenceParameterType = z.infer<
+  typeof TravelSearchPreferenceParameter
+>;
+export type TravelSearchPreferenceOptionIdType = z.infer<
+  typeof TravelSearchPreferenceOptionId
+>;
+export type TravelSearchPreferenceOptionType = z.infer<
+  typeof TravelSearchPreferenceOption
+>;
+export type TravelSearchPreferenceType = z.infer<typeof TravelSearchPreference>;
