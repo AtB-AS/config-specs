@@ -1,8 +1,5 @@
 import {assertType, expect, test} from 'vitest';
-import {
-  TransportModeFilterOption,
-  TransportModeFilterOptionType,
-} from '../travel-search-filters';
+import {TransportModeFilterOption, TransportModeFilterOptionType} from '../travel-search-filters';
 
 test('TransportModeFilterOptionType', function () {
   expect(() => TransportModeFilterOption.parse('foo')).toThrowError();
@@ -18,7 +15,7 @@ test('TransportModeFilterOptionType', function () {
         },
       ],
       modes: [],
-      defaultValue: true,
+      defaultValue: true
     }),
   );
 });
