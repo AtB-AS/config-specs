@@ -1,16 +1,16 @@
-import {z} from "zod";
+import {z} from 'zod';
 import {LanguageAndTextTypeArray} from './common';
 
 export const FormFactor = z.union([
-  z.literal("SCOOTER"),
-  z.literal("BICYCLE"),
-  z.literal("CAR"),
-])
+  z.literal('SCOOTER'),
+  z.literal('BICYCLE'),
+  z.literal('CAR'),
+]);
 
 export const OperatorBenefitId = z.union([
-  z.literal("free-unlock"),
+  z.literal('free-unlock'),
   z.literal('free-use'),
-  z.literal('single-unlock')
+  z.literal('single-unlock'),
 ]);
 export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
 
@@ -28,7 +28,7 @@ export const OperatorBenefit = z.object({
   }),
   ticketDescription: LanguageAndTextTypeArray.optional(),
   formFactors: z.array(FormFactor).nonempty(),
-})
+});
 
 export type OperatorBenefitType = z.infer<typeof OperatorBenefit>;
 
@@ -37,7 +37,7 @@ export const MobilityOperator = z.object({
   name: z.string().nonempty(),
   showInApp: z.boolean().default(false),
   formFactors: z.array(FormFactor).nonempty(),
-  benefits: z.array(OperatorBenefit).optional().default([])
+  benefits: z.array(OperatorBenefit).optional().default([]),
 });
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;

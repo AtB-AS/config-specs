@@ -102,11 +102,12 @@ After your changes are merged to the main branch:
 3. Make sure your npm user has access to publish packages to AtB's npm repo.
 4. Run `yarn build` to build the package.
 5. Tag a new release by running `yarn version`:
-  - **Major**: Breaking change. This version _require_ you to do code
-    modifications after upgrading on the consumer side.
-  - **Minor**: This version extends functionality.
-  - **Patch**: This version affects no APIs at all, just changes to existing
-    code.
+
+- **Major**: Breaking change. This version _require_ you to do code
+  modifications after upgrading on the consumer side.
+- **Minor**: This version extends functionality.
+- **Patch**: This version affects no APIs at all, just changes to existing code.
+
 6. Run `npm publish` to publish the package to npm.
 7. Push to Github: `git push origin main`
 8. Push tags to Github: `git push origin main --tags`

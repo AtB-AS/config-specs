@@ -22,9 +22,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "nob"
-            ],
+            "required": ["nob"],
             "additionalProperties": false
           },
           "description": {
@@ -40,23 +38,16 @@
                 "type": "string"
               }
             },
-            "required": [
-              "nob"
-            ],
+            "required": ["nob"],
             "additionalProperties": false
           }
         },
-        "required": [
-          "id",
-          "title"
-        ],
+        "required": ["id", "title"],
         "additionalProperties": false
       }
     }
   },
-  "required": [
-    "consents"
-  ],
+  "required": ["consents"],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }

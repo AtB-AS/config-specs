@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../schema-definitions/travelSearchFilters.json
 transportModes:
-  - id: "bus"
+  - id: 'bus'
     icon:
       transportMode: bus
     text:
@@ -30,7 +30,7 @@ transportModes:
           - specialNeedsBus
       - transportMode: coach
     defaultValue: false
-  - id: "tram"
+  - id: 'tram'
     icon:
       transportMode: tram
     text:
@@ -41,7 +41,7 @@ transportModes:
     modes:
       - transportMode: tram
     defaultValue: false
-  - id: "rail"
+  - id: 'rail'
     icon:
       transportMode: rail
     text:
@@ -55,7 +55,7 @@ transportModes:
         transportSubModes:
           - railReplacementBus
     defaultValue: false
-  - id: "speedboat"
+  - id: 'speedboat'
     icon:
       transportMode: water
       transportSubMode: highSpeedPassengerService
@@ -73,7 +73,7 @@ transportModes:
           - localPassengerFerry
           - internationalPassengerFerry
     defaultValue: false
-  - id: "ferry"
+  - id: 'ferry'
     icon:
       transportMode: water
     text:
@@ -89,7 +89,7 @@ transportModes:
           - localCarFerry
           - nationalCarFerry
     defaultValue: false
-  - id: "flybus"
+  - id: 'flybus'
     icon:
       transportMode: bus
     text:
@@ -102,7 +102,7 @@ transportModes:
         transportSubModes:
           - airportLinkBus
     defaultValue: false
-  - id: "other"
+  - id: 'other'
     icon:
       transportMode: unknown
     text:
@@ -133,6 +133,10 @@ flexibleTransport:
       value: Tips on Flexible transport
   description:
     - lang: nob
-      value: Vis tips om bestillingstransport som kjøres fra adresse til adresse i Steinkjer, Verdal, Rørs og Overhalla.
+      value:
+        Vis tips om bestillingstransport som kjøres fra adresse til adresse i
+        Steinkjer, Verdal, Rørs og Overhalla.
     - lang: eng
-      value: Show tips about ordered transport that is driven from address to address in Steinkjer, Verdal, Rørs and Overhalla.
+      value:
+        Show tips about ordered transport that is driven from address to address
+        in Steinkjer, Verdal, Rørs and Overhalla.

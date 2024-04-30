@@ -13,10 +13,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "lang",
-            "value"
-          ],
+          "required": ["lang", "value"],
           "additionalProperties": false
         },
         {
@@ -175,9 +172,7 @@
           ]
         }
       },
-      "required": [
-        "mode"
-      ],
+      "required": ["mode"],
       "additionalProperties": false
     },
     "FareProductTypeConfigSettings": {
@@ -198,29 +193,15 @@
         },
         "travellerSelectionMode": {
           "type": "string",
-          "enum": [
-            "multiple",
-            "single",
-            "none"
-          ]
+          "enum": ["multiple", "single", "none"]
         },
         "timeSelectionMode": {
           "type": "string",
-          "enum": [
-            "datetime",
-            "next-morning",
-            "next-morning-minimum",
-            "none"
-          ]
+          "enum": ["datetime", "next-morning", "next-morning-minimum", "none"]
         },
         "productSelectionMode": {
           "type": "string",
-          "enum": [
-            "duration",
-            "product",
-            "productAlias",
-            "none"
-          ]
+          "enum": ["duration", "product", "productAlias", "none"]
         },
         "productSelectionTitle": {
           "type": "array",
@@ -237,11 +218,7 @@
         },
         "offerEndpoint": {
           "type": "string",
-          "enum": [
-            "zones",
-            "stop-places",
-            "authority"
-          ]
+          "enum": ["zones", "stop-places", "authority"]
         },
         "onBehalfOfEnabled": {
           "type": "boolean"
@@ -337,17 +314,12 @@
                 "$ref": "#/definitions/FareProductTypeConfigSettings/properties/productSelectionTitle"
               }
             },
-            "required": [
-              "transportModes",
-              "types"
-            ],
+            "required": ["transportModes", "types"],
             "additionalProperties": false
           }
         }
       },
-      "required": [
-        "fareProductTypeConfigs"
-      ],
+      "required": ["fareProductTypeConfigs"],
       "additionalProperties": false
     }
   },
