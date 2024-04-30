@@ -22,7 +22,8 @@
     "gen": "node -r @swc-node/register src/tools/generate-schemas.ts",
     "build": "rimraf lib && yarn gen && tsc",
     "typecheck": "tsc --noEmit",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "npx prettier . --write"
   },
   "devDependencies": {
     "@swc-node/register": "^1.6.2",
