@@ -123,7 +123,6 @@ transportModes:
       - transportMode: lift
       - transportMode: trolleybus
     defaultValue: false
-    
 flexibleTransport:
   id: 'flexibleTransport'
   label: 'new'
