@@ -236,6 +236,9 @@
                 "items": {
                   "$ref": "#/definitions/TravelSearchTransportModes"
                 }
+              },
+              "defaultValue": {
+                "type": "boolean"
               }
             },
             "required": [

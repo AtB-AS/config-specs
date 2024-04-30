@@ -22,6 +22,7 @@ export const TransportModeFilterOption = z.object({
   text: LanguageAndTextTypeArray.nonempty(),
   description: LanguageAndTextTypeArray.optional(),
   modes: z.array(TravelSearchTransportModes),
+  defaultValue: z.boolean(),
 });
 
 export const FlexibleTransportOption = z.object({
