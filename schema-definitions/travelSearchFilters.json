@@ -230,11 +230,11 @@
                   "$ref": "#/definitions/TravelSearchTransportModes"
                 }
               },
-              "defaultValue": {
+              "selectedAsDefault": {
                 "type": "boolean"
               }
             },
-            "required": ["id", "icon", "text", "modes"],
+            "required": ["id", "icon", "text", "modes", "selectedAsDefault"],
             "additionalProperties": false
           }
         },

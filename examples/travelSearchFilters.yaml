@@ -29,7 +29,7 @@ transportModes:
           - sightseeingBus
           - specialNeedsBus
       - transportMode: coach
-    defaultValue: false
+    selectedAsDefault: false
   - id: 'tram'
     icon:
       transportMode: tram
@@ -40,7 +40,7 @@ transportModes:
         value: Tram
     modes:
       - transportMode: tram
-    defaultValue: false
+    selectedAsDefault: false
   - id: 'rail'
     icon:
       transportMode: rail
@@ -54,7 +54,7 @@ transportModes:
       - transportMode: bus
         transportSubModes:
           - railReplacementBus
-    defaultValue: false
+    selectedAsDefault: false
   - id: 'speedboat'
     icon:
       transportMode: water
@@ -72,7 +72,7 @@ transportModes:
           - sightseeingService
           - localPassengerFerry
           - internationalPassengerFerry
-    defaultValue: false
+    selectedAsDefault: false
   - id: 'ferry'
     icon:
       transportMode: water
@@ -88,7 +88,7 @@ transportModes:
           - internationalCarFerry
           - localCarFerry
           - nationalCarFerry
-    defaultValue: false
+    selectedAsDefault: false
   - id: 'flybus'
     icon:
       transportMode: bus
@@ -101,7 +101,7 @@ transportModes:
       - transportMode: bus
         transportSubModes:
           - airportLinkBus
-    defaultValue: false
+    selectedAsDefault: false
   - id: 'other'
     icon:
       transportMode: unknown
@@ -123,7 +123,7 @@ transportModes:
       - transportMode: monorail
       - transportMode: lift
       - transportMode: trolleybus
-    defaultValue: false
+    selectedAsDefault: false
 flexibleTransport:
   label: 'new'
   title:
