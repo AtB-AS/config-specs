@@ -15,10 +15,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "lang",
-              "value"
-            ],
+            "required": ["lang", "value"],
             "additionalProperties": false
           },
           {
@@ -181,9 +178,7 @@
           }
         }
       },
-      "required": [
-        "transportMode"
-      ],
+      "required": ["transportMode"],
       "additionalProperties": false
     },
     "TravelSearchTransportModeIcon": {
@@ -196,9 +191,7 @@
           "$ref": "#/definitions/TravelSearchTransportModes/properties/transportSubModes/items"
         }
       },
-      "required": [
-        "transportMode"
-      ],
+      "required": ["transportMode"],
       "additionalProperties": false
     },
     "TransportModeType": {
@@ -241,12 +234,7 @@
                 "type": "boolean"
               }
             },
-            "required": [
-              "id",
-              "icon",
-              "text",
-              "modes"
-            ],
+            "required": ["id", "icon", "text", "modes"],
             "additionalProperties": false
           }
         },
@@ -265,10 +253,7 @@
             },
             "label": {
               "type": "string",
-              "enum": [
-                "beta",
-                "new"
-              ]
+              "enum": ["beta", "new"]
             },
             "description": {
               "type": "array",
@@ -278,11 +263,7 @@
               "minItems": 1
             }
           },
-          "required": [
-            "id",
-            "title",
-            "description"
-          ],
+          "required": ["id", "title", "description"],
           "additionalProperties": false
         },
         "travelSearchPreferences": {
@@ -328,11 +309,7 @@
                       "minimum": 0
                     }
                   },
-                  "required": [
-                    "id",
-                    "text",
-                    "value"
-                  ],
+                  "required": ["id", "text", "value"],
                   "additionalProperties": false
                 },
                 "minItems": 1
@@ -341,12 +318,7 @@
                 "$ref": "#/definitions/TravelSearchFilters/properties/travelSearchPreferences/items/properties/options/items/properties/id"
               }
             },
-            "required": [
-              "type",
-              "title",
-              "options",
-              "defaultOption"
-            ],
+            "required": ["type", "title", "options", "defaultOption"],
             "additionalProperties": false
           }
         }

@@ -3,11 +3,7 @@
   "definitions": {
     "FormFactor": {
       "type": "string",
-      "enum": [
-        "SCOOTER",
-        "BICYCLE",
-        "CAR"
-      ]
+      "enum": ["SCOOTER", "BICYCLE", "CAR"]
     },
     "MobilityOperator": {
       "type": "object",
@@ -43,11 +39,7 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "enum": [
-                        "free-unlock",
-                        "free-use",
-                        "single-unlock"
-                      ]
+                      "enum": ["free-unlock", "free-use", "single-unlock"]
                     },
                     "imageWhenActive": {
                       "type": "string"
@@ -66,10 +58,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "lang",
-                              "value"
-                            ],
+                            "required": ["lang", "value"],
                             "additionalProperties": false
                           },
                           {
@@ -109,9 +98,7 @@
                           "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
                         }
                       },
-                      "required": [
-                        "url"
-                      ],
+                      "required": ["url"],
                       "additionalProperties": false
                     },
                     "ticketDescription": {
@@ -137,18 +124,12 @@
                 "default": []
               }
             },
-            "required": [
-              "id",
-              "name",
-              "formFactors"
-            ],
+            "required": ["id", "name", "formFactors"],
             "additionalProperties": false
           }
         }
       },
-      "required": [
-        "operators"
-      ],
+      "required": ["operators"],
       "additionalProperties": false
     }
   },

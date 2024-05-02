@@ -16,17 +16,12 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "from",
-          "to"
-        ],
+        "required": ["from", "to"],
         "additionalProperties": false
       }
     }
   },
-  "required": [
-    "overrides"
-  ],
+  "required": ["overrides"],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }

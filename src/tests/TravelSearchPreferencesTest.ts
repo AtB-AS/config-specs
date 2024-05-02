@@ -1,5 +1,8 @@
 import {assertType, expect, test} from 'vitest';
-import {TravelSearchPreference, TravelSearchPreferenceType} from '../travel-search-filters';
+import {
+  TravelSearchPreference,
+  TravelSearchPreferenceType,
+} from '../travel-search-filters';
 
 test('TravelSearchPreference', function () {
   expect(() => TravelSearchPreference.parse('foo')).toThrowError();
@@ -7,10 +10,12 @@ test('TravelSearchPreference', function () {
   assertType<TravelSearchPreferenceType>(
     TravelSearchPreference.parse({
       type: 'walkSpeed',
-      title: [{
-        lang: 'nob',
-        value: 'Overskrift'
-      }],
+      title: [
+        {
+          lang: 'nob',
+          value: 'Overskrift',
+        },
+      ],
       options: [
         {
           id: 'walkSpeed-slow',
@@ -18,7 +23,7 @@ test('TravelSearchPreference', function () {
             lang: 'nob',
             value: 'Langsom',
           },
-          value: 1
+          value: 1,
         },
         {
           id: 'walkSpeed-normal',
@@ -27,9 +32,9 @@ test('TravelSearchPreference', function () {
             value: 'Normal',
           },
           value: 2.5,
-        }
+        },
       ],
       defaultOption: 'walkSpeed-normal',
-    },
-  ));
+    }),
+  );
 });
