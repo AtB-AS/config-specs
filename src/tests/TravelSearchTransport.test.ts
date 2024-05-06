@@ -18,7 +18,7 @@ test('TransportModeFilterOptionType', function () {
         },
       ],
       modes: [],
-      defaultValue: true,
+      selectedAsDefault: true,
     }),
   );
 });
