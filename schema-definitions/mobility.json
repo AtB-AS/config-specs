@@ -5,6 +5,10 @@
       "type": "string",
       "enum": ["SCOOTER", "BICYCLE", "CAR"]
     },
+    "OperatorBenefitId": {
+      "type": "string",
+      "enum": ["free-unlock", "free-use", "single-unlock"]
+    },
     "MobilityOperator": {
       "type": "object",
       "properties": {
@@ -38,8 +42,7 @@
                   "type": "object",
                   "properties": {
                     "id": {
-                      "type": "string",
-                      "enum": ["free-unlock", "free-use", "single-unlock"]
+                      "$ref": "#/definitions/OperatorBenefitId"
                     },
                     "imageWhenActive": {
                       "type": "string"
@@ -126,6 +129,12 @@
             },
             "required": ["id", "name", "formFactors"],
             "additionalProperties": false
+          }
+        },
+        "benefitIdsRequiringValueCode": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OperatorBenefitId"
           }
         }
       },

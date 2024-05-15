@@ -18,7 +18,11 @@ import {
   TravelSearchTransportModeIcon,
   TravelSearchTransportModes,
 } from '../travel-search-filters';
-import {FormFactor, MobilityOperator} from '../mobility-operators';
+import {
+  FormFactor,
+  MobilityOperator,
+  OperatorBenefitId,
+} from '../mobility-operators';
 import {ConfigurableLinks} from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 import {NotificationConfig} from '../notification-config';
@@ -83,11 +87,13 @@ export const jsonSchemas = {
   mobility: zodToJsonSchema(
     z.object({
       operators: z.array(MobilityOperator),
+      benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
     }),
     {
       name: 'MobilityOperator',
       definitions: {
         FormFactor,
+        OperatorBenefitId,
       },
     },
   ),
