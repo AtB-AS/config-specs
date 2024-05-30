@@ -13,7 +13,10 @@
               "type": "string"
             }
           },
-          "required": ["lang", "value"],
+          "required": [
+            "lang",
+            "value"
+          ],
           "additionalProperties": false
         },
         {
@@ -55,6 +58,12 @@
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         },
         "appA11yStatement": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "iosStoreLink": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "androidStoreLink": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }
       },
