@@ -60,10 +60,10 @@
         "appA11yStatement": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         },
-        "iosStoreLink": {
+        "iosStoreListing": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         },
-        "androidStoreLink": {
+        "androidStoreListing": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }
       },
