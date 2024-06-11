@@ -266,6 +266,10 @@
         },
         "isCollectionOfAccesses": {
           "type": "boolean"
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["one-way","two-way"]
         }
       },
       "required": [

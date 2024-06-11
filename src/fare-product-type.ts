@@ -42,6 +42,11 @@ export const OfferEndpoint = z.union([
   z.literal('authority'),
 ]);
 
+export const Direction = z.union([
+  z.literal('one-way'),
+  z.literal('two-way'),
+]);
+
 export const ProductTypeTransportModes = z.object({
   mode: TransportModeType,
   subMode: TransportSubmodeType.optional(),
@@ -68,6 +73,7 @@ export const FareProductTypeConfig = z.object({
   description: LanguageAndTextTypeArray,
   configuration: FareProductTypeConfigSettings,
   isCollectionOfAccesses: z.boolean(),
+  direction: Direction.optional(),
 });
 
 export type ProductTypeTransportModes = z.infer<
