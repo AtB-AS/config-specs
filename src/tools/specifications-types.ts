@@ -35,7 +35,7 @@ export const specifications = [
   'mobility',
   'paymentTypes',
   'travelSearchFilters',
-  'url',
+  'urls',
   'harborConnectionOverrides',
   'notificationConfig',
   'consents',
@@ -59,7 +59,7 @@ export const schemaTypes = {
   }),
   other: undefined,
   paymentTypes: undefined,
-  url: ConfigurableLinks,
+  urls: ConfigurableLinks,
   harborConnectionOverrides: HarborConnectionOverrides,
   notificationConfig: NotificationConfig,
   consents: Consents,
@@ -109,7 +109,7 @@ export const jsonSchemas = {
       TransportSubmodeType,
     },
   }),
-  url: zodToJsonSchema(ConfigurableLinks, {
+  urls: zodToJsonSchema(ConfigurableLinks, {
     name: 'ConfigurableLinks',
     definitions: {
       LanguageAndTextType,
