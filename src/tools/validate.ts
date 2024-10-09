@@ -38,13 +38,13 @@ async function readSpecification(
   const spec = await readFile(join(BASE_FOLDER, `${filename}.json`));
   try {
     const parsed = JSON.parse(spec.toString());
-    const previous = ajv.getSchema(parsed['$ref']);
-
-    if (previous) {
-      return previous;
-    } else {
-      return ajv.compile(parsed);
+    if (parsed['$ref']) {
+      const previous = ajv.getSchema(parsed['$ref']);
+      if (previous) {
+        return previous;
+      }
     }
+    return ajv.compile(parsed);
   } catch (err) {
     throw new Error(`Unable to load or parse ${err}`);
   }
