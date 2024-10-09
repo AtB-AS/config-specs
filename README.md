@@ -14,7 +14,7 @@ organisations.
 - [x] Urls
 - [x] Harbor connection overrides
 - [x] Notification config
-- [ ] Payment Types
+- [x] Payment Types
 - [ ] Other
 - [ ] Reference Data
 
