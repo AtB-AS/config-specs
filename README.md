@@ -15,7 +15,7 @@ organisations.
 - [x] Harbor connection overrides
 - [x] Notification config
 - [x] Payment Types
-- [ ] Other
+- [x] Other
 - [ ] Reference Data
 
 ## Usage
