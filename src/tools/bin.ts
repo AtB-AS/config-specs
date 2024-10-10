@@ -34,10 +34,20 @@ async function main() {
       ['file', 'schema'],
       'Please provide both scheme and file arguments',
     )
+    .option('list-schemas', {
+      alias: 'l',
+      describe: 'list all available schemas',
+      skipValidation: true,
+    })
     .help('h')
     .alias('h', 'help')
     .coerce('file', readAllFiles)
     .parse();
+
+  if (opts['list-schemas']) {
+    console.log(specifications.join('\n'));
+    process.exit(0);
+  }
 
   let error = 0;
   if (!opts?.file) {
