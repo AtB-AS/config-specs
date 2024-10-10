@@ -28,6 +28,7 @@ import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 import {NotificationConfig} from '../notification-config';
 import {Consents} from '../consents';
 import {PaymentTypes} from '../payment-types';
+import {Other} from '../other';
 
 // All supported specifications
 export const specifications = [
@@ -58,7 +59,7 @@ export const schemaTypes = {
   mobility: z.object({
     operators: z.array(MobilityOperator),
   }),
-  other: undefined,
+  other: Other,
   paymentTypes: PaymentTypes,
   urls: ConfigurableLinks,
   harborConnectionOverrides: HarborConnectionOverrides,
@@ -98,7 +99,7 @@ export const jsonSchemas = {
       },
     },
   ),
-  other: undefined,
+  other: zodToJsonSchema(Other),
   paymentTypes: zodToJsonSchema(PaymentTypes),
   travelSearchFilters: zodToJsonSchema(TravelSearchFilters, {
     name: 'TravelSearchFilters',
