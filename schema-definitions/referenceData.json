@@ -1,0 +1,315 @@
+{
+  "type": "object",
+  "properties": {
+    "preassignedFareProducts_v2": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "distributionChannel": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "lang",
+                  "value"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "language": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "limitations": {
+            "type": "object",
+            "properties": {
+              "userProfileRefs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tariffZoneRefs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "appVersionMin": {
+                "type": "string"
+              },
+              "appVersionMax": {
+                "type": "string"
+              },
+              "latestActivationDate": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "userProfileRefs"
+            ],
+            "additionalProperties": false
+          },
+          "durationDays": {
+            "type": "number"
+          },
+          "isApplicableOnSingleZoneOnly": {
+            "type": "boolean"
+          },
+          "isDefault": {
+            "type": "boolean"
+          },
+          "alternativeNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/properties/preassignedFareProducts_v2/items/properties/name"
+            }
+          },
+          "zoneSelectionMode": {
+            "type": "string",
+            "enum": [
+              "none",
+              "single",
+              "single-stop",
+              "single-zone",
+              "multiple",
+              "multiple-stop",
+              "multiple-zone",
+              "multiple-stop-harbor"
+            ]
+          },
+          "description": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+          },
+          "productDescription": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+          },
+          "productAliasId": {
+            "type": "string"
+          },
+          "productAlias": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+          },
+          "warningMessage": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "type",
+          "distributionChannel",
+          "name",
+          "limitations"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "tariffZones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/name"
+          },
+          "version": {
+            "type": "string"
+          },
+          "geometry": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "type",
+              "coordinates"
+            ],
+            "additionalProperties": false
+          },
+          "description": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+          },
+          "isDefault": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "version",
+          "geometry"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "userProfiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "userTypeString": {
+            "type": "string"
+          },
+          "userType": {
+            "type": "number"
+          },
+          "version": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/name"
+          },
+          "alternativeNames": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+          },
+          "description": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/name"
+          },
+          "alternativeDescriptions": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+          },
+          "hideFromDefaultTravellerSelection": {
+            "type": "boolean"
+          },
+          "minAge": {
+            "type": "number"
+          },
+          "maxAge": {
+            "type": "number"
+          },
+          "emoji": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "userTypeString",
+          "userType",
+          "version",
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "cityZones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "moreInfoUrl": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+          },
+          "orderUrl": {
+            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "geometry": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "type",
+              "coordinates"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "enabled",
+          "geometry"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "preassignedFareProducts": {}
+  },
+  "required": [
+    "preassignedFareProducts_v2",
+    "tariffZones",
+    "userProfiles"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

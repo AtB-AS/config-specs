@@ -7,3 +7,4 @@ export * from './notification-config';
 export * from './consents';
 export * from './payment-types';
 export * from './other';
+export * from './reference-data';

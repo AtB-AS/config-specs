@@ -16,7 +16,10 @@ organisations.
 - [x] Notification config
 - [x] Payment Types
 - [x] Other
-- [ ] Reference Data
+- [x] Reference Data
+- [ ] Schedules
+- [ ] Feedback Questions
+- [ ] App Texts
 
 ## Usage
 
