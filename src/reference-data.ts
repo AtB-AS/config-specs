@@ -32,7 +32,7 @@ export const TariffZone = z.object({
   name: LanguageAndTextType,
   version: z.string(),
   geometry: z.object({
-    type: z.string(),
+    type: z.literal('Polygon'),
     coordinates: z.array(z.array(z.array(z.number()).length(2))),
   }),
   description: LanguageAndTextTypeArray.optional(),
@@ -47,7 +47,7 @@ export const CityZone = z.object({
   orderUrl: LanguageAndTextTypeArray.optional(),
   phoneNumber: z.string().optional(),
   geometry: z.object({
-    type: z.string(),
+    type: z.literal('Polygon'),
     coordinates: z.array(z.array(z.array(z.number()).length(2))),
   }),
 });
