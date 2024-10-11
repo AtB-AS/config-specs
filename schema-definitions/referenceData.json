@@ -156,7 +156,8 @@
             "type": "object",
             "properties": {
               "type": {
-                "type": "string"
+                "type": "string",
+                "const": "Polygon"
               },
               "coordinates": {
                 "type": "array",
@@ -272,7 +273,8 @@
             "type": "object",
             "properties": {
               "type": {
-                "type": "string"
+                "type": "string",
+                "const": "Polygon"
               },
               "coordinates": {
                 "type": "array",
