@@ -29,6 +29,7 @@ import {NotificationConfig} from '../notification-config';
 import {Consents} from '../consents';
 import {PaymentTypes} from '../payment-types';
 import {Other} from '../other';
+import {ReferenceData} from '../reference-data';
 
 // All supported specifications
 export const specifications = [
@@ -41,6 +42,7 @@ export const specifications = [
   'harborConnectionOverrides',
   'notificationConfig',
   'consents',
+  'referenceData'
 ] as const;
 
 export type SchemaNames = (typeof specifications)[number];
@@ -65,6 +67,7 @@ export const schemaTypes = {
   harborConnectionOverrides: HarborConnectionOverrides,
   notificationConfig: NotificationConfig,
   consents: Consents,
+  referenceData: ReferenceData,
 };
 
 // All correctly supported schema types as JSON Schema data structures
@@ -120,4 +123,5 @@ export const jsonSchemas = {
   harborConnectionOverrides: zodToJsonSchema(HarborConnectionOverrides),
   notificationConfig: zodToJsonSchema(NotificationConfig),
   consents: zodToJsonSchema(Consents),
+  referenceData: zodToJsonSchema(ReferenceData),
 } satisfies Record<SchemaNames, JsonSchema7Type | undefined>;
