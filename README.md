@@ -40,7 +40,7 @@ const selectedZone2: ZoneSelectionMode =
 ### Usage in YAML validation
 
 ```yaml
-# yaml-language-server: $schema=https://github.com/atb-as/fare-product-type-configs/schema-definitions/other.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/AtB-AS/config-specs/refs/heads/main/schema-definitions/other.json
 enableTokenToggleRestrictions: true
 tokenToggleMaxLimit: 3
 defaultTariffZone: NOR:TariffZone:8040
