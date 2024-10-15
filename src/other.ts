@@ -9,9 +9,9 @@ export const Other = z.object({
   enableTokenToggleRestrictions: z.boolean().optional(),
   enableNynorsk: z.boolean().optional(),
   tokenToggleMaxLimit: z.number().optional(),
-  travelcardNumberLength: z.number().optional(),
+  travelcardNumberLength: z.number().default(16),
   modesWeSellTicketsFor: z.array(TransportSubmodeType).optional(),
-  nextMorningUtcTimestamp: z.string().regex(/^\d{2}:\d{2}$/).optional(),
+  nextMorningUtcTimestamp: z.string().regex(/^\d{2}:\d{2}$/).default("04:00"),
   defaultFocusPoint: z.object({
     lat: z.number(),
     lon: z.number(),

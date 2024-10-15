@@ -1,6 +1,9 @@
 {
   "type": "object",
   "properties": {
+    "vatPercent": {
+      "type": "number"
+    },
     "enableTokenToggleRestrictions": {
       "type": "boolean"
     },
@@ -11,7 +14,8 @@
       "type": "number"
     },
     "travelcardNumberLength": {
-      "type": "number"
+      "type": "number",
+      "default": 16
     },
     "modesWeSellTicketsFor": {
       "type": "array",
@@ -135,10 +139,8 @@
     },
     "nextMorningUtcTimestamp": {
       "type": "string",
-      "pattern": "^\\d{2}:\\d{2}$"
-    },
-    "vatPercent": {
-      "type": "number"
+      "pattern": "^\\d{2}:\\d{2}$",
+      "default": "04:00"
     },
     "defaultFocusPoint": {
       "type": "object",
