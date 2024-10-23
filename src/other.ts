@@ -7,7 +7,7 @@ export const LoginMethod = z.enum(['otp', 'email', 'vipps']);
 export const Other = z.object({
   vatPercent: z.number(),
   enableTokenToggleRestrictions: z.boolean().optional(),
-  contactPhoneNumber: z.string().regex(/^\+\d{1,3}\d{1,14}$/).default(""),
+  contactPhoneNumber: z.string().regex(/^\+\d{1,3}\d{1,14}$/).optional(),
   enableNynorsk: z.boolean().optional(),
   tokenToggleMaxLimit: z.number().optional(),
   travelcardNumberLength: z.number().default(16),
