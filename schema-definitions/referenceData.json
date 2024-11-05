@@ -73,9 +73,6 @@
               },
               "appVersionMax": {
                 "type": "string"
-              },
-              "latestActivationDate": {
-                "type": "number"
               }
             },
             "required": [

@@ -13,7 +13,6 @@ export const PreassignedFareProduct = z.object({
     tariffZoneRefs: z.array(z.string()).optional(),
     appVersionMin: z.string().optional(),
     appVersionMax: z.string().optional(),
-    latestActivationDate: z.number().optional(),
   }),
   durationDays: z.number().optional(),
   isApplicableOnSingleZoneOnly: z.boolean().optional(),
