@@ -30,6 +30,7 @@ import {Consents} from '../consents';
 import {PaymentTypes} from '../payment-types';
 import {Other} from '../other';
 import {ReferenceData} from '../reference-data';
+import {StopSignalButtonConfig} from '../stop-signal-button-config';
 
 // All supported specifications
 export const specifications = [
@@ -42,7 +43,8 @@ export const specifications = [
   'harborConnectionOverrides',
   'notificationConfig',
   'consents',
-  'referenceData'
+  'referenceData',
+  'stopSignalButtonConfig',
 ] as const;
 
 export type SchemaNames = (typeof specifications)[number];
@@ -68,6 +70,7 @@ export const schemaTypes = {
   notificationConfig: NotificationConfig,
   consents: Consents,
   referenceData: ReferenceData,
+  stopSignalButtonConfig: StopSignalButtonConfig,
 };
 
 // All correctly supported schema types as JSON Schema data structures
@@ -124,4 +127,5 @@ export const jsonSchemas = {
   notificationConfig: zodToJsonSchema(NotificationConfig),
   consents: zodToJsonSchema(Consents),
   referenceData: zodToJsonSchema(ReferenceData),
+  stopSignalButtonConfig: zodToJsonSchema(StopSignalButtonConfig)
 } satisfies Record<SchemaNames, JsonSchema7Type | undefined>;

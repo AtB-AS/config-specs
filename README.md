@@ -17,6 +17,7 @@ organisations.
 - [x] Payment Types
 - [x] Other
 - [x] Reference Data
+- [x] Stop Signal Button Config
 - [ ] Schedules
 - [ ] Feedback Questions
 - [ ] App Texts

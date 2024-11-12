@@ -8,3 +8,4 @@ export * from './consents';
 export * from './payment-types';
 export * from './other';
 export * from './reference-data';
+export * from './stop-signal-button-config';
