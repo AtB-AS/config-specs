@@ -95,6 +95,7 @@ export const jsonSchemas = {
   mobility: zodToJsonSchema(
     z.object({
       operators: z.array(MobilityOperator),
+      scooterFaqs: LanguageAndTextTypeArray.optional(),
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
     }),
     {
@@ -127,5 +128,5 @@ export const jsonSchemas = {
   notificationConfig: zodToJsonSchema(NotificationConfig),
   consents: zodToJsonSchema(Consents),
   referenceData: zodToJsonSchema(ReferenceData),
-  stopSignalButtonConfig: zodToJsonSchema(StopSignalButtonConfig)
+  stopSignalButtonConfig: zodToJsonSchema(StopSignalButtonConfig),
 } satisfies Record<SchemaNames, JsonSchema7Type | undefined>;

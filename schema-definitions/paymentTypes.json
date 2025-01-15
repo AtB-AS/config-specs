@@ -5,12 +5,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": [
-          "vipps",
-          "visa",
-          "mastercard",
-          "amex"
-        ]
+        "enum": ["vipps", "visa", "mastercard", "amex"]
       }
     },
     "web": {

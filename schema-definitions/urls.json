@@ -13,10 +13,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "lang",
-            "value"
-          ],
+          "required": ["lang", "value"],
           "additionalProperties": false
         },
         {

@@ -4,17 +4,13 @@
       "id": "ATB:PreassignedFareProduct:8808c360",
       "version": "ATB:Version:d918f8e3-eb23-4d62-9626-a5cbd02a1dee",
       "type": "single",
-      "distributionChannel": [
-        "app"
-      ],
+      "distributionChannel": ["app"],
       "name": {
         "lang": "nob",
         "value": "Enkeltbillett"
       },
       "limitations": {
-        "userProfileRefs": [
-          "ATB:UserProfile:2832569f"
-        ]
+        "userProfileRefs": ["ATB:UserProfile:2832569f"]
       }
     }
   ],
@@ -28,14 +24,7 @@
       "version": "4",
       "geometry": {
         "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              10.73617214148,
-              63.31324444455
-            ]
-          ]
-        ]
+        "coordinates": [[[10.73617214148, 63.31324444455]]]
       }
     }
   ],

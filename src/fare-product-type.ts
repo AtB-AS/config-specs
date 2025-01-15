@@ -42,10 +42,7 @@ export const OfferEndpoint = z.union([
   z.literal('authority'),
 ]);
 
-export const Direction = z.union([
-  z.literal('one-way'),
-  z.literal('two-way'),
-]);
+export const Direction = z.union([z.literal('one-way'), z.literal('two-way')]);
 
 export const ProductTypeTransportModes = z.object({
   mode: TransportModeType,

@@ -131,6 +131,9 @@
             "additionalProperties": false
           }
         },
+        "scooterFaqs": {
+          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
+        },
         "benefitIdsRequiringValueCode": {
           "type": "array",
           "items": {
