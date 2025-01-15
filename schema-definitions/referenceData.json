@@ -33,10 +33,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "lang",
-                  "value"
-                ],
+                "required": ["lang", "value"],
                 "additionalProperties": false
               },
               {
@@ -75,9 +72,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "userProfileRefs"
-            ],
+            "required": ["userProfileRefs"],
             "additionalProperties": false
           },
           "durationDays": {
@@ -169,10 +164,7 @@
                 }
               }
             },
-            "required": [
-              "type",
-              "coordinates"
-            ],
+            "required": ["type", "coordinates"],
             "additionalProperties": false
           },
           "description": {
@@ -182,12 +174,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "id",
-          "name",
-          "version",
-          "geometry"
-        ],
+        "required": ["id", "name", "version", "geometry"],
         "additionalProperties": false
       }
     },
@@ -233,13 +220,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "id",
-          "userTypeString",
-          "userType",
-          "version",
-          "name"
-        ],
+        "required": ["id", "userTypeString", "userType", "version", "name"],
         "additionalProperties": false
       }
     },
@@ -286,29 +267,17 @@
                 }
               }
             },
-            "required": [
-              "type",
-              "coordinates"
-            ],
+            "required": ["type", "coordinates"],
             "additionalProperties": false
           }
         },
-        "required": [
-          "id",
-          "name",
-          "enabled",
-          "geometry"
-        ],
+        "required": ["id", "name", "enabled", "geometry"],
         "additionalProperties": false
       }
     },
     "preassignedFareProducts": {}
   },
-  "required": [
-    "preassignedFareProducts_v2",
-    "tariffZones",
-    "userProfiles"
-  ],
+  "required": ["preassignedFareProducts_v2", "tariffZones", "userProfiles"],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }

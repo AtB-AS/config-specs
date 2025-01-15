@@ -156,10 +156,7 @@
           "type": "number"
         }
       },
-      "required": [
-        "lat",
-        "lon"
-      ],
+      "required": ["lat", "lon"],
       "additionalProperties": false
     },
     "defaultTariffZone": {
@@ -167,10 +164,7 @@
     },
     "defaultOfferSearchMode": {
       "type": "string",
-      "enum": [
-        "zone",
-        "stop-place"
-      ]
+      "enum": ["zone", "stop-place"]
     },
     "disabledLoginMethods": {
       "type": "object",
@@ -179,11 +173,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": [
-              "otp",
-              "email",
-              "vipps"
-            ]
+            "enum": ["otp", "email", "vipps"]
           }
         },
         "web": {
@@ -196,9 +186,7 @@
       "additionalProperties": false
     }
   },
-  "required": [
-    "vatPercent"
-  ],
+  "required": ["vatPercent"],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }

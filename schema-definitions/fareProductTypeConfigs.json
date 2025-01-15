@@ -269,7 +269,7 @@
         },
         "direction": {
           "type": "string",
-          "enum": ["one-way","two-way"]
+          "enum": ["one-way", "two-way"]
         }
       },
       "required": [

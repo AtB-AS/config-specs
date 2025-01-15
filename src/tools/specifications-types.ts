@@ -127,5 +127,5 @@ export const jsonSchemas = {
   notificationConfig: zodToJsonSchema(NotificationConfig),
   consents: zodToJsonSchema(Consents),
   referenceData: zodToJsonSchema(ReferenceData),
-  stopSignalButtonConfig: zodToJsonSchema(StopSignalButtonConfig)
+  stopSignalButtonConfig: zodToJsonSchema(StopSignalButtonConfig),
 } satisfies Record<SchemaNames, JsonSchema7Type | undefined>;

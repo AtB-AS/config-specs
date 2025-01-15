@@ -156,9 +156,7 @@
             }
           }
         },
-        "required": [
-          "mode"
-        ],
+        "required": ["mode"],
         "additionalProperties": false
       },
       "default": [

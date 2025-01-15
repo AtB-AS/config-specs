@@ -9,8 +9,12 @@ export const StopSignalModeAndSubmodes = z.object({
 export const StopSignalButtonConfig = z.object({
   activationWindowStartMinutesBefore: z.number().default(60),
   activationWindowEndMinutesBefore: z.number().default(2),
-  modes: z.array(StopSignalModeAndSubmodes).default([{mode: 'bus'}, {mode: 'tram'}]),
+  modes: z
+    .array(StopSignalModeAndSubmodes)
+    .default([{mode: 'bus'}, {mode: 'tram'}]),
 });
 
 export type StopSignalButtonConfigType = z.infer<typeof StopSignalButtonConfig>;
-export type StopSignalModeAndSubmodesType = z.infer<typeof StopSignalModeAndSubmodes>;
+export type StopSignalModeAndSubmodesType = z.infer<
+  typeof StopSignalModeAndSubmodes
+>;
