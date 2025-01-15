@@ -141,7 +141,7 @@
           }
         }
       },
-      "required": ["operators", "scooterFaqs"],
+      "required": ["operators"],
       "additionalProperties": false
     }
   },
