@@ -62,6 +62,7 @@ export const schemaTypes = {
   travelSearchFilters: TravelSearchFilters,
   mobility: z.object({
     operators: z.array(MobilityOperator),
+    scooterFaqs: LanguageAndTextTypeArray,
   }),
   other: Other,
   paymentTypes: PaymentTypes,
@@ -95,6 +96,7 @@ export const jsonSchemas = {
   mobility: zodToJsonSchema(
     z.object({
       operators: z.array(MobilityOperator),
+      scooterFaqs: LanguageAndTextTypeArray,
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
     }),
     {
