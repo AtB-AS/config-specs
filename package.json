@@ -20,7 +20,7 @@
     "prepublishOnly": "yarn build",
     "cli": "node -r @swc-node/register src/tools/bin.ts",
     "gen": "node -r @swc-node/register src/tools/generate-schemas.ts",
-    "build": "rimraf lib && yarn gen && tsc",
+    "build": "rimraf lib && yarn gen && tsc && yarn lint",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "lint": "npx prettier . --write"

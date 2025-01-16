@@ -41,3 +41,11 @@ export const MobilityOperator = z.object({
 });
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;
+
+export const ScooterFaq = z.object({
+  id: z.string(),
+  title: LanguageAndTextTypeArray.nonempty(),
+  description: LanguageAndTextTypeArray.nonempty(),
+});
+
+export type ScooterFaqType = z.infer<typeof ScooterFaq>;

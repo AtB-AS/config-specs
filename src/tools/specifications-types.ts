@@ -22,7 +22,8 @@ import {
   FormFactor,
   MobilityOperator,
   OperatorBenefitId,
-} from '../mobility-operators';
+  ScooterFaq,
+} from '../mobility';
 import {ConfigurableLinks} from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 import {NotificationConfig} from '../notification-config';
@@ -95,7 +96,7 @@ export const jsonSchemas = {
   mobility: zodToJsonSchema(
     z.object({
       operators: z.array(MobilityOperator),
-      scooterFaqs: LanguageAndTextTypeArray.optional(),
+      scooterFaqs: z.array(ScooterFaq).optional(),
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
     }),
     {

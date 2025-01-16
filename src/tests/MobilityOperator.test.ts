@@ -4,7 +4,7 @@ import {
   MobilityOperatorType,
   OperatorBenefit,
   OperatorBenefitType,
-} from '../mobility-operators';
+} from '../mobility';
 
 test('MobilityOperator', () => {
   expect(

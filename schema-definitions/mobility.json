@@ -132,7 +132,31 @@
           }
         },
         "scooterFaqs": {
-          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
+                },
+                "minItems": 1
+              },
+              "description": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
+                },
+                "minItems": 1
+              }
+            },
+            "required": ["id", "title", "description"],
+            "additionalProperties": false
+          }
         },
         "benefitIdsRequiringValueCode": {
           "type": "array",
