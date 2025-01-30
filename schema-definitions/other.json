@@ -52,6 +52,7 @@
           "domesticFlight",
           "domesticScheduledFlight",
           "dragLift",
+          "escooter",
           "expressBus",
           "funicular",
           "helicopterService",
