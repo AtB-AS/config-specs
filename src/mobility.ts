@@ -40,7 +40,7 @@ export const MobilityOperator = z.object({
   benefits: z.array(OperatorBenefit).optional().default([]),
   brandAssets: z
     .object({
-      brandImageUrl: z.string().optional().describe('base64 logo'),
+      brandImageUrl: z.string().describe('base64 logo'),
     })
     .optional()
     .describe('modeled like brandAssets in GBFS'),
