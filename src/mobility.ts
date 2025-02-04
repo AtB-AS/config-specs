@@ -49,3 +49,13 @@ export const ScooterFaq = z.object({
 });
 
 export type ScooterFaqType = z.infer<typeof ScooterFaq>;
+
+export const BonusProduct = z.object({
+  id: z.string(),
+  price: z.number().int().positive(),
+  title: LanguageAndTextTypeArray.nonempty(),
+  description: LanguageAndTextTypeArray.nonempty(),
+  logoUrl: z.string(),
+});
+
+export type BonusProductType = z.infer<typeof BonusProduct>;
