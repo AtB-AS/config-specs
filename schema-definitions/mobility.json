@@ -125,6 +125,17 @@
                   "additionalProperties": false
                 },
                 "default": []
+              },
+              "brandAssets": {
+                "type": "object",
+                "properties": {
+                  "brandImageUrl": {
+                    "type": "string",
+                    "description": "base64 logo"
+                  }
+                },
+                "additionalProperties": false,
+                "description": "modeled like brandAssets in GBFS"
               }
             },
             "required": ["id", "name", "formFactors"],

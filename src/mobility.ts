@@ -38,6 +38,12 @@ export const MobilityOperator = z.object({
   showInApp: z.boolean().default(false),
   formFactors: z.array(FormFactor).nonempty(),
   benefits: z.array(OperatorBenefit).optional().default([]),
+  brandAssets: z
+    .object({
+      brandImageUrl: z.string().optional().describe('base64 logo'),
+    })
+    .optional()
+    .describe('modeled like brandAssets in GBFS'),
 });
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;
