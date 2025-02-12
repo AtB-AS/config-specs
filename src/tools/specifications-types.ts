@@ -19,6 +19,7 @@ import {
   TravelSearchTransportModes,
 } from '../travel-search-filters';
 import {
+  BonusProduct,
   FormFactor,
   MobilityOperator,
   OperatorBenefitId,
@@ -98,6 +99,7 @@ export const jsonSchemas = {
       operators: z.array(MobilityOperator),
       scooterFaqs: z.array(ScooterFaq).optional(),
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
+      bonusProducts: z.array(BonusProduct).optional(),
     }),
     {
       name: 'MobilityOperator',
