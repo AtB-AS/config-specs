@@ -52,10 +52,15 @@ export type ScooterFaqType = z.infer<typeof ScooterFaq>;
 
 export const BonusProduct = z.object({
   id: z.string(),
+  isActive: z.boolean(),
+  operatorId: MobilityOperator.shape.id,
+  formFactors: z.array(FormFactor).nonempty(),
   price: z.number().int().positive(),
-  title: LanguageAndTextTypeArray.nonempty(),
-  description: LanguageAndTextTypeArray.nonempty(),
-  logoUrl: z.string(),
+  paymentDescription: LanguageAndTextTypeArray.nonempty(),
+  productDescription: z.object({
+    title: LanguageAndTextTypeArray.nonempty(),
+    description: LanguageAndTextTypeArray.nonempty(),
+  }),
 });
 
 export type BonusProductType = z.infer<typeof BonusProduct>;
