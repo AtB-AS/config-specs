@@ -65,6 +65,12 @@
         },
         "externalRealtimeMap": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "tileServerBaseUrl": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "mapboxSpriteUrl": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }
       },
       "additionalProperties": false

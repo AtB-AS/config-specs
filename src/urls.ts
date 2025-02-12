@@ -12,6 +12,8 @@ export const ConfigurableLinks = z.object({
   iosStoreListing: LanguageAndTextTypeArray.optional(),
   androidStoreListing: LanguageAndTextTypeArray.optional(),
   externalRealtimeMap: LanguageAndTextTypeArray.optional(),
+  tileServerBaseUrl: LanguageAndTextTypeArray.optional(),
+  mapboxSpriteUrl: LanguageAndTextTypeArray.optional(),
 });
 
 export type ConfigurableLinksType = z.infer<typeof ConfigurableLinks>;
