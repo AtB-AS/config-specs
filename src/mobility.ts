@@ -51,11 +51,14 @@ export const ScooterFaq = z.object({
 export type ScooterFaqType = z.infer<typeof ScooterFaq>;
 
 export const BonusProduct = z.object({
-  id: z.string(),
+  id: z.string().nonempty(),
   isActive: z.boolean(),
   operatorId: MobilityOperator.shape.id,
   formFactors: z.array(FormFactor).nonempty(),
-  price: z.number().int().positive(),
+  price: z.object({
+    amount: z.number().int().positive(),
+    currencyCode: z.literal('ATB_BONUS_POINT'),
+  }),
   paymentDescription: LanguageAndTextTypeArray.nonempty(),
   productDescription: z.object({
     title: LanguageAndTextTypeArray.nonempty(),
