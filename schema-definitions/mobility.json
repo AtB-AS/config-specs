@@ -170,7 +170,8 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
               },
               "isActive": {
                 "type": "boolean"
@@ -186,8 +187,19 @@
                 "minItems": 1
               },
               "price": {
-                "type": "integer",
-                "exclusiveMinimum": 0
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0
+                  },
+                  "currencyCode": {
+                    "type": "string",
+                    "const": "ATB_BONUS_POINT"
+                  }
+                },
+                "required": ["amount", "currencyCode"],
+                "additionalProperties": false
               },
               "paymentDescription": {
                 "type": "array",
