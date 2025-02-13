@@ -187,6 +187,84 @@
           "items": {
             "$ref": "#/definitions/OperatorBenefitId"
           }
+        },
+        "bonusProducts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "isActive": {
+                "type": "boolean"
+              },
+              "operatorId": {
+                "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/id"
+              },
+              "formFactors": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/FormFactor"
+                },
+                "minItems": 1
+              },
+              "price": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0
+                  },
+                  "currencyCode": {
+                    "type": "string",
+                    "const": "ATB_BONUS_POINT"
+                  }
+                },
+                "required": ["amount", "currencyCode"],
+                "additionalProperties": false
+              },
+              "paymentDescription": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
+                },
+                "minItems": 1
+              },
+              "productDescription": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
+                    },
+                    "minItems": 1
+                  },
+                  "description": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
+                    },
+                    "minItems": 1
+                  }
+                },
+                "required": ["title", "description"],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "isActive",
+              "operatorId",
+              "formFactors",
+              "price",
+              "paymentDescription",
+              "productDescription"
+            ],
+            "additionalProperties": false
+          }
         }
       },
       "required": ["operators"],
