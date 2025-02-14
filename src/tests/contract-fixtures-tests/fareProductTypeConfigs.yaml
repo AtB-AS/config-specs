@@ -161,7 +161,6 @@ fareProductTypeConfigs:
       productSelectionMode: none
       offerEndpoint: stop-places
       requiresLogin: true
-      requiresTokenOnMobile: true
       onBehalfOfEnabled: true
   - type: boat-period
     name:
@@ -193,7 +192,6 @@ fareProductTypeConfigs:
           value: Select duration
       offerEndpoint: stop-places
       requiresLogin: true
-      requiresTokenOnMobile: true
       onBehalfOfEnabled: true
   - type: youth-ticket
     name:
