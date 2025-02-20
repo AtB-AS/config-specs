@@ -48,6 +48,7 @@ export const MobilityOperator = z.object({
     })
     .optional()
     .describe('modeled 1-1 like brandAssets in EnTur mobility API'),
+  isDeepIntegrationEnabled: z.boolean().default(false),
 });
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;
