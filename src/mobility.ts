@@ -1,6 +1,11 @@
 import {z} from 'zod';
 import {LanguageAndTextTypeArray} from './common';
 
+export const titleAndDescription = z.object({
+  title: LanguageAndTextTypeArray.nonempty(),
+  description: LanguageAndTextTypeArray.nonempty(),
+});
+
 export const FormFactor = z.union([
   z.literal('SCOOTER'),
   z.literal('BICYCLE'),
@@ -53,11 +58,11 @@ export const MobilityOperator = z.object({
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;
 
-export const ScooterFaq = z.object({
-  id: z.string(),
-  title: LanguageAndTextTypeArray.nonempty(),
-  description: LanguageAndTextTypeArray.nonempty(),
-});
+export const ScooterFaq = z
+  .object({
+    id: z.string(),
+  })
+  .merge(titleAndDescription);
 
 export type ScooterFaqType = z.infer<typeof ScooterFaq>;
 
@@ -71,10 +76,13 @@ export const BonusProduct = z.object({
     currencyCode: z.literal('ATB_BONUS_POINT'),
   }),
   paymentDescription: LanguageAndTextTypeArray.nonempty(),
-  productDescription: z.object({
-    title: LanguageAndTextTypeArray.nonempty(),
-    description: LanguageAndTextTypeArray.nonempty(),
-  }),
+  productDescription: titleAndDescription,
 });
 
 export type BonusProductType = z.infer<typeof BonusProduct>;
+
+export const BonusTexts = z.object({
+  howBonusWorks: titleAndDescription,
+});
+
+export type BonusTextsType = z.infer<typeof BonusTexts>;

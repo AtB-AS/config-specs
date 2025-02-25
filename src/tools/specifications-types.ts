@@ -20,6 +20,7 @@ import {
 } from '../travel-search-filters';
 import {
   BonusProduct,
+  BonusTexts,
   FormFactor,
   MobilityOperator,
   OperatorBenefitId,
@@ -100,6 +101,7 @@ export const jsonSchemas = {
       scooterFaqs: z.array(ScooterFaq).optional(),
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
       bonusProducts: z.array(BonusProduct).optional(),
+      bonusTexts: z.array(BonusTexts).optional(),
     }),
     {
       name: 'MobilityOperator',
