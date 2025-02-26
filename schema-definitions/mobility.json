@@ -263,20 +263,17 @@
           }
         },
         "bonusTexts": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "howBonusWorks": {
-                "$ref": "#/definitions/MobilityOperator/properties/bonusProducts/items/properties/productDescription"
-              }
-            },
-            "required": ["howBonusWorks"],
-            "additionalProperties": false
-          }
+          "type": "object",
+          "properties": {
+            "howBonusWorks": {
+              "$ref": "#/definitions/MobilityOperator/properties/bonusProducts/items/properties/productDescription"
+            }
+          },
+          "required": ["howBonusWorks"],
+          "additionalProperties": false
         }
       },
-      "required": ["operators", "bonusTexts"],
+      "required": ["operators"],
       "additionalProperties": false
     }
   },
