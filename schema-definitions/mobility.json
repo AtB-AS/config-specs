@@ -186,6 +186,29 @@
             "additionalProperties": false
           }
         },
+        "ScooterConsentLines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "illustration": {
+                "type": "string"
+              },
+              "title": {
+                "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/title"
+              },
+              "description": {
+                "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/description"
+              }
+            },
+            "required": ["id", "title", "description"],
+            "additionalProperties": false
+          }
+        },
         "benefitIdsRequiringValueCode": {
           "type": "array",
           "items": {
