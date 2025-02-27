@@ -66,6 +66,15 @@ export const ScooterFaq = z
 
 export type ScooterFaqType = z.infer<typeof ScooterFaq>;
 
+export const ScooterConsentLine = z
+  .object({
+    id: z.string().nonempty(),
+    illustration: z.string().optional(),
+  })
+  .merge(titleAndDescription);
+
+export type ScooterConsentLineType = z.infer<typeof ScooterConsentLine>;
+
 export const BonusProduct = z.object({
   id: z.string().nonempty(),
   isActive: z.boolean(),
