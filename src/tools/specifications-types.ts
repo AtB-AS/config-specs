@@ -100,7 +100,7 @@ export const jsonSchemas = {
     z.object({
       operators: z.array(MobilityOperator),
       scooterFaqs: z.array(ScooterFaq).optional(),
-      ScooterConsentLines: z.array(ScooterConsentLine).optional(),
+      scooterConsentLines: z.array(ScooterConsentLine).optional(),
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
       bonusProducts: z.array(BonusProduct).optional(),
       bonusTexts: BonusTexts.optional(),
