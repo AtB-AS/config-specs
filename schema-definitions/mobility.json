@@ -186,7 +186,7 @@
             "additionalProperties": false
           }
         },
-        "ScooterConsentLines": {
+        "scooterConsentLines": {
           "type": "array",
           "items": {
             "type": "object",
