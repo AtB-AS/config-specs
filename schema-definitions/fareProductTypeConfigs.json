@@ -214,10 +214,6 @@
         "requiresLogin": {
           "type": "boolean"
         },
-        "requiresTokenOnMobile": {
-          "type": "boolean",
-          "default": false
-        },
         "offerEndpoint": {
           "type": "string",
           "enum": ["zones", "stop-places", "authority"]
