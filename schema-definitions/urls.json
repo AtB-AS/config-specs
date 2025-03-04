@@ -71,6 +71,9 @@
         },
         "mapboxSpriteUrl": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "mobilityTermsUrl": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }
       },
       "additionalProperties": false
