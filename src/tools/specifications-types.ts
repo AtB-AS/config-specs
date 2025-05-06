@@ -105,7 +105,7 @@ export const jsonSchemas = {
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
       bonusProducts: z.array(BonusProduct).optional(),
       bonusTexts: BonusTexts.optional(),
-      BonusSource: BonusSource.optional(),
+      bonusSources: z.array(BonusSource).optional(),
     }),
     {
       name: 'MobilityOperator',
