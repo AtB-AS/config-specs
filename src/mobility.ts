@@ -94,3 +94,17 @@ export const BonusTexts = z.object({
 });
 
 export type BonusTextsType = z.infer<typeof BonusTexts>;
+
+export const BonusSource = z.object({
+  id: z.string(),
+  preassignedFareProductId: z.string(),
+  userProfileIds: z.array(z.string()),
+  amountByEnrollment: z.array(
+    z.object({
+      enrollmentId: z.string().optional(), // which enrollment (pilot group) a user is in
+      amount: z.number().int().positive(),
+    }),
+  ),
+});
+
+export type BonusSourceType = z.infer<typeof BonusSource>;
