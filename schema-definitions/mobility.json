@@ -295,6 +295,50 @@
           },
           "required": ["howBonusWorks"],
           "additionalProperties": false
+        },
+        "bonusSources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "preassignedFareProductId": {
+                "type": "string"
+              },
+              "userProfileIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "amountByEnrollment": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "enrollmentId": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "type": "integer",
+                      "exclusiveMinimum": 0
+                    }
+                  },
+                  "required": ["amount"],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "id",
+              "preassignedFareProductId",
+              "userProfileIds",
+              "amountByEnrollment"
+            ],
+            "additionalProperties": false
+          }
         }
       },
       "required": ["operators"],

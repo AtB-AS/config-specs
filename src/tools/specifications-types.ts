@@ -24,6 +24,7 @@ import {
   FormFactor,
   MobilityOperator,
   OperatorBenefitId,
+  BonusSource,
   ScooterConsentLine,
   ScooterFaq,
 } from '../mobility';
@@ -104,6 +105,7 @@ export const jsonSchemas = {
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
       bonusProducts: z.array(BonusProduct).optional(),
       bonusTexts: BonusTexts.optional(),
+      bonusSources: z.array(BonusSource).optional(),
     }),
     {
       name: 'MobilityOperator',
