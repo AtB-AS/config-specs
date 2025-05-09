@@ -26,6 +26,7 @@ export const Other = z.object({
     })
     .optional(),
   defaultTariffZone: z.string().optional(),
+  defaultFareZone: z.string().optional(),
   defaultOfferSearchMode: OfferSearchMode.optional(),
   disabledLoginMethods: z
     .object({

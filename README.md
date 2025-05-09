@@ -45,6 +45,7 @@ const selectedZone2: ZoneSelectionMode =
 enableTokenToggleRestrictions: true
 tokenToggleMaxLimit: 3
 defaultTariffZone: NOR:TariffZone:8040
+defaultFareZone: NOR:FareZone:8040
 vatPercent: 12
 ```
 

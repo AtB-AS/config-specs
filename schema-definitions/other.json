@@ -163,6 +163,9 @@
     "defaultTariffZone": {
       "type": "string"
     },
+    "defaultFareZone": {
+      "type": "string"
+    },
     "defaultOfferSearchMode": {
       "type": "string",
       "enum": ["zone", "stop-place"]

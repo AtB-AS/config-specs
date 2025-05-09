@@ -256,6 +256,12 @@
             "type": "string"
           }
         },
+        "excludedFareZones": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "description": {
           "$ref": "#/definitions/FareProductTypeConfigSettings/properties/productSelectionTitle"
         },
