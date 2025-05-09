@@ -65,7 +65,9 @@ export const FareProductTypeConfig = z.object({
   illustration: z.string().optional(),
   name: LanguageAndTextTypeArray,
   transportModes: z.array(ProductTypeTransportModes),
+  /** @deprecated use excludedFareZones instead */
   excludedTariffZones: z.array(z.string()).optional(),
+  excludedFareZones: z.array(z.string()).optional(),
   description: LanguageAndTextTypeArray,
   configuration: FareProductTypeConfigSettings,
   isCollectionOfAccesses: z.boolean(),

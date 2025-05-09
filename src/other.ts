@@ -25,7 +25,9 @@ export const Other = z.object({
       lon: z.number(),
     })
     .optional(),
+  /** @deprecated use defaultFareZone instead */
   defaultTariffZone: z.string().optional(),
+  defaultFareZone: z.string().optional(),
   defaultOfferSearchMode: OfferSearchMode.optional(),
   disabledLoginMethods: z
     .object({

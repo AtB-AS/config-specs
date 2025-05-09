@@ -10,9 +10,14 @@ export const PreassignedFareProduct = z.object({
   name: LanguageAndTextType,
   limitations: z.object({
     userProfileRefs: z.array(z.string()),
-    tariffZoneRefs: z.array(z.string()).optional(),
     appVersionMin: z.string().optional(),
     appVersionMax: z.string().optional(),
+    fareZoneRefs: z.array(z.string()).optional(),
+    
+    /**
+     * @deprecated use fareZoneRefs instead
+     */
+    tariffZoneRefs: z.array(z.string()).optional(),
   }),
   durationDays: z.number().optional(),
   isApplicableOnSingleZoneOnly: z.boolean().optional(),
@@ -26,7 +31,24 @@ export const PreassignedFareProduct = z.object({
   warningMessage: LanguageAndTextTypeArray.optional(),
 });
 
+/**
+ * @deprecated
+ * 
+ * Use {@link FareZone} instead
+ */
 export const TariffZone = z.object({
+  id: z.string(),
+  name: LanguageAndTextType,
+  version: z.string(),
+  geometry: z.object({
+    type: z.literal('Polygon'),
+    coordinates: z.array(z.array(z.array(z.number()).length(2))),
+  }),
+  description: LanguageAndTextTypeArray.optional(),
+  isDefault: z.boolean().optional(),
+});
+
+export const FareZone = z.object({
   id: z.string(),
   name: LanguageAndTextType,
   version: z.string(),
@@ -68,7 +90,7 @@ export const UserProfile = z.object({
 
 export const ReferenceData = z.object({
   preassignedFareProducts_v2: z.array(PreassignedFareProduct),
-  tariffZones: z.array(TariffZone),
+  fareZones: z.array(FareZone),
   userProfiles: z.array(UserProfile),
   cityZones: z.array(CityZone).optional(),
 
@@ -76,10 +98,20 @@ export const ReferenceData = z.object({
    * @deprecated Use preassignedFareProducts_v2 instead
    */
   preassignedFareProducts: z.any(),
+
+  /**
+   * @deprecated Use fareZones instead
+   */
+  tariffZones: z.array(TariffZone),
+  
 });
 
 export type PreassignedFareProduct = z.infer<typeof PreassignedFareProduct>;
+
+/** @deprecated Use {@link FareZone} instead */
 export type TariffZone = z.infer<typeof TariffZone>;
+
+export type FareZone = z.infer<typeof FareZone>;
 export type CityZone = z.infer<typeof CityZone>;
 export type UserProfile = z.infer<typeof UserProfile>;
 export type ReferenceData = z.infer<typeof ReferenceData>;
