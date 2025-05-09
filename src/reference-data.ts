@@ -13,7 +13,7 @@ export const PreassignedFareProduct = z.object({
     appVersionMin: z.string().optional(),
     appVersionMax: z.string().optional(),
     fareZoneRefs: z.array(z.string()).optional(),
-    
+
     /**
      * @deprecated use fareZoneRefs instead
      */
@@ -33,7 +33,7 @@ export const PreassignedFareProduct = z.object({
 
 /**
  * @deprecated
- * 
+ *
  * Use {@link FareZone} instead
  */
 export const TariffZone = z.object({
@@ -103,7 +103,6 @@ export const ReferenceData = z.object({
    * @deprecated Use fareZones instead
    */
   tariffZones: z.array(TariffZone),
-  
 });
 
 export type PreassignedFareProduct = z.infer<typeof PreassignedFareProduct>;
