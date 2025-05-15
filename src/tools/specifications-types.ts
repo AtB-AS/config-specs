@@ -1,6 +1,5 @@
 import {z} from 'zod';
-import zodToJsonSchema from 'zod-to-json-schema';
-import {JsonSchema7Type} from 'zod-to-json-schema/src/parseDef';
+import zodToJsonSchema, {JsonSchema7Type} from 'zod-to-json-schema';
 import {
   LanguageAndTextType,
   LanguageAndTextTypeArray,
