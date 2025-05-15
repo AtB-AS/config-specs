@@ -331,12 +331,7 @@
       }
     }
   },
-  "required": [
-    "preassignedFareProducts_v2",
-    "fareZones",
-    "userProfiles",
-    "tariffZones"
-  ],
+  "required": ["preassignedFareProducts_v2", "userProfiles", "tariffZones"],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"
 }

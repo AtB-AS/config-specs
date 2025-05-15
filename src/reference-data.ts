@@ -90,7 +90,7 @@ export const UserProfile = z.object({
 
 export const ReferenceData = z.object({
   preassignedFareProducts_v2: z.array(PreassignedFareProduct),
-  fareZones: z.array(FareZone),
+  fareZones: z.array(FareZone).optional(),
   userProfiles: z.array(UserProfile),
   cityZones: z.array(CityZone).optional(),
 
