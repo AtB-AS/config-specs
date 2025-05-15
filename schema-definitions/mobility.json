@@ -131,7 +131,7 @@
                 "properties": {
                   "brandLastModified": {
                     "type": "string",
-                    "format": "date-time"
+                    "format": "date"
                   },
                   "brandTermsUrl": {
                     "type": "string",

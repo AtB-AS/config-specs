@@ -45,7 +45,7 @@ export const MobilityOperator = z.object({
   benefits: z.array(OperatorBenefit).optional().default([]),
   brandAssets: z
     .object({
-      brandLastModified: z.date(),
+      brandLastModified: z.string().date(),
       brandTermsUrl: z.string().url().optional(),
       brandImageUrl: z.string(),
       brandImageUrlDark: z.string().optional(),
