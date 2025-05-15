@@ -71,6 +71,7 @@
               "allFunicularServices",
               "allHireVehicles",
               "allTaxiServices",
+              "atbBookingBus",
               "bikeTaxi",
               "blackCab",
               "cableCar",
