@@ -19,12 +19,6 @@ export const Other = z.object({
     .string()
     .regex(/^\d{2}:\d{2}$/)
     .default('04:00'),
-  defaultFocusPoint: z
-    .object({
-      lat: z.number(),
-      lon: z.number(),
-    })
-    .optional(),
   /** @deprecated use defaultFareZone instead */
   defaultTariffZone: z.string().optional(),
   defaultFareZone: z.string().optional(),
