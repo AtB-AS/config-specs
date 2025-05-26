@@ -8,19 +8,19 @@ import {
 
 export const TravelSearchTransportModeIcon = z.object({
   transportMode: TransportModeType,
-  transportSubMode: TransportSubmodeType.optional(),
+  transportSubMode: TransportSubmodeType.nullish(),
 });
 
 export const TravelSearchTransportModes = z.object({
   transportMode: TransportModeType,
-  transportSubModes: z.array(TransportSubmodeType).optional(),
+  transportSubModes: z.array(TransportSubmodeType).nullish(),
 });
 
 export const TransportModeFilterOption = z.object({
   id: z.string(),
   icon: TravelSearchTransportModeIcon,
   text: LanguageAndTextTypeArray.nonempty(),
-  description: LanguageAndTextTypeArray.optional(),
+  description: LanguageAndTextTypeArray.nullish(),
   modes: z.array(TravelSearchTransportModes),
   selectedAsDefault: z.boolean(),
 });
@@ -28,7 +28,7 @@ export const TransportModeFilterOption = z.object({
 export const FlexibleTransportOption = z.object({
   id: z.string(),
   title: LanguageAndTextTypeArray.nonempty(),
-  label: LabelType.optional(),
+  label: LabelType.nullish(),
   description: LanguageAndTextTypeArray.nonempty(),
 });
 
@@ -54,9 +54,9 @@ export const TravelSearchPreference = z.object({
 });
 
 export const TravelSearchFilters = z.object({
-  transportModes: TransportModeFilterOption.array().optional(),
-  flexibleTransport: FlexibleTransportOption.optional(),
-  travelSearchPreferences: TravelSearchPreference.array().optional(),
+  transportModes: TransportModeFilterOption.array().nullish(),
+  flexibleTransport: FlexibleTransportOption.nullish(),
+  travelSearchPreferences: TravelSearchPreference.array().nullish(),
 });
 
 export type TravelSearchTransportModesType = z.infer<

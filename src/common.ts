@@ -147,8 +147,8 @@ export const LanguageAndTextType = z.union([
     value: z.string(),
   }),
   z.object({
-    language: z.string().optional(),
-    value: z.string().optional(),
+    language: z.string().nullish(),
+    value: z.string().nullish(),
   }),
 ]);
 

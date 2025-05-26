@@ -10,25 +10,25 @@ export const PreassignedFareProduct = z.object({
   name: LanguageAndTextType,
   limitations: z.object({
     userProfileRefs: z.array(z.string()),
-    appVersionMin: z.string().optional(),
-    appVersionMax: z.string().optional(),
-    fareZoneRefs: z.array(z.string()).optional(),
+    appVersionMin: z.string().nullish(),
+    appVersionMax: z.string().nullish(),
+    fareZoneRefs: z.array(z.string()).nullish(),
 
     /**
      * @deprecated use fareZoneRefs instead
      */
-    tariffZoneRefs: z.array(z.string()).optional(),
+    tariffZoneRefs: z.array(z.string()).nullish(),
   }),
-  durationDays: z.number().optional(),
-  isApplicableOnSingleZoneOnly: z.boolean().optional(),
-  isDefault: z.boolean().optional(),
-  alternativeNames: LanguageAndTextTypeArray.optional(),
-  zoneSelectionMode: ZoneSelectionMode.optional(),
-  description: LanguageAndTextTypeArray.optional(),
-  productDescription: LanguageAndTextTypeArray.optional(),
-  productAliasId: z.string().optional(),
-  productAlias: LanguageAndTextTypeArray.optional(),
-  warningMessage: LanguageAndTextTypeArray.optional(),
+  durationDays: z.number().nullish(),
+  isApplicableOnSingleZoneOnly: z.boolean().nullish(),
+  isDefault: z.boolean().nullish(),
+  alternativeNames: LanguageAndTextTypeArray.nullish(),
+  zoneSelectionMode: ZoneSelectionMode.nullish(),
+  description: LanguageAndTextTypeArray.nullish(),
+  productDescription: LanguageAndTextTypeArray.nullish(),
+  productAliasId: z.string().nullish(),
+  productAlias: LanguageAndTextTypeArray.nullish(),
+  warningMessage: LanguageAndTextTypeArray.nullish(),
 });
 
 /**
@@ -44,8 +44,8 @@ export const TariffZone = z.object({
     type: z.literal('Polygon'),
     coordinates: z.array(z.array(z.array(z.number()).length(2))),
   }),
-  description: LanguageAndTextTypeArray.optional(),
-  isDefault: z.boolean().optional(),
+  description: LanguageAndTextTypeArray.nullish(),
+  isDefault: z.boolean().nullish(),
 });
 
 export const FareZone = z.object({
@@ -56,17 +56,17 @@ export const FareZone = z.object({
     type: z.literal('Polygon'),
     coordinates: z.array(z.array(z.array(z.number()).length(2))),
   }),
-  description: LanguageAndTextTypeArray.optional(),
-  isDefault: z.boolean().optional(),
+  description: LanguageAndTextTypeArray.nullish(),
+  isDefault: z.boolean().nullish(),
 });
 
 export const CityZone = z.object({
   id: z.string(),
   name: z.string(),
   enabled: z.boolean(),
-  moreInfoUrl: LanguageAndTextTypeArray.optional(),
-  orderUrl: LanguageAndTextTypeArray.optional(),
-  phoneNumber: z.string().optional(),
+  moreInfoUrl: LanguageAndTextTypeArray.nullish(),
+  orderUrl: LanguageAndTextTypeArray.nullish(),
+  phoneNumber: z.string().nullish(),
   geometry: z.object({
     type: z.literal('Polygon'),
     coordinates: z.array(z.array(z.array(z.number()).length(2))),
@@ -79,20 +79,20 @@ export const UserProfile = z.object({
   userType: z.number(),
   version: z.string(),
   name: LanguageAndTextType,
-  alternativeNames: LanguageAndTextTypeArray.optional(),
-  description: LanguageAndTextType.optional(),
-  alternativeDescriptions: LanguageAndTextTypeArray.optional(),
-  hideFromDefaultTravellerSelection: z.boolean().optional(),
-  minAge: z.number().optional(),
-  maxAge: z.number().optional(),
-  emoji: z.string().optional(),
+  alternativeNames: LanguageAndTextTypeArray.nullish(),
+  description: LanguageAndTextType.nullish(),
+  alternativeDescriptions: LanguageAndTextTypeArray.nullish(),
+  hideFromDefaultTravellerSelection: z.boolean().nullish(),
+  minAge: z.number().nullish(),
+  maxAge: z.number().nullish(),
+  emoji: z.string().nullish(),
 });
 
 export const ReferenceData = z.object({
   preassignedFareProducts_v2: z.array(PreassignedFareProduct),
   fareZones: z.array(FareZone),
   userProfiles: z.array(UserProfile),
-  cityZones: z.array(CityZone).optional(),
+  cityZones: z.array(CityZone).nullish(),
 
   /**
    * @deprecated Use preassignedFareProducts_v2 instead
