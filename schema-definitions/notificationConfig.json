@@ -39,10 +39,10 @@
                   "type": "object",
                   "properties": {
                     "language": {
-                      "type": "string"
+                      "type": ["string", "null"]
                     },
                     "value": {
-                      "type": "string"
+                      "type": ["string", "null"]
                     }
                   },
                   "additionalProperties": false

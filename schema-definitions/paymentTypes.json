@@ -2,17 +2,31 @@
   "type": "object",
   "properties": {
     "app": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": ["vipps", "visa", "mastercard", "amex"]
-      }
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["vipps", "visa", "mastercard", "amex"]
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "web": {
-      "type": "array",
-      "items": {
-        "$ref": "#/properties/app/items"
-      }
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/properties/app/anyOf/0/items"
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
     }
   },
   "additionalProperties": false,

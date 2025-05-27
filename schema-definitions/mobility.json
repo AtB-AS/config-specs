@@ -37,118 +37,167 @@
                 "minItems": 1
               },
               "benefits": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "$ref": "#/definitions/OperatorBenefitId"
-                    },
-                    "imageWhenActive": {
-                      "type": "string"
-                    },
-                    "headingWhenActive": {
-                      "type": "array",
-                      "items": {
-                        "anyOf": [
-                          {
-                            "type": "object",
-                            "properties": {
-                              "lang": {
-                                "type": "string"
-                              },
-                              "value": {
-                                "type": "string"
-                              }
-                            },
-                            "required": ["lang", "value"],
-                            "additionalProperties": false
-                          },
-                          {
-                            "type": "object",
-                            "properties": {
-                              "language": {
-                                "type": "string"
-                              },
-                              "value": {
-                                "type": "string"
-                              }
-                            },
-                            "additionalProperties": false
-                          }
-                        ]
-                      }
-                    },
-                    "descriptionWhenActive": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
-                    },
-                    "imageWhenNotActive": {
-                      "type": "string"
-                    },
-                    "headingWhenNotActive": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
-                    },
-                    "descriptionWhenNotActive": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
-                    },
-                    "callToAction": {
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
                       "type": "object",
                       "properties": {
-                        "url": {
-                          "type": "string"
+                        "id": {
+                          "$ref": "#/definitions/OperatorBenefitId"
                         },
-                        "name": {
-                          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
+                        "imageWhenActive": {
+                          "type": ["string", "null"]
+                        },
+                        "headingWhenActive": {
+                          "anyOf": [
+                            {
+                              "type": "array",
+                              "items": {
+                                "anyOf": [
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "lang": {
+                                        "type": "string"
+                                      },
+                                      "value": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": ["lang", "value"],
+                                    "additionalProperties": false
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "language": {
+                                        "type": ["string", "null"]
+                                      },
+                                      "value": {
+                                        "type": ["string", "null"]
+                                      }
+                                    },
+                                    "additionalProperties": false
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "descriptionWhenActive": {
+                          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/anyOf/0/items/properties/headingWhenActive/anyOf/0"
+                        },
+                        "imageWhenNotActive": {
+                          "type": ["string", "null"]
+                        },
+                        "headingWhenNotActive": {
+                          "anyOf": [
+                            {
+                              "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/anyOf/0/items/properties/headingWhenActive/anyOf/0"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "descriptionWhenNotActive": {
+                          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/anyOf/0/items/properties/headingWhenActive/anyOf/0"
+                        },
+                        "callToAction": {
+                          "type": "object",
+                          "properties": {
+                            "url": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "anyOf": [
+                                {
+                                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/anyOf/0/items/properties/headingWhenActive/anyOf/0"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            }
+                          },
+                          "required": ["url"],
+                          "additionalProperties": false
+                        },
+                        "ticketDescription": {
+                          "anyOf": [
+                            {
+                              "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/anyOf/0/items/properties/headingWhenActive/anyOf/0"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "formFactors": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/definitions/FormFactor"
+                          },
+                          "minItems": 1
                         }
                       },
-                      "required": ["url"],
+                      "required": [
+                        "id",
+                        "descriptionWhenActive",
+                        "descriptionWhenNotActive",
+                        "callToAction",
+                        "formFactors"
+                      ],
                       "additionalProperties": false
-                    },
-                    "ticketDescription": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
-                    },
-                    "formFactors": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/definitions/FormFactor"
-                      },
-                      "minItems": 1
                     }
                   },
-                  "required": [
-                    "id",
-                    "descriptionWhenActive",
-                    "descriptionWhenNotActive",
-                    "callToAction",
-                    "formFactors"
-                  ],
-                  "additionalProperties": false
-                },
+                  {
+                    "type": "null"
+                  }
+                ],
                 "default": []
               },
               "brandAssets": {
-                "type": "object",
-                "properties": {
-                  "brandLastModified": {
-                    "type": "string",
-                    "format": "date"
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "brandLastModified": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "brandTermsUrl": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "format": "uri"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "brandImageUrl": {
+                        "type": "string"
+                      },
+                      "brandImageUrlDark": {
+                        "type": ["string", "null"]
+                      },
+                      "color": {
+                        "type": ["string", "null"]
+                      }
+                    },
+                    "required": ["brandLastModified", "brandImageUrl"],
+                    "additionalProperties": false
                   },
-                  "brandTermsUrl": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "brandImageUrl": {
-                    "type": "string"
-                  },
-                  "brandImageUrlDark": {
-                    "type": "string"
-                  },
-                  "color": {
-                    "type": "string"
+                  {
+                    "type": "null"
                   }
-                },
-                "required": ["brandLastModified", "brandImageUrl"],
-                "additionalProperties": false,
+                ],
                 "description": "modeled 1-1 like brandAssets in EnTur mobility API"
               },
               "isDeepIntegrationEnabled": {
@@ -161,185 +210,227 @@
           }
         },
         "scooterFaqs": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
-                },
-                "minItems": 1
-              },
-              "description": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
-                },
-                "minItems": 1
-              }
-            },
-            "required": ["id", "title", "description"],
-            "additionalProperties": false
-          }
-        },
-        "scooterConsentLines": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "minLength": 1
-              },
-              "illustration": {
-                "type": "string"
-              },
-              "description": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
-                },
-                "minItems": 1
-              }
-            },
-            "required": ["id", "description"],
-            "additionalProperties": false
-          }
-        },
-        "benefitIdsRequiringValueCode": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/OperatorBenefitId"
-          }
-        },
-        "bonusProducts": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "minLength": 1
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "operatorId": {
-                "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/id"
-              },
-              "formFactors": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/FormFactor"
-                },
-                "minItems": 1
-              },
-              "price": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
                 "type": "object",
                 "properties": {
-                  "amount": {
-                    "type": "integer",
-                    "exclusiveMinimum": 0
+                  "id": {
+                    "type": "string"
                   },
-                  "currencyCode": {
-                    "type": "string",
-                    "const": "ATB_BONUS_POINT"
-                  }
-                },
-                "required": ["amount", "currencyCode"],
-                "additionalProperties": false
-              },
-              "paymentDescription": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
-                },
-                "minItems": 1
-              },
-              "productDescription": {
-                "type": "object",
-                "properties": {
                   "title": {
-                    "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/title"
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/anyOf/0/items/properties/headingWhenActive/anyOf/0/items"
+                    },
+                    "minItems": 1
                   },
                   "description": {
-                    "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/description"
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/anyOf/0/items/properties/headingWhenActive/anyOf/0/items"
+                    },
+                    "minItems": 1
                   }
                 },
-                "required": ["title", "description"],
+                "required": ["id", "title", "description"],
                 "additionalProperties": false
               }
             },
-            "required": [
-              "id",
-              "isActive",
-              "operatorId",
-              "formFactors",
-              "price",
-              "paymentDescription",
-              "productDescription"
-            ],
-            "additionalProperties": false
-          }
-        },
-        "bonusTexts": {
-          "type": "object",
-          "properties": {
-            "howBonusWorks": {
-              "$ref": "#/definitions/MobilityOperator/properties/bonusProducts/items/properties/productDescription"
+            {
+              "type": "null"
             }
-          },
-          "required": ["howBonusWorks"],
-          "additionalProperties": false
+          ]
         },
-        "bonusSources": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "preassignedFareProductId": {
-                "type": "string"
-              },
-              "userProfileIds": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "amountByEnrollment": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "enrollmentId": {
-                      "type": "string"
-                    },
-                    "amount": {
-                      "type": "integer",
-                      "exclusiveMinimum": 0
-                    }
+        "scooterConsentLines": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1
                   },
-                  "required": ["amount"],
-                  "additionalProperties": false
-                }
+                  "illustration": {
+                    "type": ["string", "null"]
+                  },
+                  "description": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/anyOf/0/items/properties/headingWhenActive/anyOf/0/items"
+                    },
+                    "minItems": 1
+                  }
+                },
+                "required": ["id", "description"],
+                "additionalProperties": false
               }
             },
-            "required": [
-              "id",
-              "preassignedFareProductId",
-              "userProfileIds",
-              "amountByEnrollment"
-            ],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "benefitIdsRequiringValueCode": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OperatorBenefitId"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bonusProducts": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "operatorId": {
+                    "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/id"
+                  },
+                  "formFactors": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/FormFactor"
+                    },
+                    "minItems": 1
+                  },
+                  "price": {
+                    "type": "object",
+                    "properties": {
+                      "amount": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0
+                      },
+                      "currencyCode": {
+                        "type": "string",
+                        "const": "ATB_BONUS_POINT"
+                      }
+                    },
+                    "required": ["amount", "currencyCode"],
+                    "additionalProperties": false
+                  },
+                  "paymentDescription": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/anyOf/0/items/properties/headingWhenActive/anyOf/0/items"
+                    },
+                    "minItems": 1
+                  },
+                  "productDescription": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/anyOf/0/items/properties/title"
+                      },
+                      "description": {
+                        "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/anyOf/0/items/properties/description"
+                      }
+                    },
+                    "required": ["title", "description"],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "id",
+                  "isActive",
+                  "operatorId",
+                  "formFactors",
+                  "price",
+                  "paymentDescription",
+                  "productDescription"
+                ],
+                "additionalProperties": false
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bonusTexts": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "howBonusWorks": {
+                  "$ref": "#/definitions/MobilityOperator/properties/bonusProducts/anyOf/0/items/properties/productDescription"
+                }
+              },
+              "required": ["howBonusWorks"],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bonusSources": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "preassignedFareProductId": {
+                    "type": "string"
+                  },
+                  "userProfileIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "amountByEnrollment": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "enrollmentId": {
+                          "type": ["string", "null"]
+                        },
+                        "amount": {
+                          "type": "integer",
+                          "exclusiveMinimum": 0
+                        }
+                      },
+                      "required": ["amount"],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "preassignedFareProductId",
+                  "userProfileIds",
+                  "amountByEnrollment"
+                ],
+                "additionalProperties": false
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       },
       "required": ["operators"],

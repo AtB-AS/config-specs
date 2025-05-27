@@ -3,7 +3,7 @@ import {TransportModeType, TransportSubmodeType} from './common';
 
 export const StopSignalModeAndSubmodes = z.object({
   mode: TransportModeType,
-  submodes: z.array(TransportSubmodeType).optional(),
+  submodes: z.array(TransportSubmodeType).nullish(),
 });
 
 export const StopSignalButtonConfig = z.object({

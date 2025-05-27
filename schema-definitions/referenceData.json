@@ -40,10 +40,10 @@
                 "type": "object",
                 "properties": {
                   "language": {
-                    "type": "string"
+                    "type": ["string", "null"]
                   },
                   "value": {
-                    "type": "string"
+                    "type": ["string", "null"]
                   }
                 },
                 "additionalProperties": false
@@ -60,69 +60,125 @@
                 }
               },
               "appVersionMin": {
-                "type": "string"
+                "type": ["string", "null"]
               },
               "appVersionMax": {
-                "type": "string"
+                "type": ["string", "null"]
               },
               "fareZoneRefs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "tariffZoneRefs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               }
             },
             "required": ["userProfileRefs"],
             "additionalProperties": false
           },
           "durationDays": {
-            "type": "number"
+            "type": ["number", "null"]
           },
           "isApplicableOnSingleZoneOnly": {
-            "type": "boolean"
+            "type": ["boolean", "null"]
           },
           "isDefault": {
-            "type": "boolean"
+            "type": ["boolean", "null"]
           },
           "alternativeNames": {
-            "type": "array",
-            "items": {
-              "$ref": "#/properties/preassignedFareProducts_v2/items/properties/name"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/properties/preassignedFareProducts_v2/items/properties/name"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "zoneSelectionMode": {
-            "type": "string",
-            "enum": [
-              "none",
-              "single",
-              "single-stop",
-              "single-zone",
-              "multiple",
-              "multiple-stop",
-              "multiple-zone",
-              "multiple-stop-harbor"
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "single",
+                  "single-stop",
+                  "single-zone",
+                  "multiple",
+                  "multiple-stop",
+                  "multiple-zone",
+                  "multiple-stop-harbor"
+                ]
+              },
+              {
+                "type": "null"
+              }
             ]
           },
           "description": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+            "anyOf": [
+              {
+                "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "productDescription": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+            "anyOf": [
+              {
+                "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "productAliasId": {
-            "type": "string"
+            "type": ["string", "null"]
           },
           "productAlias": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+            "anyOf": [
+              {
+                "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "warningMessage": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+            "anyOf": [
+              {
+                "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "required": [
@@ -176,10 +232,17 @@
             "additionalProperties": false
           },
           "description": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+            "anyOf": [
+              {
+                "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "isDefault": {
-            "type": "boolean"
+            "type": ["boolean", "null"]
           }
         },
         "required": ["id", "name", "version", "geometry"],
@@ -207,25 +270,46 @@
             "$ref": "#/properties/preassignedFareProducts_v2/items/properties/name"
           },
           "alternativeNames": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+            "anyOf": [
+              {
+                "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "description": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/name"
+            "anyOf": [
+              {
+                "$ref": "#/properties/preassignedFareProducts_v2/items/properties/name"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "alternativeDescriptions": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+            "anyOf": [
+              {
+                "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "hideFromDefaultTravellerSelection": {
-            "type": "boolean"
+            "type": ["boolean", "null"]
           },
           "minAge": {
-            "type": "number"
+            "type": ["number", "null"]
           },
           "maxAge": {
-            "type": "number"
+            "type": ["number", "null"]
           },
           "emoji": {
-            "type": "string"
+            "type": ["string", "null"]
           }
         },
         "required": ["id", "userTypeString", "userType", "version", "name"],
@@ -233,57 +317,78 @@
       }
     },
     "cityZones": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "enabled": {
-            "type": "boolean"
-          },
-          "moreInfoUrl": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
-          },
-          "orderUrl": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
-          },
-          "phoneNumber": {
-            "type": "string"
-          },
-          "geometry": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
             "type": "object",
             "properties": {
-              "type": {
-                "type": "string",
-                "const": "Polygon"
+              "id": {
+                "type": "string"
               },
-              "coordinates": {
-                "type": "array",
-                "items": {
-                  "type": "array",
-                  "items": {
+              "name": {
+                "type": "string"
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "moreInfoUrl": {
+                "anyOf": [
+                  {
+                    "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "orderUrl": {
+                "anyOf": [
+                  {
+                    "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "phoneNumber": {
+                "type": ["string", "null"]
+              },
+              "geometry": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "Polygon"
+                  },
+                  "coordinates": {
                     "type": "array",
                     "items": {
-                      "type": "number"
-                    },
-                    "minItems": 2,
-                    "maxItems": 2
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                      }
+                    }
                   }
-                }
+                },
+                "required": ["type", "coordinates"],
+                "additionalProperties": false
               }
             },
-            "required": ["type", "coordinates"],
+            "required": ["id", "name", "enabled", "geometry"],
             "additionalProperties": false
           }
         },
-        "required": ["id", "name", "enabled", "geometry"],
-        "additionalProperties": false
-      }
+        {
+          "type": "null"
+        }
+      ]
     },
     "preassignedFareProducts": {},
     "tariffZones": {
@@ -326,10 +431,17 @@
             "additionalProperties": false
           },
           "description": {
-            "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames"
+            "anyOf": [
+              {
+                "$ref": "#/properties/preassignedFareProducts_v2/items/properties/alternativeNames/anyOf/0"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "isDefault": {
-            "type": "boolean"
+            "type": ["boolean", "null"]
           }
         },
         "required": ["id", "name", "version", "geometry"],

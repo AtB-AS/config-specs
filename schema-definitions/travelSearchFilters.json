@@ -22,10 +22,10 @@
             "type": "object",
             "properties": {
               "language": {
-                "type": "string"
+                "type": ["string", "null"]
               },
               "value": {
-                "type": "string"
+                "type": ["string", "null"]
               }
             },
             "additionalProperties": false
@@ -40,10 +40,17 @@
           "$ref": "#/definitions/TransportModeType"
         },
         "transportSubModes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TransportSubmodeType"
-          }
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TransportSubmodeType"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       },
       "required": ["transportMode"],
@@ -56,7 +63,14 @@
           "$ref": "#/definitions/TransportModeType"
         },
         "transportSubMode": {
-          "$ref": "#/definitions/TransportSubmodeType"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TransportSubmodeType"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       },
       "required": ["transportMode"],
@@ -206,123 +220,164 @@
       "type": "object",
       "properties": {
         "transportModes": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "icon": {
-                "$ref": "#/definitions/TravelSearchTransportModeIcon"
-              },
-              "text": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-                },
-                "minItems": 1
-              },
-              "description": {
-                "$ref": "#/definitions/LanguageAndTextTypeArray"
-              },
-              "modes": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/TravelSearchTransportModes"
-                }
-              },
-              "selectedAsDefault": {
-                "type": "boolean"
-              }
-            },
-            "required": ["id", "icon", "text", "modes", "selectedAsDefault"],
-            "additionalProperties": false
-          }
-        },
-        "flexibleTransport": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "title": {
+          "anyOf": [
+            {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-              },
-              "minItems": 1
-            },
-            "label": {
-              "type": "string",
-              "enum": ["beta", "new"]
-            },
-            "description": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-              },
-              "minItems": 1
-            }
-          },
-          "required": ["id", "title", "description"],
-          "additionalProperties": false
-        },
-        "travelSearchPreferences": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "transferSlack",
-                  "transferPenalty",
-                  "waitReluctance",
-                  "walkReluctance",
-                  "walkSpeed"
-                ]
-              },
-              "title": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-                },
-                "minItems": 1
-              },
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "minLength": 1
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "$ref": "#/definitions/TravelSearchTransportModeIcon"
+                  },
+                  "text": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/LanguageAndTextTypeArray/items"
                     },
-                    "text": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+                    "minItems": 1
+                  },
+                  "description": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/definitions/LanguageAndTextTypeArray"
                       },
-                      "minItems": 1
-                    },
-                    "value": {
-                      "type": "number",
-                      "minimum": 0
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "modes": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/TravelSearchTransportModes"
                     }
                   },
-                  "required": ["id", "text", "value"],
-                  "additionalProperties": false
+                  "selectedAsDefault": {
+                    "type": "boolean"
+                  }
                 },
-                "minItems": 1
-              },
-              "defaultOption": {
-                "$ref": "#/definitions/TravelSearchFilters/properties/travelSearchPreferences/items/properties/options/items/properties/id"
+                "required": [
+                  "id",
+                  "icon",
+                  "text",
+                  "modes",
+                  "selectedAsDefault"
+                ],
+                "additionalProperties": false
               }
             },
-            "required": ["type", "title", "options", "defaultOption"],
-            "additionalProperties": false
-          }
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "flexibleTransport": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+                  },
+                  "minItems": 1
+                },
+                "label": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": ["beta", "new"]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "description": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": ["id", "title", "description"],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "travelSearchPreferences": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "transferSlack",
+                      "transferPenalty",
+                      "waitReluctance",
+                      "walkReluctance",
+                      "walkSpeed"
+                    ]
+                  },
+                  "title": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+                    },
+                    "minItems": 1
+                  },
+                  "options": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "text": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/definitions/LanguageAndTextTypeArray/items"
+                          },
+                          "minItems": 1
+                        },
+                        "value": {
+                          "type": "number",
+                          "minimum": 0
+                        }
+                      },
+                      "required": ["id", "text", "value"],
+                      "additionalProperties": false
+                    },
+                    "minItems": 1
+                  },
+                  "defaultOption": {
+                    "$ref": "#/definitions/TravelSearchFilters/properties/travelSearchPreferences/anyOf/0/items/properties/options/items/properties/id"
+                  }
+                },
+                "required": ["type", "title", "options", "defaultOption"],
+                "additionalProperties": false
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       },
       "additionalProperties": false

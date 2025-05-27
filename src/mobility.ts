@@ -21,17 +21,17 @@ export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
 
 export const OperatorBenefit = z.object({
   id: OperatorBenefitId,
-  imageWhenActive: z.string().optional(),
-  headingWhenActive: LanguageAndTextTypeArray.optional(),
+  imageWhenActive: z.string().nullish(),
+  headingWhenActive: LanguageAndTextTypeArray.nullish(),
   descriptionWhenActive: LanguageAndTextTypeArray,
-  imageWhenNotActive: z.string().optional(),
-  headingWhenNotActive: LanguageAndTextTypeArray.optional(),
+  imageWhenNotActive: z.string().nullish(),
+  headingWhenNotActive: LanguageAndTextTypeArray.nullish(),
   descriptionWhenNotActive: LanguageAndTextTypeArray,
   callToAction: z.object({
     url: z.string(),
-    name: LanguageAndTextTypeArray.optional(),
+    name: LanguageAndTextTypeArray.nullish(),
   }),
-  ticketDescription: LanguageAndTextTypeArray.optional(),
+  ticketDescription: LanguageAndTextTypeArray.nullish(),
   formFactors: z.array(FormFactor).nonempty(),
 });
 
@@ -42,16 +42,16 @@ export const MobilityOperator = z.object({
   name: z.string().nonempty(),
   showInApp: z.boolean().default(false),
   formFactors: z.array(FormFactor).nonempty(),
-  benefits: z.array(OperatorBenefit).optional().default([]),
+  benefits: z.array(OperatorBenefit).nullish().default([]),
   brandAssets: z
     .object({
       brandLastModified: z.string().date(),
-      brandTermsUrl: z.string().url().optional(),
+      brandTermsUrl: z.string().url().nullish(),
       brandImageUrl: z.string(),
-      brandImageUrlDark: z.string().optional(),
-      color: z.string().optional(),
+      brandImageUrlDark: z.string().nullish(),
+      color: z.string().nullish(),
     })
-    .optional()
+    .nullish()
     .describe('modeled 1-1 like brandAssets in EnTur mobility API'),
   isDeepIntegrationEnabled: z.boolean().default(false),
 });
@@ -68,7 +68,7 @@ export type ScooterFaqType = z.infer<typeof ScooterFaq>;
 
 export const ScooterConsentLine = z.object({
   id: z.string().nonempty(),
-  illustration: z.string().optional(),
+  illustration: z.string().nullish(),
   description: LanguageAndTextTypeArray.nonempty(),
 });
 
@@ -101,7 +101,7 @@ export const BonusSource = z.object({
   userProfileIds: z.array(z.string()),
   amountByEnrollment: z.array(
     z.object({
-      enrollmentId: z.string().optional(), // which enrollment (pilot group) a user is in
+      enrollmentId: z.string().nullish(), // which enrollment (pilot group) a user is in
       amount: z.number().int().positive(),
     }),
   ),

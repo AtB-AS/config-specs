@@ -5,142 +5,156 @@
       "type": "number"
     },
     "enableTokenToggleRestrictions": {
-      "type": "boolean"
+      "type": ["boolean", "null"]
     },
     "contactPhoneNumber": {
-      "type": "string",
-      "pattern": "^\\+\\d{1,3}\\d{1,14}$"
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^\\+\\d{1,3}\\d{1,14}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "enableNynorsk": {
-      "type": "boolean"
+      "type": ["boolean", "null"]
     },
     "tokenToggleMaxLimit": {
-      "type": "number"
+      "type": ["number", "null"]
     },
     "travelcardNumberLength": {
       "type": "number",
       "default": 16
     },
     "modesWeSellTicketsFor": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "SchengenAreaFlight",
-          "airportBoatLink",
-          "airportLinkBus",
-          "airportLinkRail",
-          "airshipService",
-          "allFunicularServices",
-          "allHireVehicles",
-          "allTaxiServices",
-          "bikeTaxi",
-          "blackCab",
-          "cableCar",
-          "cableFerry",
-          "canalBarge",
-          "carTransportRailService",
-          "chairLift",
-          "charterTaxi",
-          "cityTram",
-          "communalTaxi",
-          "commuterCoach",
-          "crossCountryRail",
-          "dedicatedLaneBus",
-          "demandAndResponseBus",
-          "domesticCharterFlight",
-          "domesticFlight",
-          "domesticScheduledFlight",
-          "dragLift",
-          "escooter",
-          "expressBus",
-          "funicular",
-          "helicopterService",
-          "highFrequencyBus",
-          "highSpeedPassengerService",
-          "highSpeedRail",
-          "highSpeedVehicleService",
-          "hireCar",
-          "hireCycle",
-          "hireMotorbike",
-          "hireVan",
-          "intercontinentalCharterFlight",
-          "intercontinentalFlight",
-          "international",
-          "internationalCarFerry",
-          "internationalCharterFlight",
-          "internationalCoach",
-          "internationalFlight",
-          "internationalPassengerFerry",
-          "interregionalRail",
-          "lift",
-          "local",
-          "localBus",
-          "localCarFerry",
-          "localPassengerFerry",
-          "localTram",
-          "longDistance",
-          "metro",
-          "miniCab",
-          "mobilityBus",
-          "mobilityBusForRegisteredDisabled",
-          "nationalCarFerry",
-          "nationalCoach",
-          "nationalPassengerFerry",
-          "nightBus",
-          "nightRail",
-          "postBoat",
-          "postBus",
-          "rackAndPinionRailway",
-          "railReplacementBus",
-          "railShuttle",
-          "railTaxi",
-          "regionalBus",
-          "regionalCarFerry",
-          "regionalCoach",
-          "regionalPassengerFerry",
-          "regionalRail",
-          "regionalTram",
-          "replacementRailService",
-          "riverBus",
-          "roadFerryLink",
-          "roundTripCharterFlight",
-          "scheduledFerry",
-          "schoolAndPublicServiceBus",
-          "schoolBoat",
-          "schoolBus",
-          "schoolCoach",
-          "shortHaulInternationalFlight",
-          "shuttleBus",
-          "shuttleCoach",
-          "shuttleFerryService",
-          "shuttleFlight",
-          "shuttleTram",
-          "sightseeingBus",
-          "sightseeingCoach",
-          "sightseeingFlight",
-          "sightseeingService",
-          "sightseeingTram",
-          "sleeperRailService",
-          "specialCoach",
-          "specialNeedsBus",
-          "specialTrain",
-          "streetCableCar",
-          "suburbanRailway",
-          "telecabin",
-          "telecabinLink",
-          "touristCoach",
-          "touristRailway",
-          "trainFerry",
-          "trainTram",
-          "tube",
-          "undefined",
-          "undefinedFunicular",
-          "unknown",
-          "urbanRailway",
-          "waterTaxi"
-        ]
-      }
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "SchengenAreaFlight",
+              "airportBoatLink",
+              "airportLinkBus",
+              "airportLinkRail",
+              "airshipService",
+              "allFunicularServices",
+              "allHireVehicles",
+              "allTaxiServices",
+              "bikeTaxi",
+              "blackCab",
+              "cableCar",
+              "cableFerry",
+              "canalBarge",
+              "carTransportRailService",
+              "chairLift",
+              "charterTaxi",
+              "cityTram",
+              "communalTaxi",
+              "commuterCoach",
+              "crossCountryRail",
+              "dedicatedLaneBus",
+              "demandAndResponseBus",
+              "domesticCharterFlight",
+              "domesticFlight",
+              "domesticScheduledFlight",
+              "dragLift",
+              "escooter",
+              "expressBus",
+              "funicular",
+              "helicopterService",
+              "highFrequencyBus",
+              "highSpeedPassengerService",
+              "highSpeedRail",
+              "highSpeedVehicleService",
+              "hireCar",
+              "hireCycle",
+              "hireMotorbike",
+              "hireVan",
+              "intercontinentalCharterFlight",
+              "intercontinentalFlight",
+              "international",
+              "internationalCarFerry",
+              "internationalCharterFlight",
+              "internationalCoach",
+              "internationalFlight",
+              "internationalPassengerFerry",
+              "interregionalRail",
+              "lift",
+              "local",
+              "localBus",
+              "localCarFerry",
+              "localPassengerFerry",
+              "localTram",
+              "longDistance",
+              "metro",
+              "miniCab",
+              "mobilityBus",
+              "mobilityBusForRegisteredDisabled",
+              "nationalCarFerry",
+              "nationalCoach",
+              "nationalPassengerFerry",
+              "nightBus",
+              "nightRail",
+              "postBoat",
+              "postBus",
+              "rackAndPinionRailway",
+              "railReplacementBus",
+              "railShuttle",
+              "railTaxi",
+              "regionalBus",
+              "regionalCarFerry",
+              "regionalCoach",
+              "regionalPassengerFerry",
+              "regionalRail",
+              "regionalTram",
+              "replacementRailService",
+              "riverBus",
+              "roadFerryLink",
+              "roundTripCharterFlight",
+              "scheduledFerry",
+              "schoolAndPublicServiceBus",
+              "schoolBoat",
+              "schoolBus",
+              "schoolCoach",
+              "shortHaulInternationalFlight",
+              "shuttleBus",
+              "shuttleCoach",
+              "shuttleFerryService",
+              "shuttleFlight",
+              "shuttleTram",
+              "sightseeingBus",
+              "sightseeingCoach",
+              "sightseeingFlight",
+              "sightseeingService",
+              "sightseeingTram",
+              "sleeperRailService",
+              "specialCoach",
+              "specialNeedsBus",
+              "specialTrain",
+              "streetCableCar",
+              "suburbanRailway",
+              "telecabin",
+              "telecabinLink",
+              "touristCoach",
+              "touristRailway",
+              "trainFerry",
+              "trainTram",
+              "tube",
+              "undefined",
+              "undefinedFunicular",
+              "unknown",
+              "urbanRailway",
+              "waterTaxi"
+            ]
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "nextMorningUtcTimestamp": {
       "type": "string",
@@ -148,33 +162,61 @@
       "default": "04:00"
     },
     "defaultTariffZone": {
-      "type": "string"
+      "type": ["string", "null"]
     },
     "defaultFareZone": {
-      "type": "string"
+      "type": ["string", "null"]
     },
     "defaultOfferSearchMode": {
-      "type": "string",
-      "enum": ["zone", "stop-place"]
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": ["zone", "stop-place"]
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "disabledLoginMethods": {
-      "type": "object",
-      "properties": {
-        "app": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": ["otp", "email", "vipps"]
-          }
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "app": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["otp", "email", "vipps"]
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "web": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/properties/disabledLoginMethods/anyOf/0/properties/app/anyOf/0/items"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
         },
-        "web": {
-          "type": "array",
-          "items": {
-            "$ref": "#/properties/disabledLoginMethods/properties/app/items"
-          }
+        {
+          "type": "null"
         }
-      },
-      "additionalProperties": false
+      ]
     }
   },
   "required": ["vatPercent"],

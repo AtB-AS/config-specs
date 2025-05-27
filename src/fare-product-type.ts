@@ -46,7 +46,7 @@ export const Direction = z.union([z.literal('one-way'), z.literal('two-way')]);
 
 export const ProductTypeTransportModes = z.object({
   mode: TransportModeType,
-  subMode: TransportSubmodeType.optional(),
+  subMode: TransportSubmodeType.nullish(),
 });
 
 export const FareProductTypeConfigSettings = z.object({
@@ -54,24 +54,24 @@ export const FareProductTypeConfigSettings = z.object({
   travellerSelectionMode: TravellerSelectionMode,
   timeSelectionMode: TimeSelectionMode,
   productSelectionMode: ProductSelectionMode,
-  productSelectionTitle: LanguageAndTextTypeArray.optional(),
+  productSelectionTitle: LanguageAndTextTypeArray.nullish(),
   requiresLogin: z.boolean(),
-  offerEndpoint: OfferEndpoint.optional(),
+  offerEndpoint: OfferEndpoint.nullish(),
   onBehalfOfEnabled: z.boolean(),
 });
 
 export const FareProductTypeConfig = z.object({
   type: z.string(),
-  illustration: z.string().optional(),
+  illustration: z.string().nullish(),
   name: LanguageAndTextTypeArray,
   transportModes: z.array(ProductTypeTransportModes),
   /** @deprecated use excludedFareZones instead */
-  excludedTariffZones: z.array(z.string()).optional(),
-  excludedFareZones: z.array(z.string()).optional(),
+  excludedTariffZones: z.array(z.string()).nullish(),
+  excludedFareZones: z.array(z.string()).nullish(),
   description: LanguageAndTextTypeArray,
   configuration: FareProductTypeConfigSettings,
   isCollectionOfAccesses: z.boolean(),
-  direction: Direction.optional(),
+  direction: Direction.nullish(),
 });
 
 export type ProductTypeTransportModes = z.infer<
@@ -89,6 +89,6 @@ export type FareProductTypeConfig = z.infer<typeof FareProductTypeConfig>;
 export const FareProductGroup = z.object({
   transportModes: ProductTypeTransportModes.array(),
   types: z.string().array(),
-  heading: LanguageAndTextTypeArray.optional(),
+  heading: LanguageAndTextTypeArray.nullish(),
 });
 export type FareProductGroupType = z.infer<typeof FareProductGroup>;

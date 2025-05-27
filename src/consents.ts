@@ -4,16 +4,16 @@ export const Consent = z.object({
   id: z.number(),
   title: z.object({
     nob: z.string(),
-    en: z.string().optional(),
-    nno: z.string().optional(),
+    en: z.string().nullish(),
+    nno: z.string().nullish(),
   }),
   description: z
     .object({
       nob: z.string(),
-      en: z.string().optional(),
-      nno: z.string().optional(),
+      en: z.string().nullish(),
+      nno: z.string().nullish(),
     })
-    .optional(),
+    .nullish(),
 });
 
 export const Consents = z.object({

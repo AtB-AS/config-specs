@@ -61,7 +61,7 @@ export function isValidSchema(schema: any): schema is SchemaNames {
 export const schemaTypes = {
   fareProductTypeConfigs: z.object({
     fareProductTypeConfigs: z.array(FareProductTypeConfig),
-    fareProductGroups: z.array(FareProductGroup).optional(),
+    fareProductGroups: z.array(FareProductGroup).nullish(),
   }),
   travelSearchFilters: TravelSearchFilters,
   mobility: z.object({
@@ -82,7 +82,7 @@ export const jsonSchemas = {
   fareProductTypeConfigs: zodToJsonSchema(
     z.object({
       fareProductTypeConfigs: z.array(FareProductTypeConfig),
-      fareProductGroups: z.array(FareProductGroup).optional(),
+      fareProductGroups: z.array(FareProductGroup).nullish(),
     }),
     {
       name: 'FareProductConfiguration',
@@ -99,12 +99,12 @@ export const jsonSchemas = {
   mobility: zodToJsonSchema(
     z.object({
       operators: z.array(MobilityOperator),
-      scooterFaqs: z.array(ScooterFaq).optional(),
-      scooterConsentLines: z.array(ScooterConsentLine).optional(),
-      benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
-      bonusProducts: z.array(BonusProduct).optional(),
-      bonusTexts: BonusTexts.optional(),
-      bonusSources: z.array(BonusSource).optional(),
+      scooterFaqs: z.array(ScooterFaq).nullish(),
+      scooterConsentLines: z.array(ScooterConsentLine).nullish(),
+      benefitIdsRequiringValueCode: z.array(OperatorBenefitId).nullish(),
+      bonusProducts: z.array(BonusProduct).nullish(),
+      bonusTexts: BonusTexts.nullish(),
+      bonusSources: z.array(BonusSource).nullish(),
     }),
     {
       name: 'MobilityOperator',
