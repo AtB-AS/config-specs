@@ -20,10 +20,10 @@
           "type": "object",
           "properties": {
             "language": {
-              "type": "string"
+              "type": ["string", "null"]
             },
             "value": {
-              "type": "string"
+              "type": ["string", "null"]
             }
           },
           "additionalProperties": false
@@ -34,46 +34,137 @@
       "type": "object",
       "properties": {
         "ticketingInfo": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/LanguageAndTextType"
-          }
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageAndTextType"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "termsInfo": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "inspectionInfo": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "refundInfo": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "flexTransportInfo": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "dataSharingInfo": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "appA11yStatement": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "iosStoreListing": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "androidStoreListing": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "externalRealtimeMap": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "tileServerBaseUrl": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "mapboxSpriteUrl": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "mobilityTermsUrl": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo/anyOf/0"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       },
       "additionalProperties": false

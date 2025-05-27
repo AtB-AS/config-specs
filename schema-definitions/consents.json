@@ -16,30 +16,37 @@
                 "type": "string"
               },
               "en": {
-                "type": "string"
+                "type": ["string", "null"]
               },
               "nno": {
-                "type": "string"
+                "type": ["string", "null"]
               }
             },
             "required": ["nob"],
             "additionalProperties": false
           },
           "description": {
-            "type": "object",
-            "properties": {
-              "nob": {
-                "type": "string"
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "nob": {
+                    "type": "string"
+                  },
+                  "en": {
+                    "type": ["string", "null"]
+                  },
+                  "nno": {
+                    "type": ["string", "null"]
+                  }
+                },
+                "required": ["nob"],
+                "additionalProperties": false
               },
-              "en": {
-                "type": "string"
-              },
-              "nno": {
-                "type": "string"
+              {
+                "type": "null"
               }
-            },
-            "required": ["nob"],
-            "additionalProperties": false
+            ]
           }
         },
         "required": ["id", "title"],
