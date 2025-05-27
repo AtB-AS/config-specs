@@ -13,7 +13,7 @@
             "type": "string"
           },
           "isFree": {
-            "type": "boolean"
+            "type": ["boolean", "null"]
           }
         },
         "required": ["from", "to"],
