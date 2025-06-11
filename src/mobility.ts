@@ -99,6 +99,7 @@ export const BonusSource = z.object({
   id: z.string(),
   preassignedFareProductId: z.string(),
   userProfileIds: z.array(z.string()),
+  fareZones: z.array(z.string()),
   amountByEnrollment: z.array(
     z.object({
       enrollmentId: z.string().optional(), // which enrollment (pilot group) a user is in
