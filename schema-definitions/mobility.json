@@ -314,6 +314,12 @@
                   "type": "string"
                 }
               },
+              "fareZones": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "amountByEnrollment": {
                 "type": "array",
                 "items": {
@@ -336,6 +342,7 @@
               "id",
               "preassignedFareProductId",
               "userProfileIds",
+              "fareZones",
               "amountByEnrollment"
             ],
             "additionalProperties": false
