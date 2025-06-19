@@ -86,6 +86,9 @@
         },
         "onBehalfOfEnabled": {
           "type": "boolean"
+        },
+        "bookingEnabled": {
+          "type" "boolean"
         }
       },
       "required": [
