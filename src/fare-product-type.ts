@@ -58,6 +58,7 @@ export const FareProductTypeConfigSettings = z.object({
   requiresLogin: z.boolean(),
   offerEndpoint: OfferEndpoint.optional(),
   onBehalfOfEnabled: z.boolean(),
+  bookingEnabled: z.boolean(),
 });
 
 export const FareProductTypeConfig = z.object({
