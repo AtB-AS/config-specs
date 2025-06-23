@@ -21,6 +21,7 @@ export const PreassignedFareProduct = z.object({
   }),
   durationDays: z.number().optional(),
   isApplicableOnSingleZoneOnly: z.boolean().optional(),
+  isBookingEnabled: z.boolean().optional(),
   isDefault: z.boolean().optional(),
   alternativeNames: LanguageAndTextTypeArray.optional(),
   zoneSelectionMode: ZoneSelectionMode.optional(),
