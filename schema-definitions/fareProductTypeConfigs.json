@@ -86,9 +86,6 @@
         },
         "onBehalfOfEnabled": {
           "type": "boolean"
-        },
-        "bookingEnabled": {
-          "type": "boolean"
         }
       },
       "required": [
@@ -97,8 +94,7 @@
         "timeSelectionMode",
         "productSelectionMode",
         "requiresLogin",
-        "onBehalfOfEnabled",
-        "bookingEnabled"
+        "onBehalfOfEnabled"
       ],
       "additionalProperties": false
     },
