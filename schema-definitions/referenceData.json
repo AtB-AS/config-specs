@@ -87,6 +87,9 @@
           "isApplicableOnSingleZoneOnly": {
             "type": "boolean"
           },
+          "isBookingEnabled": {
+            "type": "boolean"
+          },
           "isDefault": {
             "type": "boolean"
           },
