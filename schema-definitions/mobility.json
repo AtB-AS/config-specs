@@ -154,6 +154,21 @@
               "isDeepIntegrationEnabled": {
                 "type": "boolean",
                 "default": false
+              },
+              "appUrl": {
+                "type": "object",
+                "properties": {
+                  "ios": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "android": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": ["ios", "android"],
+                "additionalProperties": false
               }
             },
             "required": ["id", "name", "formFactors"],
@@ -292,9 +307,70 @@
           "properties": {
             "howBonusWorks": {
               "$ref": "#/definitions/MobilityOperator/properties/bonusProducts/items/properties/productDescription"
+            },
+            "onboardingScreens": {
+              "type": "object",
+              "properties": {
+                "welcome": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/title"
+                    },
+                    "description": {
+                      "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/description"
+                    },
+                    "buttonText": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
+                      },
+                      "minItems": 1
+                    }
+                  },
+                  "required": ["title", "description", "buttonText"],
+                  "additionalProperties": false
+                },
+                "buyTickets": {
+                  "$ref": "#/definitions/MobilityOperator/properties/bonusTexts/properties/onboardingScreens/properties/welcome"
+                },
+                "moreTravelOptions": {
+                  "$ref": "#/definitions/MobilityOperator/properties/bonusTexts/properties/onboardingScreens/properties/welcome"
+                },
+                "download": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/title"
+                    },
+                    "description": {
+                      "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/description"
+                    },
+                    "buttonText": {
+                      "$ref": "#/definitions/MobilityOperator/properties/bonusTexts/properties/onboardingScreens/properties/welcome/properties/buttonText"
+                    },
+                    "downloadMobilityOperatorIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": ["title", "description", "buttonText"],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "welcome",
+                "buyTickets",
+                "moreTravelOptions",
+                "download"
+              ],
+              "additionalProperties": false
             }
           },
-          "required": ["howBonusWorks"],
+          "required": ["howBonusWorks", "onboardingScreens"],
           "additionalProperties": false
         },
         "bonusSources": {
