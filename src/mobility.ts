@@ -89,8 +89,33 @@ export const BonusProduct = z.object({
 
 export type BonusProductType = z.infer<typeof BonusProduct>;
 
+export const OnboardingScreenData = titleAndDescription.extend({
+  buttonText: LanguageAndTextTypeArray.nonempty(),
+});
+
+export type OnboardingScreenDataType = z.infer<typeof OnboardingScreenData>;
+
 export const BonusTexts = z.object({
   howBonusWorks: titleAndDescription,
+  onboardingScreens: z.object({
+    welcome: OnboardingScreenData,
+    buyTickets: OnboardingScreenData,
+    moreTravelOptions: OnboardingScreenData,
+    download: OnboardingScreenData.extend({
+      downloadOperators: z
+        .array(
+          z.object({
+            operatorId: z.string(),
+            operatorName: z.string(),
+            downloadLinks: z.object({
+              ios: z.string(),
+              android: z.string(),
+            }),
+          }),
+        )
+        .optional(),
+    }),
+  }),
 });
 
 export type BonusTextsType = z.infer<typeof BonusTexts>;
