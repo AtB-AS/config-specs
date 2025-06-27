@@ -54,6 +54,12 @@ export const MobilityOperator = z.object({
     .optional()
     .describe('modeled 1-1 like brandAssets in EnTur mobility API'),
   isDeepIntegrationEnabled: z.boolean().default(false),
+  appUrl: z
+    .object({
+      ios: z.string().url(),
+      android: z.string().url(),
+    })
+    .optional(),
 });
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;
@@ -102,18 +108,7 @@ export const BonusTexts = z.object({
     buyTickets: OnboardingScreenData,
     moreTravelOptions: OnboardingScreenData,
     download: OnboardingScreenData.extend({
-      downloadOperators: z
-        .array(
-          z.object({
-            operatorId: z.string(),
-            operatorName: z.string(),
-            downloadLinks: z.object({
-              ios: z.string(),
-              android: z.string(),
-            }),
-          }),
-        )
-        .optional(),
+      downloadMobilityOperatorIds: z.array(z.string().nonempty()).optional(),
     }),
   }),
 });
