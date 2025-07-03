@@ -98,33 +98,17 @@ quality across Firestore, Webshop and App for all organisations involved.
 1. Input validation (Data INTO Firestore)
 1. Data decoding / encoding validation. (Data OUT of Firestore)
 
-## Release package
+## Release
 
-After your changes are merged to the main branch (which should include changes
-from `yarn build`):
+1. Merge a PR to main, where the commit message follows the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
+2. The Github action `release-please-action` will create a PR to update the package version and changelog.
+    - `feat` will be a minor release.
+    - `fix` will be a patch release.
+    - Adding `!` after the prefix (e.g. `feat!`) means it is a breaking change, and will be a major release. This includes any changes to the public API that requires users of the package to update any code.
+    - Other prefixes such as `chore` or `refactor` will not trigger a release.
+3. Merge the release PR to main to trigger a NPM release.
 
-1. Create and checkout a new branch, e.g. called "yourfirstname/v-5-8-0".
-2. Run `yarn version` (which creates a new commit with updated version number in
-   package.json and creates a version tag):
-
-- **Major**: Breaking change. This version _require_ you to do code
-  modifications after upgrading on the consumer side.
-- **Minor**: This version extends functionality.
-- **Patch**: This version affects no APIs at all, just changes to existing code.
-
-3. Push to Github: `git push origin yourfirstname/v-5-8-0` (replace with your
-   actual branch name).
-4. Push tags to Github: `git push origin yourfirstname/v-5-8-0 --tags` (replace
-   with your actual branch name).
-5. Create a PR for this new branch into main and merge when approved.
-6. Make sure you are authenticated through npm by running `npm whoami`.
-7. Make sure your npm user has access to publish packages to AtB's npm repo.
-8. Checkout and pull the updated main branch.
-9. run `npm publish` to publish the package to npm.
-
-_TODO: Packages should be automatically released when merging a PR created by
-`release-please-action` Github Action. Changelog and releases should
-automatically be updated._
+For more details, see [release-please-action](https://github.com/googleapis/release-please-action).
 
 ## License
 
