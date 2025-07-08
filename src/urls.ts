@@ -15,6 +15,10 @@ export const ConfigurableLinks = z.object({
   tileServerBaseUrl: LanguageAndTextTypeArray.optional(),
   mapboxSpriteUrl: LanguageAndTextTypeArray.optional(),
   mobilityTermsUrl: LanguageAndTextTypeArray.optional(),
+  contactFormUrl: LanguageAndTextTypeArray.optional(),
+  lostAndFoundUrl: LanguageAndTextTypeArray.optional(),
+  refoundUrl: LanguageAndTextTypeArray.optional(),
+  frecuentlyAskedQuestionsUrl: LanguageAndTextTypeArray.optional(),
 });
 
 export type ConfigurableLinksType = z.infer<typeof ConfigurableLinks>;
