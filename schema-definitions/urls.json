@@ -81,9 +81,6 @@
         "lostAndFoundUrl": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         },
-        "refundUrl": {
-          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
-        },
         "frequentlyAskedQuestionsUrl": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }

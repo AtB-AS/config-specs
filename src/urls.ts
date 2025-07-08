@@ -17,7 +17,6 @@ export const ConfigurableLinks = z.object({
   mobilityTermsUrl: LanguageAndTextTypeArray.optional(),
   contactFormUrl: LanguageAndTextTypeArray.optional(),
   lostAndFoundUrl: LanguageAndTextTypeArray.optional(),
-  refundUrl: LanguageAndTextTypeArray.optional(),
   frequentlyAskedQuestionsUrl: LanguageAndTextTypeArray.optional(),
 });
 
