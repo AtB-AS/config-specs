@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.1.0](https://github.com/AtB-AS/config-specs/compare/v7.0.0...v7.1.0) (2025-07-08)
+
+
+### Features
+
+* Update urls to include contact urls ([#116](https://github.com/AtB-AS/config-specs/issues/116)) ([7639a8c](https://github.com/AtB-AS/config-specs/commit/7639a8cb4d77f291be33a72de10d0f80ae4c0fe5))
+
 ## [7.0.0](https://github.com/AtB-AS/config-specs/compare/v2.0.0...v7.0.0) (2025-07-02)
 
 
