@@ -74,6 +74,15 @@
         },
         "mobilityTermsUrl": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "contactFormUrl": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "lostAndFoundUrl": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "frequentlyAskedQuestionsUrl": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }
       },
       "additionalProperties": false
