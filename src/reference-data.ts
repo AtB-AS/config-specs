@@ -1,6 +1,7 @@
 import {z} from 'zod';
 import {LanguageAndTextType, LanguageAndTextTypeArray} from './common';
 import {ZoneSelectionMode} from './fare-product-type';
+import {nullishToOptional} from './utils/nullish-to-optional';
 
 export const PreassignedFareProduct = z.object({
   id: z.string(),
@@ -10,26 +11,32 @@ export const PreassignedFareProduct = z.object({
   name: LanguageAndTextType,
   limitations: z.object({
     userProfileRefs: z.array(z.string()),
-    appVersionMin: z.string().optional(),
-    appVersionMax: z.string().optional(),
-    fareZoneRefs: z.array(z.string()).optional(),
+    appVersionMin: z.string().nullish().transform(nullishToOptional),
+    appVersionMax: z.string().nullish().transform(nullishToOptional),
+    fareZoneRefs: z.array(z.string()).nullish().transform(nullishToOptional),
 
     /**
      * @deprecated use fareZoneRefs instead
      */
-    tariffZoneRefs: z.array(z.string()).optional(),
+    tariffZoneRefs: z.array(z.string()).nullish().transform(nullishToOptional),
   }),
-  durationDays: z.number().optional(),
-  isApplicableOnSingleZoneOnly: z.boolean().optional(),
-  isBookingEnabled: z.boolean().optional(),
-  isDefault: z.boolean().optional(),
-  alternativeNames: LanguageAndTextTypeArray.optional(),
-  zoneSelectionMode: ZoneSelectionMode.optional(),
-  description: LanguageAndTextTypeArray.optional(),
-  productDescription: LanguageAndTextTypeArray.optional(),
-  productAliasId: z.string().optional(),
-  productAlias: LanguageAndTextTypeArray.optional(),
-  warningMessage: LanguageAndTextTypeArray.optional(),
+  durationDays: z.number().nullish().transform(nullishToOptional),
+  isApplicableOnSingleZoneOnly: z
+    .boolean()
+    .nullish()
+    .transform(nullishToOptional),
+  isBookingEnabled: z.boolean().nullish().transform(nullishToOptional),
+  isDefault: z.boolean().nullish().transform(nullishToOptional),
+  alternativeNames:
+    LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
+  zoneSelectionMode: ZoneSelectionMode.nullish().transform(nullishToOptional),
+  description: LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
+  productDescription:
+    LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
+  productAliasId: z.string().nullish().transform(nullishToOptional),
+  productAlias: LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
+  warningMessage:
+    LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
 });
 
 /**
