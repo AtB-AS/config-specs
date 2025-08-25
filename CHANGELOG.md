@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.2.0](https://github.com/AtB-AS/config-specs/compare/v7.1.0...v7.2.0) (2025-08-25)
+
+
+### Features
+
+* handle `null` values in PreassignedFareProduct ([#120](https://github.com/AtB-AS/config-specs/issues/120)) ([38e832c](https://github.com/AtB-AS/config-specs/commit/38e832c1b775397bf20e9c484616dcced1ff7779))
+
 ## [7.1.0](https://github.com/AtB-AS/config-specs/compare/v7.0.0...v7.1.0) (2025-07-08)
 
 
