@@ -1,18 +1,23 @@
 import {z} from 'zod';
 
 export const TransportModeType = z.union([
-  z.literal('air'),
+  // custom values
   z.literal('bicycle'),
+  z.literal('car'),
+  z.literal('carpool'),
+  z.literal('foot'),
+  z.literal('scooter'),
+
+  // JourneyPlannerV3 values
+  z.literal('air'),
   z.literal('bus'),
   z.literal('cableway'),
   z.literal('coach'),
-  z.literal('foot'),
   z.literal('funicular'),
   z.literal('lift'),
   z.literal('metro'),
   z.literal('monorail'),
   z.literal('rail'),
-  z.literal('scooter'),
   z.literal('taxi'),
   z.literal('tram'),
   z.literal('trolleybus'),
@@ -21,6 +26,10 @@ export const TransportModeType = z.union([
 ]);
 
 export const TransportSubmodeType = z.union([
+  // custom values
+  z.literal('escooter'),
+
+  // JourneyPlannerV3 values
   z.literal('SchengenAreaFlight'),
   z.literal('airportBoatLink'),
   z.literal('airportLinkBus'),
@@ -47,7 +56,6 @@ export const TransportSubmodeType = z.union([
   z.literal('domesticFlight'),
   z.literal('domesticScheduledFlight'),
   z.literal('dragLift'),
-  z.literal('escooter'),
   z.literal('expressBus'),
   z.literal('funicular'),
   z.literal('helicopterService'),
