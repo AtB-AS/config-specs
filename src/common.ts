@@ -3,8 +3,6 @@ import {z} from 'zod';
 export const TransportModeType = z.union([
   // custom values
   z.literal('bicycle'),
-  z.literal('car'),
-  z.literal('carpool'),
   z.literal('foot'),
   z.literal('scooter'),
 

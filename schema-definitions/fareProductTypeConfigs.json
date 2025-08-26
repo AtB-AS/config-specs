@@ -156,8 +156,6 @@
       "type": "string",
       "enum": [
         "bicycle",
-        "car",
-        "carpool",
         "foot",
         "scooter",
         "air",
