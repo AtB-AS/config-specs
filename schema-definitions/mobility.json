@@ -155,6 +155,11 @@
                 "type": "boolean",
                 "default": false
               },
+              "ageLimit": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "default": 18
+              },
               "appUrl": {
                 "type": "object",
                 "properties": {

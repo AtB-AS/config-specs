@@ -54,6 +54,7 @@ export const MobilityOperator = z.object({
     .optional()
     .describe('modeled 1-1 like brandAssets in EnTur mobility API'),
   isDeepIntegrationEnabled: z.boolean().default(false),
+  ageLimit: z.number().int().positive().default(18),
   appUrl: z
     .object({
       ios: z.string().url(),
