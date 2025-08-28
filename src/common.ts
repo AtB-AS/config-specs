@@ -27,7 +27,7 @@ export const TransportSubmodeType = z.union([
   // custom values
   z.literal('escooter'),
 
-  // JourneyPlannerV3 values
+  // JourneyPlannerV3 TransportSubmode
   z.literal('SchengenAreaFlight'),
   z.literal('airportBoatLink'),
   z.literal('airportLinkBus'),
