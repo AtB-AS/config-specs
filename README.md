@@ -101,30 +101,23 @@ quality across Firestore, Webshop and App for all organisations involved.
 ## Release
 
 1. Once your changes are ready, make sure to run `yarn build`.
-1. Merge a PR to main, where the commit message follows the
-   [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
-1. The Github action `release-please-action` will create a PR to update the
-   package version and changelog.
-   - `feat` will be a minor release.
-   - `fix` will be a patch release.
-   - Adding `!` after the prefix (e.g. `feat!`) means it is a breaking change,
-     and will be a major release. This includes any changes to the public API
-     that requires users of the package to update any code.
-   - Other prefixes such as `chore` or `refactor` will not trigger a release.
-1. Merge the release PR to main to trigger a NPM release.
+2. Merge a PR to main, where the commit message follows the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
+3. The Github action `release-please-action` will create a PR to update the package version and changelog.
+    - `feat` will be a minor release.
+    - `fix` will be a patch release.
+    - Adding `!` after the prefix (e.g. `feat!`) means it is a breaking change, and will be a major release. This includes any changes to the public API that requires users of the package to update any code.
+    - Other prefixes such as `chore` or `refactor` will not trigger a release.
+4. Merge the release PR to main to trigger a NPM release.
 
-> [!NOTE] In case you want to create a release with a different version number
-> than the one suggested by release-please, you can make an empty commit on
-> master with commit message on this format:
->
+> [!NOTE]
+> In case you want to create a release with a different version number than the one suggested by release-please, you can make an empty commit on master with commit message on this format:
 > ```
 > chore: release v1.2.3
 >
 > release-as: 1.2.3
 > ```
 
-For more details, see
-[release-please-action](https://github.com/googleapis/release-please-action).
+For more details, see [release-please-action](https://github.com/googleapis/release-please-action).
 
 ## License
 
