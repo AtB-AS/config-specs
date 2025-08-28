@@ -6,7 +6,7 @@ export const TransportModeType = z.union([
   z.literal('foot'),
   z.literal('scooter'),
 
-  // JourneyPlannerV3 values
+  // JourneyPlannerV3 Mode
   z.literal('air'),
   z.literal('bus'),
   z.literal('cableway'),
