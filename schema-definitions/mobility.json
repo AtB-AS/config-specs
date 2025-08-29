@@ -157,8 +157,7 @@
               },
               "ageLimit": {
                 "type": "integer",
-                "exclusiveMinimum": 0,
-                "default": 18
+                "exclusiveMinimum": 0
               },
               "appUrl": {
                 "type": "object",
