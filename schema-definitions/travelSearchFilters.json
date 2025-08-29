@@ -65,18 +65,18 @@
     "TransportModeType": {
       "type": "string",
       "enum": [
-        "air",
         "bicycle",
+        "foot",
+        "scooter",
+        "air",
         "bus",
         "cableway",
         "coach",
-        "foot",
         "funicular",
         "lift",
         "metro",
         "monorail",
         "rail",
-        "scooter",
         "taxi",
         "tram",
         "trolleybus",
@@ -87,6 +87,7 @@
     "TransportSubmodeType": {
       "type": "string",
       "enum": [
+        "escooter",
         "SchengenAreaFlight",
         "airportBoatLink",
         "airportLinkBus",
@@ -113,7 +114,6 @@
         "domesticFlight",
         "domesticScheduledFlight",
         "dragLift",
-        "escooter",
         "expressBus",
         "funicular",
         "helicopterService",
