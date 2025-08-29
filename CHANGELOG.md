@@ -1,5 +1,13 @@
 # Changelog
 
+## [7.3.0](https://github.com/AtB-AS/config-specs/compare/v7.2.0...v7.3.0) (2025-08-29)
+
+
+### Features
+
+* add age limit to mobility operators ([#123](https://github.com/AtB-AS/config-specs/issues/123)) ([88f71a4](https://github.com/AtB-AS/config-specs/commit/88f71a4ae84210b7715223c2fc0b9d9f9ad62fce))
+* Update TransportModeType and TransportSubmodeType ([#122](https://github.com/AtB-AS/config-specs/issues/122)) ([b3cf9d7](https://github.com/AtB-AS/config-specs/commit/b3cf9d7da1912720afe4cd45b652d6e904bb6342))
+
 ## [7.2.0](https://github.com/AtB-AS/config-specs/compare/v7.1.0...v7.2.0) (2025-08-25)
 
 
