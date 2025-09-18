@@ -22,12 +22,10 @@ export const ZoneFeatureGeometryReferenceType = z.enum([
 
 const ZoneFeatureRuleInline = FeatureRuleBase.extend({
   geometryType: z.literal(ZoneFeatureGeometryType.Values.Inline),
-  geometries: z.array(
-    z.object({
-      type: z.literal('Polygon'),
-      coordinates: z.array(z.array(z.array(z.number()).length(2))),
-    }),
-  ),
+  geometry: z.object({
+    type: z.literal('Polygon'),
+    coordinates: z.array(z.array(z.array(z.number()).length(2))),
+  }),
 });
 
 const ZoneFeatureRuleReference = FeatureRuleBase.extend({

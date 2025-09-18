@@ -94,33 +94,30 @@
                 "type": "string",
                 "const": "Inline"
               },
-              "geometries": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "const": "Polygon"
-                    },
-                    "coordinates": {
+              "geometry": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "Polygon"
+                  },
+                  "coordinates": {
+                    "type": "array",
+                    "items": {
                       "type": "array",
                       "items": {
                         "type": "array",
                         "items": {
-                          "type": "array",
-                          "items": {
-                            "type": "number"
-                          },
-                          "minItems": 2,
-                          "maxItems": 2
-                        }
+                          "type": "number"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
                       }
                     }
-                  },
-                  "required": ["type", "coordinates"],
-                  "additionalProperties": false
-                }
+                  }
+                },
+                "required": ["type", "coordinates"],
+                "additionalProperties": false
               }
             },
             "required": [
@@ -128,7 +125,7 @@
               "ruleType",
               "isEnabled",
               "geometryType",
-              "geometries"
+              "geometry"
             ],
             "additionalProperties": false
           },
@@ -151,8 +148,8 @@
               "geometryType": {
                 "$ref": "#/properties/zoneFeatureRules/items/anyOf/1/properties/geometryType"
               },
-              "geometries": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/1/properties/geometries"
+              "geometry": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/1/properties/geometry"
               }
             },
             "required": [
@@ -160,7 +157,7 @@
               "ruleType",
               "isEnabled",
               "geometryType",
-              "geometries"
+              "geometry"
             ],
             "additionalProperties": false
           },
