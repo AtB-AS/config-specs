@@ -52,8 +52,8 @@ test('FeatureRulesEvaluation', async function () {
   const ruleVariables: RuleVariables = {
     location: [10.57160969381, 63.09006242709],
   };
-  const appRules = featureRules.zoneFeatureRules
-    .filter(
+  const appRules = featureRules
+    .zoneFeatureRules!.filter(
       (rule) => rule.geometryType === ZoneFeatureGeometryType.Values.Inline,
     )
     .map(mapFromZoneFeatureRules);
@@ -63,8 +63,8 @@ test('FeatureRulesEvaluation', async function () {
   const ruleVariablesNotWithin: RuleVariables = {
     location: [20.57160969381, 63.09006242709],
   };
-  const appRulesNotWithin = featureRules.zoneFeatureRules
-    .filter(
+  const appRulesNotWithin = featureRules
+    .zoneFeatureRules!.filter(
       (rule) => rule.geometryType === ZoneFeatureGeometryType.Values.Inline,
     )
     .map(mapFromZoneFeatureRules);
@@ -82,6 +82,13 @@ const mapFromZoneFeatureRules = (featureRule: ZoneFeatureRule): Rule => {
       operator: RuleOperator.isWithinZones,
     };
   }
+
+  // Faking a polygon for reference rules
+  return {
+    variable: 'location',
+    value: [[[10.57160969381, 63.09006242709]]],
+    operator: RuleOperator.isWithinZones,
+  };
 };
 
 export const Coordinates = z.array(z.number()).length(2);
