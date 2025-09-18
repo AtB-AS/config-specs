@@ -1,0 +1,106 @@
+{
+  "zoneFeatureRules": [
+    {
+      "ruleName": "isWithinFlexibleTransportZone",
+      "ruleDescription": {
+        "lang": "nob",
+        "value": "Er koordinat innenfor sone for bestillingstransport"
+      },
+      "ruleType": "Inbuilt",
+      "isEnabled": true,
+      "geometryType": "Reference",
+      "referenceType": "CityZone",
+      "zoneIds": ["steinkjer", "verdal", "roros", "overhalla"]
+    },
+    {
+      "ruleName": "isWithinCarPoolingZone",
+      "ruleDescription": {
+        "lang": "nob",
+        "value": "Er koordinat innenfor sone for samkjøring"
+      },
+      "ruleType": "Inbuilt",
+      "isEnabled": true,
+      "geometryType": "Inline",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [10.57160969381, 63.09006242709],
+              [10.67250886502, 63.12453638347],
+              [10.71494714304, 63.14391001657],
+              [10.77790349969, 63.12242873209],
+              [10.9029210181, 63.08257285441],
+              [10.994768, 63.063366],
+              [10.966404, 63.002481],
+              [10.957092, 62.979292],
+              [10.943431, 62.969693],
+              [10.939961, 62.937172],
+              [10.604257, 62.814567],
+              [10.550468, 62.805387],
+              [10.492673, 62.806816],
+              [10.359406, 62.823905],
+              [10.273169, 62.838562],
+              [10.159647, 62.856577],
+              [10.047477, 62.914942],
+              [9.98709693791, 62.96572945014],
+              [10.02830230033, 63.02253878138],
+              [10.09412493562, 63.0314757006],
+              [10.14175973748, 63.05748519722],
+              [10.18159975358, 63.0575833023],
+              [10.22685281535, 63.05699466688],
+              [10.26149630761, 63.06091867829],
+              [10.30425936837, 63.07229532145],
+              [10.32347568049, 63.0758496107],
+              [10.40856875835, 63.07820255645],
+              [10.44386181609, 63.08624035226],
+              [10.48673313777, 63.09094437303],
+              [10.52419141378, 63.09172830252],
+              [10.57160969381, 63.09006242709]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "ruleName": "isWithinFareZoneA&B1",
+      "ruleDescription": {
+        "lang": "nob",
+        "value": "Er koordinat innenfor sone for bestillingstransport"
+      },
+      "ruleType": "Custom",
+      "isEnabled": true,
+      "geometryType": "Reference",
+      "referenceType": "FareZone",
+      "zoneIds": ["ATB:FareZone:10", "ATB:FareZone:6"]
+    },
+    {
+      "ruleName": "isWithinSomeRandomGeometricZone",
+      "ruleDescription": {
+        "lang": "nob",
+        "value": "Er koordinat innenfor sone for bestillingstransport"
+      },
+      "ruleType": "Custom",
+      "isEnabled": true,
+      "geometryType": "Inline",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [10.57160969381, 63.09006242709],
+              [10.67250886502, 63.12453638347],
+              [10.71494714304, 63.14391001657],
+              [10.77790349969, 63.12242873209],
+              [10.9029210181, 63.08257285441],
+              [10.44386181609, 63.08624035226],
+              [10.48673313777, 63.09094437303],
+              [10.52419141378, 63.09172830252],
+              [10.57160969381, 63.09006242709]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

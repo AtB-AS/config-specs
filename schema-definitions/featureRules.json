@@ -1,0 +1,210 @@
+{
+  "type": "object",
+  "properties": {
+    "zoneFeatureRules": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ruleName": {
+                "type": "string",
+                "const": "isWithinFlexibleTransportZone"
+              },
+              "ruleDescription": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "lang": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["lang", "value"],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "language": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "ruleType": {
+                "type": "string",
+                "const": "Inbuilt"
+              },
+              "isEnabled": {
+                "type": "boolean"
+              },
+              "geometryType": {
+                "type": "string",
+                "const": "Reference"
+              },
+              "referenceType": {
+                "type": "string",
+                "const": "CityZone"
+              },
+              "zoneIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "ruleName",
+              "ruleType",
+              "isEnabled",
+              "geometryType",
+              "referenceType",
+              "zoneIds"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ruleName": {
+                "type": "string",
+                "const": "isWithinCarPoolingZone"
+              },
+              "ruleDescription": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/ruleDescription"
+              },
+              "ruleType": {
+                "type": "string",
+                "const": "Inbuilt"
+              },
+              "isEnabled": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/isEnabled"
+              },
+              "geometryType": {
+                "type": "string",
+                "const": "Inline"
+              },
+              "geometries": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "const": "Polygon"
+                    },
+                    "coordinates": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          },
+                          "minItems": 2,
+                          "maxItems": 2
+                        }
+                      }
+                    }
+                  },
+                  "required": ["type", "coordinates"],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "ruleName",
+              "ruleType",
+              "isEnabled",
+              "geometryType",
+              "geometries"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ruleName": {
+                "type": "string"
+              },
+              "ruleDescription": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/ruleDescription"
+              },
+              "ruleType": {
+                "type": "string",
+                "const": "Custom"
+              },
+              "isEnabled": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/isEnabled"
+              },
+              "geometryType": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/1/properties/geometryType"
+              },
+              "geometries": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/1/properties/geometries"
+              }
+            },
+            "required": [
+              "ruleName",
+              "ruleType",
+              "isEnabled",
+              "geometryType",
+              "geometries"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ruleName": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/2/properties/ruleName"
+              },
+              "ruleDescription": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/ruleDescription"
+              },
+              "ruleType": {
+                "type": "string",
+                "const": "Custom"
+              },
+              "isEnabled": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/isEnabled"
+              },
+              "geometryType": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/geometryType"
+              },
+              "referenceType": {
+                "type": "string",
+                "enum": ["FareZone", "CityZone"]
+              },
+              "zoneIds": {
+                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/zoneIds"
+              }
+            },
+            "required": [
+              "ruleName",
+              "ruleType",
+              "isEnabled",
+              "geometryType",
+              "referenceType",
+              "zoneIds"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
