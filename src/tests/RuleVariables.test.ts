@@ -120,6 +120,11 @@ test('RuleVariablesEvaluation', async function () {
   expect(resultsOutside).toEqual([false, false, false, false]); // Rules evaluated as false if user location is outside the zone
 });
 
+/**
+ * The code below is duplicated and expanded from the app code, just to verify that this works in a rule engine
+ * Actual implementation may differ from app code
+ */
+
 export const Coordinates = z.array(z.number()).length(2);
 type Coordinates = z.infer<typeof Coordinates>;
 export const Polygon = z.array(z.array(Coordinates));
