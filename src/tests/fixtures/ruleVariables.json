@@ -4,7 +4,7 @@
       "variableName": "flexibleTransportZone",
       "variableDescription": {
         "lang": "nob",
-        "value": "Er koordinat innenfor sone for bestillingstransport"
+        "value": "Regelvariabel som kan brukes til å evaluere sone for bestillingstransport"
       },
       "variableType": "Inbuilt",
       "geometryType": "Reference",
@@ -15,7 +15,7 @@
       "variableName": "carPoolingZone",
       "variableDescription": {
         "lang": "nob",
-        "value": "Er koordinat innenfor sone for samkjøring"
+        "value": "Regelvariabel som kan brukes til å evaluere sone for samkjøring"
       },
       "variableType": "Inbuilt",
       "geometryType": "Inline",
@@ -62,7 +62,7 @@
       "variableName": "fareZoneA&B1",
       "variableDescription": {
         "lang": "nob",
-        "value": "Er koordinat innenfor sone for bestillingstransport"
+        "value": "Regelvariabel som kan brukes til å evaluere sone for farezone A og B1"
       },
       "variableType": "Custom",
       "geometryType": "Reference",
@@ -73,7 +73,7 @@
       "variableName": "someRandomGeometricZone",
       "variableDescription": {
         "lang": "nob",
-        "value": "Er koordinat innenfor sone for bestillingstransport"
+        "value": "Regelvariabel som kan brukes til å evaluere en tilfeldig sone definert for en spesifikk liten sone som produkteier bryr seg om"
       },
       "variableType": "Custom",
       "geometryType": "Inline",

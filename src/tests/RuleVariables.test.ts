@@ -50,41 +50,51 @@ test('RuleVariablesEvaluation', async function () {
   const testLocation: Coordinates = [10.57160969381, 63.09006242709];
 
   // Test inline polygon zones - convert to rules for testing evaluation
-  const inlineZoneVariables = ruleVariables
-    .zoneRuleVariables!.filter(
-      (variable) =>
-        variable.geometryType === ZoneRuleVariableType.Values.Inline,
-    )
-    .map(mapFromZoneRuleVariables);
-  const inlineResults = inlineZoneVariables.map((rule) =>
-    checkRule(rule, {location: testLocation}),
+  const localVariables = ruleVariables.zoneRuleVariables!.reduce(
+    (acc, variable) => {
+      if (variable.geometryType === ZoneRuleVariableType.Values.Inline) {
+        acc[variable.variableName] = variable.geometry.coordinates;
+      } else {
+        // Faking a polygon for reference rules
+        acc[variable.variableName] = [
+          [
+            [10.57160969381, 63.09006242709],
+            [10.67250886502, 63.12453638347],
+            [10.71494714304, 63.14391001657],
+            [10.77790349969, 63.12242873209],
+            [10.9029210181, 63.08257285441],
+            [10.44386181609, 63.08624035226],
+            [10.48673313777, 63.09094437303],
+            [10.52419141378, 63.09172830252],
+            [10.57160969381, 63.09006242709],
+          ],
+        ];
+      }
+      return acc;
+    },
+    {} as TestRuleVariables,
   );
-  expect(inlineResults).toEqual([true, true]); // Both inline polygon zones should contain the test location
+
+  const rules = ruleVariables.zoneRuleVariables!.map((rv) => {
+    return {
+      variable: rv.variableName,
+      value: true,
+      operator: RuleOperator.isUserWithinZone,
+    };
+  });
+
+  const results = rules.map((rule) =>
+    checkRule(rule, {userLocation: testLocation, ...localVariables}),
+  );
+  expect(results).toEqual([true, true, true, true]); // Both inline polygon zones should contain the test location
 
   // Test location not within
   const testLocationOutside: Coordinates = [20.57160969381, 63.09006242709];
-  const inlineResultsOutside = inlineZoneVariables.map((rule) =>
-    checkRule(rule, {location: testLocationOutside}),
+  const resultsOutside = rules.map((rule) =>
+    checkRule(rule, {userLocation: testLocationOutside, ...localVariables}),
   );
-  expect(inlineResultsOutside).toEqual([false, false]); // Location outside polygons
+  expect(resultsOutside).toEqual([false, false, false, false]); // Location outside polygons
 });
-
-const mapFromZoneRuleVariables = (zoneVariable: ZoneRuleVariable): Rule => {
-  if (zoneVariable.geometryType === ZoneRuleVariableType.Values.Inline) {
-    return {
-      variable: 'location',
-      value: Polygon.parse(zoneVariable.geometry.coordinates),
-      operator: RuleOperator.isUserWithinZone,
-    };
-  }
-
-  // Faking a polygon for reference rules
-  return {
-    variable: 'location',
-    value: [[[10.57160969381, 63.09006242709]]],
-    operator: RuleOperator.isUserWithinZone,
-  };
-};
 
 export const Coordinates = z.array(z.number()).length(2);
 type Coordinates = z.infer<typeof Coordinates>;
@@ -101,7 +111,7 @@ const RuleValue = z.union([
 type RuleValue = z.infer<typeof RuleValue>;
 
 export type TestRuleVariables = {
-  location: Coordinates;
+  userLocation: Coordinates;
   [key: string]: RuleValue | RuleValue[];
 };
 
@@ -123,13 +133,15 @@ const checkRule = (rule: Rule, localVariables: TestRuleVariables): boolean => {
   const localValue = localVariables[variableName];
   switch (operator) {
     case RuleOperator.isUserWithinZone:
-      const [longitude, latitude] = localValue as Coordinates;
-      const result = Polygon.safeParse(ruleValue);
+      const [longitude, latitude] = localVariables.userLocation;
+      const result = Polygon.safeParse(localValue);
       if (result.success)
-        return turfBooleanPointInPolygon([longitude, latitude], {
-          type: 'Polygon',
-          coordinates: result.data,
-        });
+        return (
+          turfBooleanPointInPolygon([longitude, latitude], {
+            type: 'Polygon',
+            coordinates: result.data,
+          }) == ruleValue
+        );
       return false;
     default:
       return false;
