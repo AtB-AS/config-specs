@@ -47,7 +47,6 @@ async function readFixture(file: string) {
 test('RuleVariablesEvaluation', async function () {
   const fixture = await readFixture('fixtures/ruleVariables.json');
   const ruleVariables = RuleVariables.parse(fixture);
-  const testLocation: Coordinates = [10.57160969381, 63.09006242709];
 
   // Test inline polygon zones - convert to rules for testing evaluation
   const localVariables = ruleVariables.zoneRuleVariables!.reduce(
@@ -75,7 +74,8 @@ test('RuleVariablesEvaluation', async function () {
     {} as TestRuleVariables,
   );
 
-  const rules = ruleVariables.zoneRuleVariables!.map((rv) => {
+  // Test positive case for where user location is within the zone
+  const rulesPositiveInside = ruleVariables.zoneRuleVariables!.map((rv) => {
     return {
       variable: rv.variableName,
       value: true,
@@ -83,17 +83,41 @@ test('RuleVariablesEvaluation', async function () {
     };
   });
 
-  const results = rules.map((rule) =>
-    checkRule(rule, {userLocation: testLocation, ...localVariables}),
-  );
-  expect(results).toEqual([true, true, true, true]); // Both inline polygon zones should contain the test location
+  const testLocationInsideZones: Coordinates = [10.57160969381, 63.09006242709];
 
-  // Test location not within
-  const testLocationOutside: Coordinates = [20.57160969381, 63.09006242709];
-  const resultsOutside = rules.map((rule) =>
-    checkRule(rule, {userLocation: testLocationOutside, ...localVariables}),
+  const resultsPositiveInside = rulesPositiveInside.map((rule) =>
+    checkRule(rule, {userLocation: testLocationInsideZones, ...localVariables}),
   );
-  expect(resultsOutside).toEqual([false, false, false, false]); // Location outside polygons
+  expect(resultsPositiveInside).toEqual([true, true, true, true]); // Rules evaluated as true if user location is within the zone
+
+  // Test positive case for where user location is not within the zone
+  const testLocationOutsideZones: Coordinates = [
+    20.57160969381, 63.09006242709,
+  ];
+
+  const rulesPositiveOutside = ruleVariables.zoneRuleVariables!.map((rv) => {
+    return {
+      variable: rv.variableName,
+      value: false,
+      operator: RuleOperator.isUserWithinZone,
+    };
+  });
+  const resultsPositiveOutside = rulesPositiveOutside.map((rule) =>
+    checkRule(rule, {
+      userLocation: testLocationOutsideZones,
+      ...localVariables,
+    }),
+  );
+  expect(resultsPositiveOutside).toEqual([true, true, true, true]); // Rules evaluated as true if user location is outside the zone
+
+  // Test negative case for where user location is not within the zone
+  const resultsOutside = rulesPositiveInside.map((rule) =>
+    checkRule(rule, {
+      userLocation: testLocationOutsideZones,
+      ...localVariables,
+    }),
+  );
+  expect(resultsOutside).toEqual([false, false, false, false]); // Rules evaluated as false if user location is outside the zone
 });
 
 export const Coordinates = z.array(z.number()).length(2);
