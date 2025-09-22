@@ -1,18 +1,18 @@
 {
   "type": "object",
   "properties": {
-    "zoneFeatureRules": {
+    "zoneRuleVariables": {
       "type": "array",
       "items": {
         "anyOf": [
           {
             "type": "object",
             "properties": {
-              "ruleName": {
+              "variableName": {
                 "type": "string",
-                "const": "isWithinFlexibleTransportZone"
+                "const": "flexibleTransportZone"
               },
-              "ruleDescription": {
+              "variableDescription": {
                 "anyOf": [
                   {
                     "type": "object",
@@ -41,12 +41,9 @@
                   }
                 ]
               },
-              "ruleType": {
+              "variableType": {
                 "type": "string",
                 "const": "Inbuilt"
-              },
-              "isEnabled": {
-                "type": "boolean"
               },
               "geometryType": {
                 "type": "string",
@@ -56,7 +53,7 @@
                 "type": "string",
                 "const": "CityZone"
               },
-              "zoneIds": {
+              "referenceIds": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -64,31 +61,27 @@
               }
             },
             "required": [
-              "ruleName",
-              "ruleType",
-              "isEnabled",
+              "variableName",
+              "variableType",
               "geometryType",
               "referenceType",
-              "zoneIds"
+              "referenceIds"
             ],
             "additionalProperties": false
           },
           {
             "type": "object",
             "properties": {
-              "ruleName": {
+              "variableName": {
                 "type": "string",
-                "const": "isWithinCarPoolingZone"
+                "const": "carPoolingZone"
               },
-              "ruleDescription": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/ruleDescription"
+              "variableDescription": {
+                "$ref": "#/properties/zoneRuleVariables/items/anyOf/0/properties/variableDescription"
               },
-              "ruleType": {
+              "variableType": {
                 "type": "string",
                 "const": "Inbuilt"
-              },
-              "isEnabled": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/isEnabled"
               },
               "geometryType": {
                 "type": "string",
@@ -121,9 +114,8 @@
               }
             },
             "required": [
-              "ruleName",
-              "ruleType",
-              "isEnabled",
+              "variableName",
+              "variableType",
               "geometryType",
               "geometry"
             ],
@@ -132,30 +124,26 @@
           {
             "type": "object",
             "properties": {
-              "ruleName": {
+              "variableName": {
                 "type": "string"
               },
-              "ruleDescription": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/ruleDescription"
+              "variableDescription": {
+                "$ref": "#/properties/zoneRuleVariables/items/anyOf/0/properties/variableDescription"
               },
-              "ruleType": {
+              "variableType": {
                 "type": "string",
                 "const": "Custom"
               },
-              "isEnabled": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/isEnabled"
-              },
               "geometryType": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/1/properties/geometryType"
+                "$ref": "#/properties/zoneRuleVariables/items/anyOf/1/properties/geometryType"
               },
               "geometry": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/1/properties/geometry"
+                "$ref": "#/properties/zoneRuleVariables/items/anyOf/1/properties/geometry"
               }
             },
             "required": [
-              "ruleName",
-              "ruleType",
-              "isEnabled",
+              "variableName",
+              "variableType",
               "geometryType",
               "geometry"
             ],
@@ -164,37 +152,33 @@
           {
             "type": "object",
             "properties": {
-              "ruleName": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/2/properties/ruleName"
+              "variableName": {
+                "$ref": "#/properties/zoneRuleVariables/items/anyOf/2/properties/variableName"
               },
-              "ruleDescription": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/ruleDescription"
+              "variableDescription": {
+                "$ref": "#/properties/zoneRuleVariables/items/anyOf/0/properties/variableDescription"
               },
-              "ruleType": {
+              "variableType": {
                 "type": "string",
                 "const": "Custom"
               },
-              "isEnabled": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/isEnabled"
-              },
               "geometryType": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/geometryType"
+                "$ref": "#/properties/zoneRuleVariables/items/anyOf/0/properties/geometryType"
               },
               "referenceType": {
                 "type": "string",
                 "enum": ["FareZone", "CityZone"]
               },
-              "zoneIds": {
-                "$ref": "#/properties/zoneFeatureRules/items/anyOf/0/properties/zoneIds"
+              "referenceIds": {
+                "$ref": "#/properties/zoneRuleVariables/items/anyOf/0/properties/referenceIds"
               }
             },
             "required": [
-              "ruleName",
-              "ruleType",
-              "isEnabled",
+              "variableName",
+              "variableType",
               "geometryType",
               "referenceType",
-              "zoneIds"
+              "referenceIds"
             ],
             "additionalProperties": false
           }

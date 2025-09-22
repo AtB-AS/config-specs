@@ -1,25 +1,23 @@
 {
-  "zoneFeatureRules": [
+  "zoneRuleVariables": [
     {
-      "ruleName": "isWithinFlexibleTransportZone",
-      "ruleDescription": {
+      "variableName": "flexibleTransportZone",
+      "variableDescription": {
         "lang": "nob",
         "value": "Er koordinat innenfor sone for bestillingstransport"
       },
-      "ruleType": "Inbuilt",
-      "isEnabled": true,
+      "variableType": "Inbuilt",
       "geometryType": "Reference",
       "referenceType": "CityZone",
-      "zoneIds": ["steinkjer", "verdal", "roros", "overhalla"]
+      "referenceIds": ["steinkjer", "verdal", "roros", "overhalla"]
     },
     {
-      "ruleName": "isWithinCarPoolingZone",
-      "ruleDescription": {
+      "variableName": "carPoolingZone",
+      "variableDescription": {
         "lang": "nob",
         "value": "Er koordinat innenfor sone for samkjøring"
       },
-      "ruleType": "Inbuilt",
-      "isEnabled": true,
+      "variableType": "Inbuilt",
       "geometryType": "Inline",
       "geometry": {
         "type": "Polygon",
@@ -61,25 +59,23 @@
       }
     },
     {
-      "ruleName": "isWithinFareZoneA&B1",
-      "ruleDescription": {
+      "variableName": "fareZoneA&B1",
+      "variableDescription": {
         "lang": "nob",
         "value": "Er koordinat innenfor sone for bestillingstransport"
       },
-      "ruleType": "Custom",
-      "isEnabled": true,
+      "variableType": "Custom",
       "geometryType": "Reference",
       "referenceType": "FareZone",
-      "zoneIds": ["ATB:FareZone:10", "ATB:FareZone:6"]
+      "referenceIds": ["ATB:FareZone:10", "ATB:FareZone:6"]
     },
     {
-      "ruleName": "isWithinSomeRandomGeometricZone",
-      "ruleDescription": {
+      "variableName": "someRandomGeometricZone",
+      "variableDescription": {
         "lang": "nob",
         "value": "Er koordinat innenfor sone for bestillingstransport"
       },
-      "ruleType": "Custom",
-      "isEnabled": true,
+      "variableType": "Custom",
       "geometryType": "Inline",
       "geometry": {
         "type": "Polygon",
