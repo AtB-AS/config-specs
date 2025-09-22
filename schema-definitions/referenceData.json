@@ -119,10 +119,10 @@
             ]
           },
           "isBookingEnabled": {
-            "type": [
-              "boolean",
-              "null"
-            ]
+            "type": ["boolean", "null"]
+          },
+          "isEnabledForOfferFromLegs": {
+            "type": ["boolean", "null"]
           },
           "isDefault": {
             "type": [
