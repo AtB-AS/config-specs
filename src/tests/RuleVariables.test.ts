@@ -18,13 +18,14 @@ test('RuleVariables', async function () {
   let fixture = await readFixture('fixtures/ruleVariables.json');
   assertType<RuleVariables>(RuleVariables.parse(fixture));
 
-  const nonExistingInbuiltRule = {
+  const nonExistingInbuiltZone = {
     zoneRuleVariables: [
       {
-        variableName: 'myOwnInbuiltRuleVariable',
+        variableName: 'myOwnInbuiltZoneVariable',
         variableDescription: {
           lang: 'nob',
-          value: 'En regel som ikke eksisterer',
+          value:
+            'Noen prøver å lage en egen inbuilt sone som ikke er definert i schema',
         },
         variableType: 'Inbuilt',
         geometryType: 'Reference',
@@ -35,8 +36,8 @@ test('RuleVariables', async function () {
   };
 
   expect(
-    () => RuleVariables.parse(nonExistingInbuiltRule),
-    'Inbuilt rules not already defined in schema should throw an error',
+    () => RuleVariables.parse(nonExistingInbuiltZone),
+    'Inbuilt variable zone not already defined in schema should throw an error',
   ).toThrowError();
 });
 
@@ -48,13 +49,13 @@ test('RuleVariablesEvaluation', async function () {
   const fixture = await readFixture('fixtures/ruleVariables.json');
   const ruleVariables = RuleVariables.parse(fixture);
 
-  // Test inline polygon zones - convert to rules for testing evaluation
+  // Create local variables for testing evaluation based on fixture data
   const localVariables = ruleVariables.zoneRuleVariables!.reduce(
     (acc, variable) => {
       if (variable.geometryType === ZoneRuleVariableType.Values.Inline) {
         acc[variable.variableName] = variable.geometry.coordinates;
       } else {
-        // Faking a polygon for reference rules
+        // Faking a polygon for reference zones
         acc[variable.variableName] = [
           [
             [10.57160969381, 63.09006242709],
