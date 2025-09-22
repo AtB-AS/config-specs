@@ -16,8 +16,6 @@ const RuleVariableBase = z.object({
 /**
  * Zone rule variables
  */
-export const ZoneRuleVariableType = z.enum(['Reference', 'Inline']);
-
 export const ZoneRuleVariableGeometryType = z.enum(['Reference', 'Inline']);
 export const ZoneRuleVariableGeometryReferenceType = z.enum([
   'FareZone',
@@ -28,7 +26,7 @@ export const ZoneRuleVariableGeometryReferenceType = z.enum([
  * Reference zone variables point to zones defined in reference data
  */
 const ReferenceZoneRuleVariable = RuleVariableBase.extend({
-  geometryType: z.literal(ZoneRuleVariableType.Values.Reference),
+  geometryType: z.literal(ZoneRuleVariableGeometryType.Values.Reference),
   referenceType: z.enum(['FareZone', 'CityZone']),
   referenceIds: z.array(z.string()), // IDs from FareZone or CityZone in reference data
 });
@@ -37,7 +35,7 @@ const ReferenceZoneRuleVariable = RuleVariableBase.extend({
  * Inline zone variables contain their own geometry
  */
 const InlineZoneRuleVariable = RuleVariableBase.extend({
-  geometryType: z.literal(ZoneRuleVariableType.Values.Inline),
+  geometryType: z.literal(ZoneRuleVariableGeometryType.Values.Inline),
   geometry: z.object({
     type: z.literal('Polygon'),
     coordinates: z.array(z.array(z.array(z.number()).length(2))),

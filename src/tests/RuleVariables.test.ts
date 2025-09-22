@@ -1,9 +1,5 @@
 import {assertType, expect, test} from 'vitest';
-import {
-  RuleVariables,
-  ZoneRuleVariable,
-  ZoneRuleVariableType,
-} from '../rule-variables';
+import {RuleVariables, ZoneRuleVariableGeometryType} from '../rule-variables';
 import {readLocalFile} from '../utils/fs';
 import {join} from 'path';
 import turfBooleanPointInPolygon from '@turf/boolean-point-in-polygon';
@@ -52,7 +48,9 @@ test('RuleVariablesEvaluation', async function () {
   // Create local variables for testing evaluation based on fixture data
   const localVariables = ruleVariables.zoneRuleVariables!.reduce(
     (acc, variable) => {
-      if (variable.geometryType === ZoneRuleVariableType.Values.Inline) {
+      if (
+        variable.geometryType === ZoneRuleVariableGeometryType.Values.Inline
+      ) {
         acc[variable.variableName] = variable.geometry.coordinates;
       } else {
         // Faking a polygon for reference zones, in app code this will be replaced with the actual polygon from the reference data
