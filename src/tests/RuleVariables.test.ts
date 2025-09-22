@@ -55,7 +55,8 @@ test('RuleVariablesEvaluation', async function () {
       if (variable.geometryType === ZoneRuleVariableType.Values.Inline) {
         acc[variable.variableName] = variable.geometry.coordinates;
       } else {
-        // Faking a polygon for reference zones
+        // Faking a polygon for reference zones, in app code this will be replaced with the actual polygon from the reference data
+        // based on its referenceType (FareZone or CityZone) and referenceIds (e.g. ATB:FareZone:10, ATB:FareZone:6, steinkjer, verdal etc)
         acc[variable.variableName] = [
           [
             [10.57160969381, 63.09006242709],
