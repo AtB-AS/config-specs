@@ -26,6 +26,10 @@ export const PreassignedFareProduct = z.object({
     .nullish()
     .transform(nullishToOptional),
   isBookingEnabled: z.boolean().nullish().transform(nullishToOptional),
+  isEnabledForTripSearchOffer: z
+    .boolean()
+    .nullish()
+    .transform(nullishToOptional),
   isDefault: z.boolean().nullish().transform(nullishToOptional),
   alternativeNames:
     LanguageAndTextTypeArray.nullish().transform(nullishToOptional),

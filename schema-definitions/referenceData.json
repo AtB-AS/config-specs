@@ -104,6 +104,9 @@
           "isBookingEnabled": {
             "type": ["boolean", "null"]
           },
+          "isEnabledForTripSearchOffer": {
+            "type": ["boolean", "null"]
+          },
           "isDefault": {
             "type": ["boolean", "null"]
           },
