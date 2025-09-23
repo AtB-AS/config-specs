@@ -33,10 +33,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "lang",
-                  "value"
-                ],
+                "required": ["lang", "value"],
                 "additionalProperties": false
               },
               {
@@ -63,16 +60,10 @@
                 }
               },
               "appVersionMin": {
-                "type": [
-                  "string",
-                  "null"
-                ]
+                "type": ["string", "null"]
               },
               "appVersionMax": {
-                "type": [
-                  "string",
-                  "null"
-                ]
+                "type": ["string", "null"]
               },
               "fareZoneRefs": {
                 "anyOf": [
@@ -101,34 +92,20 @@
                 ]
               }
             },
-            "required": [
-              "userProfileRefs"
-            ],
+            "required": ["userProfileRefs"],
             "additionalProperties": false
           },
           "durationDays": {
-            "type": [
-              "number",
-              "null"
-            ]
+            "type": ["number", "null"]
           },
           "isApplicableOnSingleZoneOnly": {
-            "type": [
-              "boolean",
-              "null"
-            ]
+            "type": ["boolean", "null"]
           },
           "isBookingEnabled": {
-            "type": [
-              "boolean",
-              "null"
-            ]
+            "type": ["boolean", "null"]
           },
           "isDefault": {
-            "type": [
-              "boolean",
-              "null"
-            ]
+            "type": ["boolean", "null"]
           },
           "alternativeNames": {
             "anyOf": [
@@ -184,10 +161,7 @@
             ]
           },
           "productAliasId": {
-            "type": [
-              "string",
-              "null"
-            ]
+            "type": ["string", "null"]
           },
           "productAlias": {
             "anyOf": [
@@ -257,10 +231,7 @@
                 }
               }
             },
-            "required": [
-              "type",
-              "coordinates"
-            ],
+            "required": ["type", "coordinates"],
             "additionalProperties": false
           },
           "description": {
@@ -270,12 +241,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "id",
-          "name",
-          "version",
-          "geometry"
-        ],
+        "required": ["id", "name", "version", "geometry"],
         "additionalProperties": false
       }
     },
@@ -321,13 +287,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "id",
-          "userTypeString",
-          "userType",
-          "version",
-          "name"
-        ],
+        "required": ["id", "userTypeString", "userType", "version", "name"],
         "additionalProperties": false
       }
     },
@@ -376,19 +336,11 @@
                 }
               }
             },
-            "required": [
-              "type",
-              "coordinates"
-            ],
+            "required": ["type", "coordinates"],
             "additionalProperties": false
           }
         },
-        "required": [
-          "id",
-          "name",
-          "enabled",
-          "geometry"
-        ],
+        "required": ["id", "name", "enabled", "geometry"],
         "additionalProperties": false
       }
     },
@@ -429,10 +381,7 @@
                 }
               }
             },
-            "required": [
-              "type",
-              "coordinates"
-            ],
+            "required": ["type", "coordinates"],
             "additionalProperties": false
           },
           "description": {
@@ -442,12 +391,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "id",
-          "name",
-          "version",
-          "geometry"
-        ],
+        "required": ["id", "name", "version", "geometry"],
         "additionalProperties": false
       }
     }
