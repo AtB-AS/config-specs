@@ -81,6 +81,15 @@ export const CityZone = z.object({
   }),
 });
 
+export const CarPoolingZone = z.object({
+  id: z.string(),
+  name: z.string(),
+  geometry: z.object({
+    type: z.literal('Polygon'),
+    coordinates: z.array(z.array(z.array(z.number()).length(2))),
+  }),
+});
+
 export const UserProfile = z.object({
   id: z.string(),
   userTypeString: z.string(),
@@ -101,6 +110,7 @@ export const ReferenceData = z.object({
   fareZones: z.array(FareZone),
   userProfiles: z.array(UserProfile),
   cityZones: z.array(CityZone).optional(),
+  carPoolingZones: z.array(CarPoolingZone).optional(),
 
   /**
    * @deprecated Use preassignedFareProducts_v2 instead
@@ -120,5 +130,6 @@ export type TariffZone = z.infer<typeof TariffZone>;
 
 export type FareZone = z.infer<typeof FareZone>;
 export type CityZone = z.infer<typeof CityZone>;
+export type CarPoolingZone = z.infer<typeof CarPoolingZone>;
 export type UserProfile = z.infer<typeof UserProfile>;
 export type ReferenceData = z.infer<typeof ReferenceData>;
