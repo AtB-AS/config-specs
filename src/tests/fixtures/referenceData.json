@@ -57,5 +57,15 @@
       "userTypeString": "ADULT",
       "userType": 1
     }
+  ],
+  "carPoolingZones": [
+    {
+      "id": "ATB:CarPoolingZone:1",
+      "name": "CarPooling Zone 1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[10.73617214148, 63.31324444455]]]
+      }
+    }
   ]
 }
