@@ -1,5 +1,18 @@
 # Changelog
 
+## [7.4.0](https://github.com/AtB-AS/config-specs/compare/v7.3.0...v7.4.0) (2025-09-23)
+
+
+### Features
+
+* Add CarPoolingZone to reference data ([#129](https://github.com/AtB-AS/config-specs/issues/129)) ([bd22ed1](https://github.com/AtB-AS/config-specs/commit/bd22ed1affd8a2785373ef930327db9b3c979a68))
+* add isEnabledForTripSearchOffer to PreassignedFareProduct ([#126](https://github.com/AtB-AS/config-specs/issues/126)) ([d61b84f](https://github.com/AtB-AS/config-specs/commit/d61b84fbb3d2f088055ec676be61ffea3853e781))
+
+
+### Bug Fixes
+
+* Pure formatting from yarn build ([#127](https://github.com/AtB-AS/config-specs/issues/127)) ([78a321e](https://github.com/AtB-AS/config-specs/commit/78a321e09d337c6c74934fa6a648c5ba73a29a49))
+
 ## [7.3.0](https://github.com/AtB-AS/config-specs/compare/v7.2.0...v7.3.0) (2025-08-29)
 
 
