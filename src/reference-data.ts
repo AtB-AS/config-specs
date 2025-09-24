@@ -45,7 +45,7 @@ import {nullishToOptional} from './utils/nullish-to-optional';
 
 const opt = <T extends z.ZodTypeAny>(base: T, includeTransform: boolean) =>
   includeTransform
-    ? base.nullish().transform(nullishToOptional)
+    ? base.nullish().transform(nullishToOptional).optional()
     : base.optional();
 
 const getPreassignedFareProduct = (includeTransform = false) =>
