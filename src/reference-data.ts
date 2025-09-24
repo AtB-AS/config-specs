@@ -103,26 +103,23 @@ export const UserProfile = z.object({
   emoji: z.string().optional(),
 });
 
-const getReferenceData = (includeTransform: boolean) =>
-  z.object({
-    preassignedFareProducts_v2: z.array(PreassignedFareProduct),
-    fareZones: z.array(FareZone),
-    userProfiles: z.array(UserProfile),
-    cityZones: z.array(CityZone).optional(),
-    carPoolingZones: z.array(CarPoolingZone).optional(),
+export const ReferenceData = z.object({
+  preassignedFareProducts_v2: z.array(PreassignedFareProduct),
+  fareZones: z.array(FareZone),
+  userProfiles: z.array(UserProfile),
+  cityZones: z.array(CityZone).optional(),
+  carPoolingZones: z.array(CarPoolingZone).optional(),
 
-    /**
-     * @deprecated Use preassignedFareProducts_v2 instead
-     */
-    preassignedFareProducts: z.any(),
+  /**
+   * @deprecated Use preassignedFareProducts_v2 instead
+   */
+  preassignedFareProducts: z.any(),
 
-    /**
-     * @deprecated Use fareZones instead
-     */
-    tariffZones: z.array(TariffZone),
-  });
-export const ReferenceData = getReferenceData(true);
-export const ReferenceDataJsonSchema = getReferenceData(false);
+  /**
+   * @deprecated Use fareZones instead
+   */
+  tariffZones: z.array(TariffZone),
+});
 
 export type PreassignedFareProduct = z.infer<typeof PreassignedFareProduct>;
 

@@ -16,7 +16,7 @@ import {NotificationConfig} from '../notification-config';
 import {Consents} from '../consents';
 import {PaymentTypes} from '../payment-types';
 import {Other} from '../other';
-import {ReferenceDataJsonSchema} from '../reference-data';
+import {ReferenceData} from '../reference-data';
 import {StopSignalButtonConfig} from '../stop-signal-button-config';
 
 // All supported specifications
@@ -56,7 +56,7 @@ export const schemaTypes = {
   harborConnectionOverrides: HarborConnectionOverrides,
   notificationConfig: NotificationConfig,
   consents: Consents,
-  referenceData: ReferenceDataJsonSchema,
+  referenceData: ReferenceData,
   stopSignalButtonConfig: StopSignalButtonConfig,
 };
 
@@ -97,6 +97,6 @@ export const jsonSchemas = {
   harborConnectionOverrides: z.toJSONSchema(HarborConnectionOverrides),
   notificationConfig: z.toJSONSchema(NotificationConfig),
   consents: z.toJSONSchema(Consents),
-  referenceData: z.toJSONSchema(ReferenceDataJsonSchema, {io: 'input'}),
+  referenceData: z.toJSONSchema(ReferenceData, {io: 'input'}),
   stopSignalButtonConfig: z.toJSONSchema(StopSignalButtonConfig),
 } satisfies Record<SchemaNames, unknown>;
