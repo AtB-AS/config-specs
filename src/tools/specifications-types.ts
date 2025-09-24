@@ -1,5 +1,4 @@
 import {z} from 'zod';
-import zodToJsonSchema, {JsonSchema7Type} from 'zod-to-json-schema';
 import {
   LanguageAndTextType,
   LanguageAndTextTypeArray,
@@ -33,7 +32,7 @@ import {NotificationConfig} from '../notification-config';
 import {Consents} from '../consents';
 import {PaymentTypes} from '../payment-types';
 import {Other} from '../other';
-import {ReferenceData} from '../reference-data';
+import {ReferenceDataJsonSchema} from '../reference-data';
 import {StopSignalButtonConfig} from '../stop-signal-button-config';
 
 // All supported specifications
@@ -73,68 +72,47 @@ export const schemaTypes = {
   harborConnectionOverrides: HarborConnectionOverrides,
   notificationConfig: NotificationConfig,
   consents: Consents,
-  referenceData: ReferenceData,
+  referenceData: ReferenceDataJsonSchema,
   stopSignalButtonConfig: StopSignalButtonConfig,
 };
 
 // All correctly supported schema types as JSON Schema data structures
 export const jsonSchemas = {
-  fareProductTypeConfigs: zodToJsonSchema(
-    z.object({
-      fareProductTypeConfigs: z.array(FareProductTypeConfig),
-      fareProductGroups: z.array(FareProductGroup).optional(),
-    }),
-    {
-      name: 'FareProductConfiguration',
-      definitions: {
-        LanguageAndTextType,
-        ProductTypeTransportModes,
-        FareProductTypeConfigSettings,
-        FareProductTypeConfig,
-        TransportModeType,
-        TransportSubmodeType,
-      },
-    },
+  fareProductTypeConfigs: z.toJSONSchema(
+    z
+      .object({
+        fareProductTypeConfigs: z.array(FareProductTypeConfig),
+        fareProductGroups: z.array(FareProductGroup).optional(),
+      })
+      .meta({title: 'FareProductConfiguration'}),
   ),
-  mobility: zodToJsonSchema(
-    z.object({
-      operators: z.array(MobilityOperator),
-      scooterFaqs: z.array(ScooterFaq).optional(),
-      scooterConsentLines: z.array(ScooterConsentLine).optional(),
-      benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
-      bonusProducts: z.array(BonusProduct).optional(),
-      bonusTexts: BonusTexts.optional(),
-      bonusSources: z.array(BonusSource).optional(),
-    }),
-    {
-      name: 'MobilityOperator',
-      definitions: {
-        FormFactor,
-        OperatorBenefitId,
-      },
-    },
+
+  mobility: z.toJSONSchema(
+    z
+      .object({
+        operators: z.array(MobilityOperator),
+        scooterFaqs: z.array(ScooterFaq).optional(),
+        scooterConsentLines: z.array(ScooterConsentLine).optional(),
+        benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
+        bonusProducts: z.array(BonusProduct).optional(),
+        bonusTexts: BonusTexts.optional(),
+        bonusSources: z.array(BonusSource).optional(),
+      })
+      .meta({title: 'MobilityOperator'}),
   ),
-  other: zodToJsonSchema(Other),
-  paymentTypes: zodToJsonSchema(PaymentTypes),
-  travelSearchFilters: zodToJsonSchema(TravelSearchFilters, {
-    name: 'TravelSearchFilters',
-    definitions: {
-      LanguageAndTextTypeArray,
-      TravelSearchTransportModes,
-      TravelSearchTransportModeIcon,
-      TransportModeType,
-      TransportSubmodeType,
-    },
-  }),
-  urls: zodToJsonSchema(ConfigurableLinks, {
-    name: 'ConfigurableLinks',
-    definitions: {
-      LanguageAndTextType,
-    },
-  }),
-  harborConnectionOverrides: zodToJsonSchema(HarborConnectionOverrides),
-  notificationConfig: zodToJsonSchema(NotificationConfig),
-  consents: zodToJsonSchema(Consents),
-  referenceData: zodToJsonSchema(ReferenceData),
-  stopSignalButtonConfig: zodToJsonSchema(StopSignalButtonConfig),
-} satisfies Record<SchemaNames, JsonSchema7Type | undefined>;
+
+  other: z.toJSONSchema(Other),
+  paymentTypes: z.toJSONSchema(PaymentTypes),
+
+  travelSearchFilters: z.toJSONSchema(
+    TravelSearchFilters.meta({title: 'TravelSearchFilters'}),
+  ),
+
+  urls: z.toJSONSchema(ConfigurableLinks.meta({title: 'ConfigurableLinks'})),
+
+  harborConnectionOverrides: z.toJSONSchema(HarborConnectionOverrides),
+  notificationConfig: z.toJSONSchema(NotificationConfig),
+  consents: z.toJSONSchema(Consents),
+  referenceData: z.toJSONSchema(ReferenceDataJsonSchema),
+  stopSignalButtonConfig: z.toJSONSchema(StopSignalButtonConfig),
+} satisfies Record<SchemaNames, unknown>;

@@ -1,53 +1,208 @@
 {
-  "$ref": "#/definitions/MobilityOperator",
-  "definitions": {
-    "FormFactor": {
-      "type": "string",
-      "enum": ["SCOOTER", "BICYCLE", "CAR"]
-    },
-    "OperatorBenefitId": {
-      "type": "string",
-      "enum": ["free-unlock", "free-use", "single-unlock"]
-    },
-    "MobilityOperator": {
-      "type": "object",
-      "properties": {
-        "operators": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "minLength": 1
-              },
-              "name": {
-                "type": "string",
-                "minLength": 1
-              },
-              "showInApp": {
-                "type": "boolean",
-                "default": false
-              },
-              "formFactors": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/FormFactor"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MobilityOperator",
+  "type": "object",
+  "properties": {
+    "operators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "showInApp": {
+            "default": false,
+            "type": "boolean"
+          },
+          "formFactors": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "SCOOTER"
                 },
-                "minItems": 1
-              },
-              "benefits": {
-                "type": "array",
-                "items": {
+                {
+                  "type": "string",
+                  "const": "BICYCLE"
+                },
+                {
+                  "type": "string",
+                  "const": "CAR"
+                }
+              ]
+            }
+          },
+          "benefits": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "free-unlock"
+                    },
+                    {
+                      "type": "string",
+                      "const": "free-use"
+                    },
+                    {
+                      "type": "string",
+                      "const": "single-unlock"
+                    }
+                  ]
+                },
+                "imageWhenActive": {
+                  "type": "string"
+                },
+                "headingWhenActive": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "lang": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": ["lang", "value"],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "language": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                },
+                "descriptionWhenActive": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "lang": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": ["lang", "value"],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "language": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                },
+                "imageWhenNotActive": {
+                  "type": "string"
+                },
+                "headingWhenNotActive": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "lang": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": ["lang", "value"],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "language": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                },
+                "descriptionWhenNotActive": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "lang": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": ["lang", "value"],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "language": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                },
+                "callToAction": {
                   "type": "object",
                   "properties": {
-                    "id": {
-                      "$ref": "#/definitions/OperatorBenefitId"
-                    },
-                    "imageWhenActive": {
+                    "url": {
                       "type": "string"
                     },
-                    "headingWhenActive": {
+                    "name": {
                       "type": "array",
                       "items": {
                         "anyOf": [
@@ -78,299 +233,588 @@
                           }
                         ]
                       }
-                    },
-                    "descriptionWhenActive": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
-                    },
-                    "imageWhenNotActive": {
-                      "type": "string"
-                    },
-                    "headingWhenNotActive": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
-                    },
-                    "descriptionWhenNotActive": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
-                    },
-                    "callToAction": {
-                      "type": "object",
-                      "properties": {
-                        "url": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
-                        }
-                      },
-                      "required": ["url"],
-                      "additionalProperties": false
-                    },
-                    "ticketDescription": {
-                      "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive"
-                    },
-                    "formFactors": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/definitions/FormFactor"
-                      },
-                      "minItems": 1
                     }
                   },
-                  "required": [
-                    "id",
-                    "descriptionWhenActive",
-                    "descriptionWhenNotActive",
-                    "callToAction",
-                    "formFactors"
-                  ],
+                  "required": ["url"],
                   "additionalProperties": false
                 },
-                "default": []
-              },
-              "brandAssets": {
-                "type": "object",
-                "properties": {
-                  "brandLastModified": {
-                    "type": "string",
-                    "format": "date"
-                  },
-                  "brandTermsUrl": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "brandImageUrl": {
-                    "type": "string"
-                  },
-                  "brandImageUrlDark": {
-                    "type": "string"
-                  },
-                  "color": {
-                    "type": "string"
+                "ticketDescription": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "lang": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": ["lang", "value"],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "language": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    ]
                   }
                 },
-                "required": ["brandLastModified", "brandImageUrl"],
-                "additionalProperties": false,
-                "description": "modeled 1-1 like brandAssets in EnTur mobility API"
-              },
-              "isDeepIntegrationEnabled": {
-                "type": "boolean",
-                "default": false
-              },
-              "ageLimit": {
-                "type": "integer",
-                "exclusiveMinimum": 0
-              },
-              "appUrl": {
-                "type": "object",
-                "properties": {
-                  "ios": {
-                    "type": "string",
-                    "format": "uri"
-                  },
-                  "android": {
-                    "type": "string",
-                    "format": "uri"
+                "formFactors": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "SCOOTER"
+                      },
+                      {
+                        "type": "string",
+                        "const": "BICYCLE"
+                      },
+                      {
+                        "type": "string",
+                        "const": "CAR"
+                      }
+                    ]
                   }
-                },
-                "required": ["ios", "android"],
-                "additionalProperties": false
-              }
-            },
-            "required": ["id", "name", "formFactors"],
-            "additionalProperties": false
-          }
-        },
-        "scooterFaqs": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
+                }
               },
-              "title": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
-                },
-                "minItems": 1
-              },
-              "description": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
-                },
-                "minItems": 1
-              }
-            },
-            "required": ["id", "title", "description"],
-            "additionalProperties": false
-          }
-        },
-        "scooterConsentLines": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "minLength": 1
-              },
-              "illustration": {
-                "type": "string"
-              },
-              "description": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
-                },
-                "minItems": 1
-              }
-            },
-            "required": ["id", "description"],
-            "additionalProperties": false
-          }
-        },
-        "benefitIdsRequiringValueCode": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/OperatorBenefitId"
-          }
-        },
-        "bonusProducts": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "minLength": 1
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "operatorId": {
-                "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/id"
-              },
-              "formFactors": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/FormFactor"
-                },
-                "minItems": 1
-              },
-              "price": {
-                "type": "object",
-                "properties": {
-                  "amount": {
-                    "type": "integer",
-                    "exclusiveMinimum": 0
-                  },
-                  "currencyCode": {
-                    "type": "string",
-                    "const": "ATB_BONUS_POINT"
-                  }
-                },
-                "required": ["amount", "currencyCode"],
-                "additionalProperties": false
-              },
-              "paymentDescription": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/MobilityOperator/properties/operators/items/properties/benefits/items/properties/headingWhenActive/items"
-                },
-                "minItems": 1
-              },
-              "productDescription": {
-                "type": "object",
-                "properties": {
-                  "title": {
-                    "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/title"
-                  },
-                  "description": {
-                    "$ref": "#/definitions/MobilityOperator/properties/scooterFaqs/items/properties/description"
-                  }
-                },
-                "required": ["title", "description"],
-                "additionalProperties": false
-              }
-            },
-            "required": [
-              "id",
-              "isActive",
-              "operatorId",
-              "formFactors",
-              "price",
-              "paymentDescription",
-              "productDescription"
-            ],
-            "additionalProperties": false
-          }
-        },
-        "bonusTexts": {
-          "type": "object",
-          "properties": {
-            "howBonusWorks": {
-              "$ref": "#/definitions/MobilityOperator/properties/bonusProducts/items/properties/productDescription"
+              "required": [
+                "id",
+                "descriptionWhenActive",
+                "descriptionWhenNotActive",
+                "callToAction",
+                "formFactors"
+              ],
+              "additionalProperties": false
             }
           },
-          "required": ["howBonusWorks"],
-          "additionalProperties": false
-        },
-        "bonusSources": {
-          "type": "array",
-          "items": {
+          "brandAssets": {
+            "description": "modeled 1-1 like brandAssets in EnTur mobility API",
             "type": "object",
             "properties": {
-              "id": {
+              "brandLastModified": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+              },
+              "brandTermsUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "brandImageUrl": {
                 "type": "string"
               },
-              "preassignedFareProductId": {
+              "brandImageUrlDark": {
                 "type": "string"
               },
-              "userProfileIds": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "color": {
+                "type": "string"
+              }
+            },
+            "required": ["brandLastModified", "brandImageUrl"],
+            "additionalProperties": false
+          },
+          "isDeepIntegrationEnabled": {
+            "default": false,
+            "type": "boolean"
+          },
+          "ageLimit": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "appUrl": {
+            "type": "object",
+            "properties": {
+              "ios": {
+                "type": "string",
+                "format": "uri"
               },
-              "fareZones": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "amountByEnrollment": {
-                "type": "array",
-                "items": {
+              "android": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": ["ios", "android"],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "showInApp",
+          "formFactors",
+          "benefits",
+          "isDeepIntegrationEnabled"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "scooterFaqs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
                   "type": "object",
                   "properties": {
-                    "enrollmentId": {
+                    "lang": {
                       "type": "string"
                     },
-                    "amount": {
-                      "type": "integer",
-                      "exclusiveMinimum": 0
+                    "value": {
+                      "type": "string"
                     }
                   },
-                  "required": ["amount"],
+                  "required": ["lang", "value"],
                   "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "description": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        },
+        "required": ["id", "title", "description"],
+        "additionalProperties": false
+      }
+    },
+    "scooterConsentLines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "illustration": {
+            "type": "string"
+          },
+          "description": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        },
+        "required": ["id", "description"],
+        "additionalProperties": false
+      }
+    },
+    "benefitIdsRequiringValueCode": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "const": "free-unlock"
+          },
+          {
+            "type": "string",
+            "const": "free-use"
+          },
+          {
+            "type": "string",
+            "const": "single-unlock"
+          }
+        ]
+      }
+    },
+    "bonusProducts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "operatorId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "formFactors": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "SCOOTER"
+                },
+                {
+                  "type": "string",
+                  "const": "BICYCLE"
+                },
+                {
+                  "type": "string",
+                  "const": "CAR"
+                }
+              ]
+            }
+          },
+          "price": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              },
+              "currencyCode": {
+                "type": "string",
+                "const": "ATB_BONUS_POINT"
+              }
+            },
+            "required": ["amount", "currencyCode"],
+            "additionalProperties": false
+          },
+          "paymentDescription": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "productDescription": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "lang": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["lang", "value"],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "language": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "description": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "lang": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["lang", "value"],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "language": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  ]
                 }
               }
             },
-            "required": [
-              "id",
-              "preassignedFareProductId",
-              "userProfileIds",
-              "fareZones",
-              "amountByEnrollment"
-            ],
+            "required": ["title", "description"],
             "additionalProperties": false
           }
+        },
+        "required": [
+          "id",
+          "isActive",
+          "operatorId",
+          "formFactors",
+          "price",
+          "paymentDescription",
+          "productDescription"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "bonusTexts": {
+      "type": "object",
+      "properties": {
+        "howBonusWorks": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "lang": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["lang", "value"],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "language": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "description": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "lang": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["lang", "value"],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "language": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            }
+          },
+          "required": ["title", "description"],
+          "additionalProperties": false
         }
       },
-      "required": ["operators"],
+      "required": ["howBonusWorks"],
       "additionalProperties": false
+    },
+    "bonusSources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "preassignedFareProductId": {
+            "type": "string"
+          },
+          "userProfileIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fareZones": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "amountByEnrollment": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "enrollmentId": {
+                  "type": "string"
+                },
+                "amount": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": ["amount"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "preassignedFareProductId",
+          "userProfileIds",
+          "fareZones",
+          "amountByEnrollment"
+        ],
+        "additionalProperties": false
+      }
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "required": ["operators"],
+  "additionalProperties": false
 }

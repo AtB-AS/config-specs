@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
     "app": {
@@ -11,10 +12,10 @@
     "web": {
       "type": "array",
       "items": {
-        "$ref": "#/properties/app/items"
+        "type": "string",
+        "enum": ["vipps", "visa", "mastercard", "amex"]
       }
     }
   },
-  "additionalProperties": false,
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "additionalProperties": false
 }

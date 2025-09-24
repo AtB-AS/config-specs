@@ -1,332 +1,1376 @@
 {
-  "$ref": "#/definitions/TravelSearchFilters",
-  "definitions": {
-    "LanguageAndTextTypeArray": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TravelSearchFilters",
+  "type": "object",
+  "properties": {
+    "transportModes": {
       "type": "array",
       "items": {
-        "anyOf": [
-          {
-            "type": "object",
-            "properties": {
-              "lang": {
-                "type": "string"
-              },
-              "value": {
-                "type": "string"
-              }
-            },
-            "required": ["lang", "value"],
-            "additionalProperties": false
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
           },
-          {
+          "icon": {
             "type": "object",
             "properties": {
-              "language": {
-                "type": "string"
-              },
-              "value": {
-                "type": "string"
-              }
-            },
-            "additionalProperties": false
-          }
-        ]
-      }
-    },
-    "TravelSearchTransportModes": {
-      "type": "object",
-      "properties": {
-        "transportMode": {
-          "$ref": "#/definitions/TransportModeType"
-        },
-        "transportSubModes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TransportSubmodeType"
-          }
-        }
-      },
-      "required": ["transportMode"],
-      "additionalProperties": false
-    },
-    "TravelSearchTransportModeIcon": {
-      "type": "object",
-      "properties": {
-        "transportMode": {
-          "$ref": "#/definitions/TransportModeType"
-        },
-        "transportSubMode": {
-          "$ref": "#/definitions/TransportSubmodeType"
-        }
-      },
-      "required": ["transportMode"],
-      "additionalProperties": false
-    },
-    "TransportModeType": {
-      "type": "string",
-      "enum": [
-        "bicycle",
-        "foot",
-        "scooter",
-        "air",
-        "bus",
-        "cableway",
-        "coach",
-        "funicular",
-        "lift",
-        "metro",
-        "monorail",
-        "rail",
-        "taxi",
-        "tram",
-        "trolleybus",
-        "unknown",
-        "water"
-      ]
-    },
-    "TransportSubmodeType": {
-      "type": "string",
-      "enum": [
-        "escooter",
-        "SchengenAreaFlight",
-        "airportBoatLink",
-        "airportLinkBus",
-        "airportLinkRail",
-        "airshipService",
-        "allFunicularServices",
-        "allHireVehicles",
-        "allTaxiServices",
-        "bikeTaxi",
-        "blackCab",
-        "cableCar",
-        "cableFerry",
-        "canalBarge",
-        "carTransportRailService",
-        "chairLift",
-        "charterTaxi",
-        "cityTram",
-        "communalTaxi",
-        "commuterCoach",
-        "crossCountryRail",
-        "dedicatedLaneBus",
-        "demandAndResponseBus",
-        "domesticCharterFlight",
-        "domesticFlight",
-        "domesticScheduledFlight",
-        "dragLift",
-        "expressBus",
-        "funicular",
-        "helicopterService",
-        "highFrequencyBus",
-        "highSpeedPassengerService",
-        "highSpeedRail",
-        "highSpeedVehicleService",
-        "hireCar",
-        "hireCycle",
-        "hireMotorbike",
-        "hireVan",
-        "intercontinentalCharterFlight",
-        "intercontinentalFlight",
-        "international",
-        "internationalCarFerry",
-        "internationalCharterFlight",
-        "internationalCoach",
-        "internationalFlight",
-        "internationalPassengerFerry",
-        "interregionalRail",
-        "lift",
-        "local",
-        "localBus",
-        "localCarFerry",
-        "localPassengerFerry",
-        "localTram",
-        "longDistance",
-        "metro",
-        "miniCab",
-        "mobilityBus",
-        "mobilityBusForRegisteredDisabled",
-        "nationalCarFerry",
-        "nationalCoach",
-        "nationalPassengerFerry",
-        "nightBus",
-        "nightRail",
-        "postBoat",
-        "postBus",
-        "rackAndPinionRailway",
-        "railReplacementBus",
-        "railShuttle",
-        "railTaxi",
-        "regionalBus",
-        "regionalCarFerry",
-        "regionalCoach",
-        "regionalPassengerFerry",
-        "regionalRail",
-        "regionalTram",
-        "replacementRailService",
-        "riverBus",
-        "roadFerryLink",
-        "roundTripCharterFlight",
-        "scheduledFerry",
-        "schoolAndPublicServiceBus",
-        "schoolBoat",
-        "schoolBus",
-        "schoolCoach",
-        "shortHaulInternationalFlight",
-        "shuttleBus",
-        "shuttleCoach",
-        "shuttleFerryService",
-        "shuttleFlight",
-        "shuttleTram",
-        "sightseeingBus",
-        "sightseeingCoach",
-        "sightseeingFlight",
-        "sightseeingService",
-        "sightseeingTram",
-        "sleeperRailService",
-        "specialCoach",
-        "specialNeedsBus",
-        "specialTrain",
-        "streetCableCar",
-        "suburbanRailway",
-        "telecabin",
-        "telecabinLink",
-        "touristCoach",
-        "touristRailway",
-        "trainFerry",
-        "trainTram",
-        "tube",
-        "undefined",
-        "undefinedFunicular",
-        "unknown",
-        "urbanRailway",
-        "waterTaxi"
-      ]
-    },
-    "TravelSearchFilters": {
-      "type": "object",
-      "properties": {
-        "transportModes": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "icon": {
-                "$ref": "#/definitions/TravelSearchTransportModeIcon"
-              },
-              "text": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-                },
-                "minItems": 1
-              },
-              "description": {
-                "$ref": "#/definitions/LanguageAndTextTypeArray"
-              },
-              "modes": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/TravelSearchTransportModes"
-                }
-              },
-              "selectedAsDefault": {
-                "type": "boolean"
-              }
-            },
-            "required": ["id", "icon", "text", "modes", "selectedAsDefault"],
-            "additionalProperties": false
-          }
-        },
-        "flexibleTransport": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "title": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-              },
-              "minItems": 1
-            },
-            "label": {
-              "type": "string",
-              "enum": ["beta", "new"]
-            },
-            "description": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-              },
-              "minItems": 1
-            }
-          },
-          "required": ["id", "title", "description"],
-          "additionalProperties": false
-        },
-        "travelSearchPreferences": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "transferSlack",
-                  "transferPenalty",
-                  "waitReluctance",
-                  "walkReluctance",
-                  "walkSpeed"
+              "transportMode": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "const": "bicycle"
+                  },
+                  {
+                    "type": "string",
+                    "const": "foot"
+                  },
+                  {
+                    "type": "string",
+                    "const": "scooter"
+                  },
+                  {
+                    "type": "string",
+                    "const": "air"
+                  },
+                  {
+                    "type": "string",
+                    "const": "bus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "cableway"
+                  },
+                  {
+                    "type": "string",
+                    "const": "coach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "funicular"
+                  },
+                  {
+                    "type": "string",
+                    "const": "lift"
+                  },
+                  {
+                    "type": "string",
+                    "const": "metro"
+                  },
+                  {
+                    "type": "string",
+                    "const": "monorail"
+                  },
+                  {
+                    "type": "string",
+                    "const": "rail"
+                  },
+                  {
+                    "type": "string",
+                    "const": "taxi"
+                  },
+                  {
+                    "type": "string",
+                    "const": "tram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "trolleybus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "unknown"
+                  },
+                  {
+                    "type": "string",
+                    "const": "water"
+                  }
                 ]
               },
-              "title": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-                },
-                "minItems": 1
-              },
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "text": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/definitions/LanguageAndTextTypeArray/items"
-                      },
-                      "minItems": 1
-                    },
-                    "value": {
-                      "type": "number",
-                      "minimum": 0
-                    }
+              "transportSubMode": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "const": "escooter"
                   },
-                  "required": ["id", "text", "value"],
-                  "additionalProperties": false
-                },
-                "minItems": 1
-              },
-              "defaultOption": {
-                "$ref": "#/definitions/TravelSearchFilters/properties/travelSearchPreferences/items/properties/options/items/properties/id"
+                  {
+                    "type": "string",
+                    "const": "SchengenAreaFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "airportBoatLink"
+                  },
+                  {
+                    "type": "string",
+                    "const": "airportLinkBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "airportLinkRail"
+                  },
+                  {
+                    "type": "string",
+                    "const": "airshipService"
+                  },
+                  {
+                    "type": "string",
+                    "const": "allFunicularServices"
+                  },
+                  {
+                    "type": "string",
+                    "const": "allHireVehicles"
+                  },
+                  {
+                    "type": "string",
+                    "const": "allTaxiServices"
+                  },
+                  {
+                    "type": "string",
+                    "const": "bikeTaxi"
+                  },
+                  {
+                    "type": "string",
+                    "const": "blackCab"
+                  },
+                  {
+                    "type": "string",
+                    "const": "cableCar"
+                  },
+                  {
+                    "type": "string",
+                    "const": "cableFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "canalBarge"
+                  },
+                  {
+                    "type": "string",
+                    "const": "carTransportRailService"
+                  },
+                  {
+                    "type": "string",
+                    "const": "chairLift"
+                  },
+                  {
+                    "type": "string",
+                    "const": "charterTaxi"
+                  },
+                  {
+                    "type": "string",
+                    "const": "cityTram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "communalTaxi"
+                  },
+                  {
+                    "type": "string",
+                    "const": "commuterCoach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "crossCountryRail"
+                  },
+                  {
+                    "type": "string",
+                    "const": "dedicatedLaneBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "demandAndResponseBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "domesticCharterFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "domesticFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "domesticScheduledFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "dragLift"
+                  },
+                  {
+                    "type": "string",
+                    "const": "expressBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "funicular"
+                  },
+                  {
+                    "type": "string",
+                    "const": "helicopterService"
+                  },
+                  {
+                    "type": "string",
+                    "const": "highFrequencyBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "highSpeedPassengerService"
+                  },
+                  {
+                    "type": "string",
+                    "const": "highSpeedRail"
+                  },
+                  {
+                    "type": "string",
+                    "const": "highSpeedVehicleService"
+                  },
+                  {
+                    "type": "string",
+                    "const": "hireCar"
+                  },
+                  {
+                    "type": "string",
+                    "const": "hireCycle"
+                  },
+                  {
+                    "type": "string",
+                    "const": "hireMotorbike"
+                  },
+                  {
+                    "type": "string",
+                    "const": "hireVan"
+                  },
+                  {
+                    "type": "string",
+                    "const": "intercontinentalCharterFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "intercontinentalFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "international"
+                  },
+                  {
+                    "type": "string",
+                    "const": "internationalCarFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "internationalCharterFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "internationalCoach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "internationalFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "internationalPassengerFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "interregionalRail"
+                  },
+                  {
+                    "type": "string",
+                    "const": "lift"
+                  },
+                  {
+                    "type": "string",
+                    "const": "local"
+                  },
+                  {
+                    "type": "string",
+                    "const": "localBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "localCarFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "localPassengerFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "localTram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "longDistance"
+                  },
+                  {
+                    "type": "string",
+                    "const": "metro"
+                  },
+                  {
+                    "type": "string",
+                    "const": "miniCab"
+                  },
+                  {
+                    "type": "string",
+                    "const": "mobilityBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "mobilityBusForRegisteredDisabled"
+                  },
+                  {
+                    "type": "string",
+                    "const": "nationalCarFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "nationalCoach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "nationalPassengerFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "nightBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "nightRail"
+                  },
+                  {
+                    "type": "string",
+                    "const": "postBoat"
+                  },
+                  {
+                    "type": "string",
+                    "const": "postBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "rackAndPinionRailway"
+                  },
+                  {
+                    "type": "string",
+                    "const": "railReplacementBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "railShuttle"
+                  },
+                  {
+                    "type": "string",
+                    "const": "railTaxi"
+                  },
+                  {
+                    "type": "string",
+                    "const": "regionalBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "regionalCarFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "regionalCoach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "regionalPassengerFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "regionalRail"
+                  },
+                  {
+                    "type": "string",
+                    "const": "regionalTram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "replacementRailService"
+                  },
+                  {
+                    "type": "string",
+                    "const": "riverBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "roadFerryLink"
+                  },
+                  {
+                    "type": "string",
+                    "const": "roundTripCharterFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "scheduledFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "schoolAndPublicServiceBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "schoolBoat"
+                  },
+                  {
+                    "type": "string",
+                    "const": "schoolBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "schoolCoach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "shortHaulInternationalFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "shuttleBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "shuttleCoach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "shuttleFerryService"
+                  },
+                  {
+                    "type": "string",
+                    "const": "shuttleFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "shuttleTram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "sightseeingBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "sightseeingCoach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "sightseeingFlight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "sightseeingService"
+                  },
+                  {
+                    "type": "string",
+                    "const": "sightseeingTram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "sleeperRailService"
+                  },
+                  {
+                    "type": "string",
+                    "const": "specialCoach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "specialNeedsBus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "specialTrain"
+                  },
+                  {
+                    "type": "string",
+                    "const": "streetCableCar"
+                  },
+                  {
+                    "type": "string",
+                    "const": "suburbanRailway"
+                  },
+                  {
+                    "type": "string",
+                    "const": "telecabin"
+                  },
+                  {
+                    "type": "string",
+                    "const": "telecabinLink"
+                  },
+                  {
+                    "type": "string",
+                    "const": "touristCoach"
+                  },
+                  {
+                    "type": "string",
+                    "const": "touristRailway"
+                  },
+                  {
+                    "type": "string",
+                    "const": "trainFerry"
+                  },
+                  {
+                    "type": "string",
+                    "const": "trainTram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "tube"
+                  },
+                  {
+                    "type": "string",
+                    "const": "undefined"
+                  },
+                  {
+                    "type": "string",
+                    "const": "undefinedFunicular"
+                  },
+                  {
+                    "type": "string",
+                    "const": "unknown"
+                  },
+                  {
+                    "type": "string",
+                    "const": "urbanRailway"
+                  },
+                  {
+                    "type": "string",
+                    "const": "waterTaxi"
+                  }
+                ]
               }
             },
-            "required": ["type", "title", "options", "defaultOption"],
+            "required": ["transportMode"],
             "additionalProperties": false
+          },
+          "text": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "description": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "modes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "transportMode": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "bicycle"
+                    },
+                    {
+                      "type": "string",
+                      "const": "foot"
+                    },
+                    {
+                      "type": "string",
+                      "const": "scooter"
+                    },
+                    {
+                      "type": "string",
+                      "const": "air"
+                    },
+                    {
+                      "type": "string",
+                      "const": "bus"
+                    },
+                    {
+                      "type": "string",
+                      "const": "cableway"
+                    },
+                    {
+                      "type": "string",
+                      "const": "coach"
+                    },
+                    {
+                      "type": "string",
+                      "const": "funicular"
+                    },
+                    {
+                      "type": "string",
+                      "const": "lift"
+                    },
+                    {
+                      "type": "string",
+                      "const": "metro"
+                    },
+                    {
+                      "type": "string",
+                      "const": "monorail"
+                    },
+                    {
+                      "type": "string",
+                      "const": "rail"
+                    },
+                    {
+                      "type": "string",
+                      "const": "taxi"
+                    },
+                    {
+                      "type": "string",
+                      "const": "tram"
+                    },
+                    {
+                      "type": "string",
+                      "const": "trolleybus"
+                    },
+                    {
+                      "type": "string",
+                      "const": "unknown"
+                    },
+                    {
+                      "type": "string",
+                      "const": "water"
+                    }
+                  ]
+                },
+                "transportSubModes": {
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "escooter"
+                      },
+                      {
+                        "type": "string",
+                        "const": "SchengenAreaFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "airportBoatLink"
+                      },
+                      {
+                        "type": "string",
+                        "const": "airportLinkBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "airportLinkRail"
+                      },
+                      {
+                        "type": "string",
+                        "const": "airshipService"
+                      },
+                      {
+                        "type": "string",
+                        "const": "allFunicularServices"
+                      },
+                      {
+                        "type": "string",
+                        "const": "allHireVehicles"
+                      },
+                      {
+                        "type": "string",
+                        "const": "allTaxiServices"
+                      },
+                      {
+                        "type": "string",
+                        "const": "bikeTaxi"
+                      },
+                      {
+                        "type": "string",
+                        "const": "blackCab"
+                      },
+                      {
+                        "type": "string",
+                        "const": "cableCar"
+                      },
+                      {
+                        "type": "string",
+                        "const": "cableFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "canalBarge"
+                      },
+                      {
+                        "type": "string",
+                        "const": "carTransportRailService"
+                      },
+                      {
+                        "type": "string",
+                        "const": "chairLift"
+                      },
+                      {
+                        "type": "string",
+                        "const": "charterTaxi"
+                      },
+                      {
+                        "type": "string",
+                        "const": "cityTram"
+                      },
+                      {
+                        "type": "string",
+                        "const": "communalTaxi"
+                      },
+                      {
+                        "type": "string",
+                        "const": "commuterCoach"
+                      },
+                      {
+                        "type": "string",
+                        "const": "crossCountryRail"
+                      },
+                      {
+                        "type": "string",
+                        "const": "dedicatedLaneBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "demandAndResponseBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "domesticCharterFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "domesticFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "domesticScheduledFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "dragLift"
+                      },
+                      {
+                        "type": "string",
+                        "const": "expressBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "funicular"
+                      },
+                      {
+                        "type": "string",
+                        "const": "helicopterService"
+                      },
+                      {
+                        "type": "string",
+                        "const": "highFrequencyBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "highSpeedPassengerService"
+                      },
+                      {
+                        "type": "string",
+                        "const": "highSpeedRail"
+                      },
+                      {
+                        "type": "string",
+                        "const": "highSpeedVehicleService"
+                      },
+                      {
+                        "type": "string",
+                        "const": "hireCar"
+                      },
+                      {
+                        "type": "string",
+                        "const": "hireCycle"
+                      },
+                      {
+                        "type": "string",
+                        "const": "hireMotorbike"
+                      },
+                      {
+                        "type": "string",
+                        "const": "hireVan"
+                      },
+                      {
+                        "type": "string",
+                        "const": "intercontinentalCharterFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "intercontinentalFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "international"
+                      },
+                      {
+                        "type": "string",
+                        "const": "internationalCarFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "internationalCharterFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "internationalCoach"
+                      },
+                      {
+                        "type": "string",
+                        "const": "internationalFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "internationalPassengerFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "interregionalRail"
+                      },
+                      {
+                        "type": "string",
+                        "const": "lift"
+                      },
+                      {
+                        "type": "string",
+                        "const": "local"
+                      },
+                      {
+                        "type": "string",
+                        "const": "localBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "localCarFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "localPassengerFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "localTram"
+                      },
+                      {
+                        "type": "string",
+                        "const": "longDistance"
+                      },
+                      {
+                        "type": "string",
+                        "const": "metro"
+                      },
+                      {
+                        "type": "string",
+                        "const": "miniCab"
+                      },
+                      {
+                        "type": "string",
+                        "const": "mobilityBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "mobilityBusForRegisteredDisabled"
+                      },
+                      {
+                        "type": "string",
+                        "const": "nationalCarFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "nationalCoach"
+                      },
+                      {
+                        "type": "string",
+                        "const": "nationalPassengerFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "nightBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "nightRail"
+                      },
+                      {
+                        "type": "string",
+                        "const": "postBoat"
+                      },
+                      {
+                        "type": "string",
+                        "const": "postBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "rackAndPinionRailway"
+                      },
+                      {
+                        "type": "string",
+                        "const": "railReplacementBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "railShuttle"
+                      },
+                      {
+                        "type": "string",
+                        "const": "railTaxi"
+                      },
+                      {
+                        "type": "string",
+                        "const": "regionalBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "regionalCarFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "regionalCoach"
+                      },
+                      {
+                        "type": "string",
+                        "const": "regionalPassengerFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "regionalRail"
+                      },
+                      {
+                        "type": "string",
+                        "const": "regionalTram"
+                      },
+                      {
+                        "type": "string",
+                        "const": "replacementRailService"
+                      },
+                      {
+                        "type": "string",
+                        "const": "riverBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "roadFerryLink"
+                      },
+                      {
+                        "type": "string",
+                        "const": "roundTripCharterFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "scheduledFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "schoolAndPublicServiceBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "schoolBoat"
+                      },
+                      {
+                        "type": "string",
+                        "const": "schoolBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "schoolCoach"
+                      },
+                      {
+                        "type": "string",
+                        "const": "shortHaulInternationalFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "shuttleBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "shuttleCoach"
+                      },
+                      {
+                        "type": "string",
+                        "const": "shuttleFerryService"
+                      },
+                      {
+                        "type": "string",
+                        "const": "shuttleFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "shuttleTram"
+                      },
+                      {
+                        "type": "string",
+                        "const": "sightseeingBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "sightseeingCoach"
+                      },
+                      {
+                        "type": "string",
+                        "const": "sightseeingFlight"
+                      },
+                      {
+                        "type": "string",
+                        "const": "sightseeingService"
+                      },
+                      {
+                        "type": "string",
+                        "const": "sightseeingTram"
+                      },
+                      {
+                        "type": "string",
+                        "const": "sleeperRailService"
+                      },
+                      {
+                        "type": "string",
+                        "const": "specialCoach"
+                      },
+                      {
+                        "type": "string",
+                        "const": "specialNeedsBus"
+                      },
+                      {
+                        "type": "string",
+                        "const": "specialTrain"
+                      },
+                      {
+                        "type": "string",
+                        "const": "streetCableCar"
+                      },
+                      {
+                        "type": "string",
+                        "const": "suburbanRailway"
+                      },
+                      {
+                        "type": "string",
+                        "const": "telecabin"
+                      },
+                      {
+                        "type": "string",
+                        "const": "telecabinLink"
+                      },
+                      {
+                        "type": "string",
+                        "const": "touristCoach"
+                      },
+                      {
+                        "type": "string",
+                        "const": "touristRailway"
+                      },
+                      {
+                        "type": "string",
+                        "const": "trainFerry"
+                      },
+                      {
+                        "type": "string",
+                        "const": "trainTram"
+                      },
+                      {
+                        "type": "string",
+                        "const": "tube"
+                      },
+                      {
+                        "type": "string",
+                        "const": "undefined"
+                      },
+                      {
+                        "type": "string",
+                        "const": "undefinedFunicular"
+                      },
+                      {
+                        "type": "string",
+                        "const": "unknown"
+                      },
+                      {
+                        "type": "string",
+                        "const": "urbanRailway"
+                      },
+                      {
+                        "type": "string",
+                        "const": "waterTaxi"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": ["transportMode"],
+              "additionalProperties": false
+            }
+          },
+          "selectedAsDefault": {
+            "type": "boolean"
+          }
+        },
+        "required": ["id", "icon", "text", "modes", "selectedAsDefault"],
+        "additionalProperties": false
+      }
+    },
+    "flexibleTransport": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": ["lang", "value"],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "language": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "beta"
+            },
+            {
+              "type": "string",
+              "const": "new"
+            }
+          ]
+        },
+        "description": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": ["lang", "value"],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "language": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
           }
         }
       },
+      "required": ["id", "title", "description"],
       "additionalProperties": false
+    },
+    "travelSearchPreferences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "transferSlack"
+              },
+              {
+                "type": "string",
+                "const": "transferPenalty"
+              },
+              {
+                "type": "string",
+                "const": "waitReluctance"
+              },
+              {
+                "type": "string",
+                "const": "walkReluctance"
+              },
+              {
+                "type": "string",
+                "const": "walkSpeed"
+              }
+            ]
+          },
+          "title": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "options": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "lang": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "required": ["lang", "value"],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "language": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": ["id", "text", "value"],
+              "additionalProperties": false
+            }
+          },
+          "defaultOption": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": ["type", "title", "options", "defaultOption"],
+        "additionalProperties": false
+      }
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "additionalProperties": false
 }
