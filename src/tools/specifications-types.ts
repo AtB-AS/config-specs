@@ -1,25 +1,9 @@
 import {z} from 'zod';
-import {
-  LanguageAndTextType,
-  LanguageAndTextTypeArray,
-  TransportModeType,
-  TransportSubmodeType,
-} from '../common';
-import {
-  FareProductGroup,
-  FareProductTypeConfig,
-  FareProductTypeConfigSettings,
-  ProductTypeTransportModes,
-} from '../fare-product-type';
-import {
-  TravelSearchFilters,
-  TravelSearchTransportModeIcon,
-  TravelSearchTransportModes,
-} from '../travel-search-filters';
+import {FareProductGroup, FareProductTypeConfig} from '../fare-product-type';
+import {TravelSearchFilters} from '../travel-search-filters';
 import {
   BonusProduct,
   BonusTexts,
-  FormFactor,
   MobilityOperator,
   OperatorBenefitId,
   BonusSource,
@@ -113,6 +97,6 @@ export const jsonSchemas = {
   harborConnectionOverrides: z.toJSONSchema(HarborConnectionOverrides),
   notificationConfig: z.toJSONSchema(NotificationConfig),
   consents: z.toJSONSchema(Consents),
-  referenceData: z.toJSONSchema(ReferenceDataJsonSchema),
+  referenceData: z.toJSONSchema(ReferenceDataJsonSchema, {io: 'input'}),
   stopSignalButtonConfig: z.toJSONSchema(StopSignalButtonConfig),
 } satisfies Record<SchemaNames, unknown>;
