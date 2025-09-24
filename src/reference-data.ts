@@ -3,12 +3,16 @@ import {LanguageAndTextType, LanguageAndTextTypeArray} from './common';
 import {ZoneSelectionMode} from './fare-product-type';
 import {nullishToOptional} from './utils/nullish-to-optional';
 
+/**
+ * zod transforms cant be represented in exported json schema files.
+ * opt is a helper to generate with or without transforms.
+ */
 const opt = <T extends z.ZodTypeAny>(base: T, includeTransform: boolean) =>
   includeTransform
     ? base.nullish().transform(nullishToOptional).optional()
     : base.optional();
 
-const getPreassignedFareProduct = (includeTransform = false) =>
+const getPreassignedFareProduct = (includeTransform: boolean) =>
   z.object({
     id: z.string(),
     version: z.string(),
