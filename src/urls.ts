@@ -18,6 +18,7 @@ export const ConfigurableLinks = z.object({
   contactFormUrl: LanguageAndTextTypeArray.optional(),
   lostAndFoundUrl: LanguageAndTextTypeArray.optional(),
   frequentlyAskedQuestionsUrl: LanguageAndTextTypeArray.optional(),
+  sparReadMoreUrl: LanguageAndTextTypeArray.optional(),
 });
 
 export type ConfigurableLinksType = z.infer<typeof ConfigurableLinks>;

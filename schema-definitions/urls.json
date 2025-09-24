@@ -83,6 +83,9 @@
         },
         "frequentlyAskedQuestionsUrl": {
           "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
+        },
+        "sparReadMoreUrl": {
+          "$ref": "#/definitions/ConfigurableLinks/properties/ticketingInfo"
         }
       },
       "additionalProperties": false
