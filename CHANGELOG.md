@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.5.0](https://github.com/AtB-AS/config-specs/compare/v7.4.0...v7.5.0) (2025-09-24)
+
+
+### Features
+
+* add SP&R read more URL ([#130](https://github.com/AtB-AS/config-specs/issues/130)) ([99a1791](https://github.com/AtB-AS/config-specs/commit/99a1791552fb58647788111762f4732c27c1968c))
+
 ## [7.4.0](https://github.com/AtB-AS/config-specs/compare/v7.3.0...v7.4.0) (2025-09-23)
 
 
