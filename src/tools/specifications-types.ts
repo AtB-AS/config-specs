@@ -97,6 +97,6 @@ export const jsonSchemas = {
   harborConnectionOverrides: z.toJSONSchema(HarborConnectionOverrides),
   notificationConfig: z.toJSONSchema(NotificationConfig),
   consents: z.toJSONSchema(Consents),
-  referenceData: z.toJSONSchema(ReferenceData, {io: 'input'}),
+  referenceData: z.toJSONSchema(ReferenceData, {io: 'input'}), // transforms can't be exported to json schemas. Handled by selecting the (input) type before transforming.
   stopSignalButtonConfig: z.toJSONSchema(StopSignalButtonConfig),
 } satisfies Record<SchemaNames, unknown>;
