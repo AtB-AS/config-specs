@@ -1,4 +1,4 @@
-import {z} from 'zod/v4';
+import {z} from 'zod';
 import {LanguageAndTextType, LanguageAndTextTypeArray} from './common';
 import {ZoneSelectionMode} from './fare-product-type';
 import {nullishToOptional} from './utils/nullish-to-optional';
