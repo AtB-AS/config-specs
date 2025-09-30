@@ -3,6 +3,9 @@ import {LanguageAndTextType, LanguageAndTextTypeArray} from './common';
 import {ZoneSelectionMode} from './fare-product-type';
 import {nullishToOptional} from './utils/nullish-to-optional';
 
+const optionalNullish = <T extends z.ZodTypeAny>(base: T) =>
+  base.nullish().transform(nullishToOptional).optional();
+
 export const PreassignedFareProduct = z.object({
   id: z.string(),
   version: z.string(),
@@ -11,36 +14,27 @@ export const PreassignedFareProduct = z.object({
   name: LanguageAndTextType,
   limitations: z.object({
     userProfileRefs: z.array(z.string()),
-    appVersionMin: z.string().nullish().transform(nullishToOptional),
-    appVersionMax: z.string().nullish().transform(nullishToOptional),
-    fareZoneRefs: z.array(z.string()).nullish().transform(nullishToOptional),
+    appVersionMin: optionalNullish(z.string()),
+    appVersionMax: optionalNullish(z.string()),
+    fareZoneRefs: optionalNullish(z.array(z.string())),
 
     /**
      * @deprecated use fareZoneRefs instead
      */
-    tariffZoneRefs: z.array(z.string()).nullish().transform(nullishToOptional),
+    tariffZoneRefs: optionalNullish(z.array(z.string())),
   }),
-  durationDays: z.number().nullish().transform(nullishToOptional),
-  isApplicableOnSingleZoneOnly: z
-    .boolean()
-    .nullish()
-    .transform(nullishToOptional),
-  isBookingEnabled: z.boolean().nullish().transform(nullishToOptional),
-  isEnabledForTripSearchOffer: z
-    .boolean()
-    .nullish()
-    .transform(nullishToOptional),
-  isDefault: z.boolean().nullish().transform(nullishToOptional),
-  alternativeNames:
-    LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
-  zoneSelectionMode: ZoneSelectionMode.nullish().transform(nullishToOptional),
-  description: LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
-  productDescription:
-    LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
-  productAliasId: z.string().nullish().transform(nullishToOptional),
-  productAlias: LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
-  warningMessage:
-    LanguageAndTextTypeArray.nullish().transform(nullishToOptional),
+  durationDays: optionalNullish(z.number()),
+  isApplicableOnSingleZoneOnly: optionalNullish(z.boolean()),
+  isBookingEnabled: optionalNullish(z.boolean()),
+  isEnabledForTripSearchOffer: optionalNullish(z.boolean()),
+  isDefault: optionalNullish(z.boolean()),
+  alternativeNames: optionalNullish(LanguageAndTextTypeArray),
+  zoneSelectionMode: optionalNullish(ZoneSelectionMode),
+  description: optionalNullish(LanguageAndTextTypeArray),
+  productDescription: optionalNullish(LanguageAndTextTypeArray),
+  productAliasId: optionalNullish(z.string()),
+  productAlias: optionalNullish(LanguageAndTextTypeArray),
+  warningMessage: optionalNullish(LanguageAndTextTypeArray),
 });
 
 /**
@@ -119,7 +113,7 @@ export const ReferenceData = z.object({
   /**
    * @deprecated Use preassignedFareProducts_v2 instead
    */
-  preassignedFareProducts: z.any(),
+  preassignedFareProducts: z.any().optional(),
 
   /**
    * @deprecated Use fareZones instead

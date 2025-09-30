@@ -1,4 +1,4 @@
-import Ajv from 'ajv';
+import Ajv from 'ajv/dist/2020';
 import type {ValidateFunction} from 'ajv/dist/core';
 import {readFile} from 'fs/promises';
 import {join} from 'path';
@@ -7,7 +7,7 @@ import addFormats from 'ajv-formats';
 import {SchemaNames} from './specifications-types';
 import {BASE_FOLDER} from './config';
 
-let ajv = new Ajv({allErrors: true});
+let ajv = new Ajv({allErrors: true, useDefaults: true});
 ajv = addFormats(ajv);
 
 type ValidationOutput =
