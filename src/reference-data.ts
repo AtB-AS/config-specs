@@ -113,7 +113,7 @@ export const ReferenceData = z.object({
   /**
    * @deprecated Use preassignedFareProducts_v2 instead
    */
-  preassignedFareProducts: z.any(),
+  preassignedFareProducts: z.any().optional(),
 
   /**
    * @deprecated Use fareZones instead
