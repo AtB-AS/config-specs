@@ -1,5 +1,16 @@
 # Changelog
 
+## [8.0.0](https://github.com/AtB-AS/config-specs/compare/v7.5.0...v8.0.0) (2025-09-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* zod and node upgrade ([#132](https://github.com/AtB-AS/config-specs/issues/132))
+
+### Features
+
+* zod and node upgrade ([#132](https://github.com/AtB-AS/config-specs/issues/132)) ([f5de4fd](https://github.com/AtB-AS/config-specs/commit/f5de4fd2fcf47b371fd836406e5e74ade82bc0e0))
+
 ## [7.5.0](https://github.com/AtB-AS/config-specs/compare/v7.4.0...v7.5.0) (2025-09-24)
 
 
