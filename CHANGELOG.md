@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.1](https://github.com/AtB-AS/config-specs/compare/v8.0.0...v8.0.1) (2025-10-07)
+
+
+### Bug Fixes
+
+* Extract optionalNullish to util ([#134](https://github.com/AtB-AS/config-specs/issues/134)) ([bae8661](https://github.com/AtB-AS/config-specs/commit/bae86613cf197ed06e89a48416061584ed229544))
+
 ## [8.0.0](https://github.com/AtB-AS/config-specs/compare/v7.5.0...v8.0.0) (2025-09-30)
 
 
