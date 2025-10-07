@@ -1,7 +1,7 @@
 import {z} from 'zod';
 import {LanguageAndTextType, LanguageAndTextTypeArray} from './common';
 import {ZoneSelectionMode} from './fare-product-type';
-import {optionalNullish} from './utils/optional-nullish';
+import {optionalNullish} from './utils/nullish';
 
 export const PreassignedFareProduct = z.object({
   id: z.string(),
