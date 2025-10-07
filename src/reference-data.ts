@@ -1,10 +1,7 @@
 import {z} from 'zod';
 import {LanguageAndTextType, LanguageAndTextTypeArray} from './common';
 import {ZoneSelectionMode} from './fare-product-type';
-import {nullishToOptional} from './utils/nullish-to-optional';
-
-const optionalNullish = <T extends z.ZodTypeAny>(base: T) =>
-  base.nullish().transform(nullishToOptional).optional();
+import {optionalNullish} from './utils/nullish';
 
 export const PreassignedFareProduct = z.object({
   id: z.string(),
