@@ -350,6 +350,9 @@
             },
             "required": ["ios", "android"],
             "additionalProperties": false
+          },
+          "rentalAppUriQueryParams": {
+            "type": "string"
           }
         },
         "required": [

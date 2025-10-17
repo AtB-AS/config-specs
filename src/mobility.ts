@@ -61,6 +61,7 @@ export const MobilityOperator = z.object({
       android: z.string().url(),
     })
     .optional(),
+  rentalAppUriQueryParams: z.string().optional(),
 });
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;
