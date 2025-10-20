@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.1.0](https://github.com/AtB-AS/config-specs/compare/v8.0.0...v8.1.0) (2025-10-20)
+
+
+### Features
+
+* add rentalAppUriQueryParams to MobilityOperator ([#136](https://github.com/AtB-AS/config-specs/issues/136)) ([5fe91b2](https://github.com/AtB-AS/config-specs/commit/5fe91b27cccdb095441906698f018e1b05fb4b95))
+
+
+### Bug Fixes
+
+* Extract optionalNullish to util ([#134](https://github.com/AtB-AS/config-specs/issues/134)) ([bae8661](https://github.com/AtB-AS/config-specs/commit/bae86613cf197ed06e89a48416061584ed229544))
+
 ## [8.0.0](https://github.com/AtB-AS/config-specs/compare/v7.5.0...v8.0.0) (2025-09-30)
 
 
