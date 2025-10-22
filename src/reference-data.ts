@@ -34,6 +34,20 @@ export const PreassignedFareProduct = z.object({
   warningMessage: optionalNullish(LanguageAndTextTypeArray),
 });
 
+export const SupplementaryProduct = z.object({
+  id: z.string(),
+  version: z.string(),
+  diistributionChannel: z.array(z.string()),
+  name: LanguageAndTextType,
+  alternativeNames: LanguageAndTextTypeArray.optional(),
+  description: LanguageAndTextTypeArray.optional(),
+  limitations: z.object({
+    appVersionMin: optionalNullish(z.string()),
+    appVersionMax: optionalNullish(z.string()),
+    fareZoneRefs: optionalNullish(z.array(z.string())),
+  }),
+});
+
 /**
  * @deprecated
  *
@@ -106,6 +120,7 @@ export const ReferenceData = z.object({
   userProfiles: z.array(UserProfile),
   cityZones: z.array(CityZone).optional(),
   carPoolingZones: z.array(CarPoolingZone).optional(),
+  supplementaryProducts: z.array(SupplementaryProduct),
 
   /**
    * @deprecated Use preassignedFareProducts_v2 instead
