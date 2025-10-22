@@ -44,7 +44,6 @@ export const SupplementaryProduct = z.object({
   limitations: optionalNullish(z.object({
     appVersionMin: optionalNullish(z.string()),
     appVersionMax: optionalNullish(z.string()),
-    fareZoneRefs: optionalNullish(z.array(z.string())),
   }).optional()),
 });
 
