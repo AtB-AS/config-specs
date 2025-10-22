@@ -37,15 +37,15 @@ export const PreassignedFareProduct = z.object({
 export const SupplementaryProduct = z.object({
   id: z.string(),
   version: z.string(),
-  diistributionChannel: z.array(z.string()),
+  distributionChannel: z.array(z.string()),
   name: LanguageAndTextType,
   alternativeNames: LanguageAndTextTypeArray.optional(),
   description: LanguageAndTextTypeArray.optional(),
-  limitations: z.object({
+  limitations: optionalNullish(z.object({
     appVersionMin: optionalNullish(z.string()),
     appVersionMax: optionalNullish(z.string()),
     fareZoneRefs: optionalNullish(z.array(z.string())),
-  }),
+  }).optional()),
 });
 
 /**
