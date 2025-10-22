@@ -807,7 +807,7 @@
           "version": {
             "type": "string"
           },
-          "diistributionChannel": {
+          "distributionChannel": {
             "type": "array",
             "items": {
               "type": "string"
@@ -901,51 +901,39 @@
             }
           },
           "limitations": {
-            "type": "object",
-            "properties": {
-              "appVersionMin": {
-                "anyOf": [
-                  {
-                    "type": "string"
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "appVersionMin": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
                   },
-                  {
-                    "type": "null"
+                  "appVersionMax": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
                   }
-                ]
+                }
               },
-              "appVersionMax": {
-                "anyOf": [
-                  {
-                    "type": "string"
-                  },
-                  {
-                    "type": "null"
-                  }
-                ]
-              },
-              "fareZoneRefs": {
-                "anyOf": [
-                  {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  {
-                    "type": "null"
-                  }
-                ]
+              {
+                "type": "null"
               }
-            }
+            ]
           }
         },
-        "required": [
-          "id",
-          "version",
-          "diistributionChannel",
-          "name",
-          "limitations"
-        ]
+        "required": ["id", "version", "distributionChannel", "name"]
       }
     },
     "preassignedFareProducts": {},

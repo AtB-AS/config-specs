@@ -4,17 +4,13 @@
       "id": "ATB:PreassignedFareProduct:8808c360",
       "version": "ATB:Version:d918f8e3-eb23-4d62-9626-a5cbd02a1dee",
       "type": "single",
-      "distributionChannel": [
-        "app"
-      ],
+      "distributionChannel": ["app"],
       "name": {
         "lang": "nob",
         "value": "Enkeltbillett"
       },
       "limitations": {
-        "userProfileRefs": [
-          "ATB:UserProfile:2832569f"
-        ]
+        "userProfileRefs": ["ATB:UserProfile:2832569f"]
       }
     }
   ],
@@ -23,10 +19,7 @@
       "id": "ATB:SupplementaryProduct:12345678",
       "version": "ATB:Version:abcdef12-3456-7890-abcd-ef1234567890",
       "type": "bicycle",
-      "distributionChannel": [
-        "app",
-        "web"
-      ],
+      "distributionChannel": ["app", "web"],
       "name": {
         "lang": "nob",
         "value": "Sykkel"
@@ -49,14 +42,7 @@
       "version": "4",
       "geometry": {
         "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              10.73617214148,
-              63.31324444455
-            ]
-          ]
-        ]
+        "coordinates": [[[10.73617214148, 63.31324444455]]]
       }
     }
   ],
@@ -70,14 +56,7 @@
       "version": "4",
       "geometry": {
         "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              10.73617214148,
-              63.31324444455
-            ]
-          ]
-        ]
+        "coordinates": [[[10.73617214148, 63.31324444455]]]
       }
     }
   ],
@@ -103,14 +82,7 @@
       "name": "CarPooling Zone 1",
       "geometry": {
         "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              10.73617214148,
-              63.31324444455
-            ]
-          ]
-        ]
+        "coordinates": [[[10.73617214148, 63.31324444455]]]
       }
     }
   ]

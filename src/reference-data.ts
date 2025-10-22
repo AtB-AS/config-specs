@@ -41,10 +41,14 @@ export const SupplementaryProduct = z.object({
   name: LanguageAndTextType,
   alternativeNames: LanguageAndTextTypeArray.optional(),
   description: LanguageAndTextTypeArray.optional(),
-  limitations: optionalNullish(z.object({
-    appVersionMin: optionalNullish(z.string()),
-    appVersionMax: optionalNullish(z.string()),
-  }).optional()),
+  limitations: optionalNullish(
+    z
+      .object({
+        appVersionMin: optionalNullish(z.string()),
+        appVersionMax: optionalNullish(z.string()),
+      })
+      .optional(),
+  ),
 });
 
 /**
