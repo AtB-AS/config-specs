@@ -14,6 +14,24 @@
       }
     }
   ],
+  "supplementProducts": [
+    {
+      "id": "ATB:SupplementProduct:12345678",
+      "version": "ATB:Version:abcdef12-3456-7890-abcd-ef1234567890",
+      "type": "bicycle",
+      "distributionChannel": ["app", "web"],
+      "name": {
+        "lang": "nob",
+        "value": "Sykkel"
+      },
+      "description": [
+        {
+          "lang": "nob",
+          "value": "Gjelder for medbringelse av sykkel på buss og trikk."
+        }
+      ]
+    }
+  ],
   "tariffZones": [
     {
       "id": "ATB:TariffZone:1",
