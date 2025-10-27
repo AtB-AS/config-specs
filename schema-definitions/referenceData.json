@@ -796,7 +796,7 @@
         "required": ["id", "name", "geometry"]
       }
     },
-    "supplementaryProducts": {
+    "supplementProducts": {
       "type": "array",
       "items": {
         "type": "object",
@@ -1041,7 +1041,7 @@
     "preassignedFareProducts_v2",
     "fareZones",
     "userProfiles",
-    "supplementaryProducts",
+    "supplementProducts",
     "tariffZones"
   ]
 }

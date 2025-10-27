@@ -34,7 +34,7 @@ export const PreassignedFareProduct = z.object({
   warningMessage: optionalNullish(LanguageAndTextTypeArray),
 });
 
-export const SupplementaryProduct = z.object({
+export const SupplementProduct = z.object({
   id: z.string(),
   version: z.string(),
   distributionChannel: z.array(z.string()),
@@ -123,7 +123,7 @@ export const ReferenceData = z.object({
   userProfiles: z.array(UserProfile),
   cityZones: z.array(CityZone).optional(),
   carPoolingZones: z.array(CarPoolingZone).optional(),
-  supplementaryProducts: z.array(SupplementaryProduct),
+  supplementProducts: z.array(SupplementProduct).optional(),
 
   /**
    * @deprecated Use preassignedFareProducts_v2 instead
