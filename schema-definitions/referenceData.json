@@ -1041,7 +1041,6 @@
     "preassignedFareProducts_v2",
     "fareZones",
     "userProfiles",
-    "supplementProducts",
     "tariffZones"
   ]
 }
