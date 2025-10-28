@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.2.0](https://github.com/AtB-AS/config-specs/compare/v8.1.0...v8.2.0) (2025-10-27)
+
+
+### Features
+
+* Add supplement products ([#137](https://github.com/AtB-AS/config-specs/issues/137)) ([f083e11](https://github.com/AtB-AS/config-specs/commit/f083e11ca69e15dfec784f8e7fc72acbce3e86e8))
+
 ## [8.1.0](https://github.com/AtB-AS/config-specs/compare/v8.0.0...v8.1.0) (2025-10-20)
 
 
