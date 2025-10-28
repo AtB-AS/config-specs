@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.2.1](https://github.com/AtB-AS/config-specs/compare/v8.2.0...v8.2.1) (2025-10-28)
+
+
+### Bug Fixes
+
+* Added missing type for SupplementProduct, and removed supplementProduct as required ([#139](https://github.com/AtB-AS/config-specs/issues/139)) ([cb38090](https://github.com/AtB-AS/config-specs/commit/cb3809050dabb4004e27fe9f0b1ccf4220f3e488))
+
 ## [8.2.0](https://github.com/AtB-AS/config-specs/compare/v8.1.0...v8.2.0) (2025-10-27)
 
 
