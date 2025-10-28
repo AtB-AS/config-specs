@@ -146,3 +146,4 @@ export type CityZone = z.infer<typeof CityZone>;
 export type CarPoolingZone = z.infer<typeof CarPoolingZone>;
 export type UserProfile = z.infer<typeof UserProfile>;
 export type ReferenceData = z.infer<typeof ReferenceData>;
+export type SupplementProduct = z.infer<typeof SupplementProduct>;
