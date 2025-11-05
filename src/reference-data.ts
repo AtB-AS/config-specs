@@ -19,6 +19,7 @@ export const PreassignedFareProduct = z.object({
      * @deprecated use fareZoneRefs instead
      */
     tariffZoneRefs: optionalNullish(z.array(z.string())),
+    supplementProductRefs: optionalNullish(z.array(z.string())),
   }),
   durationDays: optionalNullish(z.number()),
   isApplicableOnSingleZoneOnly: optionalNullish(z.boolean()),
@@ -37,6 +38,7 @@ export const PreassignedFareProduct = z.object({
 export const SupplementProduct = z.object({
   id: z.string(),
   version: z.string(),
+  illustration: z.string().optional(),
   distributionChannel: z.array(z.string()),
   name: LanguageAndTextType,
   alternativeNames: LanguageAndTextTypeArray.optional(),
