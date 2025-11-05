@@ -103,6 +103,19 @@
                     "type": "null"
                   }
                 ]
+              },
+              "supplementProductRefs": {
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               }
             },
             "required": ["userProfileRefs"]
@@ -805,6 +818,9 @@
             "type": "string"
           },
           "version": {
+            "type": "string"
+          },
+          "illustration": {
             "type": "string"
           },
           "distributionChannel": {
