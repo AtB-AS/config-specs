@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.3.0](https://github.com/AtB-AS/config-specs/compare/v8.2.1...v8.3.0) (2025-11-05)
+
+
+### Features
+
+* Added supplementProductRefs as a limitation to fareProducts ([#141](https://github.com/AtB-AS/config-specs/issues/141)) ([34f6f7a](https://github.com/AtB-AS/config-specs/commit/34f6f7a068de70db1b9d252b4ae17c3d0065bec5))
+
 ## [8.2.1](https://github.com/AtB-AS/config-specs/compare/v8.2.0...v8.2.1) (2025-10-28)
 
 
