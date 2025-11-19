@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.4.0](https://github.com/AtB-AS/config-specs/compare/v8.3.0...v8.4.0) (2025-11-19)
+
+
+### Features
+
+* Add isSupplementProduct and isBaggageProduct to enable bike-ticket ([#143](https://github.com/AtB-AS/config-specs/issues/143)) ([e78089e](https://github.com/AtB-AS/config-specs/commit/e78089ef392bc55eb65de8e44a9232e26ffed6da))
+
 ## [8.3.0](https://github.com/AtB-AS/config-specs/compare/v8.2.1...v8.3.0) (2025-11-05)
 
 
