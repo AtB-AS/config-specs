@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.4.1](https://github.com/AtB-AS/config-specs/compare/v8.4.0...v8.4.1) (2025-11-19)
+
+
+### Bug Fixes
+
+* Make optional fields optionalNullish on SupplementProduct ([#145](https://github.com/AtB-AS/config-specs/issues/145)) ([c6a8d43](https://github.com/AtB-AS/config-specs/commit/c6a8d437cdce62351ad42cf03e326e40d4487b05))
+
 ## [8.4.0](https://github.com/AtB-AS/config-specs/compare/v8.3.0...v8.4.0) (2025-11-19)
 
 
