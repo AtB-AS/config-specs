@@ -26,6 +26,7 @@ export const PreassignedFareProduct = z.object({
   isBookingEnabled: optionalNullish(z.boolean()),
   isEnabledForTripSearchOffer: optionalNullish(z.boolean()),
   isDefault: optionalNullish(z.boolean()),
+  isSupplementProduct: optionalNullish(z.boolean()),
   alternativeNames: optionalNullish(LanguageAndTextTypeArray),
   zoneSelectionMode: optionalNullish(ZoneSelectionMode),
   description: optionalNullish(LanguageAndTextTypeArray),
@@ -43,6 +44,7 @@ export const SupplementProduct = z.object({
   name: LanguageAndTextType,
   alternativeNames: LanguageAndTextTypeArray.optional(),
   description: LanguageAndTextTypeArray.optional(),
+  isBaggageProduct: optionalNullish(z.boolean()),
   limitations: optionalNullish(
     z
       .object({
