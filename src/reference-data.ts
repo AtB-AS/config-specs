@@ -39,11 +39,11 @@ export const PreassignedFareProduct = z.object({
 export const SupplementProduct = z.object({
   id: z.string(),
   version: z.string(),
-  illustration: z.string().optional(),
+  illustration: optionalNullish(z.string()),
   distributionChannel: z.array(z.string()),
   name: LanguageAndTextType,
-  alternativeNames: LanguageAndTextTypeArray.optional(),
-  description: LanguageAndTextTypeArray.optional(),
+  alternativeNames: optionalNullish(LanguageAndTextTypeArray),
+  description: optionalNullish(LanguageAndTextTypeArray),
   isBaggageProduct: optionalNullish(z.boolean()),
   limitations: optionalNullish(
     z
