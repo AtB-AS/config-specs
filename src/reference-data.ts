@@ -45,6 +45,7 @@ export const SupplementProduct = z.object({
   alternativeNames: optionalNullish(LanguageAndTextTypeArray),
   description: optionalNullish(LanguageAndTextTypeArray),
   isBaggageProduct: optionalNullish(z.boolean()),
+  baggageType: optionalNullish(z.string()),
   limitations: optionalNullish(
     z
       .object({
