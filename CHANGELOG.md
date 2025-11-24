@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.5.0](https://github.com/AtB-AS/config-specs/compare/v8.4.1...v8.5.0) (2025-11-24)
+
+
+### Features
+
+* Add baggageType to SupplementProduct ([#147](https://github.com/AtB-AS/config-specs/issues/147)) ([b61c3b4](https://github.com/AtB-AS/config-specs/commit/b61c3b49dd32c591a45d8a58297d75297b2c37ff))
+
 ## [8.4.1](https://github.com/AtB-AS/config-specs/compare/v8.4.0...v8.4.1) (2025-11-19)
 
 
