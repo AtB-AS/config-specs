@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.6.0](https://github.com/AtB-AS/config-specs/compare/v8.5.0...v8.6.0) (2025-11-27)
+
+
+### Features
+
+* Add BaggageProduct-type, and remove illustration ([#149](https://github.com/AtB-AS/config-specs/issues/149)) ([c7ed797](https://github.com/AtB-AS/config-specs/commit/c7ed797bbfa431d2550c701948e9a3b1bf9d4f3c))
+
 ## [8.5.0](https://github.com/AtB-AS/config-specs/compare/v8.4.1...v8.5.0) (2025-11-24)
 
 
