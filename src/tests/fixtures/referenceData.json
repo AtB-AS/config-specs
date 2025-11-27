@@ -29,7 +29,9 @@
           "lang": "nob",
           "value": "Gjelder for medbringelse av sykkel på buss og trikk."
         }
-      ]
+      ],
+      "isBaggageProduct": true,
+      "baggageType": "BICYCLE"
     }
   ],
   "tariffZones": [
