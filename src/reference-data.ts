@@ -36,16 +36,17 @@ export const PreassignedFareProduct = z.object({
   warningMessage: optionalNullish(LanguageAndTextTypeArray),
 });
 
+export const BaggageType = z.enum(['BICYCLE']);
+
 export const SupplementProduct = z.object({
   id: z.string(),
   version: z.string(),
-  illustration: optionalNullish(z.string()),
   distributionChannel: z.array(z.string()),
   name: LanguageAndTextType,
   alternativeNames: optionalNullish(LanguageAndTextTypeArray),
   description: optionalNullish(LanguageAndTextTypeArray),
   isBaggageProduct: optionalNullish(z.boolean()),
-  baggageType: optionalNullish(z.string()),
+  baggageType: optionalNullish(BaggageType),
   limitations: optionalNullish(
     z
       .object({
@@ -54,6 +55,11 @@ export const SupplementProduct = z.object({
       })
       .optional(),
   ),
+});
+
+export const BaggageProduct = SupplementProduct.extend({
+  isBaggageProduct: z.literal(true),
+  baggageType: BaggageType,
 });
 
 /**
@@ -152,3 +158,5 @@ export type CarPoolingZone = z.infer<typeof CarPoolingZone>;
 export type UserProfile = z.infer<typeof UserProfile>;
 export type ReferenceData = z.infer<typeof ReferenceData>;
 export type SupplementProduct = z.infer<typeof SupplementProduct>;
+export type BaggageType = z.infer<typeof BaggageType>;
+export type BaggageProduct = z.infer<typeof BaggageProduct>;
