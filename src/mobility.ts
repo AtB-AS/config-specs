@@ -1,9 +1,15 @@
 import {z} from 'zod';
 import {LanguageAndTextTypeArray} from './common';
+import {title} from 'process';
 
 export const titleAndDescription = z.object({
   title: LanguageAndTextTypeArray.nonempty(),
   description: LanguageAndTextTypeArray.nonempty(),
+});
+
+export const titleAndOptionalDescription = z.object({
+  title: LanguageAndTextTypeArray.nonempty(),
+  description: LanguageAndTextTypeArray.nonempty().optional(),
 });
 
 export const FormFactor = z.union([
@@ -92,7 +98,7 @@ export const BonusProduct = z.object({
     currencyCode: z.literal('ATB_BONUS_POINT'),
   }),
   paymentDescription: LanguageAndTextTypeArray.nonempty(),
-  productDescription: titleAndDescription,
+  productDescription: titleAndOptionalDescription,
 });
 
 export type BonusProductType = z.infer<typeof BonusProduct>;

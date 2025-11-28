@@ -669,7 +669,7 @@
                 }
               }
             },
-            "required": ["title", "description"],
+            "required": ["title"],
             "additionalProperties": false
           }
         },
