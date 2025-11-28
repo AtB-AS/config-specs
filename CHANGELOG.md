@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.6.1](https://github.com/AtB-AS/config-specs/compare/v8.6.0...v8.6.1) (2025-11-28)
+
+
+### Bug Fixes
+
+* bonus product description is optional ([#151](https://github.com/AtB-AS/config-specs/issues/151)) ([44d6bf3](https://github.com/AtB-AS/config-specs/commit/44d6bf3ab2d73327cd80c0f5efecb9c1485aac6f))
+
 ## [8.6.0](https://github.com/AtB-AS/config-specs/compare/v8.5.0...v8.6.0) (2025-11-27)
 
 
