@@ -79,7 +79,7 @@ export const jsonSchemas = Object.fromEntries(
   Object.entries(schemaTypes).map(([key, schema]) => {
     const json =
       key === 'referenceData'
-        ? z.toJSONSchema(schema, {io: 'input'})
+        ? z.toJSONSchema(schema, {io: 'input'}) // transforms can't be exported to json schemas. Handled by selecting the (input) type before transforming.
         : z.toJSONSchema(schema);
     return [key, json];
   }),
