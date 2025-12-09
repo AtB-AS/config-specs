@@ -70,10 +70,6 @@ export const schemaTypes = {
   stopSignalButtonConfig: StopSignalButtonConfig,
 } satisfies Record<SchemaNames, unknown>;
 
-function typedEntries<T extends Record<string, any>>(obj: T) {
-  return Object.entries(obj) as [keyof T, T[keyof T]][];
-}
-
 // All correctly supported schema types as JSON Schema data structures
 export const jsonSchemas = Object.fromEntries(
   Object.entries(schemaTypes).map(([key, schema]) => {
