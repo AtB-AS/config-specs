@@ -73,10 +73,7 @@ export const schemaTypes = {
 // All correctly supported schema types as JSON Schema data structures
 export const jsonSchemas = Object.fromEntries(
   Object.entries(schemaTypes).map(([key, schema]) => {
-    const json =
-      key === 'referenceData'
-        ? z.toJSONSchema(schema, {io: 'input'}) // transforms can't be exported to json schemas. Handled by selecting the (input) type before transforming.
-        : z.toJSONSchema(schema);
+    const json = z.toJSONSchema(schema, {io: 'input'}); // transforms can't be exported to json schemas. Handled by selecting the (input) type before transforming.
     return [key, json];
   }),
 );
