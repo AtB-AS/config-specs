@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.6.2](https://github.com/AtB-AS/config-specs/compare/v8.6.1...v8.6.2) (2025-12-16)
+
+
+### Bug Fixes
+
+* update schemaTypes and jsonSchemas to same definition ([#153](https://github.com/AtB-AS/config-specs/issues/153)) ([3a67e49](https://github.com/AtB-AS/config-specs/commit/3a67e49849251e993378475ebe59765fac498e58))
+
 ## [8.6.1](https://github.com/AtB-AS/config-specs/compare/v8.6.0...v8.6.1) (2025-11-28)
 
 
