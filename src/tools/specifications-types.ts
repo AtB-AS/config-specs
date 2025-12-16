@@ -42,61 +42,38 @@ export function isValidSchema(schema: any): schema is SchemaNames {
 
 // Exactly as structured in Firestore Config Yaml Files (correct root level)
 export const schemaTypes = {
-  fareProductTypeConfigs: z.object({
-    fareProductTypeConfigs: z.array(FareProductTypeConfig),
-    fareProductGroups: z.array(FareProductGroup).optional(),
-  }),
-  travelSearchFilters: TravelSearchFilters,
-  mobility: z.object({
-    operators: z.array(MobilityOperator),
-  }),
+  fareProductTypeConfigs: z
+    .object({
+      fareProductTypeConfigs: z.array(FareProductTypeConfig),
+      fareProductGroups: z.array(FareProductGroup).optional(),
+    })
+    .meta({title: 'FareProductConfiguration'}),
+  travelSearchFilters: TravelSearchFilters.meta({title: 'TravelSearchFilters'}),
+  mobility: z
+    .object({
+      operators: z.array(MobilityOperator),
+      scooterFaqs: z.array(ScooterFaq).optional(),
+      scooterConsentLines: z.array(ScooterConsentLine).optional(),
+      benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
+      bonusProducts: z.array(BonusProduct).optional(),
+      bonusTexts: BonusTexts.optional(),
+      bonusSources: z.array(BonusSource).optional(),
+    })
+    .meta({title: 'MobilityOperator'}),
   other: Other,
   paymentTypes: PaymentTypes,
-  urls: ConfigurableLinks,
+  urls: ConfigurableLinks.meta({title: 'ConfigurableLinks'}),
   harborConnectionOverrides: HarborConnectionOverrides,
   notificationConfig: NotificationConfig,
   consents: Consents,
   referenceData: ReferenceData,
   stopSignalButtonConfig: StopSignalButtonConfig,
-};
+} satisfies Record<SchemaNames, unknown>;
 
 // All correctly supported schema types as JSON Schema data structures
-export const jsonSchemas = {
-  fareProductTypeConfigs: z.toJSONSchema(
-    z
-      .object({
-        fareProductTypeConfigs: z.array(FareProductTypeConfig),
-        fareProductGroups: z.array(FareProductGroup).optional(),
-      })
-      .meta({title: 'FareProductConfiguration'}),
-  ),
-
-  mobility: z.toJSONSchema(
-    z
-      .object({
-        operators: z.array(MobilityOperator),
-        scooterFaqs: z.array(ScooterFaq).optional(),
-        scooterConsentLines: z.array(ScooterConsentLine).optional(),
-        benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
-        bonusProducts: z.array(BonusProduct).optional(),
-        bonusTexts: BonusTexts.optional(),
-        bonusSources: z.array(BonusSource).optional(),
-      })
-      .meta({title: 'MobilityOperator'}),
-  ),
-
-  other: z.toJSONSchema(Other),
-  paymentTypes: z.toJSONSchema(PaymentTypes),
-
-  travelSearchFilters: z.toJSONSchema(
-    TravelSearchFilters.meta({title: 'TravelSearchFilters'}),
-  ),
-
-  urls: z.toJSONSchema(ConfigurableLinks.meta({title: 'ConfigurableLinks'})),
-
-  harborConnectionOverrides: z.toJSONSchema(HarborConnectionOverrides),
-  notificationConfig: z.toJSONSchema(NotificationConfig),
-  consents: z.toJSONSchema(Consents),
-  referenceData: z.toJSONSchema(ReferenceData, {io: 'input'}), // transforms can't be exported to json schemas. Handled by selecting the (input) type before transforming.
-  stopSignalButtonConfig: z.toJSONSchema(StopSignalButtonConfig),
-} satisfies Record<SchemaNames, unknown>;
+export const jsonSchemas = Object.fromEntries(
+  Object.entries(schemaTypes).map(([key, schema]) => {
+    const json = z.toJSONSchema(schema, {io: 'input'}); // transforms can't be exported to json schemas. Handled by selecting the (input) type before transforming.
+    return [key, json];
+  }),
+);
