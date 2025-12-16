@@ -163,3 +163,14 @@ export const LanguageAndTextTypeArray = z.array(LanguageAndTextType);
 // Type exports
 export type LanguageAndTextType = z.infer<typeof LanguageAndTextType>;
 export type LanguageAndTextTypeArray = z.infer<typeof LanguageAndTextTypeArray>;
+
+export const Geometry = z.object({
+  type: z.literal('Polygon'),
+  /**
+    @deprecated use {@link Geometry.polylineEncodedCoordinates} instead
+  */
+  coordinates: z.array(z.array(z.array(z.number()).length(2))).optional(),
+  polylineEncodedCoordinates: z.array(z.string()),
+});
+
+export type Geometry = z.infer<typeof Geometry>;
