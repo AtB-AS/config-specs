@@ -1,5 +1,9 @@
 import {z} from 'zod';
-import {LanguageAndTextType, LanguageAndTextTypeArray} from './common';
+import {
+  PolygonGeometry,
+  LanguageAndTextType,
+  LanguageAndTextTypeArray,
+} from './common';
 import {ZoneSelectionMode} from './fare-product-type';
 import {optionalNullish} from './utils/nullish';
 
@@ -71,10 +75,7 @@ export const TariffZone = z.object({
   id: z.string(),
   name: LanguageAndTextType,
   version: z.string(),
-  geometry: z.object({
-    type: z.literal('Polygon'),
-    coordinates: z.array(z.array(z.array(z.number()).length(2))),
-  }),
+  geometry: PolygonGeometry,
   description: LanguageAndTextTypeArray.optional(),
   isDefault: z.boolean().optional(),
 });
@@ -83,10 +84,7 @@ export const FareZone = z.object({
   id: z.string(),
   name: LanguageAndTextType,
   version: z.string(),
-  geometry: z.object({
-    type: z.literal('Polygon'),
-    coordinates: z.array(z.array(z.array(z.number()).length(2))),
-  }),
+  geometry: PolygonGeometry,
   description: LanguageAndTextTypeArray.optional(),
   isDefault: z.boolean().optional(),
 });
@@ -98,19 +96,13 @@ export const CityZone = z.object({
   moreInfoUrl: LanguageAndTextTypeArray.optional(),
   orderUrl: LanguageAndTextTypeArray.optional(),
   phoneNumber: z.string().optional(),
-  geometry: z.object({
-    type: z.literal('Polygon'),
-    coordinates: z.array(z.array(z.array(z.number()).length(2))),
-  }),
+  geometry: PolygonGeometry,
 });
 
 export const CarPoolingZone = z.object({
   id: z.string(),
   name: z.string(),
-  geometry: z.object({
-    type: z.literal('Polygon'),
-    coordinates: z.array(z.array(z.array(z.number()).length(2))),
-  }),
+  geometry: PolygonGeometry,
 });
 
 export const UserProfile = z.object({
