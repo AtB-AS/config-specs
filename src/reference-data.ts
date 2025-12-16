@@ -1,6 +1,6 @@
 import {z} from 'zod';
 import {
-  Geometry,
+  PolygonGeometry,
   LanguageAndTextType,
   LanguageAndTextTypeArray,
 } from './common';
@@ -75,7 +75,7 @@ export const TariffZone = z.object({
   id: z.string(),
   name: LanguageAndTextType,
   version: z.string(),
-  geometry: Geometry,
+  geometry: PolygonGeometry,
   description: LanguageAndTextTypeArray.optional(),
   isDefault: z.boolean().optional(),
 });
@@ -84,7 +84,7 @@ export const FareZone = z.object({
   id: z.string(),
   name: LanguageAndTextType,
   version: z.string(),
-  geometry: Geometry,
+  geometry: PolygonGeometry,
   description: LanguageAndTextTypeArray.optional(),
   isDefault: z.boolean().optional(),
 });
@@ -96,13 +96,13 @@ export const CityZone = z.object({
   moreInfoUrl: LanguageAndTextTypeArray.optional(),
   orderUrl: LanguageAndTextTypeArray.optional(),
   phoneNumber: z.string().optional(),
-  geometry: Geometry,
+  geometry: PolygonGeometry,
 });
 
 export const CarPoolingZone = z.object({
   id: z.string(),
   name: z.string(),
-  geometry: Geometry,
+  geometry: PolygonGeometry,
 });
 
 export const UserProfile = z.object({
