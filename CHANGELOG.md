@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.7.0](https://github.com/AtB-AS/config-specs/compare/v8.6.2...v8.7.0) (2025-12-16)
+
+
+### Features
+
+* add geometry with polyline encoded coordinates ([#154](https://github.com/AtB-AS/config-specs/issues/154)) ([ba08db0](https://github.com/AtB-AS/config-specs/commit/ba08db0686d5531a024dbbfa4921bacbf0afbede))
+
 ## [8.6.2](https://github.com/AtB-AS/config-specs/compare/v8.6.1...v8.6.2) (2025-12-16)
 
 
