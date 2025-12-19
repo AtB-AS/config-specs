@@ -79,8 +79,7 @@
                             "type": "string"
                           }
                         },
-                        "required": ["lang", "value"],
-                        "additionalProperties": false
+                        "required": ["lang", "value"]
                       },
                       {
                         "type": "object",
@@ -91,8 +90,7 @@
                           "value": {
                             "type": "string"
                           }
-                        },
-                        "additionalProperties": false
+                        }
                       }
                     ]
                   }
@@ -111,8 +109,7 @@
                             "type": "string"
                           }
                         },
-                        "required": ["lang", "value"],
-                        "additionalProperties": false
+                        "required": ["lang", "value"]
                       },
                       {
                         "type": "object",
@@ -123,8 +120,7 @@
                           "value": {
                             "type": "string"
                           }
-                        },
-                        "additionalProperties": false
+                        }
                       }
                     ]
                   }
@@ -146,8 +142,7 @@
                             "type": "string"
                           }
                         },
-                        "required": ["lang", "value"],
-                        "additionalProperties": false
+                        "required": ["lang", "value"]
                       },
                       {
                         "type": "object",
@@ -158,8 +153,7 @@
                           "value": {
                             "type": "string"
                           }
-                        },
-                        "additionalProperties": false
+                        }
                       }
                     ]
                   }
@@ -178,8 +172,7 @@
                             "type": "string"
                           }
                         },
-                        "required": ["lang", "value"],
-                        "additionalProperties": false
+                        "required": ["lang", "value"]
                       },
                       {
                         "type": "object",
@@ -190,8 +183,7 @@
                           "value": {
                             "type": "string"
                           }
-                        },
-                        "additionalProperties": false
+                        }
                       }
                     ]
                   }
@@ -216,8 +208,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": ["lang", "value"],
-                            "additionalProperties": false
+                            "required": ["lang", "value"]
                           },
                           {
                             "type": "object",
@@ -228,15 +219,13 @@
                               "value": {
                                 "type": "string"
                               }
-                            },
-                            "additionalProperties": false
+                            }
                           }
                         ]
                       }
                     }
                   },
-                  "required": ["url"],
-                  "additionalProperties": false
+                  "required": ["url"]
                 },
                 "ticketDescription": {
                   "type": "array",
@@ -252,8 +241,7 @@
                             "type": "string"
                           }
                         },
-                        "required": ["lang", "value"],
-                        "additionalProperties": false
+                        "required": ["lang", "value"]
                       },
                       {
                         "type": "object",
@@ -264,8 +252,7 @@
                           "value": {
                             "type": "string"
                           }
-                        },
-                        "additionalProperties": false
+                        }
                       }
                     ]
                   }
@@ -297,8 +284,7 @@
                 "descriptionWhenNotActive",
                 "callToAction",
                 "formFactors"
-              ],
-              "additionalProperties": false
+              ]
             }
           },
           "brandAssets": {
@@ -324,8 +310,7 @@
                 "type": "string"
               }
             },
-            "required": ["brandLastModified", "brandImageUrl"],
-            "additionalProperties": false
+            "required": ["brandLastModified", "brandImageUrl"]
           },
           "isDeepIntegrationEnabled": {
             "default": false,
@@ -348,22 +333,13 @@
                 "format": "uri"
               }
             },
-            "required": ["ios", "android"],
-            "additionalProperties": false
+            "required": ["ios", "android"]
           },
           "rentalAppUriQueryParams": {
             "type": "string"
           }
         },
-        "required": [
-          "id",
-          "name",
-          "showInApp",
-          "formFactors",
-          "benefits",
-          "isDeepIntegrationEnabled"
-        ],
-        "additionalProperties": false
+        "required": ["id", "name", "formFactors"]
       }
     },
     "scooterFaqs": {
@@ -389,8 +365,7 @@
                       "type": "string"
                     }
                   },
-                  "required": ["lang", "value"],
-                  "additionalProperties": false
+                  "required": ["lang", "value"]
                 },
                 {
                   "type": "object",
@@ -401,8 +376,7 @@
                     "value": {
                       "type": "string"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 }
               ]
             }
@@ -422,8 +396,7 @@
                       "type": "string"
                     }
                   },
-                  "required": ["lang", "value"],
-                  "additionalProperties": false
+                  "required": ["lang", "value"]
                 },
                 {
                   "type": "object",
@@ -434,15 +407,13 @@
                     "value": {
                       "type": "string"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 }
               ]
             }
           }
         },
-        "required": ["id", "title", "description"],
-        "additionalProperties": false
+        "required": ["id", "title", "description"]
       }
     },
     "scooterConsentLines": {
@@ -472,8 +443,7 @@
                       "type": "string"
                     }
                   },
-                  "required": ["lang", "value"],
-                  "additionalProperties": false
+                  "required": ["lang", "value"]
                 },
                 {
                   "type": "object",
@@ -484,15 +454,13 @@
                     "value": {
                       "type": "string"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 }
               ]
             }
           }
         },
-        "required": ["id", "description"],
-        "additionalProperties": false
+        "required": ["id", "description"]
       }
     },
     "benefitIdsRequiringValueCode": {
@@ -563,8 +531,7 @@
                 "const": "ATB_BONUS_POINT"
               }
             },
-            "required": ["amount", "currencyCode"],
-            "additionalProperties": false
+            "required": ["amount", "currencyCode"]
           },
           "paymentDescription": {
             "minItems": 1,
@@ -581,8 +548,7 @@
                       "type": "string"
                     }
                   },
-                  "required": ["lang", "value"],
-                  "additionalProperties": false
+                  "required": ["lang", "value"]
                 },
                 {
                   "type": "object",
@@ -593,8 +559,7 @@
                     "value": {
                       "type": "string"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 }
               ]
             }
@@ -617,8 +582,7 @@
                           "type": "string"
                         }
                       },
-                      "required": ["lang", "value"],
-                      "additionalProperties": false
+                      "required": ["lang", "value"]
                     },
                     {
                       "type": "object",
@@ -629,8 +593,7 @@
                         "value": {
                           "type": "string"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     }
                   ]
                 }
@@ -650,8 +613,7 @@
                           "type": "string"
                         }
                       },
-                      "required": ["lang", "value"],
-                      "additionalProperties": false
+                      "required": ["lang", "value"]
                     },
                     {
                       "type": "object",
@@ -662,15 +624,13 @@
                         "value": {
                           "type": "string"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     }
                   ]
                 }
               }
             },
-            "required": ["title"],
-            "additionalProperties": false
+            "required": ["title"]
           }
         },
         "required": [
@@ -681,8 +641,7 @@
           "price",
           "paymentDescription",
           "productDescription"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "bonusTexts": {
@@ -706,8 +665,7 @@
                         "type": "string"
                       }
                     },
-                    "required": ["lang", "value"],
-                    "additionalProperties": false
+                    "required": ["lang", "value"]
                   },
                   {
                     "type": "object",
@@ -718,8 +676,7 @@
                       "value": {
                         "type": "string"
                       }
-                    },
-                    "additionalProperties": false
+                    }
                   }
                 ]
               }
@@ -739,8 +696,7 @@
                         "type": "string"
                       }
                     },
-                    "required": ["lang", "value"],
-                    "additionalProperties": false
+                    "required": ["lang", "value"]
                   },
                   {
                     "type": "object",
@@ -751,19 +707,16 @@
                       "value": {
                         "type": "string"
                       }
-                    },
-                    "additionalProperties": false
+                    }
                   }
                 ]
               }
             }
           },
-          "required": ["title", "description"],
-          "additionalProperties": false
+          "required": ["title", "description"]
         }
       },
-      "required": ["howBonusWorks"],
-      "additionalProperties": false
+      "required": ["howBonusWorks"]
     },
     "bonusSources": {
       "type": "array",
@@ -802,8 +755,7 @@
                   "maximum": 9007199254740991
                 }
               },
-              "required": ["amount"],
-              "additionalProperties": false
+              "required": ["amount"]
             }
           }
         },
@@ -813,11 +765,9 @@
           "userProfileIds",
           "fareZones",
           "amountByEnrollment"
-        ],
-        "additionalProperties": false
+        ]
       }
     }
   },
-  "required": ["operators"],
-  "additionalProperties": false
+  "required": ["operators"]
 }
