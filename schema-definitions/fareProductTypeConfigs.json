@@ -28,8 +28,7 @@
                       "type": "string"
                     }
                   },
-                  "required": ["lang", "value"],
-                  "additionalProperties": false
+                  "required": ["lang", "value"]
                 },
                 {
                   "type": "object",
@@ -40,8 +39,7 @@
                     "value": {
                       "type": "string"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 }
               ]
             }
@@ -580,8 +578,7 @@
                   ]
                 }
               },
-              "required": ["mode"],
-              "additionalProperties": false
+              "required": ["mode"]
             }
           },
           "excludedTariffZones": {
@@ -610,8 +607,7 @@
                       "type": "string"
                     }
                   },
-                  "required": ["lang", "value"],
-                  "additionalProperties": false
+                  "required": ["lang", "value"]
                 },
                 {
                   "type": "object",
@@ -622,8 +618,7 @@
                     "value": {
                       "type": "string"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 }
               ]
             }
@@ -737,8 +732,7 @@
                           "type": "string"
                         }
                       },
-                      "required": ["lang", "value"],
-                      "additionalProperties": false
+                      "required": ["lang", "value"]
                     },
                     {
                       "type": "object",
@@ -749,8 +743,7 @@
                         "value": {
                           "type": "string"
                         }
-                      },
-                      "additionalProperties": false
+                      }
                     }
                   ]
                 }
@@ -785,8 +778,7 @@
               "productSelectionMode",
               "requiresLogin",
               "onBehalfOfEnabled"
-            ],
-            "additionalProperties": false
+            ]
           },
           "isCollectionOfAccesses": {
             "type": "boolean"
@@ -811,8 +803,7 @@
           "description",
           "configuration",
           "isCollectionOfAccesses"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "fareProductGroups": {
@@ -1354,8 +1345,7 @@
                   ]
                 }
               },
-              "required": ["mode"],
-              "additionalProperties": false
+              "required": ["mode"]
             }
           },
           "types": {
@@ -1378,8 +1368,7 @@
                       "type": "string"
                     }
                   },
-                  "required": ["lang", "value"],
-                  "additionalProperties": false
+                  "required": ["lang", "value"]
                 },
                 {
                   "type": "object",
@@ -1390,18 +1379,15 @@
                     "value": {
                       "type": "string"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 }
               ]
             }
           }
         },
-        "required": ["transportModes", "types"],
-        "additionalProperties": false
+        "required": ["transportModes", "types"]
       }
     }
   },
-  "required": ["fareProductTypeConfigs"],
-  "additionalProperties": false
+  "required": ["fareProductTypeConfigs"]
 }

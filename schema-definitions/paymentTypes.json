@@ -16,6 +16,5 @@
         "enum": ["vipps", "visa", "mastercard", "amex"]
       }
     }
-  },
-  "additionalProperties": false
+  }
 }

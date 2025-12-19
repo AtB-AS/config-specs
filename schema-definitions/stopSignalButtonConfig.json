@@ -555,15 +555,8 @@
             }
           }
         },
-        "required": ["mode"],
-        "additionalProperties": false
+        "required": ["mode"]
       }
     }
-  },
-  "required": [
-    "activationWindowStartMinutesBefore",
-    "activationWindowEndMinutesBefore",
-    "modes"
-  ],
-  "additionalProperties": false
+  }
 }

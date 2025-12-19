@@ -17,11 +17,9 @@
             "type": "boolean"
           }
         },
-        "required": ["from", "to"],
-        "additionalProperties": false
+        "required": ["from", "to"]
       }
     }
   },
-  "required": ["overrides"],
-  "additionalProperties": false
+  "required": ["overrides"]
 }

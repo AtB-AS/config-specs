@@ -23,8 +23,7 @@
                 "type": "string"
               }
             },
-            "required": ["nob"],
-            "additionalProperties": false
+            "required": ["nob"]
           },
           "description": {
             "type": "object",
@@ -39,15 +38,12 @@
                 "type": "string"
               }
             },
-            "required": ["nob"],
-            "additionalProperties": false
+            "required": ["nob"]
           }
         },
-        "required": ["id", "title"],
-        "additionalProperties": false
+        "required": ["id", "title"]
       }
     }
   },
-  "required": ["consents"],
-  "additionalProperties": false
+  "required": ["consents"]
 }

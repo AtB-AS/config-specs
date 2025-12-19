@@ -170,6 +170,16 @@
               }
             ]
           },
+          "isSupplementProduct": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "alternativeNames": {
             "anyOf": [
               {
@@ -477,9 +487,15 @@
                     }
                   }
                 }
+              },
+              "polylineEncodedCoordinates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
-            "required": ["type", "coordinates"]
+            "required": ["type"]
           },
           "description": {
             "type": "array",
@@ -762,9 +778,15 @@
                     }
                   }
                 }
+              },
+              "polylineEncodedCoordinates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
-            "required": ["type", "coordinates"]
+            "required": ["type"]
           }
         },
         "required": ["id", "name", "enabled", "geometry"]
@@ -801,9 +823,15 @@
                     }
                   }
                 }
+              },
+              "polylineEncodedCoordinates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
-            "required": ["type", "coordinates"]
+            "required": ["type"]
           }
         },
         "required": ["id", "name", "geometry"]
@@ -818,9 +846,6 @@
             "type": "string"
           },
           "version": {
-            "type": "string"
-          },
-          "illustration": {
             "type": "string"
           },
           "distributionChannel": {
@@ -857,64 +882,99 @@
             ]
           },
           "alternativeNames": {
-            "type": "array",
-            "items": {
-              "anyOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "lang": {
-                      "type": "string"
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "lang": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["lang", "value"]
                     },
-                    "value": {
-                      "type": "string"
+                    {
+                      "type": "object",
+                      "properties": {
+                        "language": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
                     }
-                  },
-                  "required": ["lang", "value"]
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "language": {
-                      "type": "string"
-                    },
-                    "value": {
-                      "type": "string"
-                    }
-                  }
+                  ]
                 }
-              ]
-            }
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "description": {
-            "type": "array",
-            "items": {
-              "anyOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "lang": {
-                      "type": "string"
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "lang": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["lang", "value"]
                     },
-                    "value": {
-                      "type": "string"
+                    {
+                      "type": "object",
+                      "properties": {
+                        "language": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      }
                     }
-                  },
-                  "required": ["lang", "value"]
-                },
-                {
-                  "type": "object",
-                  "properties": {
-                    "language": {
-                      "type": "string"
-                    },
-                    "value": {
-                      "type": "string"
-                    }
-                  }
+                  ]
                 }
-              ]
-            }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "isBaggageProduct": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "baggageType": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": ["BICYCLE"]
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "limitations": {
             "anyOf": [
@@ -1011,9 +1071,15 @@
                     }
                   }
                 }
+              },
+              "polylineEncodedCoordinates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
-            "required": ["type", "coordinates"]
+            "required": ["type"]
           },
           "description": {
             "type": "array",

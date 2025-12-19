@@ -33,8 +33,7 @@
                       "type": "string"
                     }
                   },
-                  "required": ["lang", "value"],
-                  "additionalProperties": false
+                  "required": ["lang", "value"]
                 },
                 {
                   "type": "object",
@@ -45,8 +44,7 @@
                     "value": {
                       "type": "string"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 }
               ]
             }
@@ -65,8 +63,7 @@
                       "type": "string"
                     }
                   },
-                  "required": ["lang", "value"],
-                  "additionalProperties": false
+                  "required": ["lang", "value"]
                 },
                 {
                   "type": "object",
@@ -77,8 +74,7 @@
                     "value": {
                       "type": "string"
                     }
-                  },
-                  "additionalProperties": false
+                  }
                 }
               ]
             }
@@ -90,8 +86,7 @@
           "salesPackages",
           "toggleDescription",
           "toggleTitle"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "modes": {
@@ -106,11 +101,9 @@
             "type": "boolean"
           }
         },
-        "required": ["id", "enabled"],
-        "additionalProperties": false
+        "required": ["id", "enabled"]
       }
     }
   },
-  "required": ["groups", "modes"],
-  "additionalProperties": false
+  "required": ["groups", "modes"]
 }

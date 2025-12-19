@@ -513,14 +513,8 @@
             "enum": ["otp", "email", "vipps"]
           }
         }
-      },
-      "additionalProperties": false
+      }
     }
   },
-  "required": [
-    "vatPercent",
-    "travelcardNumberLength",
-    "nextMorningUtcTimestamp"
-  ],
-  "additionalProperties": false
+  "required": ["vatPercent"]
 }
