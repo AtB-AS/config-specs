@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.8.0](https://github.com/AtB-AS/config-specs/compare/v8.7.1...v8.8.0) (2025-12-22)
+
+
+### Features
+
+* Added missing values from Mode to TransportMode ([#160](https://github.com/AtB-AS/config-specs/issues/160)) ([b15c7f5](https://github.com/AtB-AS/config-specs/commit/b15c7f5b63c5c10ac03d1c4e49b66c887c5851e0))
+
 ## [8.7.1](https://github.com/AtB-AS/config-specs/compare/v8.7.0...v8.7.1) (2025-12-19)
 
 
