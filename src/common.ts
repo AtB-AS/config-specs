@@ -10,6 +10,8 @@ export const TransportModeType = z.union([
   z.literal('air'),
   z.literal('bus'),
   z.literal('cableway'),
+  z.literal('car'),
+  z.literal('carpool'),
   z.literal('coach'),
   z.literal('funicular'),
   z.literal('lift'),
@@ -19,6 +21,7 @@ export const TransportModeType = z.union([
   z.literal('taxi'),
   z.literal('tram'),
   z.literal('trolleybus'),
+  z.literal('snowAndIce'),
   z.literal('unknown'),
   z.literal('water'),
 ]);
