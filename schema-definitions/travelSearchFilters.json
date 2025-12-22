@@ -42,6 +42,14 @@
                   },
                   {
                     "type": "string",
+                    "const": "car"
+                  },
+                  {
+                    "type": "string",
+                    "const": "carpool"
+                  },
+                  {
+                    "type": "string",
                     "const": "coach"
                   },
                   {
@@ -75,6 +83,10 @@
                   {
                     "type": "string",
                     "const": "trolleybus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "snowAndIce"
                   },
                   {
                     "type": "string",
@@ -639,6 +651,14 @@
                     },
                     {
                       "type": "string",
+                      "const": "car"
+                    },
+                    {
+                      "type": "string",
+                      "const": "carpool"
+                    },
+                    {
+                      "type": "string",
                       "const": "coach"
                     },
                     {
@@ -672,6 +692,10 @@
                     {
                       "type": "string",
                       "const": "trolleybus"
+                    },
+                    {
+                      "type": "string",
+                      "const": "snowAndIce"
                     },
                     {
                       "type": "string",
