@@ -120,6 +120,11 @@ export const UserProfile = z.object({
   emoji: z.string().optional(),
 });
 
+export const Operator = z.object({
+  id: z.string(),
+  name: z.string(),
+});
+
 export const ReferenceData = z.object({
   preassignedFareProducts_v2: z.array(PreassignedFareProduct),
   fareZones: z.array(FareZone),
@@ -127,6 +132,7 @@ export const ReferenceData = z.object({
   cityZones: z.array(CityZone).optional(),
   carPoolingZones: z.array(CarPoolingZone).optional(),
   supplementProducts: z.array(SupplementProduct).optional(),
+  operators: z.array(Operator).optional(),
 
   /**
    * @deprecated Use preassignedFareProducts_v2 instead
@@ -152,3 +158,4 @@ export type ReferenceData = z.infer<typeof ReferenceData>;
 export type SupplementProduct = z.infer<typeof SupplementProduct>;
 export type BaggageType = z.infer<typeof BaggageType>;
 export type BaggageProduct = z.infer<typeof BaggageProduct>;
+export type Operator = z.infer<typeof Operator>;

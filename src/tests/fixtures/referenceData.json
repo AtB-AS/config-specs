@@ -96,5 +96,11 @@
         ]
       }
     }
+  ],
+  "operators": [
+    {
+      "id": "YRY:Operator:Ryde",
+      "name": "Ryde"
+    }
   ]
 }
