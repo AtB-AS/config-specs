@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.8.1](https://github.com/AtB-AS/config-specs/compare/v8.8.0...v8.8.1) (2026-01-14)
+
+
+### Bug Fixes
+
+* make polylineEncodedCoordinates required again ([#159](https://github.com/AtB-AS/config-specs/issues/159)) ([2616124](https://github.com/AtB-AS/config-specs/commit/26161249fd16a286c001b25fcc242386a38f2c7b))
+
 ## [8.8.0](https://github.com/AtB-AS/config-specs/compare/v8.7.1...v8.8.0) (2025-12-22)
 
 
