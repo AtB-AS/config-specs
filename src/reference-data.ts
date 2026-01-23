@@ -6,6 +6,7 @@ import {
 } from './common';
 import {ZoneSelectionMode} from './fare-product-type';
 import {optionalNullish} from './utils/nullish';
+import {TransportModeType, TransportSubmodeType} from './common';
 
 export const PreassignedFareProduct = z.object({
   id: z.string(),
@@ -40,17 +41,13 @@ export const PreassignedFareProduct = z.object({
   warningMessage: optionalNullish(LanguageAndTextTypeArray),
 });
 
-export const BaggageType = z.enum(['BICYCLE']);
-
-export const SupplementProduct = z.object({
+const BaseProduct = z.object({
   id: z.string(),
   version: z.string(),
   distributionChannel: z.array(z.string()),
   name: LanguageAndTextType,
   alternativeNames: optionalNullish(LanguageAndTextTypeArray),
   description: optionalNullish(LanguageAndTextTypeArray),
-  isBaggageProduct: optionalNullish(z.boolean()),
-  baggageType: optionalNullish(BaggageType),
   limitations: optionalNullish(
     z
       .object({
@@ -61,10 +58,23 @@ export const SupplementProduct = z.object({
   ),
 });
 
-export const BaggageProduct = SupplementProduct.extend({
-  isBaggageProduct: z.literal(true),
+export const BaggageType = z.enum(['BICYCLE']);
+export const BaggageProduct = BaseProduct.extend({
+  kind: z.literal('baggage'),
   baggageType: BaggageType,
+  illustration: optionalNullish(z.string()),
 });
+
+export const ReservationProduct = BaseProduct.extend({
+  kind: z.literal('reservation'),
+  transportMode: optionalNullish(TransportModeType),
+  transportSubmodes: optionalNullish(z.array(TransportSubmodeType)),
+});
+
+export const SupplementProduct = z.discriminatedUnion('kind', [
+  BaggageProduct,
+  ReservationProduct,
+]);
 
 /**
  * @deprecated
@@ -152,3 +162,4 @@ export type ReferenceData = z.infer<typeof ReferenceData>;
 export type SupplementProduct = z.infer<typeof SupplementProduct>;
 export type BaggageType = z.infer<typeof BaggageType>;
 export type BaggageProduct = z.infer<typeof BaggageProduct>;
+export type ReservationProduct = z.infer<typeof ReservationProduct>;
