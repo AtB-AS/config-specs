@@ -31,7 +31,10 @@
         }
       ],
       "kind": "baggage",
-      "baggageType": "BICYCLE"
+      "baggageType": "BICYCLE",
+      "limitations": {
+        "userProfileRefs": []
+      }
     },
     {
       "id": "ATB:SupplementProduct:87654321",
@@ -49,7 +52,10 @@
       ],
       "kind": "reservation",
       "transportMode": "water",
-      "transportSubmodes": ["highSpeedPassengerService"]
+      "transportSubmodes": ["highSpeedPassengerService"],
+      "limitations": {
+        "userProfileRefs": []
+      }
     }
   ],
   "tariffZones": [
