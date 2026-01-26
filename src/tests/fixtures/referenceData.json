@@ -30,8 +30,26 @@
           "value": "Gjelder for medbringelse av sykkel på buss og trikk."
         }
       ],
-      "isBaggageProduct": true,
+      "kind": "baggage",
       "baggageType": "BICYCLE"
+    },
+    {
+      "id": "ATB:SupplementProduct:87654321",
+      "version": "ATB:Version:09876543-2109-8765-4321-098765432109",
+      "distributionChannel": ["app"],
+      "name": {
+        "lang": "nob",
+        "value": "Plassreservasjon"
+      },
+      "description": [
+        {
+          "lang": "nob",
+          "value": "Garantert plass på hurtigbåt"
+        }
+      ],
+      "kind": "reservation",
+      "transportMode": "water",
+      "transportSubmodes": ["highSpeedPassengerService"]
     }
   ],
   "tariffZones": [
