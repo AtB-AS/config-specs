@@ -1,5 +1,21 @@
 # Changelog
 
+## [9.0.0](https://github.com/AtB-AS/config-specs/compare/v8.8.1...v9.0.0) (2026-01-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* Removes isBaggageProduct and adds kind to all supplement products
+
+### Features
+
+* Refactors supplementProduct/baggageProduct to better support reservations ([#164](https://github.com/AtB-AS/config-specs/issues/164)) ([b5fb31c](https://github.com/AtB-AS/config-specs/commit/b5fb31c15263ad10db5b4e9c3e494b9f4c9bbe02))
+
+
+### Bug Fixes
+
+* Fixed and improved tests ([b5fb31c](https://github.com/AtB-AS/config-specs/commit/b5fb31c15263ad10db5b4e9c3e494b9f4c9bbe02))
+
 ## [8.8.1](https://github.com/AtB-AS/config-specs/compare/v8.8.0...v8.8.1) (2026-01-14)
 
 
