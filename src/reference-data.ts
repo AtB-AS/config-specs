@@ -8,24 +8,26 @@ import {ZoneSelectionMode} from './fare-product-type';
 import {optionalNullish} from './utils/nullish';
 import {TransportModeType, TransportSubmodeType} from './common';
 
+export const Limitations = z.object({
+  userProfileRefs: z.array(z.string()),
+  appVersionMin: optionalNullish(z.string()),
+  appVersionMax: optionalNullish(z.string()),
+  fareZoneRefs: optionalNullish(z.array(z.string())),
+
+  /**
+   * @deprecated use fareZoneRefs instead
+   */
+  tariffZoneRefs: optionalNullish(z.array(z.string())),
+  supplementProductRefs: optionalNullish(z.array(z.string())),
+});
+
 export const PreassignedFareProduct = z.object({
   id: z.string(),
   version: z.string(),
   type: z.string(),
   distributionChannel: z.array(z.string()),
   name: LanguageAndTextType,
-  limitations: z.object({
-    userProfileRefs: z.array(z.string()),
-    appVersionMin: optionalNullish(z.string()),
-    appVersionMax: optionalNullish(z.string()),
-    fareZoneRefs: optionalNullish(z.array(z.string())),
-
-    /**
-     * @deprecated use fareZoneRefs instead
-     */
-    tariffZoneRefs: optionalNullish(z.array(z.string())),
-    supplementProductRefs: optionalNullish(z.array(z.string())),
-  }),
+  limitations: Limitations,
   durationDays: optionalNullish(z.number()),
   isApplicableOnSingleZoneOnly: optionalNullish(z.boolean()),
   isBookingEnabled: optionalNullish(z.boolean()),
@@ -48,14 +50,7 @@ const BaseProduct = z.object({
   name: LanguageAndTextType,
   alternativeNames: optionalNullish(LanguageAndTextTypeArray),
   description: optionalNullish(LanguageAndTextTypeArray),
-  limitations: optionalNullish(
-    z
-      .object({
-        appVersionMin: optionalNullish(z.string()),
-        appVersionMax: optionalNullish(z.string()),
-      })
-      .optional(),
-  ),
+  limitations: Limitations,
 });
 
 export const BaggageType = z.enum(['BICYCLE']);

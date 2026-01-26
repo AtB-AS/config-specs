@@ -958,36 +958,75 @@
                 ]
               },
               "limitations": {
-                "anyOf": [
-                  {
-                    "type": "object",
-                    "properties": {
-                      "appVersionMin": {
-                        "anyOf": [
-                          {
-                            "type": "string"
-                          },
-                          {
-                            "type": "null"
-                          }
-                        ]
-                      },
-                      "appVersionMax": {
-                        "anyOf": [
-                          {
-                            "type": "string"
-                          },
-                          {
-                            "type": "null"
-                          }
-                        ]
-                      }
+                "type": "object",
+                "properties": {
+                  "userProfileRefs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
                     }
                   },
-                  {
-                    "type": "null"
+                  "appVersionMin": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "appVersionMax": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "fareZoneRefs": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "tariffZoneRefs": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "supplementProductRefs": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
                   }
-                ]
+                },
+                "required": ["userProfileRefs"]
               },
               "kind": {
                 "type": "string",
@@ -1013,6 +1052,7 @@
               "version",
               "distributionChannel",
               "name",
+              "limitations",
               "kind",
               "baggageType"
             ]
@@ -1134,36 +1174,75 @@
                 ]
               },
               "limitations": {
-                "anyOf": [
-                  {
-                    "type": "object",
-                    "properties": {
-                      "appVersionMin": {
-                        "anyOf": [
-                          {
-                            "type": "string"
-                          },
-                          {
-                            "type": "null"
-                          }
-                        ]
-                      },
-                      "appVersionMax": {
-                        "anyOf": [
-                          {
-                            "type": "string"
-                          },
-                          {
-                            "type": "null"
-                          }
-                        ]
-                      }
+                "type": "object",
+                "properties": {
+                  "userProfileRefs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
                     }
                   },
-                  {
-                    "type": "null"
+                  "appVersionMin": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "appVersionMax": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "fareZoneRefs": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "tariffZoneRefs": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "supplementProductRefs": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
                   }
-                ]
+                },
+                "required": ["userProfileRefs"]
               },
               "kind": {
                 "type": "string",
@@ -1727,7 +1806,14 @@
                 ]
               }
             },
-            "required": ["id", "version", "distributionChannel", "name", "kind"]
+            "required": [
+              "id",
+              "version",
+              "distributionChannel",
+              "name",
+              "limitations",
+              "kind"
+            ]
           }
         ]
       }
