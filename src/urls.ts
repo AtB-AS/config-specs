@@ -21,7 +21,9 @@ export const ConfigurableLinksSchema = z.object({
   iosStoreListing: LanguageAndTextTypeArray.optional(),
   androidStoreListing: LanguageAndTextTypeArray.optional(),
   externalRealtimeMap: LanguageAndTextTypeArray.optional(),
+  /** @deprecated Use tileServerBaseUrls instead. */
   tileServerBaseUrl: LanguageAndTextTypeArray.optional(),
+  tileServerBaseUrls: z.array(AppVersionedConfigurableLinkSchema),
   /** @deprecated Use mapboxSpriteUrls instead. */
   mapboxSpriteUrl: LanguageAndTextTypeArray.optional(),
   mapboxSpriteUrls: z.array(AppVersionedConfigurableLinkSchema),

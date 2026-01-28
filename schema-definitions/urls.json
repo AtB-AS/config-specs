@@ -333,6 +333,50 @@
         ]
       }
     },
+    "tileServerBaseUrls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "configurableLink": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "appVersionMin": {
+            "type": "string"
+          },
+          "appVersionMax": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "mapboxSpriteUrl": {
       "type": "array",
       "items": {
@@ -361,6 +405,50 @@
             }
           }
         ]
+      }
+    },
+    "mapboxSpriteUrls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "configurableLink": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "appVersionMin": {
+            "type": "string"
+          },
+          "appVersionMax": {
+            "type": "string"
+          }
+        }
       }
     },
     "mobilityTermsUrl": {
@@ -513,5 +601,6 @@
         ]
       }
     }
-  }
+  },
+  "required": ["tileServerBaseUrls", "mapboxSpriteUrls"]
 }
