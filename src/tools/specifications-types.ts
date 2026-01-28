@@ -10,7 +10,7 @@ import {
   ScooterConsentLine,
   ScooterFaq,
 } from '../mobility';
-import {ConfigurableLinks} from '../urls';
+import {ConfigurableLinksSchema} from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 import {NotificationConfig} from '../notification-config';
 import {Consents} from '../consents';
@@ -62,7 +62,7 @@ export const schemaTypes = {
     .meta({title: 'MobilityOperator'}),
   other: Other,
   paymentTypes: PaymentTypes,
-  urls: ConfigurableLinks.meta({title: 'ConfigurableLinks'}),
+  urls: ConfigurableLinksSchema.meta({title: 'ConfigurableLinks'}),
   harborConnectionOverrides: HarborConnectionOverrides,
   notificationConfig: NotificationConfig,
   consents: Consents,
