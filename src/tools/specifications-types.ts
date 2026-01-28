@@ -10,7 +10,11 @@ import {
   ScooterConsentLine,
   ScooterFaq,
 } from '../mobility';
-import {ConfigurableLinksSchema} from '../urls';
+import {
+  ConfigurableLinksSchema,
+  AppVersionedConfigurableLink,
+  AppVersionedConfigurableLinkSchema,
+} from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 import {NotificationConfig} from '../notification-config';
 import {Consents} from '../consents';
@@ -39,6 +43,8 @@ export type SchemaNames = (typeof specifications)[number];
 export function isValidSchema(schema: any): schema is SchemaNames {
   return schema in schemaTypes;
 }
+
+export {AppVersionedConfigurableLink, AppVersionedConfigurableLinkSchema};
 
 // Exactly as structured in Firestore Config Yaml Files (correct root level)
 export const schemaTypes = {
