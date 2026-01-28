@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.0.1](https://github.com/AtB-AS/config-specs/compare/v9.0.0...v9.0.1) (2026-01-28)
+
+
+### Bug Fixes
+
+* unified limitations on PreassignedFareProduct and SupplementProduct ([#166](https://github.com/AtB-AS/config-specs/issues/166)) ([ebfec60](https://github.com/AtB-AS/config-specs/commit/ebfec601c2acc2ca12c3ced278cf4c557f26f7cd))
+
 ## [9.0.0](https://github.com/AtB-AS/config-specs/compare/v8.8.1...v9.0.0) (2026-01-26)
 
 
