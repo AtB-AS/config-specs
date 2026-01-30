@@ -14,9 +14,11 @@ export const titleAndOptionalDescription = z.object({
 
 export const FormFactor = z.union([
   z.literal('SCOOTER'),
+  z.literal('SCOOTER_STANDING'),
   z.literal('BICYCLE'),
   z.literal('CAR'),
 ]);
+export type FormFactorType = z.infer<typeof FormFactor>;
 
 export const OperatorBenefitId = z.union([
   z.literal('free-unlock'),
@@ -43,12 +45,25 @@ export const OperatorBenefit = z.object({
 
 export type OperatorBenefitType = z.infer<typeof OperatorBenefit>;
 
+export const PriceAdjustment = z.object({
+  amount: z.number(),
+  description: z.string(),
+});
+
+export type PriceAdjustmentType = z.infer<typeof PriceAdjustment>;
+
+export const PriceAdjustmentsByFormFactor = z.record(FormFactor, PriceAdjustment);
+
+export type PriceAdjustmentsByFormFactorType =
+Partial<Record<FormFactorType, PriceAdjustmentType>>;
+
 export const MobilityOperator = z.object({
   id: z.string().nonempty(),
   name: z.string().nonempty(),
   showInApp: z.boolean().default(false),
   formFactors: z.array(FormFactor).nonempty(),
   benefits: z.array(OperatorBenefit).optional().default([]),
+  priceAdjustments: PriceAdjustmentsByFormFactor.optional(),
   brandAssets: z
     .object({
       brandLastModified: z.string().date(),
