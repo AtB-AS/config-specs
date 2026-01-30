@@ -338,6 +338,12 @@
       "items": {
         "type": "object",
         "properties": {
+          "appVersionMin": {
+            "type": "string"
+          },
+          "appVersionMax": {
+            "type": "string"
+          },
           "configurableLink": {
             "type": "array",
             "items": {
@@ -367,12 +373,6 @@
                 }
               ]
             }
-          },
-          "appVersionMin": {
-            "type": "string"
-          },
-          "appVersionMax": {
-            "type": "string"
           }
         },
         "required": ["configurableLink"]
@@ -413,6 +413,12 @@
       "items": {
         "type": "object",
         "properties": {
+          "appVersionMin": {
+            "type": "string"
+          },
+          "appVersionMax": {
+            "type": "string"
+          },
           "configurableLink": {
             "type": "array",
             "items": {
@@ -442,12 +448,6 @@
                 }
               ]
             }
-          },
-          "appVersionMin": {
-            "type": "string"
-          },
-          "appVersionMax": {
-            "type": "string"
           }
         },
         "required": ["configurableLink"]

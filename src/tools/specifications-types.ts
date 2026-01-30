@@ -14,6 +14,8 @@ import {
   ConfigurableLinksSchema,
   AppVersionedConfigurableLink,
   AppVersionedConfigurableLinkSchema,
+  AppVersionedItem,
+  AppVersionedItemSchema,
 } from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 import {NotificationConfig} from '../notification-config';
@@ -44,7 +46,12 @@ export function isValidSchema(schema: any): schema is SchemaNames {
   return schema in schemaTypes;
 }
 
-export {AppVersionedConfigurableLink, AppVersionedConfigurableLinkSchema};
+export {
+  AppVersionedConfigurableLink,
+  AppVersionedConfigurableLinkSchema,
+  AppVersionedItem,
+  AppVersionedItemSchema,
+};
 
 // Exactly as structured in Firestore Config Yaml Files (correct root level)
 export const schemaTypes = {
