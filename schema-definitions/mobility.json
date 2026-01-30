@@ -31,6 +31,10 @@
                 },
                 {
                   "type": "string",
+                  "const": "SCOOTER_STANDING"
+                },
+                {
+                  "type": "string",
                   "const": "BICYCLE"
                 },
                 {
@@ -268,6 +272,10 @@
                       },
                       {
                         "type": "string",
+                        "const": "SCOOTER_STANDING"
+                      },
+                      {
+                        "type": "string",
                         "const": "BICYCLE"
                       },
                       {
@@ -285,6 +293,44 @@
                 "callToAction",
                 "formFactors"
               ]
+            }
+          },
+          "priceAdjustments": {
+            "type": "object",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "SCOOTER"
+                },
+                {
+                  "type": "string",
+                  "const": "SCOOTER_STANDING"
+                },
+                {
+                  "type": "string",
+                  "const": "BICYCLE"
+                },
+                {
+                  "type": "string",
+                  "const": "CAR"
+                }
+              ]
+            },
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "number"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "required": ["amount", "description"]
+              }
             }
           },
           "brandAssets": {
@@ -506,6 +552,10 @@
                 {
                   "type": "string",
                   "const": "SCOOTER"
+                },
+                {
+                  "type": "string",
+                  "const": "SCOOTER_STANDING"
                 },
                 {
                   "type": "string",
