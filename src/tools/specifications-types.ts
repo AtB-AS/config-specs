@@ -10,7 +10,13 @@ import {
   ScooterConsentLine,
   ScooterFaq,
 } from '../mobility';
-import {ConfigurableLinks} from '../urls';
+import {
+  ConfigurableLinksSchema,
+  AppVersionedConfigurableLink,
+  AppVersionedConfigurableLinkSchema,
+  AppVersionedItem,
+  AppVersionedItemSchema,
+} from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 import {NotificationConfig} from '../notification-config';
 import {Consents} from '../consents';
@@ -40,6 +46,13 @@ export function isValidSchema(schema: any): schema is SchemaNames {
   return schema in schemaTypes;
 }
 
+export {
+  AppVersionedConfigurableLink,
+  AppVersionedConfigurableLinkSchema,
+  AppVersionedItem,
+  AppVersionedItemSchema,
+};
+
 // Exactly as structured in Firestore Config Yaml Files (correct root level)
 export const schemaTypes = {
   fareProductTypeConfigs: z
@@ -62,7 +75,7 @@ export const schemaTypes = {
     .meta({title: 'MobilityOperator'}),
   other: Other,
   paymentTypes: PaymentTypes,
-  urls: ConfigurableLinks.meta({title: 'ConfigurableLinks'}),
+  urls: ConfigurableLinksSchema.meta({title: 'ConfigurableLinks'}),
   harborConnectionOverrides: HarborConnectionOverrides,
   notificationConfig: NotificationConfig,
   consents: Consents,
