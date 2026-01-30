@@ -5,6 +5,7 @@ on:
       - main
 
 permissions:
+  id-token: write
   contents: write
   pull-requests: write
   issues: write
@@ -31,7 +32,6 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
+      - run: npm install -g npm@11
       - run: yarn install --frozen-lockfile
       - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
