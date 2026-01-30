@@ -374,7 +374,8 @@
           "appVersionMax": {
             "type": "string"
           }
-        }
+        },
+        "required": ["configurableLink"]
       }
     },
     "mapboxSpriteUrl": {
@@ -448,7 +449,8 @@
           "appVersionMax": {
             "type": "string"
           }
-        }
+        },
+        "required": ["configurableLink"]
       }
     },
     "mobilityTermsUrl": {
@@ -601,6 +603,5 @@
         ]
       }
     }
-  },
-  "required": ["tileServerBaseUrls", "mapboxSpriteUrls"]
+  }
 }

@@ -2,7 +2,7 @@ import {z} from 'zod';
 import {LanguageAndTextTypeArray} from './common';
 
 export const AppVersionedConfigurableLinkSchema = z.object({
-  configurableLink: LanguageAndTextTypeArray.optional(),
+  configurableLink: LanguageAndTextTypeArray,
   appVersionMin: z.string().optional(),
   appVersionMax: z.string().optional(),
 });
@@ -23,10 +23,10 @@ export const ConfigurableLinksSchema = z.object({
   externalRealtimeMap: LanguageAndTextTypeArray.optional(),
   /** @deprecated Use tileServerBaseUrls instead. */
   tileServerBaseUrl: LanguageAndTextTypeArray.optional(),
-  tileServerBaseUrls: z.array(AppVersionedConfigurableLinkSchema),
+  tileServerBaseUrls: z.array(AppVersionedConfigurableLinkSchema).optional(),
   /** @deprecated Use mapboxSpriteUrls instead. */
   mapboxSpriteUrl: LanguageAndTextTypeArray.optional(),
-  mapboxSpriteUrls: z.array(AppVersionedConfigurableLinkSchema),
+  mapboxSpriteUrls: z.array(AppVersionedConfigurableLinkSchema).optional(),
   mobilityTermsUrl: LanguageAndTextTypeArray.optional(),
   contactFormUrl: LanguageAndTextTypeArray.optional(),
   lostAndFoundUrl: LanguageAndTextTypeArray.optional(),
