@@ -1,5 +1,17 @@
 # Changelog
 
+## [9.1.0](https://github.com/AtB-AS/config-specs/compare/v9.0.0...v9.1.0) (2026-02-02)
+
+
+### Features
+
+* added priceAdjustment to mobilityOperators ([#169](https://github.com/AtB-AS/config-specs/issues/169)) ([c979d6d](https://github.com/AtB-AS/config-specs/commit/c979d6d1b3beb0c979b26626b2aa9436d8bca318))
+
+
+### Bug Fixes
+
+* unified limitations on PreassignedFareProduct and SupplementProduct ([#166](https://github.com/AtB-AS/config-specs/issues/166)) ([ebfec60](https://github.com/AtB-AS/config-specs/commit/ebfec601c2acc2ca12c3ced278cf4c557f26f7cd))
+
 ## [9.0.0](https://github.com/AtB-AS/config-specs/compare/v8.8.1...v9.0.0) (2026-01-26)
 
 
