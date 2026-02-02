@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.2.0](https://github.com/AtB-AS/config-specs/compare/v9.1.0...v9.2.0) (2026-02-02)
+
+
+### Features
+
+* App versioned configurable link ([#170](https://github.com/AtB-AS/config-specs/issues/170)) ([92a27bf](https://github.com/AtB-AS/config-specs/commit/92a27bfaa7b1ee825839fd0722c3fb61c3ea3694))
+
 ## [9.1.0](https://github.com/AtB-AS/config-specs/compare/v9.0.0...v9.1.0) (2026-02-02)
 
 
