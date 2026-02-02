@@ -14,8 +14,6 @@ import {
   ConfigurableLinksSchema,
   AppVersionedConfigurableLink,
   AppVersionedConfigurableLinkSchema,
-  AppVersionedItem,
-  AppVersionedItemSchema,
 } from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 import {NotificationConfig} from '../notification-config';
@@ -24,6 +22,7 @@ import {PaymentTypes} from '../payment-types';
 import {Other} from '../other';
 import {ReferenceData} from '../reference-data';
 import {StopSignalButtonConfig} from '../stop-signal-button-config';
+import {AppVersionedItem, AppVersionedItemSchema} from '../common';
 
 // All supported specifications
 export const specifications = [
@@ -46,12 +45,8 @@ export function isValidSchema(schema: any): schema is SchemaNames {
   return schema in schemaTypes;
 }
 
-export {
-  AppVersionedConfigurableLink,
-  AppVersionedConfigurableLinkSchema,
-  AppVersionedItem,
-  AppVersionedItemSchema,
-};
+export {AppVersionedConfigurableLink, AppVersionedConfigurableLinkSchema};
+export {AppVersionedItem, AppVersionedItemSchema};
 
 // Exactly as structured in Firestore Config Yaml Files (correct root level)
 export const schemaTypes = {

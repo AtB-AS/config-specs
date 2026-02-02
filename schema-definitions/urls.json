@@ -339,10 +339,24 @@
         "type": "object",
         "properties": {
           "appVersionMin": {
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "appVersionMax": {
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "configurableLink": {
             "type": "array",
@@ -414,10 +428,24 @@
         "type": "object",
         "properties": {
           "appVersionMin": {
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "appVersionMax": {
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "configurableLink": {
             "type": "array",

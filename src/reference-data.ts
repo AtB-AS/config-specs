@@ -3,15 +3,14 @@ import {
   PolygonGeometry,
   LanguageAndTextType,
   LanguageAndTextTypeArray,
+  AppVersionedItemSchema,
 } from './common';
 import {ZoneSelectionMode} from './fare-product-type';
 import {optionalNullish} from './utils/nullish';
 import {TransportModeType, TransportSubmodeType} from './common';
 
-export const Limitations = z.object({
+export const Limitations = AppVersionedItemSchema.extend({
   userProfileRefs: z.array(z.string()),
-  appVersionMin: optionalNullish(z.string()),
-  appVersionMax: optionalNullish(z.string()),
   fareZoneRefs: optionalNullish(z.array(z.string())),
 
   /**

@@ -1,11 +1,5 @@
 import {z} from 'zod';
-import {LanguageAndTextTypeArray} from './common';
-
-export const AppVersionedItemSchema = z.object({
-  appVersionMin: z.string().optional(),
-  appVersionMax: z.string().optional(),
-});
-export type AppVersionedItem = z.infer<typeof AppVersionedItemSchema>;
+import {AppVersionedItemSchema, LanguageAndTextTypeArray} from './common';
 
 export const AppVersionedConfigurableLinkSchema = AppVersionedItemSchema.extend(
   {
