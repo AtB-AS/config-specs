@@ -52,12 +52,6 @@
           "limitations": {
             "type": "object",
             "properties": {
-              "userProfileRefs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "appVersionMin": {
                 "anyOf": [
                   {
@@ -77,6 +71,12 @@
                     "type": "null"
                   }
                 ]
+              },
+              "userProfileRefs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "fareZoneRefs": {
                 "anyOf": [
@@ -960,12 +960,6 @@
               "limitations": {
                 "type": "object",
                 "properties": {
-                  "userProfileRefs": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
                   "appVersionMin": {
                     "anyOf": [
                       {
@@ -985,6 +979,12 @@
                         "type": "null"
                       }
                     ]
+                  },
+                  "userProfileRefs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   },
                   "fareZoneRefs": {
                     "anyOf": [
@@ -1176,12 +1176,6 @@
               "limitations": {
                 "type": "object",
                 "properties": {
-                  "userProfileRefs": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
                   "appVersionMin": {
                     "anyOf": [
                       {
@@ -1201,6 +1195,12 @@
                         "type": "null"
                       }
                     ]
+                  },
+                  "userProfileRefs": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   },
                   "fareZoneRefs": {
                     "anyOf": [

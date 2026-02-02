@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {optionalNullish} from './utils/nullish';
 
 export const TransportModeType = z.union([
   // custom values
@@ -177,3 +178,9 @@ export const PolygonGeometry = z.object({
 });
 
 export type PolygonGeometry = z.infer<typeof PolygonGeometry>;
+
+export const AppVersionedItemSchema = z.object({
+  appVersionMin: optionalNullish(z.string()),
+  appVersionMax: optionalNullish(z.string()),
+});
+export type AppVersionedItem = z.infer<typeof AppVersionedItemSchema>;

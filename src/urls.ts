@@ -1,7 +1,16 @@
 import {z} from 'zod';
-import {LanguageAndTextTypeArray} from './common';
+import {AppVersionedItemSchema, LanguageAndTextTypeArray} from './common';
 
-export const ConfigurableLinks = z.object({
+export const AppVersionedConfigurableLinkSchema = AppVersionedItemSchema.extend(
+  {
+    configurableLink: LanguageAndTextTypeArray,
+  },
+);
+export type AppVersionedConfigurableLink = z.infer<
+  typeof AppVersionedConfigurableLinkSchema
+>;
+
+export const ConfigurableLinksSchema = z.object({
   ticketingInfo: LanguageAndTextTypeArray.optional(),
   termsInfo: LanguageAndTextTypeArray.optional(),
   inspectionInfo: LanguageAndTextTypeArray.optional(),
@@ -12,8 +21,12 @@ export const ConfigurableLinks = z.object({
   iosStoreListing: LanguageAndTextTypeArray.optional(),
   androidStoreListing: LanguageAndTextTypeArray.optional(),
   externalRealtimeMap: LanguageAndTextTypeArray.optional(),
+  /** @deprecated Use tileServerBaseUrls instead. */
   tileServerBaseUrl: LanguageAndTextTypeArray.optional(),
+  tileServerBaseUrls: z.array(AppVersionedConfigurableLinkSchema).optional(),
+  /** @deprecated Use mapboxSpriteUrls instead. */
   mapboxSpriteUrl: LanguageAndTextTypeArray.optional(),
+  mapboxSpriteUrls: z.array(AppVersionedConfigurableLinkSchema).optional(),
   mobilityTermsUrl: LanguageAndTextTypeArray.optional(),
   contactFormUrl: LanguageAndTextTypeArray.optional(),
   lostAndFoundUrl: LanguageAndTextTypeArray.optional(),
@@ -21,4 +34,4 @@ export const ConfigurableLinks = z.object({
   sparReadMoreUrl: LanguageAndTextTypeArray.optional(),
 });
 
-export type ConfigurableLinksType = z.infer<typeof ConfigurableLinks>;
+export type ConfigurableLinks = z.infer<typeof ConfigurableLinksSchema>;
