@@ -52,13 +52,17 @@ export const PriceAdjustment = z.object({
 
 export type PriceAdjustmentType = z.infer<typeof PriceAdjustment>;
 
-export const PriceAdjustmentsByFormFactor = z.record(
-  FormFactor,
-  z.array(PriceAdjustment),
-);
+export const PriceAdjustmentsByFormFactor = z
+  .object({
+    SCOOTER: z.array(PriceAdjustment).optional(),
+    SCOOTER_STANDING: z.array(PriceAdjustment).optional(),
+    BICYCLE: z.array(PriceAdjustment).optional(),
+    CAR: z.array(PriceAdjustment).optional(),
+  })
+  .strict();
 
-export type PriceAdjustmentsByFormFactorType = Partial<
-  Record<FormFactorType, PriceAdjustmentType[]>
+export type PriceAdjustmentsByFormFactorType = z.infer<
+  typeof PriceAdjustmentsByFormFactor
 >;
 
 export const MobilityOperator = z.object({
