@@ -297,41 +297,69 @@
           },
           "priceAdjustments": {
             "type": "object",
-            "propertyNames": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "SCOOTER"
-                },
-                {
-                  "type": "string",
-                  "const": "SCOOTER_STANDING"
-                },
-                {
-                  "type": "string",
-                  "const": "BICYCLE"
-                },
-                {
-                  "type": "string",
-                  "const": "CAR"
-                }
-              ]
-            },
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "amount": {
-                    "type": "number"
+            "properties": {
+              "SCOOTER": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "number"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
                   },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "required": ["amount", "description"]
+                  "required": ["amount", "description"]
+                }
+              },
+              "SCOOTER_STANDING": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "number"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["amount", "description"]
+                }
+              },
+              "BICYCLE": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "number"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["amount", "description"]
+                }
+              },
+              "CAR": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "number"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["amount", "description"]
+                }
               }
-            }
+            },
+            "additionalProperties": false
           },
           "brandAssets": {
             "description": "modeled 1-1 like brandAssets in EnTur mobility API",
