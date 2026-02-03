@@ -52,14 +52,12 @@ export const PriceAdjustment = z.object({
 
 export type PriceAdjustmentType = z.infer<typeof PriceAdjustment>;
 
-export const PriceAdjustmentsByFormFactor = z
-  .object({
-    SCOOTER: z.array(PriceAdjustment).optional(),
-    SCOOTER_STANDING: z.array(PriceAdjustment).optional(),
-    BICYCLE: z.array(PriceAdjustment).optional(),
-    CAR: z.array(PriceAdjustment).optional(),
-  })
-  .strict();
+export const PriceAdjustmentsByFormFactor = z.strictObject({
+  SCOOTER: z.array(PriceAdjustment).optional(),
+  SCOOTER_STANDING: z.array(PriceAdjustment).optional(),
+  BICYCLE: z.array(PriceAdjustment).optional(),
+  CAR: z.array(PriceAdjustment).optional(),
+});
 
 export type PriceAdjustmentsByFormFactorType = z.infer<
   typeof PriceAdjustmentsByFormFactor
