@@ -52,7 +52,7 @@ export const PriceAdjustment = z.object({
 
 export type PriceAdjustmentType = z.infer<typeof PriceAdjustment>;
 
-export const PriceAdjustmentsByFormFactor = z.record(
+export const PriceAdjustmentsByFormFactor = z.partialRecord(
   FormFactor,
   z.array(PriceAdjustment),
 );
