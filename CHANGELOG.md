@@ -1,5 +1,13 @@
 # Changelog
 
+## [9.2.1](https://github.com/AtB-AS/config-specs/compare/v9.2.0...v9.2.1) (2026-02-04)
+
+
+### Bug Fixes
+
+* added partialRecord for priceAdjustments ([#173](https://github.com/AtB-AS/config-specs/issues/173)) ([4bd05af](https://github.com/AtB-AS/config-specs/commit/4bd05af1297c6f4cefd6b0ab3362080f5e4f2676))
+* Re-added optionalNullish to baseProduct limitations ([#174](https://github.com/AtB-AS/config-specs/issues/174)) ([6932e6a](https://github.com/AtB-AS/config-specs/commit/6932e6a809b8e8ef5f9c57126f73ca76ba346b63))
+
 ## [9.2.0](https://github.com/AtB-AS/config-specs/compare/v9.1.0...v9.2.0) (2026-02-02)
 
 
