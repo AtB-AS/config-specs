@@ -49,7 +49,7 @@ const BaseProduct = z.object({
   name: LanguageAndTextType,
   alternativeNames: optionalNullish(LanguageAndTextTypeArray),
   description: optionalNullish(LanguageAndTextTypeArray),
-  limitations: Limitations,
+  limitations: optionalNullish(Limitations),
 });
 
 export const BaggageType = z.enum(['BICYCLE']);
