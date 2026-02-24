@@ -327,9 +327,13 @@
                   },
                   "description": {
                     "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": ["UNLOCK", "MINUTES"]
                   }
                 },
-                "required": ["amount", "description"]
+                "required": ["amount", "description", "type"]
               }
             }
           },
