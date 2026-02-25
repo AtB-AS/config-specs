@@ -25,7 +25,11 @@ export const OperatorBenefitId = z.union([
   z.literal('free-use'),
   z.literal('single-unlock'),
 ]);
+
 export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
+
+export const PriceAdjustmentEnum = z.enum(['FREE_UNLOCK', 'FREE_MINUTES']);
+export type PriceAdjustmentEnumType = z.infer<typeof PriceAdjustmentEnum>;
 
 export const OperatorBenefit = z.object({
   id: OperatorBenefitId,
@@ -48,6 +52,8 @@ export type OperatorBenefitType = z.infer<typeof OperatorBenefit>;
 export const PriceAdjustment = z.object({
   amount: z.number(),
   description: z.string(),
+  type: PriceAdjustmentEnum,
+  systemIds: z.string().array().default([]),
 });
 
 export type PriceAdjustmentType = z.infer<typeof PriceAdjustment>;

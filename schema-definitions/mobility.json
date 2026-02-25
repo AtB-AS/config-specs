@@ -327,9 +327,20 @@
                   },
                   "description": {
                     "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": ["FREE_UNLOCK", "FREE_MINUTES"]
+                  },
+                  "systemIds": {
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
-                "required": ["amount", "description"]
+                "required": ["amount", "description", "type"]
               }
             }
           },
