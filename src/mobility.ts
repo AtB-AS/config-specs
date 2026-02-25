@@ -28,7 +28,7 @@ export const OperatorBenefitId = z.union([
 
 export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
 
-export const PriceAdjustmentEnum = z.enum(['UNLOCK', 'MINUTES']);
+export const PriceAdjustmentEnum = z.enum(['FREE_UNLOCK', 'FREE_MINUTES']);
 export type PriceAdjustmentEnumType = z.infer<typeof PriceAdjustmentEnum>;
 
 export const OperatorBenefit = z.object({

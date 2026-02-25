@@ -330,7 +330,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": ["UNLOCK", "MINUTES"]
+                    "enum": ["FREE_UNLOCK", "FREE_MINUTES"]
                   },
                   "systemIds": {
                     "default": [],
