@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.3.0](https://github.com/AtB-AS/config-specs/compare/v9.2.1...v9.3.0) (2026-02-25)
+
+
+### Features
+
+* added enum type to priceAdjustments ([#176](https://github.com/AtB-AS/config-specs/issues/176)) ([392f7cb](https://github.com/AtB-AS/config-specs/commit/392f7cbd559b9aef03f58c9021f912b8256ccc62))
+
 ## [9.2.1](https://github.com/AtB-AS/config-specs/compare/v9.2.0...v9.2.1) (2026-02-04)
 
 
