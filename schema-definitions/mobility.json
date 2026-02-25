@@ -331,6 +331,13 @@
                   "type": {
                     "type": "string",
                     "enum": ["UNLOCK", "MINUTES"]
+                  },
+                  "systemIds": {
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 },
                 "required": ["amount", "description", "type"]

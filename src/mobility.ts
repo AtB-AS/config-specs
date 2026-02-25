@@ -53,6 +53,7 @@ export const PriceAdjustment = z.object({
   amount: z.number(),
   description: z.string(),
   type: PriceAdjustmentEnum,
+  systemIds: z.string().array().default([]),
 });
 
 export type PriceAdjustmentType = z.infer<typeof PriceAdjustment>;
