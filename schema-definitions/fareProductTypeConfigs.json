@@ -141,6 +141,10 @@
                     },
                     {
                       "type": "string",
+                      "const": "ebicycle"
+                    },
+                    {
+                      "type": "string",
                       "const": "SchengenAreaFlight"
                     },
                     {
@@ -917,6 +921,10 @@
                     {
                       "type": "string",
                       "const": "escooter"
+                    },
+                    {
+                      "type": "string",
+                      "const": "ebicycle"
                     },
                     {
                       "type": "string",
