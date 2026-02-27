@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.4.0](https://github.com/AtB-AS/config-specs/compare/v9.3.0...v9.4.0) (2026-02-27)
+
+
+### Features
+
+* added ebicycle as submode ([#178](https://github.com/AtB-AS/config-specs/issues/178)) ([fad5b66](https://github.com/AtB-AS/config-specs/commit/fad5b669c85b4c72a43bbadd9feffd7a16895d21))
+
 ## [9.3.0](https://github.com/AtB-AS/config-specs/compare/v9.2.1...v9.3.0) (2026-02-25)
 
 
