@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.5.0](https://github.com/AtB-AS/config-specs/compare/v9.4.0...v9.5.0) (2026-03-02)
+
+
+### Features
+
+* add Apple Pay payment type ([#180](https://github.com/AtB-AS/config-specs/issues/180)) ([5f4dcba](https://github.com/AtB-AS/config-specs/commit/5f4dcbae9ccf8783466480005d43f5155c6ab106))
+
 ## [9.4.0](https://github.com/AtB-AS/config-specs/compare/v9.3.0...v9.4.0) (2026-02-27)
 
 
