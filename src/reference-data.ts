@@ -9,15 +9,27 @@ import {ZoneSelectionMode} from './fare-product-type';
 import {optionalNullish} from './utils/nullish';
 import {TransportModeType, TransportSubmodeType} from './common';
 
-export const Limitations = AppVersionedItemSchema.extend({
+/**
+ * These are only relevant for products, i.e. not supplement products
+ */
+export const PreassignedFareProductLimitations = AppVersionedItemSchema.extend({
+  /**
+   * @deprecated use userProfiles instead
+   */
   userProfileRefs: z.array(z.string()),
+  userProfiles: z.array(
+    z.object({
+      userProfileRef: z.string(),
+      maxCount: z.number(),
+    }),
+  ),
   fareZoneRefs: optionalNullish(z.array(z.string())),
-
   /**
    * @deprecated use fareZoneRefs instead
    */
   tariffZoneRefs: optionalNullish(z.array(z.string())),
   supplementProductRefs: optionalNullish(z.array(z.string())),
+  limitPerOrder: optionalNullish(z.number()),
 });
 
 export const PreassignedFareProduct = z.object({
@@ -26,7 +38,7 @@ export const PreassignedFareProduct = z.object({
   type: z.string(),
   distributionChannel: z.array(z.string()),
   name: LanguageAndTextType,
-  limitations: Limitations,
+  limitations: PreassignedFareProductLimitations,
   durationDays: optionalNullish(z.number()),
   isApplicableOnSingleZoneOnly: optionalNullish(z.boolean()),
   isBookingEnabled: optionalNullish(z.boolean()),
@@ -42,24 +54,24 @@ export const PreassignedFareProduct = z.object({
   warningMessage: optionalNullish(LanguageAndTextTypeArray),
 });
 
-const BaseProduct = z.object({
+const BaseSupplementProduct = z.object({
   id: z.string(),
   version: z.string(),
   distributionChannel: z.array(z.string()),
   name: LanguageAndTextType,
   alternativeNames: optionalNullish(LanguageAndTextTypeArray),
   description: optionalNullish(LanguageAndTextTypeArray),
-  limitations: optionalNullish(Limitations),
+  limitations: optionalNullish(AppVersionedItemSchema),
 });
 
 export const BaggageType = z.enum(['BICYCLE']);
-export const BaggageProduct = BaseProduct.extend({
+export const BaggageProduct = BaseSupplementProduct.extend({
   kind: z.literal('baggage'),
   baggageType: BaggageType,
   illustration: optionalNullish(z.string()),
 });
 
-export const ReservationProduct = BaseProduct.extend({
+export const ReservationProduct = BaseSupplementProduct.extend({
   kind: z.literal('reservation'),
   transportMode: optionalNullish(TransportModeType),
   transportSubmodes: optionalNullish(z.array(TransportSubmodeType)),
