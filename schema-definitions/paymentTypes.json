@@ -6,14 +6,14 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["vipps", "visa", "mastercard", "amex"]
+        "enum": ["vipps", "visa", "mastercard", "amex", "applePay"]
       }
     },
     "web": {
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["vipps", "visa", "mastercard", "amex"]
+        "enum": ["vipps", "visa", "mastercard", "amex", "applePay"]
       }
     }
   }

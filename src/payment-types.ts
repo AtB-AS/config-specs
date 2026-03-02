@@ -1,6 +1,12 @@
 import {z} from 'zod';
 
-export const PaymentType = z.enum(['vipps', 'visa', 'mastercard', 'amex']);
+export const PaymentType = z.enum([
+  'vipps',
+  'visa',
+  'mastercard',
+  'amex',
+  'applePay',
+]);
 
 export const PaymentTypes = z.object({
   app: z.array(PaymentType).optional(),
