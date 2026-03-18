@@ -10,7 +10,11 @@
         "value": "Enkeltbillett"
       },
       "limitations": {
-        "userProfileRefs": ["ATB:UserProfile:2832569f"]
+        "userProfiles": [
+          {
+            "userProfileRef": "ATB:UserProfile:2832569f"
+          }
+        ]
       }
     }
   ],
@@ -31,10 +35,7 @@
         }
       ],
       "kind": "baggage",
-      "baggageType": "BICYCLE",
-      "limitations": {
-        "userProfileRefs": []
-      }
+      "baggageType": "BICYCLE"
     },
     {
       "id": "ATB:SupplementProduct:87654321",
@@ -52,10 +53,7 @@
       ],
       "kind": "reservation",
       "transportMode": "water",
-      "transportSubmodes": ["highSpeedPassengerService"],
-      "limitations": {
-        "userProfileRefs": []
-      }
+      "transportSubmodes": ["highSpeedPassengerService"]
     }
   ],
   "tariffZones": [

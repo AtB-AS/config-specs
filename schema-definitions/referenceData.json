@@ -72,27 +72,6 @@
                   }
                 ]
               },
-              "userProfileRefs": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "userProfiles": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "userProfileRef": {
-                      "type": "string"
-                    },
-                    "maxCount": {
-                      "type": "number"
-                    }
-                  },
-                  "required": ["userProfileRef", "maxCount"]
-                }
-              },
               "fareZoneRefs": {
                 "anyOf": [
                   {
@@ -132,7 +111,29 @@
                   }
                 ]
               },
-              "limitPerOrder": {
+              "userProfiles": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "userProfileRef": {
+                      "type": "string"
+                    },
+                    "maxCount": {
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": ["userProfileRef"]
+                }
+              },
+              "maxCountPerOrder": {
                 "anyOf": [
                   {
                     "type": "number"
@@ -143,7 +144,7 @@
                 ]
               }
             },
-            "required": ["userProfileRefs", "userProfiles"]
+            "required": ["userProfiles"]
           },
           "durationDays": {
             "anyOf": [

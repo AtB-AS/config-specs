@@ -13,23 +13,29 @@ import {TransportModeType, TransportSubmodeType} from './common';
  * These are only relevant for products, i.e. not supplement products
  */
 export const PreassignedFareProductLimitations = AppVersionedItemSchema.extend({
-  /**
-   * @deprecated use userProfiles instead
-   */
-  userProfileRefs: z.array(z.string()),
-  userProfiles: z.array(
-    z.object({
-      userProfileRef: z.string(),
-      maxCount: z.number(),
-    }),
-  ),
   fareZoneRefs: optionalNullish(z.array(z.string())),
   /**
    * @deprecated use fareZoneRefs instead
    */
   tariffZoneRefs: optionalNullish(z.array(z.string())),
   supplementProductRefs: optionalNullish(z.array(z.string())),
-  limitPerOrder: optionalNullish(z.number()),
+
+  /*
+   * The types below are not intended to be set in Firestore,
+   * but are returned from the v2 endpoint of the product-service.
+   *
+   * They can of course be set in Firestore as well, but since firestore is
+   * consumed by all app versions it is cleaner to consume a versioned API
+   * for these breaking / deprecating changes.
+   *
+   */
+  userProfiles: z.array(
+    z.object({
+      userProfileRef: z.string(),
+      maxCount: optionalNullish(z.number()),
+    }),
+  ),
+  maxCountPerOrder: optionalNullish(z.number()),
 });
 
 export const PreassignedFareProduct = z.object({
