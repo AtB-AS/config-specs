@@ -32,10 +32,10 @@ export const PreassignedFareProductLimitations = AppVersionedItemSchema.extend({
   userProfiles: z.array(
     z.object({
       userProfileRef: z.string(),
-      maxCount: optionalNullish(z.number()),
+      maxCount: optionalNullish(z.number().int().nonnegative()),
     }),
   ),
-  maxCountPerOrder: optionalNullish(z.number()),
+  maxCountPerOrder: optionalNullish(z.number().int().nonnegative()),
 });
 
 export const PreassignedFareProduct = z.object({
