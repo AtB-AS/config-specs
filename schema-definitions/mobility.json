@@ -778,56 +778,6 @@
         }
       },
       "required": ["howBonusWorks"]
-    },
-    "bonusSources": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "preassignedFareProductId": {
-            "type": "string"
-          },
-          "userProfileIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "fareZones": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "amountByEnrollment": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "enrollmentId": {
-                  "type": "string"
-                },
-                "amount": {
-                  "type": "integer",
-                  "exclusiveMinimum": 0,
-                  "maximum": 9007199254740991
-                }
-              },
-              "required": ["amount"]
-            }
-          }
-        },
-        "required": [
-          "id",
-          "preassignedFareProductId",
-          "userProfileIds",
-          "fareZones",
-          "amountByEnrollment"
-        ]
-      }
     }
   },
   "required": ["operators"]

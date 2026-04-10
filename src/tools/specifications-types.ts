@@ -6,7 +6,6 @@ import {
   BonusTexts,
   MobilityOperator,
   OperatorBenefitId,
-  BonusSource,
   ScooterConsentLine,
   ScooterFaq,
 } from '../mobility';
@@ -65,7 +64,6 @@ export const schemaTypes = {
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
       bonusProducts: z.array(BonusProduct).optional(),
       bonusTexts: BonusTexts.optional(),
-      bonusSources: z.array(BonusSource).optional(),
     })
     .meta({title: 'MobilityOperator'}),
   other: Other,
