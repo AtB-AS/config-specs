@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.6.1](https://github.com/AtB-AS/config-specs/compare/v9.6.0...v9.6.1) (2026-04-23)
+
+
+### Bug Fixes
+
+* remove root default for knownQrCodeUrls ([#186](https://github.com/AtB-AS/config-specs/issues/186)) ([c1a76d2](https://github.com/AtB-AS/config-specs/commit/c1a76d25b45619532f60bdffe19d301fada43ca3))
+
 ## [9.6.0](https://github.com/AtB-AS/config-specs/compare/v9.5.0...v9.6.0) (2026-04-23)
 
 
