@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.6.0](https://github.com/AtB-AS/config-specs/compare/v9.5.0...v9.6.0) (2026-04-23)
+
+
+### Features
+
+* add KnownQrCodeUrls schema and related types ([#184](https://github.com/AtB-AS/config-specs/issues/184)) ([35a65b4](https://github.com/AtB-AS/config-specs/commit/35a65b4cb8870ec2faccf2e0b59f160ced9df0eb))
+
 ## [9.5.0](https://github.com/AtB-AS/config-specs/compare/v9.4.0...v9.5.0) (2026-03-02)
 
 
