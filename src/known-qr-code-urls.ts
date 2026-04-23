@@ -8,11 +8,9 @@ export const KnownQrCodeUrl = z.object({
   openMode: KnownQrCodeUrlOpenMode,
 });
 
-export const KnownQrCodeUrls = z
-  .object({
-    urls: z.array(KnownQrCodeUrl).default([]),
-  })
-  .default({urls: []});
+export const KnownQrCodeUrls = z.object({
+  urls: z.array(KnownQrCodeUrl).default([]),
+});
 
 export type KnownQrCodeUrlType = z.infer<typeof KnownQrCodeUrl>;
 export type KnownQrCodeUrlsType = z.infer<typeof KnownQrCodeUrls>;
