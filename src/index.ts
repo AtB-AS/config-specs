@@ -9,3 +9,4 @@ export * from './payment-types';
 export * from './other';
 export * from './reference-data';
 export * from './stop-signal-button-config';
+export * from './known-qr-code-urls';
