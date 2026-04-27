@@ -16,7 +16,6 @@ import {
 } from '../urls';
 import {HarborConnectionOverrides} from '../harbor-connection-overrides';
 import {NotificationConfig} from '../notification-config';
-import {Consents} from '../consents';
 import {PaymentTypes} from '../payment-types';
 import {Other} from '../other';
 import {ReferenceData} from '../reference-data';
@@ -34,7 +33,6 @@ export const specifications = [
   'urls',
   'harborConnectionOverrides',
   'notificationConfig',
-  'consents',
   'referenceData',
   'stopSignalButtonConfig',
   'knownQrCodeUrls',
@@ -73,7 +71,6 @@ export const schemaTypes = {
   urls: ConfigurableLinksSchema.meta({title: 'ConfigurableLinks'}),
   harborConnectionOverrides: HarborConnectionOverrides,
   notificationConfig: NotificationConfig,
-  consents: Consents,
   referenceData: ReferenceData,
   stopSignalButtonConfig: StopSignalButtonConfig,
   knownQrCodeUrls: KnownQrCodeUrls.meta({title: 'KnownQrCodeUrls'}),
