@@ -4,9 +4,9 @@ import {TravelSearchFilters} from '../travel-search-filters';
 import {
   BonusProduct,
   BonusTexts,
+  ConsentLine,
   MobilityOperator,
   OperatorBenefitId,
-  ScooterConsentLine,
   ScooterFaq,
 } from '../mobility';
 import {
@@ -60,7 +60,8 @@ export const schemaTypes = {
     .object({
       operators: z.array(MobilityOperator),
       scooterFaqs: z.array(ScooterFaq).optional(),
-      scooterConsentLines: z.array(ScooterConsentLine).optional(),
+      scooterConsentLines: z.array(ConsentLine).optional(),
+      bicycleConsentLines: z.array(ConsentLine).optional(),
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
       bonusProducts: z.array(BonusProduct).optional(),
       bonusTexts: BonusTexts.optional(),
