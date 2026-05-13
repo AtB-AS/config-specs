@@ -1,5 +1,17 @@
 # Changelog
 
+## [10.0.0](https://github.com/AtB-AS/config-specs/compare/v9.6.1...v10.0.0) (2026-05-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove consents ([#188](https://github.com/AtB-AS/config-specs/issues/188))
+
+### Features
+
+* added bicycleConsentLines ([#190](https://github.com/AtB-AS/config-specs/issues/190)) ([a5e20a7](https://github.com/AtB-AS/config-specs/commit/a5e20a7e578261b49d4993099b16fe2fbe29f600))
+* remove consents ([#188](https://github.com/AtB-AS/config-specs/issues/188)) ([e05b537](https://github.com/AtB-AS/config-specs/commit/e05b537cc610a213cd3bc0e0fee90b9a077c69ba))
+
 ## [9.6.1](https://github.com/AtB-AS/config-specs/compare/v9.6.0...v9.6.1) (2026-04-23)
 
 
