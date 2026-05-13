@@ -104,13 +104,13 @@ export const ScooterFaq = z
 
 export type ScooterFaqType = z.infer<typeof ScooterFaq>;
 
-export const ScooterConsentLine = z.object({
+export const ConsentLine = z.object({
   id: z.string().nonempty(),
   illustration: z.string().optional(),
   description: LanguageAndTextTypeArray.nonempty(),
 });
 
-export type ScooterConsentLineType = z.infer<typeof ScooterConsentLine>;
+export type ConsentLineType = z.infer<typeof ConsentLine>;
 
 export const BonusProduct = z.object({
   id: z.string().nonempty(),
