@@ -295,55 +295,6 @@
               ]
             }
           },
-          "priceAdjustments": {
-            "type": "object",
-            "propertyNames": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "SCOOTER"
-                },
-                {
-                  "type": "string",
-                  "const": "SCOOTER_STANDING"
-                },
-                {
-                  "type": "string",
-                  "const": "BICYCLE"
-                },
-                {
-                  "type": "string",
-                  "const": "CAR"
-                }
-              ]
-            },
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "amount": {
-                    "type": "number"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "type": {
-                    "type": "string",
-                    "enum": ["FREE_UNLOCK", "FREE_MINUTES"]
-                  },
-                  "systemIds": {
-                    "default": [],
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "required": ["amount", "description", "type"]
-              }
-            }
-          },
           "brandAssets": {
             "description": "modeled 1-1 like brandAssets in EnTur mobility API",
             "type": "object",
@@ -602,28 +553,11 @@
             "type": "string",
             "minLength": 1
           },
-          "formFactors": {
+          "vehicleTypeIds": {
             "minItems": 1,
             "type": "array",
             "items": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "SCOOTER"
-                },
-                {
-                  "type": "string",
-                  "const": "SCOOTER_STANDING"
-                },
-                {
-                  "type": "string",
-                  "const": "BICYCLE"
-                },
-                {
-                  "type": "string",
-                  "const": "CAR"
-                }
-              ]
+              "type": "string"
             }
           },
           "price": {
@@ -745,7 +679,7 @@
           "id",
           "isActive",
           "operatorId",
-          "formFactors",
+          "vehicleTypeIds",
           "price",
           "paymentDescription",
           "productDescription"
@@ -825,6 +759,38 @@
         }
       },
       "required": ["howBonusWorks"]
+    },
+    "priceAdjustments": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "number"
+            },
+            "description": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "enum": ["FREE_UNLOCK", "FREE_MINUTES"]
+            },
+            "systemIds": {
+              "default": [],
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": ["amount", "description", "type"]
+        }
+      }
     }
   },
   "required": ["operators"]

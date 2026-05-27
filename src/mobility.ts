@@ -57,13 +57,13 @@ export const PriceAdjustment = z.object({
 
 export type PriceAdjustmentType = z.infer<typeof PriceAdjustment>;
 
-export const PriceAdjustmentsByFormFactor = z.partialRecord(
-  FormFactor,
+export const PriceAdjustmentsByVehicleTypeId = z.record(
+  z.string(),
   z.array(PriceAdjustment),
 );
 
-export type PriceAdjustmentsByFormFactorType = Partial<
-  Record<FormFactorType, PriceAdjustmentType[]>
+export type PriceAdjustmentsByVehicleTypeIdType = z.infer<
+  typeof PriceAdjustmentsByVehicleTypeId
 >;
 
 export const MobilityOperator = z.object({
@@ -72,7 +72,6 @@ export const MobilityOperator = z.object({
   showInApp: z.boolean().default(false),
   formFactors: z.array(FormFactor).nonempty(),
   benefits: z.array(OperatorBenefit).optional().default([]),
-  priceAdjustments: PriceAdjustmentsByFormFactor.optional(),
   brandAssets: z
     .object({
       brandLastModified: z.string().date(),
@@ -116,7 +115,7 @@ export const BonusProduct = z.object({
   id: z.string().nonempty(),
   isActive: z.boolean(),
   operatorId: MobilityOperator.shape.id,
-  formFactors: z.array(FormFactor).nonempty(),
+  vehicleTypeIds: z.array(z.string()).nonempty(),
   price: z.object({
     amount: z.number().int().positive(),
     currencyCode: z.literal('ATB_BONUS_POINT'),

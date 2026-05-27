@@ -7,6 +7,7 @@ import {
   ConsentLine,
   MobilityOperator,
   OperatorBenefitId,
+  PriceAdjustmentsByVehicleTypeId,
   ScooterFaq,
 } from '../mobility';
 import {
@@ -65,6 +66,7 @@ export const schemaTypes = {
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
       bonusProducts: z.array(BonusProduct).optional(),
       bonusTexts: BonusTexts.optional(),
+      priceAdjustments: PriceAdjustmentsByVehicleTypeId.optional(),
     })
     .meta({title: 'MobilityOperator'}),
   other: Other,
