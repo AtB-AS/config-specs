@@ -92,6 +92,9 @@ export const MobilityOperator = z.object({
     })
     .optional(),
   rentalAppUriQueryParams: z.string().optional(),
+  supportPhone: z.string().optional(),
+  supportChatUrl: z.url().optional(),
+  supportWebsiteUrl: z.url().optional(),
 });
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;

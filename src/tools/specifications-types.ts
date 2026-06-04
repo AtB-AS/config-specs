@@ -60,6 +60,7 @@ export const schemaTypes = {
     .object({
       operators: z.array(MobilityOperator),
       scooterFaqs: z.array(ScooterFaq).optional(),
+      bicycleFaqs: z.array(ScooterFaq).optional(),
       scooterConsentLines: z.array(ConsentLine).optional(),
       bicycleConsentLines: z.array(ConsentLine).optional(),
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),

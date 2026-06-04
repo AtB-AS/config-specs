@@ -394,12 +394,97 @@
           },
           "rentalAppUriQueryParams": {
             "type": "string"
+          },
+          "supportPhone": {
+            "type": "string"
+          },
+          "supportChatUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "supportWebsiteUrl": {
+            "type": "string",
+            "format": "uri"
           }
         },
         "required": ["id", "name", "formFactors"]
       }
     },
     "scooterFaqs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lang": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["lang", "value"]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "language": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "required": ["id", "title", "description"]
+      }
+    },
+    "bicycleFaqs": {
       "type": "array",
       "items": {
         "type": "object",
