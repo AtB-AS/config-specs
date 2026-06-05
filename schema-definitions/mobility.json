@@ -395,16 +395,21 @@
           "rentalAppUriQueryParams": {
             "type": "string"
           },
-          "supportPhone": {
-            "type": "string"
-          },
-          "supportChatUrl": {
-            "type": "string",
-            "format": "uri"
-          },
-          "supportWebsiteUrl": {
-            "type": "string",
-            "format": "uri"
+          "support": {
+            "type": "object",
+            "properties": {
+              "phone": {
+                "type": "string"
+              },
+              "chatUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "websiteUrl": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
           }
         },
         "required": ["id", "name", "formFactors"]
