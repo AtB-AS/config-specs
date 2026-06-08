@@ -92,17 +92,24 @@ export const MobilityOperator = z.object({
     })
     .optional(),
   rentalAppUriQueryParams: z.string().optional(),
+  support: z
+    .object({
+      phone: z.string().optional(),
+      chatUrl: z.url().optional(),
+      websiteUrl: z.url().optional(),
+    })
+    .optional(),
 });
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;
 
-export const ScooterFaq = z
+export const ShmoFaq = z
   .object({
     id: z.string(),
   })
   .merge(titleAndDescription);
 
-export type ScooterFaqType = z.infer<typeof ScooterFaq>;
+export type ShmoFaqType = z.infer<typeof ShmoFaq>;
 
 export const ConsentLine = z.object({
   id: z.string().nonempty(),
