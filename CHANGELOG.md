@@ -1,5 +1,16 @@
 # Changelog
 
+## [11.0.0](https://github.com/AtB-AS/config-specs/compare/v10.0.0...v11.0.0) (2026-06-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* add more details on operators ([#192](https://github.com/AtB-AS/config-specs/issues/192))
+
+### Features
+
+* add more details on operators ([#192](https://github.com/AtB-AS/config-specs/issues/192)) ([ceb894b](https://github.com/AtB-AS/config-specs/commit/ceb894b7b988228b24504257e4faa1cc9283cb45))
+
 ## [10.0.0](https://github.com/AtB-AS/config-specs/compare/v9.6.1...v10.0.0) (2026-05-13)
 
 
