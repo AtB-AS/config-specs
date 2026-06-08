@@ -70,7 +70,7 @@ Examples:
 ## Install
 
 ```
-yarn add @atb-as/config-specs
+pnpm add @atb-as/config-specs
 ```
 
 ## Tests and fixtures
@@ -100,7 +100,7 @@ quality across Firestore, Webshop and App for all organisations involved.
 
 ## Release
 
-1. Once your changes are ready, make sure to run `yarn build`.
+1. Once your changes are ready, make sure to run `pnpm build`.
 2. Merge a PR to main, where the commit message follows the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
 3. The Github action `release-please-action` will create a PR to update the package version and changelog.
     - `feat` will be a minor release.
