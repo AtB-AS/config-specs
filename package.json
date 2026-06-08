@@ -21,8 +21,9 @@
     "gen": "node -r @swc-node/register src/tools/generate-schemas.ts",
     "build": "rimraf lib && yarn gen && tsc && yarn lint",
     "typecheck": "tsc --noEmit",
-    "test": "vitest",
-    "lint": "npx prettier . --write"
+    "test": "vitest run",
+    "lint": "npx prettier . --write",
+    "check-all": "yarn typecheck && yarn test && yarn lint && yarn build"
   },
   "devDependencies": {
     "@swc-node/register": "^1.6.2",

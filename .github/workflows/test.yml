@@ -20,8 +20,5 @@ jobs:
       - name: Install
         run: yarn install
 
-      - name: Typecheck
-        run: yarn typecheck
-
-      - name: Run tests and verify contracts
-        run: yarn test
+      - name: Check all
+        run: yarn check-all
