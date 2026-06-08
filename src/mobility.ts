@@ -103,13 +103,13 @@ export const MobilityOperator = z.object({
 
 export type MobilityOperatorType = z.infer<typeof MobilityOperator>;
 
-export const ScooterFaq = z
+export const ShmoFaq = z
   .object({
     id: z.string(),
   })
   .merge(titleAndDescription);
 
-export type ScooterFaqType = z.infer<typeof ScooterFaq>;
+export type ShmoFaqType = z.infer<typeof ShmoFaq>;
 
 export const ConsentLine = z.object({
   id: z.string().nonempty(),

@@ -7,7 +7,7 @@ import {
   ConsentLine,
   MobilityOperator,
   OperatorBenefitId,
-  ScooterFaq,
+  ShmoFaq,
 } from '../mobility';
 import {
   ConfigurableLinksSchema,
@@ -59,8 +59,8 @@ export const schemaTypes = {
   mobility: z
     .object({
       operators: z.array(MobilityOperator),
-      scooterFaqs: z.array(ScooterFaq).optional(),
-      bicycleFaqs: z.array(ScooterFaq).optional(),
+      scooterFaqs: z.array(ShmoFaq).optional(),
+      bicycleFaqs: z.array(ShmoFaq).optional(),
       scooterConsentLines: z.array(ConsentLine).optional(),
       bicycleConsentLines: z.array(ConsentLine).optional(),
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
