@@ -15,15 +15,16 @@
     "!lib/tests"
   ],
   "private": false,
+  "packageManager": "pnpm@11.5.2",
   "scripts": {
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "pnpm build",
     "cli": "node -r @swc-node/register src/tools/bin.ts",
     "gen": "node -r @swc-node/register src/tools/generate-schemas.ts",
-    "build": "rimraf lib && yarn gen && tsc && yarn lint",
+    "build": "rimraf lib && pnpm gen && tsc && pnpm lint",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "lint": "npx prettier . --write",
-    "check-all": "yarn typecheck && yarn test && yarn lint && yarn build"
+    "lint": "prettier . --write",
+    "check-all": "pnpm typecheck && pnpm test && pnpm lint && pnpm build"
   },
   "devDependencies": {
     "@swc-node/register": "^1.6.2",

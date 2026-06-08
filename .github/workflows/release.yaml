@@ -28,10 +28,10 @@ jobs:
     if: ${{ needs.release-please.outputs.release_created }}
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
           node-version-file: .nvmrc
           registry-url: 'https://registry.npmjs.org'
-      - run: npm install -g npm@11
-      - run: yarn install --frozen-lockfile
-      - run: npm publish --access public
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm publish --access public --no-git-checks
