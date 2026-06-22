@@ -140,6 +140,17 @@
               }
             ]
           },
+          "fareZoneSummaryStyle": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": ["none"]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "isBookingEnabled": {
             "anyOf": [
               {

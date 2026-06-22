@@ -20,6 +20,8 @@ export const Limitations = AppVersionedItemSchema.extend({
   supplementProductRefs: optionalNullish(z.array(z.string())),
 });
 
+export const FareZoneSummaryStyle = z.enum(['none']);
+
 export const PreassignedFareProduct = z.object({
   id: z.string(),
   version: z.string(),
@@ -29,6 +31,7 @@ export const PreassignedFareProduct = z.object({
   limitations: Limitations,
   durationDays: optionalNullish(z.number()),
   isApplicableOnSingleZoneOnly: optionalNullish(z.boolean()),
+  fareZoneSummaryStyle: optionalNullish(FareZoneSummaryStyle),
   isBookingEnabled: optionalNullish(z.boolean()),
   isEnabledForTripSearchOffer: optionalNullish(z.boolean()),
   isDefault: optionalNullish(z.boolean()),
