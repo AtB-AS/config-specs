@@ -144,7 +144,7 @@
             "anyOf": [
               {
                 "type": "string",
-                "const": "none"
+                "enum": ["none"]
               },
               {
                 "type": "null"
