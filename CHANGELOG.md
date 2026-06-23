@@ -1,5 +1,12 @@
 # Changelog
 
+## [11.1.0](https://github.com/AtB-AS/config-specs/compare/v11.0.0...v11.1.0) (2026-06-22)
+
+
+### Features
+
+* fareZoneSummaryStyle ([#195](https://github.com/AtB-AS/config-specs/issues/195)) ([e927ff5](https://github.com/AtB-AS/config-specs/commit/e927ff5ececbd7ba1d3e4a5f1023655bd49c2536))
+
 ## [11.0.0](https://github.com/AtB-AS/config-specs/compare/v10.0.0...v11.0.0) (2026-06-08)
 
 
