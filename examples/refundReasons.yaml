@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../schema-definitions/refundReasons.json
+refundReasons:
+  - id: WRONG_TICKET_TYPE
+    name:
+      - lang: nob
+        value: Feil billettype
+      - lang: nno
+        value: Feil billettype
+      - lang: eng
+        value: Wrong ticket type
+  - id: OTHER
+    name:
+      - lang: nob
+        value: Annet
+      - lang: nno
+        value: Anna
+      - lang: eng
+        value: Other

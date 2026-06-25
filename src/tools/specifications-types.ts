@@ -21,6 +21,7 @@ import {Other} from '../other';
 import {ReferenceData} from '../reference-data';
 import {StopSignalButtonConfig} from '../stop-signal-button-config';
 import {KnownQrCodeUrls} from '../known-qr-code-urls';
+import {RefundReasons} from '../refund-reasons';
 import {AppVersionedItem, AppVersionedItemSchema} from '../common';
 
 // All supported specifications
@@ -36,6 +37,7 @@ export const specifications = [
   'referenceData',
   'stopSignalButtonConfig',
   'knownQrCodeUrls',
+  'refundReasons',
 ] as const;
 
 export type SchemaNames = (typeof specifications)[number];
@@ -76,6 +78,7 @@ export const schemaTypes = {
   referenceData: ReferenceData,
   stopSignalButtonConfig: StopSignalButtonConfig,
   knownQrCodeUrls: KnownQrCodeUrls.meta({title: 'KnownQrCodeUrls'}),
+  refundReasons: RefundReasons.meta({title: 'RefundReasons'}),
 } satisfies Record<SchemaNames, unknown>;
 
 // All correctly supported schema types as JSON Schema data structures
