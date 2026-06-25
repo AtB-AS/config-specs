@@ -1,5 +1,12 @@
 # Changelog
 
+## [11.2.0](https://github.com/AtB-AS/config-specs/compare/v11.1.0...v11.2.0) (2026-06-25)
+
+
+### Features
+
+* add refundReasons spec ([#197](https://github.com/AtB-AS/config-specs/issues/197)) ([7855fac](https://github.com/AtB-AS/config-specs/commit/7855fac92d616f6d5cf421c92a93d6171baf35c3))
+
 ## [11.1.0](https://github.com/AtB-AS/config-specs/compare/v11.0.0...v11.1.0) (2026-06-22)
 
 
