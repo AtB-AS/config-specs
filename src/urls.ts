@@ -32,6 +32,7 @@ export const ConfigurableLinksSchema = z.object({
   lostAndFoundUrl: LanguageAndTextTypeArray.optional(),
   frequentlyAskedQuestionsUrl: LanguageAndTextTypeArray.optional(),
   sparReadMoreUrl: LanguageAndTextTypeArray.optional(),
+  externalChatUrl: LanguageAndTextTypeArray.optional(),
 });
 
 export type ConfigurableLinks = z.infer<typeof ConfigurableLinksSchema>;
