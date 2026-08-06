@@ -1,5 +1,12 @@
 # Changelog
 
+## [11.3.0](https://github.com/AtB-AS/config-specs/compare/v11.2.0...v11.3.0) (2026-08-06)
+
+
+### Features
+
+* add external chat url ([#199](https://github.com/AtB-AS/config-specs/issues/199)) ([c5a34f8](https://github.com/AtB-AS/config-specs/commit/c5a34f8365f09b51e0f8091b3bcd55966c7fdec8))
+
 ## [11.2.0](https://github.com/AtB-AS/config-specs/compare/v11.1.0...v11.2.0) (2026-06-25)
 
 
