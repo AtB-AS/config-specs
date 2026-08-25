@@ -1,5 +1,16 @@
 # Changelog
 
+## [12.0.0](https://github.com/AtB-AS/config-specs/compare/v11.3.0...v12.0.0) (2026-08-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove unused BonusTextsType and BonusProductType ([#201](https://github.com/AtB-AS/config-specs/issues/201))
+
+### Bug Fixes
+
+* remove unused BonusTextsType and BonusProductType ([#201](https://github.com/AtB-AS/config-specs/issues/201)) ([8a67bea](https://github.com/AtB-AS/config-specs/commit/8a67beaf779009436f1e7819f77294d8b8cab192))
+
 ## [11.3.0](https://github.com/AtB-AS/config-specs/compare/v11.2.0...v11.3.0) (2026-08-06)
 
 
