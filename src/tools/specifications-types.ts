@@ -2,8 +2,6 @@ import {z} from 'zod';
 import {FareProductGroup, FareProductTypeConfig} from '../fare-product-type';
 import {TravelSearchFilters} from '../travel-search-filters';
 import {
-  BonusProduct,
-  BonusTexts,
   ConsentLine,
   MobilityOperator,
   OperatorBenefitId,
@@ -66,8 +64,6 @@ export const schemaTypes = {
       scooterConsentLines: z.array(ConsentLine).optional(),
       bicycleConsentLines: z.array(ConsentLine).optional(),
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
-      bonusProducts: z.array(BonusProduct).optional(),
-      bonusTexts: BonusTexts.optional(),
     })
     .meta({title: 'MobilityOperator'}),
   other: Other,
