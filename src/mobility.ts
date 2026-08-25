@@ -133,9 +133,3 @@ export const BonusProduct = z.object({
 });
 
 export type BonusProductType = z.infer<typeof BonusProduct>;
-
-export const BonusTexts = z.object({
-  howBonusWorks: titleAndDescription,
-});
-
-export type BonusTextsType = z.infer<typeof BonusTexts>;
