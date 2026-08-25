@@ -118,18 +118,3 @@ export const ConsentLine = z.object({
 });
 
 export type ConsentLineType = z.infer<typeof ConsentLine>;
-
-export const BonusProduct = z.object({
-  id: z.string().nonempty(),
-  isActive: z.boolean(),
-  operatorId: MobilityOperator.shape.id,
-  formFactors: z.array(FormFactor).nonempty(),
-  price: z.object({
-    amount: z.number().int().positive(),
-    currencyCode: z.literal('ATB_BONUS_POINT'),
-  }),
-  paymentDescription: LanguageAndTextTypeArray.nonempty(),
-  productDescription: titleAndOptionalDescription,
-});
-
-export type BonusProductType = z.infer<typeof BonusProduct>;
