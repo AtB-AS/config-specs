@@ -6,6 +6,7 @@ export const PaymentType = z.enum([
   'mastercard',
   'amex',
   'applePay',
+  'googlePay',
 ]);
 
 export const PaymentTypes = z.object({
