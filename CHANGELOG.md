@@ -1,5 +1,12 @@
 # Changelog
 
+## [12.1.0](https://github.com/AtB-AS/config-specs/compare/v12.0.0...v12.1.0) (2026-11-23)
+
+
+### Features
+
+* Google pay as a payment type ([#203](https://github.com/AtB-AS/config-specs/issues/203)) ([b776284](https://github.com/AtB-AS/config-specs/commit/b776284849590b6609aed7db501b416025fc0730))
+
 ## [12.0.0](https://github.com/AtB-AS/config-specs/compare/v11.3.0...v12.0.0) (2026-08-25)
 
 
