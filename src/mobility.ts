@@ -32,12 +32,19 @@ export type PriceAdjustmentEnumType = z.infer<typeof PriceAdjustmentEnum>;
 
 export const OperatorBenefit = z.object({
   id: OperatorBenefitId,
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   imageWhenActive: z.string().optional(),
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   headingWhenActive: LanguageAndTextTypeArray.optional(),
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   descriptionWhenActive: LanguageAndTextTypeArray,
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   imageWhenNotActive: z.string().optional(),
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   headingWhenNotActive: LanguageAndTextTypeArray.optional(),
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   descriptionWhenNotActive: LanguageAndTextTypeArray,
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   callToAction: z.object({
     url: z.string(),
     name: LanguageAndTextTypeArray.optional(),
@@ -83,7 +90,9 @@ export const MobilityOperator = z.object({
     })
     .optional()
     .describe('modeled 1-1 like brandAssets in EnTur mobility API'),
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   isDeepIntegrationEnabled: z.boolean().default(false),
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   ageLimit: z.number().int().positive().optional(),
   appUrl: z
     .object({
@@ -91,6 +100,7 @@ export const MobilityOperator = z.object({
       android: z.string().url(),
     })
     .optional(),
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   rentalAppUriQueryParams: z.string().optional(),
   support: z
     .object({

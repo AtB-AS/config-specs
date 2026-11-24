@@ -16,6 +16,7 @@ export const ConfigurableLinksSchema = z.object({
   inspectionInfo: LanguageAndTextTypeArray.optional(),
   refundInfo: LanguageAndTextTypeArray.optional(),
   flexTransportInfo: LanguageAndTextTypeArray.optional(),
+  /** @deprecated No longer read by the app. Kept for older app versions. */
   dataSharingInfo: LanguageAndTextTypeArray.optional(),
   appA11yStatement: LanguageAndTextTypeArray.optional(),
   iosStoreListing: LanguageAndTextTypeArray.optional(),
