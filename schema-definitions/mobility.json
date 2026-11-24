@@ -70,6 +70,8 @@
                   "type": "string"
                 },
                 "headingWhenActive": {
+                  "deprecated": true,
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [
@@ -100,6 +102,8 @@
                   }
                 },
                 "descriptionWhenActive": {
+                  "deprecated": true,
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [
@@ -133,6 +137,8 @@
                   "type": "string"
                 },
                 "headingWhenNotActive": {
+                  "deprecated": true,
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [
@@ -163,6 +169,8 @@
                   }
                 },
                 "descriptionWhenNotActive": {
+                  "deprecated": true,
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [
@@ -232,6 +240,8 @@
                   "required": ["url"]
                 },
                 "ticketDescription": {
+                  "deprecated": true,
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [

@@ -30,19 +30,41 @@ export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
 export const PriceAdjustmentEnum = z.enum(['FREE_UNLOCK', 'FREE_MINUTES']);
 export type PriceAdjustmentEnumType = z.infer<typeof PriceAdjustmentEnum>;
 
+// The benefit texts are served by the benefit service (title/description and
+// notEligibleTitle/notEligibleDescription) from app version 1.94, so these
+// config texts are only needed for app version 1.93 and below.
+const deprecatedBenefitText = {
+  deprecated: true,
+  description:
+    'Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.',
+};
+
 export const OperatorBenefit = z.object({
   id: OperatorBenefitId,
   imageWhenActive: z.string().optional(),
-  headingWhenActive: LanguageAndTextTypeArray.optional(),
-  descriptionWhenActive: LanguageAndTextTypeArray,
+  /** @deprecated From app version 1.94. Use the title from the benefit service instead. */
+  headingWhenActive: LanguageAndTextTypeArray.optional().meta(
+    deprecatedBenefitText,
+  ),
+  /** @deprecated From app version 1.94. Use the description from the benefit service instead. */
+  descriptionWhenActive: LanguageAndTextTypeArray.meta(deprecatedBenefitText),
   imageWhenNotActive: z.string().optional(),
-  headingWhenNotActive: LanguageAndTextTypeArray.optional(),
-  descriptionWhenNotActive: LanguageAndTextTypeArray,
+  /** @deprecated From app version 1.94. Use notEligibleTitle from the benefit service instead. */
+  headingWhenNotActive: LanguageAndTextTypeArray.optional().meta(
+    deprecatedBenefitText,
+  ),
+  /** @deprecated From app version 1.94. Use notEligibleDescription from the benefit service instead. */
+  descriptionWhenNotActive: LanguageAndTextTypeArray.meta(
+    deprecatedBenefitText,
+  ),
   callToAction: z.object({
     url: z.string(),
     name: LanguageAndTextTypeArray.optional(),
   }),
-  ticketDescription: LanguageAndTextTypeArray.optional(),
+  /** @deprecated From app version 1.94. Use the title and description from the benefit service instead. */
+  ticketDescription: LanguageAndTextTypeArray.optional().meta(
+    deprecatedBenefitText,
+  ),
   formFactors: z.array(FormFactor).nonempty(),
 });
 
