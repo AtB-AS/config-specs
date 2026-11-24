@@ -71,7 +71,7 @@
                 },
                 "headingWhenActive": {
                   "deprecated": true,
-                  "description": "Deprecated: benefit texts are served by the benefit service. Still read by the station sheets.",
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [
@@ -103,7 +103,7 @@
                 },
                 "descriptionWhenActive": {
                   "deprecated": true,
-                  "description": "Deprecated: benefit texts are served by the benefit service. Still read by the station sheets.",
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [
@@ -138,7 +138,7 @@
                 },
                 "headingWhenNotActive": {
                   "deprecated": true,
-                  "description": "Deprecated: benefit texts are served by the benefit service. Still read by the station sheets.",
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [
@@ -170,7 +170,7 @@
                 },
                 "descriptionWhenNotActive": {
                   "deprecated": true,
-                  "description": "Deprecated: benefit texts are served by the benefit service. Still read by the station sheets.",
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [
@@ -241,7 +241,7 @@
                 },
                 "ticketDescription": {
                   "deprecated": true,
-                  "description": "Deprecated: benefit texts are served by the benefit service. No longer read by the app.",
+                  "description": "Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.",
                   "type": "array",
                   "items": {
                     "anyOf": [
