@@ -30,19 +30,44 @@ export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
 export const PriceAdjustmentEnum = z.enum(['FREE_UNLOCK', 'FREE_MINUTES']);
 export type PriceAdjustmentEnumType = z.infer<typeof PriceAdjustmentEnum>;
 
+// The benefit texts are now served by the benefit service (title/description
+// and notEligibleTitle/notEligibleDescription), so these config texts are
+// outdated. They are still read by the station sheets until those stop showing
+// benefits.
+const deprecatedBenefitText = {
+  deprecated: true,
+  description:
+    'Deprecated: benefit texts are served by the benefit service. Still read by the station sheets.',
+};
+
 export const OperatorBenefit = z.object({
   id: OperatorBenefitId,
   imageWhenActive: z.string().optional(),
-  headingWhenActive: LanguageAndTextTypeArray.optional(),
-  descriptionWhenActive: LanguageAndTextTypeArray,
+  /** @deprecated Use the title from the benefit service instead. */
+  headingWhenActive: LanguageAndTextTypeArray.optional().meta(
+    deprecatedBenefitText,
+  ),
+  /** @deprecated Use the description from the benefit service instead. */
+  descriptionWhenActive: LanguageAndTextTypeArray.meta(deprecatedBenefitText),
   imageWhenNotActive: z.string().optional(),
-  headingWhenNotActive: LanguageAndTextTypeArray.optional(),
-  descriptionWhenNotActive: LanguageAndTextTypeArray,
+  /** @deprecated Use notEligibleTitle from the benefit service instead. */
+  headingWhenNotActive: LanguageAndTextTypeArray.optional().meta(
+    deprecatedBenefitText,
+  ),
+  /** @deprecated Use notEligibleDescription from the benefit service instead. */
+  descriptionWhenNotActive: LanguageAndTextTypeArray.meta(
+    deprecatedBenefitText,
+  ),
   callToAction: z.object({
     url: z.string(),
     name: LanguageAndTextTypeArray.optional(),
   }),
-  ticketDescription: LanguageAndTextTypeArray.optional(),
+  /** @deprecated Use the title and description from the benefit service instead. */
+  ticketDescription: LanguageAndTextTypeArray.optional().meta({
+    deprecated: true,
+    description:
+      'Deprecated: benefit texts are served by the benefit service. No longer read by the app.',
+  }),
   formFactors: z.array(FormFactor).nonempty(),
 });
 
