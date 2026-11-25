@@ -30,13 +30,19 @@ export type OperatorBenefitIdType = z.infer<typeof OperatorBenefitId>;
 export const PriceAdjustmentEnum = z.enum(['FREE_UNLOCK', 'FREE_MINUTES']);
 export type PriceAdjustmentEnumType = z.infer<typeof PriceAdjustmentEnum>;
 
-// The benefit texts are served by the benefit service (title/description and
-// notEligibleTitle/notEligibleDescription) from app version 1.94, so these
-// config texts are only needed for app version 1.93 and below.
+// The benefit texts are served by the benefit service (title/description) from
+// app version 1.94, so these config texts are only needed for app version 1.93
+// and below.
 const deprecatedBenefitText = {
   deprecated: true,
   description:
     'Deprecated from app version 1.94: benefit texts are served by the benefit service. Only needed for app version 1.93 and below.',
+};
+
+const deprecatedNotActiveText = {
+  deprecated: true,
+  description:
+    'Deprecated from app version 1.94: no longer in use. Only needed for app version 1.93 and below.',
 };
 
 export const OperatorBenefit = z.object({
@@ -49,13 +55,13 @@ export const OperatorBenefit = z.object({
   /** @deprecated From app version 1.94. Use the description from the benefit service instead. */
   descriptionWhenActive: LanguageAndTextTypeArray.meta(deprecatedBenefitText),
   imageWhenNotActive: z.string().optional(),
-  /** @deprecated From app version 1.94. Use notEligibleTitle from the benefit service instead. */
+  /** @deprecated From app version 1.94. No longer in use. */
   headingWhenNotActive: LanguageAndTextTypeArray.optional().meta(
-    deprecatedBenefitText,
+    deprecatedNotActiveText,
   ),
-  /** @deprecated From app version 1.94. Use notEligibleDescription from the benefit service instead. */
+  /** @deprecated From app version 1.94. No longer in use. */
   descriptionWhenNotActive: LanguageAndTextTypeArray.meta(
-    deprecatedBenefitText,
+    deprecatedNotActiveText,
   ),
   callToAction: z.object({
     url: z.string(),
