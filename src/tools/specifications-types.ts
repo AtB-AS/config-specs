@@ -59,10 +59,13 @@ export const schemaTypes = {
   mobility: z
     .object({
       operators: z.array(MobilityOperator),
+      /** @deprecated No longer read by the app; FAQs come from mobility-service. Kept for older app versions. */
       scooterFaqs: z.array(ShmoFaq).optional(),
+      /** @deprecated No longer read by the app; FAQs come from mobility-service. Kept for older app versions. */
       bicycleFaqs: z.array(ShmoFaq).optional(),
       scooterConsentLines: z.array(ConsentLine).optional(),
       bicycleConsentLines: z.array(ConsentLine).optional(),
+      /** @deprecated No longer read by the app. Kept for older app versions. */
       benefitIdsRequiringValueCode: z.array(OperatorBenefitId).optional(),
     })
     .meta({title: 'MobilityOperator'}),
